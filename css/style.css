@@ -3005,6 +3005,15 @@ p:last-child {
     display: none;
   }
 
+  /* Hide banner image on mobile — use gradient fallback */
+  .hero--banner {
+    background: var(--gradient-hero);
+  }
+
+  .hero--banner .hero__gradient-bg {
+    display: none;
+  }
+
   .hero h1 {
     font-size: 32px;
   }
