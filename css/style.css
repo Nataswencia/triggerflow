@@ -3018,6 +3018,15 @@ p:last-child {
     font-size: 32px;
   }
 
+  /* Hide forced <br> in section titles on mobile — let text wrap naturally */
+  .section__title br {
+    display: none;
+  }
+
+  .section__title {
+    padding: 0 var(--space-2);
+  }
+
   .hero-buttons {
     flex-direction: column;
     width: 100%;
