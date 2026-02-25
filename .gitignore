@@ -1,0 +1,6 @@
+# Project memory (internal)
+project-memory-*.md
+
+# OS files
+Thumbs.db
+.DS_Store

@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О команде TriggerFlow | SEO-диагностика</title>
+    <meta name="description" content="Узнайте о команде TriggerFlow: помогаем бизнесу находить точки роста и устранять потери. Системный подход, логика решений, ясность вместо хаоса.">
+    <link rel="canonical" href="https://triggerflow.pro/about.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="О команде TriggerFlow - кто мы и как помогаем бизнесу расти">
+    <meta property="og:description" content="Команда TriggerFlow: системный подход к росту бизнеса. Логика решений, ясность вместо хаоса.">
+    <meta property="og:url" content="https://triggerflow.pro/about.html">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="О команде TriggerFlow - кто мы и как помогаем бизнесу">
+    <meta name="twitter:description" content="Находим триггеры роста и убираем блоки, которые тормозят продажи.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- About page specific styles -->
+    <style>
+        /* ===== MANIFESTO HERO ===== */
+        .hero--manifesto {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero--manifesto .hero__title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ===== MANIFESTO STATEMENT SECTIONS ===== */
+        .section--manifesto {
+            padding: 80px 0;
+        }
+
+        .manifesto-statements {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .manifesto-statement {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 16px;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .manifesto-statement--strong {
+            color: #fff;
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+        }
+
+        .manifesto-connector {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.6);
+            margin: 40px 0 20px;
+            font-weight: 400;
+        }
+
+        .manifesto-dash-item {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 10px;
+            padding-left: 8px;
+            font-weight: 400;
+        }
+
+        .manifesto-conclusion {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-top: 48px;
+            background: linear-gradient(135deg, #1e6fff, #00b4ff);
+            - webkit-background-clip: text;
+            - webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== BELIEF CARDS ===== */
+        .beliefs__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .belief-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 48px 36px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .belief-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(30, 111, 255, 0.2);
+        }
+
+        .belief-card__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(30, 111, 255, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.3rem;
+            color: #00b4ff;
+        }
+
+        .belief-card__text {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        /* ===== HOW I WORK ===== */
+        .how-work__content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .how-work__lead {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 32px;
+        }
+
+        .how-work__connector {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+        }
+
+        .how-work__list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        .how-work__list li {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 12px 0 12px 36px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .how-work__list li:last-child {
+            border-bottom: none;
+        }
+
+        .how-work__list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #00b4ff;
+            font-size: 1rem;
+        }
+
+        .how-work__closing {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+        }
+
+        /* ===== FOR WHOM ===== */
+        .for-whom__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 28px;
+            margin: 48px 0 40px;
+        }
+
+        .for-whom__item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .for-whom__item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(30, 111, 255, 0.2);
+        }
+
+        .for-whom__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(30, 111, 255, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.3rem;
+            color: #00b4ff;
+        }
+
+        .for-whom__name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .for-whom__closing {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== MANIFESTO TF SECTION ===== */
+        .section--manifesto-tf {
+            padding: 100px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .manifesto-tf__content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .manifesto-tf__subtitle {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+        }
+
+        .manifesto-tf__block {
+            margin-top: 16px;
+        }
+
+        .manifesto-tf__line {
+            font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .manifesto-tf__final {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+            color: #fff;
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== NO CHAOS ===== */
+        .no-chaos__content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .no-chaos__text {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            margin-bottom: 36px;
+        }
+
+        .no-chaos__bold {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(135deg, #1e6fff, #00b4ff);
+            - webkit-background-clip: text;
+            - webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== NO GUESSING ===== */
+        .no-guessing__content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .no-guessing__text {
+            font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .no-guessing__accent {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* ===== CLARITY ===== */
+        .clarity__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 48px 0 40px;
+        }
+
+        .clarity__item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .clarity__item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(30, 111, 255, 0.2);
+        }
+
+        .clarity__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(30, 111, 255, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 1.3rem;
+            color: #00b4ff;
+        }
+
+        .clarity__name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .clarity__closing {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ===== BRAND SUMMARY ===== */
+        .section--brand-summary {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-summary__logo {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .brand-summary__logo .logo-flow {
+            background: linear-gradient(135deg, #ff6a00, #ff9500);
+            - webkit-background-clip: text;
+            - webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-summary__logo .tm {
+            font-size: 0.4em;
+            vertical-align: super;
+        }
+
+        .brand-summary__logo-image {
+            margin-bottom: 24px;
+        }
+
+        .brand-summary__logo-image img {
+            width: min(280px, 70vw);
+            height: auto;
+            margin: 0 auto;
+            filter: drop-shadow(0 0 24px rgba(30, 111, 255, 0.35));
+        }
+
+        .brand-summary__tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 56px;
+            line-height: 1.6;
+        }
+
+        .brand-summary__pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .brand-summary__pillar {
+            background: rgba(30, 111, 255, 0.06);
+            border: 1px solid rgba(30, 111, 255, 0.15);
+            border-radius: 12px;
+            padding: 32px 24px;
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .brand-summary__pillar:hover {
+            transform: translateY(-4px);
+            background: rgba(30, 111, 255, 0.1);
+            box-shadow: 0 8px 30px rgba(30, 111, 255, 0.15);
+        }
+
+        .brand-summary__pillar-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(30, 111, 255, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.3rem;
+            color: #00b4ff;
+        }
+
+        .brand-summary__pillar-text {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* ===== CLOSING CTA ===== */
+        .section--about-cta {
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .about-cta__text {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 750px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        /* ===== SPACING UTILITIES ===== */
+        .section--about-story {
+            padding: 100px 0 80px;
+        }
+
+        .section--beliefs {
+            padding: 80px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .section--how-work {
+            padding: 80px 0;
+        }
+
+        .section--for-whom {
+            padding: 80px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .section--no-chaos {
+            padding: 80px 0;
+        }
+
+        .section--no-guessing {
+            padding: 80px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .section--clarity {
+            padding: 80px 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero--manifesto {
+                min-height: 60vh;
+                padding: 120px 0 60px;
+            }
+
+            .manifesto-statement {
+                font-size: 1.2rem;
+            }
+
+            .belief-card {
+                padding: 36px 24px;
+            }
+
+            .brand-summary__pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .clarity__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .for-whom__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://triggerflow.pro/"},
+                    {"@type": "ListItem", "position": 2, "name": "О нас", "item": "https://triggerflow.pro/about.html"}
+                ]
+            },
+            {
+                "@type": "Person",
+                "name": "Основатель TriggerFlow",
+                "jobTitle": "Эксперт по диагностике роста",
+                "worksFor": {"@id": "https://triggerflow.pro/#organization"},
+                "description": "Специалист по аудиту сайтов и стратегии роста. Работает с логикой, решениями и системами."
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {"@type": "Question", "name": "Кто стоит за TriggerFlow?", "acceptedAnswer": {"@type": "Answer", "text": "TriggerFlow - это команда с опытом в SEO, аналитике и автоматизации бизнес-процессов. Каждый проект получает индивидуальный разбор с конкретными рекомендациями."}},
+                    {"@type": "Question", "name": "Какие технологии вы используете?", "acceptedAnswer": {"@type": "Answer", "text": "Наш стек: n8n для автоматизации, AI-агенты для анализа, Telegram для доставки результатов, Google Sheets для структурированных данных."}},
+                    {"@type": "Question", "name": "Для каких бизнесов подходит диагностика?", "acceptedAnswer": {"@type": "Answer", "text": "Для любого бизнеса с сайтом, который должен генерировать заявки и продажи: e-commerce, SaaS, услуги, B2B."}}
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                        <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html">Главная</a></li>
+                <li class="navbar__dropdown"><a href="services.html">Услуги <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#seo-text">SEO Text Reality Check <span class="dropdown__price">69€</span></a></li>
+                        <li><a href="services.html#first-screen">First Screen Verdict <span class="dropdown__price">79€</span></a></li>
+                        <li><a href="sitemoney-scan.html">SiteMoney Scan <span class="dropdown__price">от 79€</span></a></li>
+                        <li><a href="services.html#one-page">One Page Breakdown <span class="dropdown__price">249€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="sitemoney-scan.html">Экспресс-анализ</a></li>
+                <li class="navbar__dropdown"><a href="money-leak-audit.html">Аудит <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#offer">Offer X-Ray <span class="dropdown__price">390€</span></a></li>
+                        <li><a href="services.html#conversion">Conversion Anatomy <span class="dropdown__price">590€</span></a></li>
+                        <li><a href="services.html#psychology">Client Psychology Map <span class="dropdown__price">790€</span></a></li>
+                        <li><a href="money-leak-audit.html">Money Leak Audit <span class="dropdown__price">1490€</span></a></li>
+                        <li><a href="services.html#funnel">Sales Funnel Intelligence <span class="dropdown__price">2990€</span></a></li>
+                        <li><a href="services.html#growth">Growth Blueprint <span class="dropdown__price">4990€+</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="subscription.html">Подписка <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="subscription.html#basic">Базовый доступ <span class="dropdown__price">79€/мес</span></a></li>
+                        <li><a href="subscription.html#priority">Приоритетные разборы <span class="dropdown__price">199€/мес</span></a></li>
+                        <li><a href="subscription.html#growth">Growth сопровождение <span class="dropdown__price">990-1990€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="about.html" class="active">Про нас</a></li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ===== SECTION 1 - HERO ===== -->
+    <section class="hero hero--manifesto" id="hero">
+        <div class="hero__gradient-bg"></div>
+        <div class="container hero__content">
+            <h1 class="hero__title animate-on-scroll fade-up">
+                О команде TriggerFlow: системный подход<br>к росту вашего бизнеса
+            </h1>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2 - PERSONAL STORY ===== -->
+    <section class="section section--about-story" id="story">
+        <div class="container">
+            <div class="manifesto-statements animate-on-scroll fade-up">
+                <p class="manifesto-statement">Мы не дизайнеры</p>
+                <p class="manifesto-statement">Мы не SEO-агентство</p>
+                <p class="manifesto-statement">Мы не &laquo;ещё одни маркетологи&raquo;</p>
+                <p class="manifesto-statement manifesto-statement--strong">Мы работаем с логикой, решениями и системами роста</p>
+            </div>
+            <div class="manifesto-statements animate-on-scroll fade-up" style="animation-delay: 0.2s; margin-top: 56px;">
+                <p class="manifesto-connector">За годы работы мы видим одну и ту же картину:</p>
+                <p class="manifesto-dash-item">- сайты делаются</p>
+                <p class="manifesto-dash-item">- бюджет расходуется</p>
+                <p class="manifesto-dash-item">- действий много</p>
+                <p class="manifesto-dash-item">- ясности нет</p>
+            </div>
+            <div class="manifesto-statements animate-on-scroll fade-up" style="animation-delay: 0.4s; margin-top: 48px;">
+                <p class="manifesto-conclusion">TriggerFlow появился как ответ на этот хаос</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3 - BELIEFS ===== -->
+    <section class="section section--beliefs" id="beliefs">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Во что мы верим</h2>
+            <div class="beliefs__grid">
+                <div class="belief-card animate-on-scroll fade-up">
+                    <div class="belief-card__icon">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <p class="belief-card__text">Рост - это система, а не набор действий</p>
+                </div>
+                <div class="belief-card animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="belief-card__icon">
+                        <i class="fa-solid fa-display"></i>
+                    </div>
+                    <p class="belief-card__text">Сайт - это инструмент принятия решений</p>
+                </div>
+                <div class="belief-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="belief-card__icon">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <p class="belief-card__text">Если что-то не влияет на результат, это не приоритет</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4 - HOW I WORK ===== -->
+    <section class="section section--how-work" id="how-i-work">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Как мы работаем</h2>
+            <div class="how-work__content">
+                <p class="how-work__lead animate-on-scroll fade-up">Мы не продаём &laquo;исправления&raquo;</p>
+                <p class="how-work__connector animate-on-scroll fade-up" style="animation-delay: 0.1s;">Мы помогаем понять:</p>
+                <ul class="how-work__list animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <li>Где именно проблема</li>
+                    <li>Почему она возникает</li>
+                    <li>Что делать в первую очередь</li>
+                </ul>
+                <p class="how-work__closing animate-on-scroll fade-up" style="animation-delay: 0.3s;">Чтобы вы могли принимать решения уверенно</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5 - FOR WHOM ===== -->
+    <section class="section section--filter" id="for-whom">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Кому мы помогаем<br>расти системно</h2>
+            <p class="section__description animate-on-scroll fade-up">Наша экспертиза востребована там, где сайт - ключевой канал привлечения клиентов</p>
+            <div class="filter-grid">
+                <div class="filter-col filter-col--yes animate-on-scroll fade-up">
+                    <h3 class="filter-col__heading"><i class="fa-solid fa-bullseye"></i> Ваш профиль</h3>
+                    <ul class="filter-list">
+                        <li><i class="fa-solid fa-briefcase"></i> Предприниматели, чей сайт не оправдывает инвестиции</li>
+                        <li><i class="fa-solid fa-user-tie"></i> Эксперты, которым важна видимость и убедительность</li>
+                        <li><i class="fa-solid fa-rocket"></i> Растущие проекты, которым нужна системная поддержка</li>
+                        <li><i class="fa-solid fa-store"></i> Сервисы и e-commerce с амбициями масштабирования</li>
+                    </ul>
+                </div>
+                <div class="filter-col filter-col--no animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <h3 class="filter-col__heading"><i class="fa-solid fa-ban"></i> Не подойдёт</h3>
+                    <ul class="filter-list">
+                        <li><i class="fa-solid fa-xmark"></i> Ищете разового подрядчика на &laquo;сделать красиво&raquo;</li>
+                        <li><i class="fa-solid fa-xmark"></i> Не готовы к системной работе над сайтом</li>
+                        <li><i class="fa-solid fa-xmark"></i> Нужен только дизайн без аналитической основы</li>
+                        <li><i class="fa-solid fa-xmark"></i> Бюджет на маркетинг менее 500€ в месяц</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6 - MANIFESTO (TRIGGERFLOW) ===== -->
+    <section class="section section--manifesto-tf" id="manifesto">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">TriggerFlow -<br>это не про сайты</h2>
+            <div class="manifesto-tf__content">
+                <p class="manifesto-tf__subtitle animate-on-scroll fade-up" style="animation-delay: 0.1s;">TriggerFlow - это про решения</p>
+                <div class="manifesto-tf__block animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <p class="manifesto-tf__line">Мы не продаём дизайн</p>
+                    <p class="manifesto-tf__line">Мы не продаём SEO</p>
+                    <p class="manifesto-tf__line">Мы не продаём &laquo;аудиты&raquo;</p>
+                    <p class="manifesto-tf__final">Мы помогаем увидеть, где теряется прибыль - и что с этим делать</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 7 - NO CHAOS ===== -->
+    <section class="section section--no-chaos" id="no-chaos">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Мы не верим в хаос</h2>
+            <div class="no-chaos__content">
+                <p class="no-chaos__text animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    Если в проекте: много действий, много подрядчиков, много мнений, и при этом нет роста - значит, нет системы</p>
+                <p class="no-chaos__bold animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    TriggerFlow - это система мышления и диагностики роста</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 8 - NO GUESSING ===== -->
+    <section class="section section--no-guessing" id="no-guessing">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Мы не работаем &laquo;на ощущениях&raquo;</h2>
+            <div class="no-guessing__content">
+                <p class="no-guessing__text animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    Каждое решение должно отвечать на вопрос: как это влияет на выручку и конверсию</p>
+                <p class="no-guessing__accent animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    Если не влияет - значит, не приоритет</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 9 - CLARITY ===== -->
+    <section class="section section--clarity" id="clarity">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Мы за ясность</h2>
+            <div class="clarity__grid">
+                <div class="clarity__item animate-on-scroll fade-up">
+                    <div class="clarity__icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <p class="clarity__name">Ясный оффер</p>
+                </div>
+                <div class="clarity__item animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="clarity__icon">
+                        <i class="fa-solid fa-sitemap"></i>
+                    </div>
+                    <p class="clarity__name">Ясная структура</p>
+                </div>
+                <div class="clarity__item animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="clarity__icon">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <p class="clarity__name">Ясный путь пользователя</p>
+                </div>
+                <div class="clarity__item animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="clarity__icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <p class="clarity__name">Ясные действия</p>
+                </div>
+            </div>
+            <p class="clarity__closing animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                Без усложнений. Без магии. Без манипуляций</p>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 10 - BRAND SUMMARY ===== -->
+    <section class="section section--brand-summary" id="brand-summary">
+        <div class="container">
+            <div class="brand-summary__logo-image animate-on-scroll fade-up">
+                <img src="images/logo-shield.png" alt="TriggerFlow - система диагностики роста" width="200" height="200">
+            </div>
+            <div class="brand-summary__logo animate-on-scroll fade-up">
+                Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span>
+            </div>
+            <p class="brand-summary__tagline animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                Мы находим триггеры роста и убираем блоки, которые тормозят продажи
+            </p>
+            <div class="brand-summary__pillars">
+                <div class="brand-summary__pillar animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="brand-summary__pillar-icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <p class="brand-summary__pillar-text">Ясность вместо хаоса</p>
+                </div>
+                <div class="brand-summary__pillar animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="brand-summary__pillar-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <p class="brand-summary__pillar-text">Решения вместо догадок</p>
+                </div>
+                <div class="brand-summary__pillar animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="brand-summary__pillar-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <p class="brand-summary__pillar-text">Рост вместо имитации работы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section--faq" id="faq">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Вопросы о TriggerFlow</h2>
+            <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">Кто стоит за TriggerFlow?</summary>
+                    <div class="faq-item__answer"><p>TriggerFlow - это команда с опытом в SEO, аналитике и автоматизации бизнес-процессов. Мы не агентство с сотней клиентов и шаблонными отчётами. Каждый проект получает индивидуальный разбор с конкретными рекомендациями.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">Какие технологии вы используете?</summary>
+                    <div class="faq-item__answer"><p>Наш стек: <a href="integrations.html">n8n</a> для автоматизации процессов, AI-агенты для анализа, Telegram для мгновенной доставки результатов, Google Sheets для структурированных данных. Это позволяет проводить глубокую диагностику быстрее и точнее, чем при ручной работе.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">Для каких бизнесов подходит диагностика?</summary>
+                    <div class="faq-item__answer"><p>Для любого бизнеса с сайтом, который должен генерировать заявки и продажи: e-commerce, SaaS, услуги, B2B. Мы работаем с сайтами от лендингов до многостраничных порталов. Ключевое - наличие коммерческих целей у сайта.</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 11 - CLOSING CTA ===== -->
+    <section class="section section--cta section--about-cta" id="final-cta">
+        <div class="cta__gradient-bg"></div>
+        <div class="container section--cta__inner">
+            <p class="about-cta__text animate-on-scroll fade-up">
+                Если вы устали гадать, переделывать, тратить ресурсы без результата - возможно, вам нужен не новый дизайн, а другой способ смотреть на ваш сайт</p>
+            <div class="animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                <a href="services.html" class="btn btn--primary btn--large" data-tooltip="SEO-диагностика, аудит утечек конверсий и системное сопровождение. Выберите формат, который подходит вашему бизнесу">Познакомиться с нашими услугами</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                <p class="footer__tagline">TriggerFlow&trade; - команда, которая видит рост там, где другие видят данные</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="index.html">Главная</a>
+                <a href="services.html">Услуги</a>
+                <a href="sitemoney-scan.html">Экспресс-анализ</a>
+                <a href="money-leak-audit.html">Аудит</a>
+                <a href="subscription.html">Подписка</a>
+                <a href="blog.html">Блог</a>
+                <a href="about.html">Про нас</a>
+                <a href="integrations.html">Технологии</a>
+            </nav>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Все права защищены</div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>

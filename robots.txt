@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /images/
+Allow: /images/*.png
+Allow: /images/*.jpg
+
+Sitemap: https://triggerflow.pro/sitemap.xml

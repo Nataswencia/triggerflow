@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Диагностика сайта и рост продаж | TriggerFlow</title>
+    <meta name="description" content="Автоматическая диагностика сайта на n8n для роста продаж. Бесплатный AI-анализ за 2 минуты, результат в Telegram и Google Sheets.">
+    <link rel="canonical" href="https://triggerflow.pro/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Диагностика сайта и рост продаж - бесплатный AI-анализ | TriggerFlow">
+    <meta property="og:description" content="Бесплатный AI-анализ сайта за 2 минуты. Экспресс-сканирование, аудит утечек конверсий, план роста продаж.">
+    <meta property="og:url" content="https://triggerflow.pro/">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Диагностика сайта и рост продаж | TriggerFlow">
+    <meta name="twitter:description" content="Бесплатный AI-анализ сайта за 2 минуты. Находим утечки конверсий и даём план роста.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://triggerflow.pro/#organization",
+                "name": "TriggerFlow",
+                "url": "https://triggerflow.pro",
+                "description": "Система диагностики роста для бизнеса. Аудит сайтов, анализ воронок, AI-диагностика.",
+                "foundingDate": "2024",
+                "sameAs": ["https://t.me/TriggerFlow_analyse_bot"]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://triggerflow.pro/#website",
+                "url": "https://triggerflow.pro",
+                "name": "TriggerFlow",
+                "publisher": {"@id": "https://triggerflow.pro/#organization"},
+                "inLanguage": "ru"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://triggerflow.pro/",
+                "url": "https://triggerflow.pro/",
+                "name": "Аудит сайта и диагностика продаж | TriggerFlow",
+                "description": "TriggerFlow - система диагностики роста. Находим, где ваш сайт теряет прибыль.",
+                "isPartOf": {"@id": "https://triggerflow.pro/#website"},
+                "about": {"@id": "https://triggerflow.pro/#organization"},
+                "inLanguage": "ru"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Что такое TriggerFlow и чем он отличается от обычного SEO-агентства?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "TriggerFlow - это система диагностики роста, а не SEO-агентство. Мы находим конкретные точки, где ваш сайт теряет прибыль, и даём план действий с приоритетами."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Как работает бесплатный AI-анализ сайта?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Отправьте URL вашего сайта Telegram-боту @TriggerFlow_analyse_bot. AI-агент за 2 минуты проанализирует сайт по 50+ параметрам и выдаст отчёт в Google Sheets и PDF."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Для кого подходят услуги TriggerFlow?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Для предпринимателей, экспертов и проектов в росте. Если у вас есть сайт и трафик, но нет стабильного роста продаж - наша диагностика покажет, где проблема."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "С чего лучше начать?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Начните с бесплатного AI-скрининга в Telegram или с диагностики SiteMoney Scan от 79€ (Light - AI-анализ, PRO - экспертный разбор за 149€)."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "В каком формате вы получите результат?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "PDF-отчёт с приоритетами, скриншоты с комментариями, Google Sheets с данными анализа. Всё без технического жаргона."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Какие технологии использует TriggerFlow?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Диагностика построена на n8n - open-source платформе автоматизации. Результат доставляется через Telegram-бота и сохраняется в Google Sheets. AI-агенты на базе GPT-4o анализируют сайт по 50+ параметрам автоматически."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Чем автоматизированная диагностика отличается от ручного аудита?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Наша система на n8n проверяет сайт по единому стандарту, не пропускает ни одного параметра и выдаёт результат за минуты. Финальные рекомендации готовит эксперт - автоматизация помогает, а не заменяет опыт."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                        <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li class="navbar__dropdown"><a href="services.html">Услуги <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#seo-text">SEO Text Reality Check <span class="dropdown__price">69€</span></a></li>
+                        <li><a href="services.html#first-screen">First Screen Verdict <span class="dropdown__price">79€</span></a></li>
+                        <li><a href="sitemoney-scan.html">SiteMoney Scan <span class="dropdown__price">от 79€</span></a></li>
+                        <li><a href="services.html#one-page">One Page Breakdown <span class="dropdown__price">249€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="sitemoney-scan.html">Экспресс-анализ</a></li>
+                <li class="navbar__dropdown"><a href="money-leak-audit.html">Аудит <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#offer">Offer X-Ray <span class="dropdown__price">390€</span></a></li>
+                        <li><a href="services.html#conversion">Conversion Anatomy <span class="dropdown__price">590€</span></a></li>
+                        <li><a href="services.html#psychology">Client Psychology Map <span class="dropdown__price">790€</span></a></li>
+                        <li><a href="money-leak-audit.html">Money Leak Audit <span class="dropdown__price">1490€</span></a></li>
+                        <li><a href="services.html#funnel">Sales Funnel Intelligence <span class="dropdown__price">2990€</span></a></li>
+                        <li><a href="services.html#growth">Growth Blueprint <span class="dropdown__price">4990€+</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="subscription.html">Подписка <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="subscription.html#basic">Базовый доступ <span class="dropdown__price">79€/мес</span></a></li>
+                        <li><a href="subscription.html#priority">Приоритетные разборы <span class="dropdown__price">199€/мес</span></a></li>
+                        <li><a href="subscription.html#growth">Growth сопровождение <span class="dropdown__price">990-1990€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="about.html">Про нас</a></li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+    <!-- ===== SECTION 1 - HERO ===== -->
+    <section class="hero hero--banner" id="hero">
+        <div class="hero__gradient-bg"></div>
+        <div class="container hero__content">
+            <h1 class="hero__title animate-on-scroll fade-up">
+                Диагностика сайта: находим точки потерь<br>и даём план роста
+            </h1>
+            <p class="hero__subtitle animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                Диагностика сайтов, офферов и воронок продаж для предпринимателей и экспертов.<br>
+                Без редизайна, без &laquo;воды&raquo;, без догадок</p>
+            <div class="hero__buttons animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                <a href="#" class="btn btn--primary" data-tf-form="express" data-tf-service="SiteMoney Scan PRO" data-tf-price="149">Получить диагностику сайта</a>
+                <a href="sitemoney-scan.html" class="btn btn--outline" data-tooltip="SiteMoney Scan - диагностика сайта на потери конверсий. Light (79€) - AI-анализ + PDF. PRO (149€) - экспертный анализ + скриншоты + приоритеты">Диагностика от 79€</a>
+            </div>
+        </div>
+        <div class="trust-bar animate-on-scroll fade-up" style="animation-delay: 0.45s;">
+            <div class="trust-bar__item"><i class="fa-solid fa-chart-simple"></i> <strong>150+</strong> сайтов проанализировано</div>
+            <div class="trust-bar__item"><i class="fa-solid fa-shield-halved"></i> Гарантия конфиденциальности</div>
+            <div class="trust-bar__item"><i class="fa-solid fa-clock"></i> Результат за <strong>24 часа</strong></div>
+        </div>
+        <div class="hero__scroll-indicator">
+            <span>Прокрутите вниз</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2 - PROBLEM RECOGNITION ===== -->
+    <section class="section section--problems" id="problems">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Если вы узнаёте себя -<br>проблема уже есть</h2>
+            <div class="problems__grid">
+                <div class="problem-card animate-on-scroll fade-up">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-arrow-trend-down"></i>
+                    </div>
+                    <p class="problem-card__text">Есть трафик, но заявок мало</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </div>
+                    <p class="problem-card__text">Заявки есть, но не покупают</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-signal"></i>
+                    </div>
+                    <p class="problem-card__text">Сайт &laquo;нормальный&raquo;, но не растёт</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-dice"></i>
+                    </div>
+                    <p class="problem-card__text">Маркетинг делается на ощущениях</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <p class="problem-card__text">Каждый специалист говорит своё</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3 - POSITIONING ===== -->
+    <section class="section section--positioning" id="positioning">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Мы не делаем сайты.<br>Мы настраиваем систему продаж</h2>
+            <p class="section__description animate-on-scroll fade-up">
+                Мы не рисуем дизайн и не продаём абстрактные &laquo;аудиты&raquo;. Мы показываем: где именно вы теряете выручку, почему пользователь не покупает, что делать в первую очередь. Вы получаете решения, а не отчёт ради отчёта</p>
+            <div class="positioning__cards">
+                <div class="positioning-card animate-on-scroll fade-up">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Ясность</h3>
+                    <p class="positioning-card__text">Понимание реальных причин, почему сайт не приносит результат</p>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Решения</h3>
+                    <p class="positioning-card__text">Конкретные действия, а не абстрактные рекомендации</p>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Система</h3>
+                    <p class="positioning-card__text">Выстроенный процесс, который работает на рост продаж</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4 - HOW WE WORK ===== -->
+    <section class="section section--steps" id="how-we-work">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Как мы работаем</h2>
+            <div class="steps">
+                <div class="step animate-on-scroll fade-up">
+                    <div class="step__number">01</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">Диагностика</h3>
+                    <p class="step__text">Находим узкие места: структура, офферы, контент, воронка</p>
+                </div>
+                <div class="step animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="step__number">02</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">Приоритеты</h3>
+                    <p class="step__text">Показываем, что приносит доход сейчас, а что можно делать позже</p>
+                </div>
+                <div class="step animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="step__number">03</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">Рост</h3>
+                    <p class="step__text">Помогаем внедрить и масштабировать</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5 - ENTRY POINTS ===== -->
+    <section class="section section--entry" id="entry-points">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Начните с малого - без риска</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card animate-on-scroll fade-up">
+                    <div class="pricing-card__badge">Популярное</div>
+                    <h3 class="pricing-card__name">SiteMoney Scan</h3>
+                    <p class="pricing-card__desc">Диагностика потерь конверсий</p>
+                    <div class="pricing-card__price">от <span>79&nbsp;&euro;</span></div>
+                    <a href="sitemoney-scan.html" class="btn btn--primary btn--block" data-tooltip="SiteMoney Scan - диагностика сайта на потери конверсий. Light (79€) - AI-анализ + PDF за 24ч. PRO (149€) - экспертный анализ + скриншоты + приоритеты за 48ч">Проверить сайт</a>
+                </div>
+                <div class="pricing-card animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <h3 class="pricing-card__name">First Screen Verdict</h3>
+                    <p class="pricing-card__desc">Вердикт по первому экрану</p>
+                    <div class="pricing-card__price"><span>79&nbsp;&euro;</span></div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="First Screen Verdict" data-tf-price="79">Получить вердикт</a>
+                </div>
+                <div class="pricing-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <h3 class="pricing-card__name">One Page Breakdown</h3>
+                    <p class="pricing-card__desc">Разбор одной страницы</p>
+                    <div class="pricing-card__price"><span>249&nbsp;&euro;</span></div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="One Page Breakdown" data-tf-price="249">Разобрать страницу</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6 - WHO WE WORK WITH ===== -->
+    <section class="section section--filter" id="who-fits">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Кому подходит<br>диагностика сайта</h2>
+            <p class="section__description animate-on-scroll fade-up">Наши услуги созданы для бизнесов, которые хотят системно увеличивать конверсию и выручку</p>
+            <div class="filter-grid">
+                <div class="filter-col filter-col--yes animate-on-scroll fade-up">
+                    <h3 class="filter-col__heading"><i class="fa-solid fa-bullseye"></i> Ваш профиль</h3>
+                    <ul class="filter-list">
+                        <li><i class="fa-solid fa-building"></i> Действующий бизнес с работающим сайтом</li>
+                        <li><i class="fa-solid fa-user-tie"></i> Эксперты и консультанты с личным брендом</li>
+                        <li><i class="fa-solid fa-cart-shopping"></i> Интернет-магазины и e-commerce проекты</li>
+                        <li><i class="fa-solid fa-chart-line"></i> Онлайн-сервисы, готовые к масштабированию</li>
+                    </ul>
+                </div>
+                <div class="filter-col filter-col--no animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <h3 class="filter-col__heading"><i class="fa-solid fa-ban"></i> Не подойдёт</h3>
+                    <ul class="filter-list">
+                        <li><i class="fa-solid fa-xmark"></i> Нужен только визуальный редизайн без аналитики</li>
+                        <li><i class="fa-solid fa-xmark"></i> Сайт ещё не запущен или находится в разработке</li>
+                        <li><i class="fa-solid fa-xmark"></i> Нет готовности внедрять изменения по результатам</li>
+                        <li><i class="fa-solid fa-xmark"></i> Бюджет на маркетинг менее 500€ в месяц</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 7 - RESULTS ===== -->
+    <section class="section section--results" id="results">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Что вы получите</h2>
+            <div class="results-grid">
+                <div class="result-item animate-on-scroll fade-up">
+                    <div class="result-item__icon"><i class="fa-solid fa-list-check"></i></div>
+                    <p>Список конкретных ошибок</p>
+                </div>
+                <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.08s;">
+                    <div class="result-item__icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <p>Чёткие рекомендации</p>
+                </div>
+                <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.16s;">
+                    <div class="result-item__icon"><i class="fa-solid fa-arrow-up-1-9"></i></div>
+                    <p>Приоритеты действий</p>
+                </div>
+                <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.24s;">
+                    <div class="result-item__icon"><i class="fa-solid fa-route"></i></div>
+                    <p>Понимание,<br>что делать дальше</p>
+                </div>
+                <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.32s;">
+                    <div class="result-item__icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <p>Основу для роста продаж</p>
+                </div>
+                <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="result-item__icon"><i class="fa-solid fa-brain"></i></div>
+                    <p>Не догадки. Не &laquo;мнение&raquo;.<br>А логика и цифры</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: UNDER THE HOOD ===== -->
+    <section class="section" id="tech-stack">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Как это работает<br>под капотом</h2>
+            <p class="section__description animate-on-scroll fade-up">Наша диагностика - не ручная проверка &laquo;на глаз&raquo;. Это автоматизированная система на базе n8n, которая собирает, анализирует и доставляет результат без задержек</p>
+            <div class="cards-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); max-width: 960px; margin: 0 auto;">
+                <div class="card animate-on-scroll fade-up">
+                    <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                    <h3 class="card-title">n8n - движок автоматизации</h3>
+                    <p class="card-text">Вся логика диагностики построена на <a href="integrations.html">n8n</a> - open-source платформе автоматизации. AI-агенты, парсинг данных, генерация отчётов - работают без участия человека 24/7</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="card-icon"><i class="fa-brands fa-telegram"></i></div>
+                    <h3 class="card-title">Telegram - мгновенная доставка</h3>
+                    <p class="card-text">Результат приходит прямо в <a href="integrations.html">Telegram</a>: отправьте URL - получите анализ за 2 минуты. Без регистрации, без личных кабинетов, без ожидания</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="card-icon"><i class="fa-solid fa-table-cells-large"></i></div>
+                    <h3 class="card-title">Google Sheets - данные и отчёты</h3>
+                    <p class="card-text">Все данные анализа сохраняются в <a href="integrations.html">Google Sheets</a>: сравнение, история, динамика. Вы получаете не только PDF, но и живую таблицу с результатами</p>
+                </div>
+            </div>
+            <p class="animate-on-scroll fade-up" style="text-align: center; color: var(--color-text-muted); margin-top: var(--space-4); font-size: var(--font-size-sm);">Мы выбрали n8n вместо Zapier - это даёт полный контроль над процессами, гибкость и скорость. <a href="integrations.html">Подробнее о технологиях &rarr;</a></p>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 8 - SOCIAL PROOF ===== -->
+    <section class="section section--proof" id="proof">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Результаты наших клиентов</h2>
+            <div class="proof-grid">
+                <div class="proof-card animate-on-scroll fade-up">
+                    <div class="proof-card__value">+23%</div>
+                    <div class="proof-card__label">заявок</div>
+                    <p class="proof-card__detail">после аудита за 2 недели</p>
+                </div>
+                <div class="proof-card animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="proof-card__value">-40%</div>
+                    <div class="proof-card__label">потерь</div>
+                    <p class="proof-card__detail">точки отвала устранены</p>
+                </div>
+                <div class="proof-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="proof-card__value">20 лет</div>
+                    <div class="proof-card__label">&nbsp;</div>
+                    <p class="proof-card__detail">опыт в маркетинге и системах продаж</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 9 - PREMIUM SERVICES ===== -->
+    <section class="section section--premium" id="premium">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Нужно больше, чем разбор?</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card pricing-card--premium animate-on-scroll fade-up">
+                    <h3 class="pricing-card__name">Money Leak Audit</h3>
+                    <p class="pricing-card__desc">Комплексный аудит сайта</p>
+                    <div class="pricing-card__price">от <span>1&thinsp;490&nbsp;&euro;</span></div>
+                    <a href="money-leak-audit.html" class="btn btn--primary btn--block" data-tooltip="Money Leak Audit - полный аудит утечек конверсий за 1490€. Глубокий анализ сайта как системы продаж: структура, контент, SEO, UX. Детальный план роста с приоритетами на 6-12 месяцев">Подробнее</a>
+                </div>
+                <div class="pricing-card pricing-card--premium animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="pricing-card__badge">Максимум</div>
+                    <h3 class="pricing-card__name">Sales Funnel Intelligence</h3>
+                    <p class="pricing-card__desc">Полный анализ воронки</p>
+                    <div class="pricing-card__price">от <span>2&thinsp;990&nbsp;&euro;</span></div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="consult" data-tf-service="Sales Funnel Intelligence" data-tf-price="2990">Подробнее</a>
+                </div>
+                <div class="pricing-card pricing-card--premium animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <h3 class="pricing-card__name">Growth Blueprint</h3>
+                    <p class="pricing-card__desc">Стратегия роста</p>
+                    <div class="pricing-card__price"><span>индивидуально</span></div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="consult" data-tf-service="Growth Blueprint" data-tf-price="4990">Обсудить</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 10 - SUBSCRIPTION ===== -->
+    <section class="section section--subscription" id="subscription">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Поддержка и рост<br>на постоянной основе</h2>
+            <div class="subscription-card animate-on-scroll fade-up">
+                <div class="subscription-card__icon">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <h3 class="subscription-card__name">Website Intelligence Club</h3>
+                <p class="subscription-card__desc">Ежемесячные разборы, контроль и рекомендации</p>
+                <div class="subscription-card__price">от <span>79&nbsp;&euro;/мес</span></div>
+                <a href="subscription.html" class="btn btn--primary" data-tooltip="Website Intelligence Club - подписка от 79€/мес. Ежемесячный мониторинг, SEO-обновления, приоритетная поддержка и план действий. Системное сопровождение для стабильного роста">Узнать про подписку</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: BENEFITS ===== -->
+    <section class="section" id="benefits">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Почему выбирают<br>TriggerFlow</h2>
+            <div class="cards-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); max-width: 960px; margin: 0 auto;">
+                <div class="card animate-on-scroll fade-up">
+                    <div class="card-icon"><i class="fa-solid fa-crosshairs"></i></div>
+                    <h3 class="card-title">Точечная диагностика</h3>
+                    <p class="card-text">Не абстрактные рекомендации, а конкретные точки потерь конверсий с приоритетами действий</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3 class="card-title">Система, а не разовый аудит</h3>
+                    <p class="card-text">От <a href="sitemoney-scan.html">экспресс-анализа за 149€</a> до <a href="subscription.html">постоянного сопровождения</a> - путь роста для каждого этапа бизнеса</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 class="card-title">Фокус на прибыль</h3>
+                    <p class="card-text">Мы анализируем не код и не дизайн - мы ищем, где сайт теряет деньги и как это исправить быстрее всего</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="card-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3 class="card-title">Результат за 24 часа</h3>
+                    <p class="card-text"><a href="sitemoney-scan.html">SiteMoney Scan</a> готов за сутки. <a href="money-leak-audit.html">Money Leak Audit</a> - за 3-5 рабочих дней с полным отчётом</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="card-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                    <h3 class="card-title">Понятный формат</h3>
+                    <p class="card-text">PDF-отчёт с приоритетами, скриншоты с комментариями - без технического жаргона, ясно для предпринимателя</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.5s;">
+                    <div class="card-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3 class="card-title">Продолжение, а не бросок</h3>
+                    <p class="card-text">После аудита предлагаем <a href="subscription.html">подписку на сопровождение</a> - помогаем внедрять рекомендации и отслеживать рост</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: SOCIAL PROOF ===== -->
+    <section class="section" id="social-proof" style="padding-top: 0;">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section__title animate-on-scroll fade-up">Что говорят клиенты</h2>
+            <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                <blockquote class="animate-on-scroll fade-up" style="background: rgba(255,255,255,0.03); border-left: 4px solid var(--color-secondary); padding: var(--space-4) var(--space-5); border-radius: var(--radius-md);">
+                    <p style="font-style: italic; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-2);">&laquo;После <a href="sitemoney-scan.html">экспресс-анализа</a> мы увидели 7 критических ошибок, которые не замечали 2 года. Конверсия выросла на 23% за 2 недели после исправлений&raquo;</p>
+                    <footer style="font-size: var(--font-size-sm); color: var(--color-text-muted);">- Владелец интернет-магазина, e-commerce</footer>
+                </blockquote>
+                <blockquote class="animate-on-scroll fade-up" style="background: rgba(255,255,255,0.03); border-left: 4px solid var(--color-accent-2); padding: var(--space-4) var(--space-5); border-radius: var(--radius-md); animation-delay: 0.15s;">
+                    <p style="font-style: italic; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-2);">&laquo;<a href="money-leak-audit.html">Money Leak Audit</a> показал, что наша воронка продаж теряла 40% клиентов на третьем шаге. Мы перестроили путь пользователя - средний чек вырос на 18%&raquo;</p>
+                    <footer style="font-size: var(--font-size-sm); color: var(--color-text-muted);">- B2B-сервис, SaaS-платформа</footer>
+                </blockquote>
+                <blockquote class="animate-on-scroll fade-up" style="background: rgba(255,255,255,0.03); border-left: 4px solid var(--color-primary-light); padding: var(--space-4) var(--space-5); border-radius: var(--radius-md); animation-delay: 0.3s;">
+                    <p style="font-style: italic; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-2);">&laquo;С <a href="subscription.html">подпиской на сопровождение</a> мы не просто получили отчёт - нам помогли внедрить рекомендации и контролировать результат каждый месяц&raquo;</p>
+                    <footer style="font-size: var(--font-size-sm); color: var(--color-text-muted);">- Основатель стартапа, маркетплейс</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: SEARCH INTENT & LSI ===== -->
+    <section class="section" id="how-it-helps">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section__title animate-on-scroll fade-up">Как диагностика сайта<br>решает ваши задачи</h2>
+            <div class="animate-on-scroll fade-up" style="color: var(--color-text-secondary); line-height: 1.8; font-size: var(--font-size-base);">
+                <p style="margin-bottom: var(--space-3);"><strong style="color: var(--color-text-primary);">Хотите понять, почему сайт не приносит заявки?</strong> <a href="sitemoney-scan.html">Экспресс-анализ SiteMoney Scan</a> покажет критические точки потерь: слабый первый экран, неработающий оффер, отсутствие триггеров доверия. Вы получите конкретный план действий, а не общие советы</p>
+                <p style="margin-bottom: var(--space-3);"><strong style="color: var(--color-text-primary);">Нужен глубокий аудит сайта как системы продаж?</strong> <a href="money-leak-audit.html">Money Leak Audit</a> анализирует 7 ключевых направлений: путь пользователя, конверсионную воронку, контент-стратегию, UX-барьеры, элементы доверия и конкурентное позиционирование. Это полноценная карта утечек конверсий с приоритетами устранения</p>
+                <p style="margin-bottom: var(--space-3);"><strong style="color: var(--color-text-primary);">Ищете постоянную поддержку для роста?</strong> <a href="subscription.html">Website Intelligence Club</a> - подписка на ежемесячный мониторинг, приоритетные разборы и экспертное сопровождение. Подходит для бизнесов, которые хотят системного роста конверсий, а не разовых улучшений</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: NICHE & COMPETITIVE EDGE ===== -->
+    <section class="section" id="competitive-edge" style="padding-top: 0;">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section__title animate-on-scroll fade-up">Диагностика роста для бизнеса<br>в конкурентной среде</h2>
+            <div class="animate-on-scroll fade-up" style="color: var(--color-text-secondary); line-height: 1.8; font-size: var(--font-size-base);">
+                <p style="margin-bottom: var(--space-3);">В высококонкурентных нишах - e-commerce, SaaS, B2B-услуги, образование, консалтинг - каждый процент конверсии решает, кто растёт, а кто стагнирует. Классический SEO-аудит проверяет технические параметры. TriggerFlow анализирует, где именно сайт теряет деньги на уровне пользовательского поведения и бизнес-логики</p>
+                <p style="margin-bottom: var(--space-3);">Мы работаем с коммерческими сайтами, лендингами, интернет-магазинами и сервисными платформами. Наши клиенты - предприниматели, маркетологи и руководители проектов, которым нужны не абстрактные отчёты, а чёткие рекомендации с измеримым результатом</p>
+                <p>Начните с <a href="sitemoney-scan.html">экспресс-анализа за 149€</a>, чтобы увидеть критические точки роста. Или сразу закажите <a href="money-leak-audit.html">полный аудит утечек конверсий</a>, если хотите системный подход к увеличению продаж через сайт</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section section--faq" id="faq">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Часто задаваемые вопросы</h2>
+            <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">Что такое TriggerFlow и чем он отличается от обычного SEO-агентства?</summary>
+                    <div class="faq-item__answer">
+                        <p>TriggerFlow - это система диагностики роста, а не SEO-агентство. Мы не продаём дизайн, SEO или рекламу. Мы находим конкретные точки, где ваш сайт теряет прибыль, и даём план действий с приоритетами. Вы получаете ясность: что делать, в каком порядке и почему</p>
+                    </div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.05s;">
+                    <summary class="faq-item__question">Как работает бесплатный AI-анализ сайта?</summary>
+                    <div class="faq-item__answer">
+                        <p>Отправьте URL вашего сайта нашему Telegram-боту <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank">@TriggerFlow_analyse_bot</a>. AI-агент за 2 минуты проанализирует сайт по 50+ параметрам: техническое состояние, SEO, контент, структура. Вы получите отчёт в Google Sheets и PDF</p>
+                    </div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <summary class="faq-item__question">Для кого подходят услуги TriggerFlow?</summary>
+                    <div class="faq-item__answer">
+                        <p>Для предпринимателей, экспертов и проектов в росте. Если у вас есть сайт, есть трафик, но нет стабильного роста продаж - наша диагностика покажет, где именно проблема и что делать первым</p>
+                    </div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <summary class="faq-item__question">С чего лучше начать?</summary>
+                    <div class="faq-item__answer">
+                        <p>Начните с бесплатного <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener">AI-скрининга в Telegram</a> или с диагностики <a href="sitemoney-scan.html">SiteMoney Scan</a> от 79€. Light - AI-анализ + PDF, PRO (149€) - экспертный разбор со скриншотами</p>
+                    </div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <summary class="faq-item__question">В каком формате вы получите результат?</summary>
+                    <div class="faq-item__answer">
+                        <p>В зависимости от выбранной услуги: PDF-отчёт с приоритетами, скриншоты с комментариями, Google Sheets с данными анализа. Всё без технического жаргона - понятно для предпринимателя</p>
+                    </div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.25s;">
+                    <summary class="faq-item__question">Какие технологии использует TriggerFlow?</summary>
+                    <div class="faq-item__answer">
+                        <p>Диагностика построена на <a href="integrations.html">n8n</a> - open-source платформе автоматизации, которая обеспечивает полный контроль и гибкость. Результат доставляется через Telegram-бота и сохраняется в Google Sheets. AI-агенты на базе GPT-4o анализируют сайт по 50+ параметрам автоматически</p>
+                    </div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <summary class="faq-item__question">Чем автоматизированная диагностика отличается от ручного аудита?</summary>
+                    <div class="faq-item__answer">
+                        <p>Ручной аудит зависит от внимательности специалиста и занимает дни. Наша система на n8n проверяет сайт по единому стандарту, не пропускает ни одного параметра и выдаёт результат за минуты. При этом финальные рекомендации готовит эксперт - автоматизация помогает, а не заменяет опыт</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 11 - FINAL CTA ===== -->
+    <section class="section section--cta" id="final-cta">
+        <div class="cta__gradient-bg"></div>
+        <div class="container section--cta__inner">
+            <h2 class="section__title animate-on-scroll fade-up">Готовы увидеть,<br>что тормозит рост вашего сайта?</h2>
+            <p class="section__description animate-on-scroll fade-up" style="animation-delay: 0.1s; opacity: 0.8; max-width: 600px; margin: 0 auto var(--space-4);">
+                PDF-отчёт с приоритетами за 24 часа.<br>Конкретные точки потерь и план действий</p>
+            <div class="animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                <a href="#" class="btn btn--primary btn--large" data-tf-form="express" data-tf-service="SiteMoney Scan PRO" data-tf-price="149">Получить отчёт за 24 часа - 149€</a>
+            </div>
+            <div class="guarantee-badge animate-on-scroll fade-up" style="animation-delay: 0.25s; margin: var(--space-3) auto 0;">
+                <i class="fa-solid fa-shield-check"></i> Если отчёт не покажет конкретных точек роста - вернём деньги
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                <p class="footer__tagline">TriggerFlow&trade; - система диагностики и роста для вашего бизнеса</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="index.html">Главная</a>
+                <a href="services.html">Услуги</a>
+                <a href="sitemoney-scan.html">Экспресс-анализ</a>
+                <a href="money-leak-audit.html">Аудит</a>
+                <a href="subscription.html">Подписка</a>
+                <a href="blog.html">Блог</a>
+                <a href="about.html">Про нас</a>
+                <a href="integrations.html">Технологии</a>
+            </nav>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Все права защищены</div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <span class="sticky-cta__text">Отчёт за <strong>24ч</strong></span>
+        <a href="#" class="btn btn--primary" data-tf-form="express" data-tf-service="SiteMoney Scan PRO" data-tf-price="149">Диагностика - 149€</a>
+    </div>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>

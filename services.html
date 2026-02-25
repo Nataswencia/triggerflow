@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги SEO-диагностики сайтов | TriggerFlow</title>
+    <meta name="description" content="Услуги SEO диагностики с автоматизацией n8n и отчётом в Telegram: экспресс-сканирование от 69€, аудит утечек конверсий, анализ ЦА и стратегия роста.">
+    <link rel="canonical" href="https://triggerflow.pro/services.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Услуги SEO диагностики сайтов | TriggerFlow">
+    <meta property="og:description" content="От экспресс-сканирования до полной стратегии роста. Выберите подходящий формат диагностики.">
+    <meta property="og:url" content="https://triggerflow.pro/services.html">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Услуги SEO диагностики сайтов | TriggerFlow">
+    <meta name="twitter:description" content="Экспресс-сканирование, аудит утечек, анализ ЦА и стратегия роста от TriggerFlow.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(30, 111, 255, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            - webkit-background-clip: text;
+            - webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-header .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: rgba(255,255,255,0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ===== FOR WHOM / NOT FOR WHOM ===== */
+        .section--for-whom .filter-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .section--for-whom .filter-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SYMPTOMS ===== */
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .symptom-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .symptom-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(30, 111, 255, 0.3);
+        }
+        .symptom-card__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(30, 111, 255, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.3rem;
+            color: #00b4ff;
+        }
+        .symptom-card__text {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .symptoms-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SEGMENT TABS ===== */
+        .segment-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .segment-tab {
+            padding: 0.75rem 1.75rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.04);
+            color: rgba(255,255,255,0.7);
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+        .segment-tab:hover {
+            border-color: rgba(30, 111, 255, 0.4);
+            color: #fff;
+        }
+        .segment-tab.active {
+            background: linear-gradient(135deg, #ff6a00, #ff9500);
+            border-color: transparent;
+            color: #fff;
+            font-weight: 500;
+        }
+        .segment-panel {
+            display: none;
+        }
+        .segment-panel.active {
+            display: block;
+        }
+        .segment-panel__header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .segment-panel__title {
+            font-size: clamp(1.25rem, 3vw, 1.6rem);
+            font-weight: 600;
+            color: var(--color-primary-light);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        .segment-panel__subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 1rem;
+        }
+        .segment-panel__keyphrase {
+            font-size: 1rem;
+            color: #a5b4fc;
+            font-style: italic;
+            font-weight: 500;
+        }
+        .segment-panel__products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        .segment-product-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(30, 111, 255, 0.08);
+            border: 1px solid rgba(30, 111, 255, 0.18);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* ===== PRODUCT CARDS GRID ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .products-grid--3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .products-grid--2 {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @media (max-width: 992px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .products-grid,
+            .products-grid--3,
+            .products-grid--2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(30, 111, 255, 0.3);
+            box-shadow: 0 12px 40px rgba(30, 111, 255, 0.08);
+        }
+        .product-card__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(30, 111, 255, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #00b4ff;
+            margin: 0 auto 1.25rem;
+        }
+        .product-card__name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .product-card__desc {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+            flex: 1;
+        }
+        .product-card__price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.25rem;
+        }
+        .product-card__price span {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.5);
+        }
+        .product-card .btn {
+            text-align: center;
+        }
+
+        /* Premium product cards */
+        .product-card--premium {
+            border-color: rgba(30, 111, 255, 0.15);
+            background: linear-gradient(180deg, rgba(99,102,241,0.06) 0%, rgba(255,255,255,0.02) 100%);
+            padding: 2.5rem 2rem;
+            align-items: flex-start;
+            text-align: left;
+        }
+        .product-card--premium .product-card__icon {
+            margin: 0 0 1.25rem;
+        }
+        .product-card--premium .product-card__features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem;
+        }
+        .product-card--premium .product-card__features li {
+            padding: 0.4rem 0;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+        .product-card--premium .product-card__features li i {
+            color: #00b4ff;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+        }
+
+        /* Subscription cards */
+        .subscription-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .subscription-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .sub-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .sub-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(30, 111, 255, 0.3);
+        }
+        .sub-card__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(30, 111, 255, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #00b4ff;
+            margin: 0 auto 1.25rem;
+        }
+        .sub-card__name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-secondary);
+            margin-bottom: 0.75rem;
+        }
+        .sub-card__price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #a5b4fc;
+            margin-bottom: 1rem;
+        }
+        .sub-card__features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem;
+            text-align: left;
+        }
+        .sub-card__features li {
+            padding: 0.4rem 0;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+        .sub-card__features li i {
+            color: #00b4ff;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+        }
+
+        /* What you get section */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @media (max-width: 576px) {
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .deliverable-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .deliverable-item__icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(30, 111, 255, 0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #00b4ff;
+            font-size: 1.1rem;
+        }
+        .deliverable-item__text {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.5;
+        }
+        .deliverable-item__text strong {
+            color: #fff;
+        }
+
+        /* Product ladder visualization */
+        .ladder {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .ladder::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(99,102,241,0.1), rgba(99,102,241,0.5), rgba(139,92,246,0.5), rgba(139,92,246,0.1));
+            transform: translateX(-50%);
+        }
+        .ladder__step {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            position: relative;
+        }
+        .ladder__step:nth-child(odd) {
+            flex-direction: row;
+            text-align: right;
+        }
+        .ladder__step:nth-child(even) {
+            flex-direction: row-reverse;
+            text-align: left;
+        }
+        .ladder__step-content {
+            flex: 1;
+        }
+        .ladder__step-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #1e6fff;
+            border: 3px solid #1a1a2e;
+            flex-shrink: 0;
+            z-index: 1;
+            box-shadow: 0 0 12px rgba(99,102,241,0.4);
+        }
+        .ladder__step-placeholder {
+            flex: 1;
+        }
+        .ladder__step-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+        .ladder__step-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .ladder__step-price {
+            font-size: 0.9rem;
+            color: #a5b4fc;
+            margin-top: 0.15rem;
+        }
+        @media (max-width: 576px) {
+            .ladder__step,
+            .ladder__step:nth-child(odd),
+            .ladder__step:nth-child(even) {
+                flex-direction: row;
+                text-align: left;
+            }
+            .ladder::before {
+                left: 8px;
+            }
+            .ladder__step-placeholder {
+                display: none;
+            }
+            .ladder__step-content {
+                flex: 1;
+            }
+        }
+
+        /* Section spacing override */
+        .section--services-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: -0.5rem auto 2.5rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://triggerflow.pro/"},
+                    {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://triggerflow.pro/services.html"}
+                ]
+            },
+            {
+                "@type": "Service",
+                "name": "SiteMoney Scan Light",
+                "description": "AI-диагностика сайта на потери конверсий с автоматическим PDF-отчётом",
+                "provider": {"@id": "https://triggerflow.pro/#organization"},
+                "offers": {"@type": "Offer", "price": "79", "priceCurrency": "EUR"}
+            },
+            {
+                "@type": "Service",
+                "name": "SiteMoney Scan PRO",
+                "description": "Экспертная диагностика сайта на потери конверсий со скриншотами и приоритетами",
+                "provider": {"@id": "https://triggerflow.pro/#organization"},
+                "offers": {"@type": "Offer", "price": "149", "priceCurrency": "EUR"}
+            },
+            {
+                "@type": "Service",
+                "name": "Money Leak Audit",
+                "description": "Комплексный аудит сайта как системы продаж",
+                "provider": {"@id": "https://triggerflow.pro/#organization"},
+                "offers": {"@type": "Offer", "price": "1490", "priceCurrency": "EUR"}
+            },
+            {
+                "@type": "Service",
+                "name": "Sales Funnel Intelligence",
+                "description": "Полный анализ воронки продаж",
+                "provider": {"@id": "https://triggerflow.pro/#organization"},
+                "offers": {"@type": "Offer", "price": "2990", "priceCurrency": "EUR"}
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {"@type": "Question", "name": "Как понять, какая услуга мне нужна?", "acceptedAnswer": {"@type": "Answer", "text": "Если вы хотите быструю проверку - начните с SiteMoney Scan за 149€. Если нужен полный разбор сайта как системы продаж - выбирайте Money Leak Audit. Для постоянного контроля подойдёт подписка."}},
+                    {"@type": "Question", "name": "В каком формате приходит результат диагностики?", "acceptedAnswer": {"@type": "Answer", "text": "Результат формируется в Google Sheets и дублируется в Telegram. Для SiteMoney Scan генерируется PDF-отчёт. Автоматизация построена на n8n."}},
+                    {"@type": "Question", "name": "Чем ваша диагностика отличается от бесплатных SEO-проверок?", "acceptedAnswer": {"@type": "Answer", "text": "Бесплатные сервисы показывают технические метрики. Мы анализируем сайт как систему продаж: оффер, структуру убеждения, логику конверсионных путей, триггеры доверия."}},
+                    {"@type": "Question", "name": "Как быстро я получу результат?", "acceptedAnswer": {"@type": "Answer", "text": "SiteMoney Scan - PDF-отчёт в течение 24 часов. Money Leak Audit - полный разбор за 5-7 рабочих дней."}}
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                        <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html">Главная</a></li>
+                <li class="navbar__dropdown"><a href="services.html" class="active">Услуги <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#seo-text">SEO Text Reality Check <span class="dropdown__price">69€</span></a></li>
+                        <li><a href="services.html#first-screen">First Screen Verdict <span class="dropdown__price">79€</span></a></li>
+                        <li><a href="sitemoney-scan.html">SiteMoney Scan <span class="dropdown__price">от 79€</span></a></li>
+                        <li><a href="services.html#one-page">One Page Breakdown <span class="dropdown__price">249€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="sitemoney-scan.html">Экспресс-анализ</a></li>
+                <li class="navbar__dropdown"><a href="money-leak-audit.html">Аудит <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#offer">Offer X-Ray <span class="dropdown__price">390€</span></a></li>
+                        <li><a href="services.html#conversion">Conversion Anatomy <span class="dropdown__price">590€</span></a></li>
+                        <li><a href="services.html#psychology">Client Psychology Map <span class="dropdown__price">790€</span></a></li>
+                        <li><a href="money-leak-audit.html">Money Leak Audit <span class="dropdown__price">1490€</span></a></li>
+                        <li><a href="services.html#funnel">Sales Funnel Intelligence <span class="dropdown__price">2990€</span></a></li>
+                        <li><a href="services.html#growth">Growth Blueprint <span class="dropdown__price">4990€+</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="subscription.html">Подписка <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="subscription.html#basic">Базовый доступ <span class="dropdown__price">79€/мес</span></a></li>
+                        <li><a href="subscription.html#priority">Приоритетные разборы <span class="dropdown__price">199€/мес</span></a></li>
+                        <li><a href="subscription.html#growth">Growth сопровождение <span class="dropdown__price">990-1990€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="about.html">Про нас</a></li>
+            </ul>
+            <button class="mobile-toggle" id="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header" id="page-header">
+        <div class="container">
+            <h1 class="animate-on-scroll fade-up">Услуги SEO диагностики<br>и роста продаж</h1>
+            <p class="subtitle animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                Мы находим, где ваш сайт теряет прибыль - и даём план, как это исправить
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: FOR WHOM / NOT FOR WHOM ===== -->
+    <section class="section section--for-whom" id="for-whom">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Кому подходят<br>наши услуги</h2>
+            <p class="section__description animate-on-scroll fade-up">Работаем с бизнесами, которые рассматривают сайт как инструмент продаж, а не визитку</p>
+            <div class="filter-grid">
+                <div class="filter-col filter-col--yes animate-on-scroll fade-up">
+                    <h3 class="filter-col__heading"><i class="fa-solid fa-bullseye"></i> Ваш профиль</h3>
+                    <ul class="filter-list">
+                        <li><i class="fa-solid fa-briefcase"></i> Владельцы бизнеса с трафиком, но низкой конверсией</li>
+                        <li><i class="fa-solid fa-chart-line"></i> Компании, которые хотят понять причины стагнации</li>
+                        <li><i class="fa-solid fa-lightbulb"></i> Проекты, готовые инвестировать в системные улучшения</li>
+                        <li><i class="fa-solid fa-magnifying-glass-chart"></i> Маркетологи, которым нужна внешняя экспертиза</li>
+                    </ul>
+                </div>
+                <div class="filter-col filter-col--no animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <h3 class="filter-col__heading"><i class="fa-solid fa-ban"></i> Не подойдёт</h3>
+                    <ul class="filter-list">
+                        <li><i class="fa-solid fa-xmark"></i> Нужен только красивый дизайн без работы с конверсией</li>
+                        <li><i class="fa-solid fa-xmark"></i> Нет ресурсов или желания внедрять рекомендации</li>
+                        <li><i class="fa-solid fa-xmark"></i> Бизнес ещё не запущен, сайт на стадии идеи</li>
+                        <li><i class="fa-solid fa-xmark"></i> Бюджет на маркетинг менее 500€ в месяц</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: SYMPTOMS ===== -->
+    <section class="section section--symptoms" id="symptoms">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Узнаёте симптомы?</h2>
+            <div class="symptoms-grid">
+                <div class="symptom-card animate-on-scroll fade-up">
+                    <div class="symptom-card__icon">
+                        <i class="fa-solid fa-arrow-trend-down"></i>
+                    </div>
+                    <p class="symptom-card__text">Есть трафик, нет заявок</p>
+                </div>
+                <div class="symptom-card animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="symptom-card__icon">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <p class="symptom-card__text">Заявки есть, не покупают</p>
+                </div>
+                <div class="symptom-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="symptom-card__icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <p class="symptom-card__text">Сайт &laquo;красивый&raquo;, но не продаёт</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: CLIENT SEGMENTS ===== -->
+    <section class="section section--segments" id="segments">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Выберите ваш сегмент</h2>
+
+            <div class="segment-tabs animate-on-scroll fade-up">
+                <button class="segment-tab active" data-tab="entrepreneurs">Предприниматели</button>
+                <button class="segment-tab" data-tab="experts">Эксперты</button>
+                <button class="segment-tab" data-tab="growth">Проекты в росте</button>
+            </div>
+
+            <!-- Tab 1: Предприниматели -->
+            <div class="segment-panel active" id="panel-entrepreneurs">
+                <div class="segment-panel__header animate-on-scroll fade-up">
+                    <h3 class="segment-panel__title">Мы показываем, где ваш сайт теряет выручку -<br>и даём план роста продаж</h3>
+                    <p class="segment-panel__subtitle">Диагностика сайта и воронки без редизайна и &laquo;маркетинговой воды&raquo;</p>
+                    <p class="segment-panel__keyphrase">&laquo;Вы точно знаете, что делать дальше и куда вкладывать ресурсы&raquo;</p>
+                    <div class="segment-panel__products">
+                        <span class="segment-product-tag">SiteMoney Scan</span>
+                        <span class="segment-product-tag">Money Leak Audit</span>
+                        <span class="segment-product-tag">Sales Funnel Intelligence</span>
+                        <span class="segment-product-tag">Growth Blueprint</span>
+                        <span class="segment-product-tag">Growth сопровождение</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Эксперты -->
+            <div class="segment-panel" id="panel-experts">
+                <div class="segment-panel__header animate-on-scroll fade-up">
+                    <h3 class="segment-panel__title">Мы упаковываем вашу экспертизу в сайт,<br>который продаёт вас без уговоров</h3>
+                    <p class="segment-panel__subtitle">Анализ оффера, структуры и смыслов сайта под реальные решения клиента</p>
+                    <p class="segment-panel__keyphrase">&laquo;Ваш сайт начинает объяснять ценность за вас&raquo;</p>
+                    <div class="segment-panel__products">
+                        <span class="segment-product-tag">First Screen Verdict</span>
+                        <span class="segment-product-tag">Offer X-Ray</span>
+                        <span class="segment-product-tag">Client Psychology Map</span>
+                        <span class="segment-product-tag">One Page Breakdown</span>
+                        <span class="segment-product-tag">Website Intelligence Club</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Проекты в росте -->
+            <div class="segment-panel" id="panel-growth">
+                <div class="segment-panel__header animate-on-scroll fade-up">
+                    <h3 class="segment-panel__title">Превращаем сайт<br>в управляемую систему роста</h3>
+                    <p class="segment-panel__subtitle">Анализ + стратегия + контроль внедрения</p>
+                    <div class="segment-panel__products">
+                        <span class="segment-product-tag">Conversion Anatomy</span>
+                        <span class="segment-product-tag">Sales Funnel Intelligence</span>
+                        <span class="segment-product-tag">Growth Blueprint</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: TRIPWIRE - CHEAP ENTRY ===== -->
+    <section class="section section--tripwire" id="tripwire">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Первый шаг -<br>выберите подходящий анализ</h2>
+            <p class="section--services-subtitle animate-on-scroll fade-up">
+                Покупаются импульсивно. Снимают страх, показывают экспертность</p>
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll fade-up" style="border-color: var(--color-primary); position: relative;">
+                    <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--gradient-primary); color: #fff; font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.75rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;">Популярный выбор</div>
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                    </div>
+                    <h3 class="product-card__name">SiteMoney Scan</h3>
+                    <p class="product-card__desc">Диагностика потерь конверсий:<br>Light 79€ | PRO 149€</p>
+                    <div class="product-card__price">от 79&nbsp;&euro;</div>
+                    <a href="sitemoney-scan.html" class="btn btn--primary btn--block" data-tooltip="SiteMoney Scan - диагностика сайта на потери конверсий. Light (79€) - AI-анализ + PDF за 24ч. PRO (149€) - экспертный анализ + скриншоты + приоритеты за 48ч">Проверить сайт</a>
+                </div>
+                <div class="product-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-display"></i>
+                    </div>
+                    <h3 class="product-card__name">First Screen Verdict</h3>
+                    <p class="product-card__desc">Вердикт по первому экрану - самый быстрый старт</p>
+                    <div class="product-card__price">79&nbsp;&euro;</div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="First Screen Verdict" data-tf-price="79">Получить вердикт</a>
+                </div>
+                <div class="product-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <h3 class="product-card__name">One Page Breakdown</h3>
+                    <p class="product-card__desc">Разбор одной страницы под конверсию</p>
+                    <div class="product-card__price">249&nbsp;&euro;</div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="One Page Breakdown" data-tf-price="249">Разобрать страницу</a>
+                </div>
+                <div class="product-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-spell-check"></i>
+                    </div>
+                    <h3 class="product-card__name">SEO Text Reality Check</h3>
+                    <p class="product-card__desc">Проверка одного SEO-текста на реальную пользу</p>
+                    <div class="product-card__price">69&nbsp;&euro;</div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="SEO Text Reality Check" data-tf-price="69">Проверить текст</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: TARIFF COMPARISON TABLE ===== -->
+    <section class="section" id="tariff-compare" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Сравнение тарифов</h2>
+            <p class="section--services-subtitle animate-on-scroll fade-up">Выберите глубину анализа под ваши задачи</p>
+            <div class="animate-on-scroll fade-up" style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: separate; border-spacing: 0; background: rgba(255,255,255,0.02); border-radius: var(--radius-lg); overflow: hidden; font-size: var(--font-size-sm);">
+                    <thead>
+                        <tr style="background: rgba(30,111,255,0.08);">
+                            <th style="padding: 1rem 1.25rem; text-align: left; color: var(--color-text-muted); font-weight: 500; border-bottom: 1px solid var(--color-border);">Что включено</th>
+                            <th style="padding: 1rem 1.25rem; text-align: center; color: var(--color-secondary); font-weight: 600; border-bottom: 1px solid var(--color-border);">Базовый<br><span style="font-size: 0.75rem; opacity: 0.7;">от 69€</span></th>
+                            <th style="padding: 1rem 1.25rem; text-align: center; color: #fff; font-weight: 600; border-bottom: 1px solid var(--color-border); background: rgba(30,111,255,0.15);">Стандарт<br><span style="font-size: 0.75rem; opacity: 0.7;">от 390€</span></th>
+                            <th style="padding: 1rem 1.25rem; text-align: center; color: var(--color-accent-2); font-weight: 600; border-bottom: 1px solid var(--color-border);">Премиум<br><span style="font-size: 0.75rem; opacity: 0.7;">от 1 490€</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Анализ первого экрана</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary); background: rgba(30,111,255,0.05);">&#10003;</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Проверка оффера и CTA</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary); background: rgba(30,111,255,0.05);">&#10003;</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">PDF-отчёт с приоритетами</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary); background: rgba(30,111,255,0.05);">&#10003;</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Анализ структуры сайта</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">-</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary); background: rgba(30,111,255,0.05);">&#10003;</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Анализ пути пользователя</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">-</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary); background: rgba(30,111,255,0.05);">&#10003;</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Анализ доверия и лид-форм</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">-</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">-</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Полная карта утечек (7 направлений)</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">-</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">-</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Стратегия роста + roadmap</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">-</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">-</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; color: var(--color-text-secondary);">Срок выполнения</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; color: var(--color-text-secondary);">24 часа</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; color: var(--color-text-secondary); background: rgba(30,111,255,0.05);">3-5 дней</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; color: var(--color-text-secondary);">5-7 дней</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: MID-TIER - DEEP ANALYSIS ===== -->
+    <section class="section section--mid" id="mid-tier">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Глубокий анализ</h2>
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll fade-up">
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-sitemap"></i>
+                    </div>
+                    <h3 class="product-card__name">Conversion Anatomy</h3>
+                    <p class="product-card__desc">Анализ структуры сайта и пользовательского пути</p>
+                    <div class="product-card__price">590&nbsp;&euro;</div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="Conversion Anatomy" data-tf-price="590">Подробнее</a>
+                </div>
+                <div class="product-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-x-ray"></i>
+                    </div>
+                    <h3 class="product-card__name">Offer X-Ray</h3>
+                    <p class="product-card__desc">Рентген оффера: почему не покупают</p>
+                    <div class="product-card__price">390&nbsp;&euro;</div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="Offer X-Ray" data-tf-price="390">Подробнее</a>
+                </div>
+                <div class="product-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="product-card__name">Client Psychology Map</h3>
+                    <p class="product-card__desc">Анализ ЦА с точки зрения принятия решений</p>
+                    <div class="product-card__price">790&nbsp;&euro;</div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="Client Psychology Map" data-tf-price="790">Подробнее</a>
+                </div>
+                <div class="product-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="product-card__name">Leadform Detox</h3>
+                    <p class="product-card__desc">Оптимизация форм заявок и CTA</p>
+                    <div class="product-card__price">290&nbsp;&euro;</div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="Leadform Detox" data-tf-price="290">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: PREMIUM PACKAGES ===== -->
+    <section class="section section--premium-packages" id="premium-packages">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Комплексные решения</h2>
+            <div class="products-grid products-grid--3">
+                <div class="product-card product-card--premium animate-on-scroll fade-up">
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-search-dollar"></i>
+                    </div>
+                    <h3 class="product-card__name">Money Leak Audit</h3>
+                    <p class="product-card__desc">Комплексный аудит: все точки потерь</p>
+                    <div class="product-card__price">1&thinsp;490&nbsp;&euro;</div>
+                    <ul class="product-card__features">
+                        <li><i class="fa-solid fa-check"></i> Структура сайта</li>
+                        <li><i class="fa-solid fa-check"></i> Офферы и контент</li>
+                        <li><i class="fa-solid fa-check"></i> Формы и доверие</li>
+                        <li><i class="fa-solid fa-check"></i> Приоритеты действий</li>
+                    </ul>
+                    <a href="money-leak-audit.html" class="btn btn--primary btn--block" data-tooltip="Money Leak Audit - полный аудит утечек конверсий за 1490€. Глубокий анализ сайта как системы продаж: структура, контент, SEO, UX. Детальный план роста с приоритетами на 6-12 месяцев">Заказать аудит</a>
+                </div>
+                <div class="product-card product-card--premium animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-filter-circle-dollar"></i>
+                    </div>
+                    <h3 class="product-card__name">Sales Funnel Intelligence</h3>
+                    <p class="product-card__desc">Полный анализ воронки продаж</p>
+                    <div class="product-card__price">2&thinsp;990&nbsp;&euro;</div>
+                    <ul class="product-card__features">
+                        <li><i class="fa-solid fa-check"></i> Полный анализ воронки</li>
+                        <li><i class="fa-solid fa-check"></i> Точки отвалов</li>
+                        <li><i class="fa-solid fa-check"></i> Сценарии поведения</li>
+                        <li><i class="fa-solid fa-check"></i> Рекомендации по пересборке</li>
+                    </ul>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="consult" data-tf-service="Sales Funnel Intelligence" data-tf-price="2990">Анализировать воронку</a>
+                </div>
+                <div class="product-card product-card--premium animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="product-card__icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h3 class="product-card__name">Growth Blueprint</h3>
+                    <p class="product-card__desc">Стратегия роста и масштабирования</p>
+                    <div class="product-card__price">4&thinsp;990-6&thinsp;990&nbsp;&euro;</div>
+                    <ul class="product-card__features">
+                        <li><i class="fa-solid fa-check"></i> Стратегия роста</li>
+                        <li><i class="fa-solid fa-check"></i> Roadmap и KPI</li>
+                        <li><i class="fa-solid fa-check"></i> Логика масштабирования</li>
+                        <li><i class="fa-solid fa-check"></i> Бюджет и ROI-модель</li>
+                    </ul>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="consult" data-tf-service="Growth Blueprint" data-tf-price="4990">Обсудить стратегию</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: SUBSCRIPTIONS ===== -->
+    <section class="section section--subscriptions" id="subscriptions">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Регулярный доход<br>и контроль</h2>
+            <div class="subscription-grid">
+                <div class="sub-card animate-on-scroll fade-up">
+                    <div class="sub-card__icon">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <h3 class="sub-card__name">Website Intelligence Club</h3>
+                    <div class="sub-card__price">79-199&nbsp;&euro;/мес</div>
+                    <ul class="sub-card__features">
+                        <li><i class="fa-solid fa-check"></i> 1 мини-разбор в месяц</li>
+                        <li><i class="fa-solid fa-check"></i> Ответы на вопросы</li>
+                        <li><i class="fa-solid fa-check"></i> Анализ страниц и офферов</li>
+                        <li><i class="fa-solid fa-check"></i> Обновление рекомендаций</li>
+                    </ul>
+                    <a href="subscription.html" class="btn btn--primary btn--block" data-tooltip="Website Intelligence Club - подписка от 79€/мес. Ежемесячный мониторинг, SEO-обновления, приоритетная поддержка и план действий. Системное сопровождение для стабильного роста">Подробнее о клубе</a>
+                </div>
+                <div class="sub-card animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="sub-card__icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="sub-card__name">Growth сопровождение</h3>
+                    <div class="sub-card__price">990-1&thinsp;990&nbsp;&euro;/мес</div>
+                    <ul class="sub-card__features">
+                        <li><i class="fa-solid fa-check"></i> Ежемесячный аудит</li>
+                        <li><i class="fa-solid fa-check"></i> Контроль внедрений</li>
+                        <li><i class="fa-solid fa-check"></i> Корректировка стратегии</li>
+                        <li><i class="fa-solid fa-check"></i> Аналитика</li>
+                    </ul>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="consult" data-tf-service="Growth Support" data-tf-price="990">Узнать подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: WHAT YOU GET ===== -->
+    <section class="section section--deliverables" id="deliverables">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Результат<br>каждой услуги</h2>
+            <div class="deliverables-grid">
+                <div class="deliverable-item animate-on-scroll fade-up">
+                    <div class="deliverable-item__icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="deliverable-item__text">
+                        <strong>Список ошибок</strong> - конкретные проблемы вашего сайта с пояснениями
+                    </div>
+                </div>
+                <div class="deliverable-item animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="deliverable-item__icon">
+                        <i class="fa-solid fa-arrow-up-1-9"></i>
+                    </div>
+                    <div class="deliverable-item__text">
+                        <strong>Приоритеты</strong> - что исправить первым для максимального эффекта
+                    </div>
+                </div>
+                <div class="deliverable-item animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="deliverable-item__icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div class="deliverable-item__text">
+                        <strong>Чёткие действия</strong> - пошаговый план, что делать и в каком порядке
+                    </div>
+                </div>
+                <div class="deliverable-item animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="deliverable-item__icon">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div class="deliverable-item__text">
+                        <strong>Формат:</strong> PDF-отчёт, видео-разбор, скриншоты с аннотациями
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: TECH BEHIND SERVICES ===== -->
+    <section class="section" id="tech-services">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Технология<br>за каждой услугой</h2>
+            <p class="section--services-subtitle animate-on-scroll fade-up">Каждый этап диагностики автоматизирован на <a href="integrations.html">n8n</a> - результат точнее, быстрее и без человеческого фактора</p>
+            <div class="animate-on-scroll fade-up" style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: separate; border-spacing: 0; background: rgba(255,255,255,0.02); border-radius: var(--radius-lg); overflow: hidden; font-size: var(--font-size-sm);">
+                    <thead>
+                        <tr style="background: rgba(30,111,255,0.08);">
+                            <th style="padding: 1rem 1.25rem; text-align: left; color: var(--color-text-muted); font-weight: 500; border-bottom: 1px solid var(--color-border);">Услуга</th>
+                            <th style="padding: 1rem 1.25rem; text-align: center; color: var(--color-secondary); font-weight: 600; border-bottom: 1px solid var(--color-border);"><i class="fa-solid fa-diagram-project"></i> n8n</th>
+                            <th style="padding: 1rem 1.25rem; text-align: center; color: var(--color-secondary); font-weight: 600; border-bottom: 1px solid var(--color-border);"><i class="fa-brands fa-telegram"></i> Telegram</th>
+                            <th style="padding: 1rem 1.25rem; text-align: center; color: var(--color-secondary); font-weight: 600; border-bottom: 1px solid var(--color-border);"><i class="fa-solid fa-table-cells-large"></i> Google Sheets</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">SiteMoney Scan</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Парсинг + AI-анализ</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003; отчёт</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003; данные</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Money Leak Audit</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">7 AI-агентов</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003; уведомления</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003; 10 табов</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">SEO Report</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Генерация 10 секций</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003; PDF</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003; стратегия</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Подписка (мониторинг)</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Автосканирование</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003; алерты</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-secondary);">&#10003; динамика</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="animate-on-scroll fade-up" style="text-align: center; color: var(--color-text-muted); margin-top: var(--space-4); font-size: var(--font-size-sm);">Мы используем n8n вместо Zapier - это даёт полный контроль над данными, гибкость и скорость обработки. <a href="integrations.html">Подробнее о технологиях &rarr;</a></p>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: HOW IT WORKS ===== -->
+    <section class="section section--steps" id="how-it-works">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Как проходит работа</h2>
+            <div class="steps">
+                <div class="step animate-on-scroll fade-up">
+                    <div class="step__number">01</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">Вы оставляете заявку</h3>
+                    <p class="step__text">Указываете сайт, задачу, ожидания. Мы изучаем вводные</p>
+                </div>
+                <div class="step animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="step__number">02</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">Диагностика и анализ</h3>
+                    <p class="step__text">Проводим аудит по выбранному формату. Находим конкретные точки потерь</p>
+                </div>
+                <div class="step animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="step__number">03</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">Получаете результат</h3>
+                    <p class="step__text">PDF, видео-разбор, приоритеты. Вы точно знаете, что делать дальше</p>
+                </div>
+            </div>
+            <div class="animate-on-scroll fade-up" style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn btn--primary btn--large" data-tf-form="express" data-tf-service="SiteMoney Scan" data-tf-price="149">Узнать, где сайт теряет конверсии</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: PRODUCT LADDER VISUALIZATION ===== -->
+    <section class="section section--ladder" id="product-ladder">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Продуктовая лестница</h2>
+            <p class="section--services-subtitle animate-on-scroll fade-up">
+                Начните с экспресс-анализа - затем углубимся
+            </p>
+            <div class="ladder animate-on-scroll fade-up">
+                <div class="ladder__step">
+                    <div class="ladder__step-content">
+                        <div class="ladder__step-label">Вход</div>
+                        <div class="ladder__step-name">SiteMoney Scan / First Screen Verdict</div>
+                        <div class="ladder__step-price">от 69&nbsp;&euro;</div>
+                    </div>
+                    <div class="ladder__step-dot"></div>
+                    <div class="ladder__step-placeholder"></div>
+                </div>
+                <div class="ladder__step">
+                    <div class="ladder__step-placeholder"></div>
+                    <div class="ladder__step-dot"></div>
+                    <div class="ladder__step-content">
+                        <div class="ladder__step-label">Углубление</div>
+                        <div class="ladder__step-name">Conversion Anatomy / Offer X-Ray</div>
+                        <div class="ladder__step-price">от 390&nbsp;&euro;</div>
+                    </div>
+                </div>
+                <div class="ladder__step">
+                    <div class="ladder__step-content">
+                        <div class="ladder__step-label">Комплекс</div>
+                        <div class="ladder__step-name">Money Leak Audit / Sales Funnel Intelligence</div>
+                        <div class="ladder__step-price">от 1&thinsp;490&nbsp;&euro;</div>
+                    </div>
+                    <div class="ladder__step-dot"></div>
+                    <div class="ladder__step-placeholder"></div>
+                </div>
+                <div class="ladder__step">
+                    <div class="ladder__step-placeholder"></div>
+                    <div class="ladder__step-dot"></div>
+                    <div class="ladder__step-content">
+                        <div class="ladder__step-label">Стратегия</div>
+                        <div class="ladder__step-name">Growth Blueprint</div>
+                        <div class="ladder__step-price">от 4&thinsp;990&nbsp;&euro;</div>
+                    </div>
+                </div>
+                <div class="ladder__step">
+                    <div class="ladder__step-content">
+                        <div class="ladder__step-label">Постоянное сопровождение</div>
+                        <div class="ladder__step-name">Growth сопровождение</div>
+                        <div class="ladder__step-price">от 990&nbsp;&euro;/мес</div>
+                    </div>
+                    <div class="ladder__step-dot"></div>
+                    <div class="ladder__step-placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: BUNDLES ===== -->
+    <section class="section" id="bundles">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Готовые пакеты<br>со скидкой</h2>
+            <p class="section--services-subtitle animate-on-scroll fade-up">
+                Объедините услуги и сэкономьте до 30%</p>
+            <div class="bundles-grid">
+                <div class="bundle-card animate-on-scroll fade-up">
+                    <div class="bundle-card__name">Starter Pack</div>
+                    <div class="bundle-card__price">299€</div>
+                    <div class="bundle-card__old-price">328€</div>
+                    <div class="bundle-card__savings">Экономия 29€</div>
+                    <ul class="bundle-card__features">
+                        <li><i class="fa-solid fa-check"></i> SiteMoney Scan Light (79€)</li>
+                        <li><i class="fa-solid fa-check"></i> One Page Breakdown (249€)</li>
+                        <li><i class="fa-solid fa-check"></i> PDF-отчёт с приоритетами</li>
+                    </ul>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="Starter Pack" data-tf-price="299">Выбрать Starter</a>
+                </div>
+                <div class="bundle-card bundle-card--featured animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="bundle-card__badge">Лучшая цена</div>
+                    <div class="bundle-card__name">Full Diagnostic</div>
+                    <div class="bundle-card__price">1 990€</div>
+                    <div class="bundle-card__old-price">2 569€</div>
+                    <div class="bundle-card__savings">Экономия 579€</div>
+                    <ul class="bundle-card__features">
+                        <li><i class="fa-solid fa-check"></i> Money Leak Audit (1 490€)</li>
+                        <li><i class="fa-solid fa-check"></i> Conversion Anatomy (590€)</li>
+                        <li><i class="fa-solid fa-check"></i> Offer X-Ray (390€)</li>
+                        <li><i class="fa-solid fa-check"></i> Карта приоритетов + roadmap</li>
+                    </ul>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="consult" data-tf-service="Full Diagnostic Pack" data-tf-price="1990">Выбрать Full Diagnostic</a>
+                </div>
+                <div class="bundle-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="bundle-card__name">Growth Pack</div>
+                    <div class="bundle-card__price">7 990€</div>
+                    <div class="bundle-card__old-price">9 960€+</div>
+                    <div class="bundle-card__savings">Экономия 1 970€+</div>
+                    <ul class="bundle-card__features">
+                        <li><i class="fa-solid fa-check"></i> Growth Blueprint (4 990€)</li>
+                        <li><i class="fa-solid fa-check"></i> Sales Funnel Intelligence (2 990€)</li>
+                        <li><i class="fa-solid fa-check"></i> Money Leak Audit (1 490€)</li>
+                        <li><i class="fa-solid fa-check"></i> 3 месяца сопровождения</li>
+                    </ul>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="consult" data-tf-service="Growth Pack" data-tf-price="7990">Обсудить Growth Pack</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section--faq" id="faq">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Частые вопросы об услугах</h2>
+            <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">Как понять, какая услуга мне нужна?</summary>
+                    <div class="faq-item__answer"><p>Если вы хотите быструю проверку - начните с <a href="sitemoney-scan.html">SiteMoney Scan</a> за 149€: за 10-15 минут получите карту критических потерь. Если нужен полный разбор сайта как системы продаж - выбирайте <a href="money-leak-audit.html">Money Leak Audit</a>. Для постоянного контроля подойдёт <a href="subscription.html">подписка</a>.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">В каком формате приходит результат диагностики?</summary>
+                    <div class="faq-item__answer"><p>Результат автоматически формируется в Google Sheets (структурированные данные) и дублируется в Telegram (быстрый доступ). Для SiteMoney Scan дополнительно генерируется PDF-отчёт с приоритетами. Вся автоматизация построена на <a href="integrations.html">n8n</a> - без ручной работы.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">Чем ваша диагностика отличается от бесплатных SEO-проверок?</summary>
+                    <div class="faq-item__answer"><p>Бесплатные сервисы показывают технические метрики (скорость, мета-теги). Мы анализируем сайт как систему продаж: оффер, структуру убеждения, логику конверсионных путей, триггеры доверия. Это разница между «у вас 85 по PageSpeed» и «вот где вы теряете клиентов и почему».</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">Как быстро я получу результат?</summary>
+                    <div class="faq-item__answer"><p>SiteMoney Scan - PDF-отчёт в течение 24 часов. Money Leak Audit - полный разбор за 5-7 рабочих дней. Экспресс-данные из автоматического сканирования приходят в Telegram сразу после анализа.</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: FINAL CTA ===== -->
+    <section class="section section--cta" id="final-cta">
+        <div class="cta__gradient-bg"></div>
+        <div class="container section--cta__inner">
+            <h2 class="section__title animate-on-scroll fade-up">Не знаете, с чего начать?</h2>
+            <p class="section__description animate-on-scroll fade-up" style="animation-delay: 0.1s; opacity: 0.8; max-width: 600px; margin: 0 auto var(--space-4);">
+                Начните с экспресс-диагностики.<br>PDF-отчёт с приоритетами за 24 часа</p>
+            <div class="animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                <a href="#" class="btn btn--primary btn--large" data-tf-form="express" data-tf-service="SiteMoney Scan PRO" data-tf-price="149">Получить отчёт за 24 часа - 149€</a>
+            </div>
+            <div class="guarantee-badge animate-on-scroll fade-up" style="animation-delay: 0.25s; margin: var(--space-3) auto 0;">
+                <i class="fa-solid fa-shield-check"></i> Если отчёт не покажет точек роста - вернём деньги
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                <p class="footer__tagline">TriggerFlow&trade; - полный спектр SEO-услуг для роста бизнеса</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="index.html">Главная</a>
+                <a href="services.html">Услуги</a>
+                <a href="sitemoney-scan.html">Экспресс-анализ</a>
+                <a href="money-leak-audit.html">Аудит</a>
+                <a href="subscription.html">Подписка</a>
+                <a href="blog.html">Блог</a>
+                <a href="about.html">Про нас</a>
+                <a href="integrations.html">Технологии</a>
+            </nav>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Все права защищены</div>
+        </div>
+    </footer>
+
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <span class="sticky-cta__text">Отчёт за <strong>24ч</strong></span>
+        <a href="#" class="btn btn--primary" data-tf-form="express" data-tf-service="SiteMoney Scan PRO" data-tf-price="149">Диагностика - 149€</a>
+    </div>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+
+    <!-- Segment Tabs Script -->
+    <script>
+        (function() {
+            const tabs = document.querySelectorAll('.segment-tab');
+            const panels = {
+                'entrepreneurs': document.getElementById('panel-entrepreneurs'),
+                'experts': document.getElementById('panel-experts'),
+                'growth': document.getElementById('panel-growth')
+            };
+
+            tabs.forEach(function(tab) {
+                tab.addEventListener('click', function() {
+                    // Deactivate all tabs and panels
+                    tabs.forEach(function(t) { t.classList.remove('active'); });
+                    Object.values(panels).forEach(function(p) { p.classList.remove('active'); });
+
+                    // Activate clicked tab and its panel
+                    tab.classList.add('active');
+                    var target = tab.getAttribute('data-tab');
+                    if (panels[target]) {
+                        panels[target].classList.add('active');
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

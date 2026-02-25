@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог об SEO и автоматизации | TriggerFlow</title>
+    <meta name="description" content="Блог TriggerFlow: статьи о SEO-диагностике, автоматизации бизнеса, росте конверсий и AI-оптимизации сайтов. Практика, кейсы, инструменты.">
+    <link rel="canonical" href="https://triggerflow.pro/blog.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Блог об SEO и автоматизации | TriggerFlow">
+    <meta property="og:description" content="Статьи о SEO-диагностике, автоматизации бизнеса и росте конверсий. Практика и кейсы.">
+    <meta property="og:url" content="https://triggerflow.pro/blog.html">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Блог об SEO и автоматизации | TriggerFlow">
+    <meta name="twitter:description" content="Экспертные статьи о SEO-диагностике, автоматизации и росте конверсий.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://triggerflow.pro/"},
+                    {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://triggerflow.pro/blog.html"}
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "name": "Статьи TriggerFlow",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "url": "https://triggerflow.pro/blog.html#article-1", "name": "5 признаков того, что ваш сайт теряет прибыль прямо сейчас"},
+                    {"@type": "ListItem", "position": 2, "url": "https://triggerflow.pro/blog.html#article-2", "name": "Почему красивый сайт не равно продающий сайт"},
+                    {"@type": "ListItem", "position": 3, "url": "https://triggerflow.pro/blog.html#article-3", "name": "Как AI меняет SEO-аудит"},
+                    {"@type": "ListItem", "position": 4, "url": "https://triggerflow.pro/blog.html#article-4", "name": "14 вопросов для проверки целевой аудитории"},
+                    {"@type": "ListItem", "position": 5, "url": "https://triggerflow.pro/blog.html#article-5", "name": "Воронка продаж на сайте"},
+                    {"@type": "ListItem", "position": 6, "url": "https://triggerflow.pro/blog.html#article-6", "name": "Первый экран сайта: 3 секунды"},
+                    {"@type": "ListItem", "position": 7, "url": "https://triggerflow.pro/blog.html#article-7", "name": "n8n vs Zapier: почему мы выбрали n8n для диагностики сайтов"},
+                    {"@type": "ListItem", "position": 8, "url": "https://triggerflow.pro/blog.html#article-8", "name": "Как мы автоматизировали аудит сайта через Telegram и Google Sheets"},
+                    {"@type": "ListItem", "position": 9, "url": "https://triggerflow.pro/blog.html#article-9", "name": "5 процессов, которые мы автоматизировали для роста конверсий клиентов"}
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                        <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html">Главная</a></li>
+                <li class="navbar__dropdown"><a href="services.html">Услуги <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#seo-text">SEO Text Reality Check <span class="dropdown__price">69€</span></a></li>
+                        <li><a href="services.html#first-screen">First Screen Verdict <span class="dropdown__price">79€</span></a></li>
+                        <li><a href="sitemoney-scan.html">SiteMoney Scan <span class="dropdown__price">от 79€</span></a></li>
+                        <li><a href="services.html#one-page">One Page Breakdown <span class="dropdown__price">249€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="sitemoney-scan.html">Экспресс-анализ</a></li>
+                <li class="navbar__dropdown"><a href="money-leak-audit.html">Аудит <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#offer">Offer X-Ray <span class="dropdown__price">390€</span></a></li>
+                        <li><a href="services.html#conversion">Conversion Anatomy <span class="dropdown__price">590€</span></a></li>
+                        <li><a href="services.html#psychology">Client Psychology Map <span class="dropdown__price">790€</span></a></li>
+                        <li><a href="money-leak-audit.html">Money Leak Audit <span class="dropdown__price">1490€</span></a></li>
+                        <li><a href="services.html#funnel">Sales Funnel Intelligence <span class="dropdown__price">2990€</span></a></li>
+                        <li><a href="services.html#growth">Growth Blueprint <span class="dropdown__price">4990€+</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="subscription.html">Подписка <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="subscription.html#basic">Базовый доступ <span class="dropdown__price">79€/мес</span></a></li>
+                        <li><a href="subscription.html#priority">Приоритетные разборы <span class="dropdown__price">199€/мес</span></a></li>
+                        <li><a href="subscription.html#growth">Growth сопровождение <span class="dropdown__price">990-1990€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html" class="active">Блог</a></li>
+                <li><a href="about.html">Про нас</a></li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-hero__title animate-on-scroll fade-up">
+                <span class="gradient-text">Блог о SEO и автоматизации бизнеса</span>
+            </h1>
+            <p class="page-hero__subtitle animate-on-scroll fade-up">
+                Практические статьи о том, как сайт может приносить больше дохода. Без воды, без абстракций - только то, что работает</p>
+        </div>
+    </section>
+
+    <!-- ===== BLOG ARTICLES ===== -->
+    <section class="section" id="articles">
+        <div class="container">
+            <div class="blog-grid">
+
+                <article class="blog-card animate-on-scroll fade-up" id="article-1">
+                    <div class="blog-card__category">SEO</div>
+                    <h2 class="blog-card__title">5 признаков того,<br>что ваш сайт теряет прибыль прямо сейчас</h2>
+                    <p class="blog-card__excerpt">Трафик есть, а заявок нет? Пользователи уходят с первой страницы? Разбираем 5 главных симптомов, которые говорят о том, что ваш сайт работает против вас - и что с этим делать</p>
+                    <div class="blog-card__meta">
+                        <span><i class="fa-regular fa-calendar"></i> 9 февраля 2026</span>
+                        <span><i class="fa-regular fa-clock"></i> 7 мин</span>
+                    </div>
+                    <div class="blog-card__tags">
+                        <span class="tag">диагностика</span>
+                        <span class="tag">конверсия</span>
+                        <span class="tag">потери</span>
+                    </div>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="blog-card__cta">Проверить свой сайт <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card animate-on-scroll fade-up" id="article-2" style="animation-delay: 0.1s;">
+                    <div class="blog-card__category">Конверсия</div>
+                    <h2 class="blog-card__title">Почему &laquo;красивый сайт&raquo; не равно &laquo;продающий сайт&raquo;</h2>
+                    <p class="blog-card__excerpt">Дизайн - это не про красоту. Дизайн - это про решения. Разбираем реальные примеры, где визуально идеальные сайты теряют до 60% потенциальных клиентов из-за структурных ошибок</p>
+                    <div class="blog-card__meta">
+                        <span><i class="fa-regular fa-calendar"></i> 8 февраля 2026</span>
+                        <span><i class="fa-regular fa-clock"></i> 5 мин</span>
+                    </div>
+                    <div class="blog-card__tags">
+                        <span class="tag">дизайн</span>
+                        <span class="tag">UX</span>
+                        <span class="tag">конверсия</span>
+                    </div>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="blog-card__cta">Проверить свой сайт <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card animate-on-scroll fade-up" id="article-3" style="animation-delay: 0.2s;">
+                    <div class="blog-card__category">AI</div>
+                    <h2 class="blog-card__title">Как AI меняет SEO-аудит:<br>что умеет наш бот-анализатор</h2>
+                    <p class="blog-card__excerpt">Мы создали AI-агента, который за 2 минуты анализирует ваш сайт по 50+ параметрам. Рассказываем, как он работает, что проверяет и почему это точнее, чем ручной аудит</p>
+                    <div class="blog-card__meta">
+                        <span><i class="fa-regular fa-calendar"></i> 7 февраля 2026</span>
+                        <span><i class="fa-regular fa-clock"></i> 6 мин</span>
+                    </div>
+                    <div class="blog-card__tags">
+                        <span class="tag">AI</span>
+                        <span class="tag">автоматизация</span>
+                        <span class="tag">SEO</span>
+                    </div>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="blog-card__cta">Попробовать AI-анализ <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card animate-on-scroll fade-up" id="article-4" style="animation-delay: 0.1s;">
+                    <div class="blog-card__category">Целевая аудитория</div>
+                    <h2 class="blog-card__title">Знаете ли вы свою целевую аудиторию?<br>14 вопросов для проверки</h2>
+                    <p class="blog-card__excerpt">Большинство бизнесов описывают ЦА как &laquo;мужчины 25-45, средний доход&raquo;. Это не работает. Показываем профессиональный 14-точечный чеклист, который раскрывает настоящие мотивы покупки</p>
+                    <div class="blog-card__meta">
+                        <span><i class="fa-regular fa-calendar"></i> 6 февраля 2026</span>
+                        <span><i class="fa-regular fa-clock"></i> 8 мин</span>
+                    </div>
+                    <div class="blog-card__tags">
+                        <span class="tag">ЦА</span>
+                        <span class="tag">маркетинг</span>
+                        <span class="tag">психология</span>
+                    </div>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="blog-card__cta">Анализ ЦА вашего сайта <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card animate-on-scroll fade-up" id="article-5" style="animation-delay: 0.2s;">
+                    <div class="blog-card__category">Стратегия</div>
+                    <h2 class="blog-card__title">Воронка продаж на сайте:<br>от первого визита до покупки</h2>
+                    <p class="blog-card__excerpt">Разбираем анатомию продающего сайта: как выстроить путь пользователя от первого клика до заявки. Конкретные шаги, примеры и типичные ошибки, которые стоят вам выручки</p>
+                    <div class="blog-card__meta">
+                        <span><i class="fa-regular fa-calendar"></i> 5 февраля 2026</span>
+                        <span><i class="fa-regular fa-clock"></i> 10 мин</span>
+                    </div>
+                    <div class="blog-card__tags">
+                        <span class="tag">воронка</span>
+                        <span class="tag">продажи</span>
+                        <span class="tag">стратегия</span>
+                    </div>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="blog-card__cta">Проверить свою воронку <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card animate-on-scroll fade-up" id="article-6" style="animation-delay: 0.3s;">
+                    <div class="blog-card__category">Практика</div>
+                    <h2 class="blog-card__title">Первый экран сайта:<br>3 секунды, чтобы удержать клиента</h2>
+                    <p class="blog-card__excerpt">Исследования показывают: пользователь принимает решение остаться или уйти за 3 секунды. Что должен содержать первый экран, чтобы конвертировать посетителей в клиентов</p>
+                    <div class="blog-card__meta">
+                        <span><i class="fa-regular fa-calendar"></i> 4 февраля 2026</span>
+                        <span><i class="fa-regular fa-clock"></i> 5 мин</span>
+                    </div>
+                    <div class="blog-card__tags">
+                        <span class="tag">первый экран</span>
+                        <span class="tag">UX</span>
+                        <span class="tag">оптимизация</span>
+                    </div>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="blog-card__cta">Проверить первый экран <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card animate-on-scroll fade-up" id="article-7">
+                    <div class="blog-card__category">Технологии</div>
+                    <h2 class="blog-card__title">n8n vs Zapier: почему мы выбрали n8n<br>для диагностики сайтов</h2>
+                    <p class="blog-card__excerpt">Zapier удобен для простых интеграций, но для серьёзной автоматизации аудитов он дорог и ограничен. Разбираем 6 критериев, по которым <a href="integrations.html">n8n</a> выигрывает: контроль данных, гибкость сценариев, стоимость, скорость, self-hosting и работа с AI-агентами</p>
+                    <div class="blog-card__meta">
+                        <span><i class="fa-regular fa-calendar"></i> 24 февраля 2026</span>
+                        <span><i class="fa-regular fa-clock"></i> 8 мин</span>
+                    </div>
+                    <div class="blog-card__tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">Zapier</span>
+                        <span class="tag">автоматизация</span>
+                    </div>
+                    <a href="integrations.html" class="blog-card__cta">Подробнее о технологиях <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card animate-on-scroll fade-up" id="article-8" style="animation-delay: 0.1s;">
+                    <div class="blog-card__category">Кейс</div>
+                    <h2 class="blog-card__title">Как мы автоматизировали аудит сайта<br>через Telegram и Google Sheets</h2>
+                    <p class="blog-card__excerpt">Клиент отправляет URL в <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener">Telegram-бота</a> - через 2 минуты получает AI-анализ по 50+ параметрам. Все данные автоматически попадают в Google Sheets. Рассказываем архитектуру: n8n-воркфлоу, AI-агенты, webhook-триггеры и генерация PDF-отчёта</p>
+                    <div class="blog-card__meta">
+                        <span><i class="fa-regular fa-calendar"></i> 23 февраля 2026</span>
+                        <span><i class="fa-regular fa-clock"></i> 10 мин</span>
+                    </div>
+                    <div class="blog-card__tags">
+                        <span class="tag">Telegram</span>
+                        <span class="tag">Google Sheets</span>
+                        <span class="tag">n8n</span>
+                        <span class="tag">кейс</span>
+                    </div>
+                    <a href="integrations.html" class="blog-card__cta">Технологии TriggerFlow <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="blog-card animate-on-scroll fade-up" id="article-9" style="animation-delay: 0.2s;">
+                    <div class="blog-card__category">Автоматизация</div>
+                    <h2 class="blog-card__title">5 процессов, которые мы автоматизировали<br>для роста конверсий клиентов</h2>
+                    <p class="blog-card__excerpt">Экспресс-сканирование, SEO-анализ текстов, мониторинг конкурентов, генерация PDF-отчётов и ежемесячный аудит - всё работает без участия человека на базе n8n. Показываем конкретные воркфлоу и результаты: скорость выросла в 10 раз, стоимость операций снизилась на 80%</p>
+                    <div class="blog-card__meta">
+                        <span><i class="fa-regular fa-calendar"></i> 22 февраля 2026</span>
+                        <span><i class="fa-regular fa-clock"></i> 7 мин</span>
+                    </div>
+                    <div class="blog-card__tags">
+                        <span class="tag">автоматизация</span>
+                        <span class="tag">n8n</span>
+                        <span class="tag">конверсия</span>
+                    </div>
+                    <a href="integrations.html" class="blog-card__cta">Наш стек технологий <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="blog-cta animate-on-scroll fade-up">
+                <div class="blog-cta__content">
+                    <h3>Хотите проверить свой сайт<br>прямо сейчас?</h3>
+                    <p>Наш AI-агент проанализирует ваш сайт за 2 минуты и покажет конкретные точки роста</p>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+                        <i class="fa-brands fa-telegram"></i>&nbsp; Получить бесплатный AI-отчёт
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                <p class="footer__tagline">TriggerFlow&trade; - экспертные статьи о SEO и автоматизации бизнеса</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="index.html">Главная</a>
+                <a href="services.html">Услуги</a>
+                <a href="sitemoney-scan.html">Экспресс-анализ</a>
+                <a href="money-leak-audit.html">Аудит</a>
+                <a href="subscription.html">Подписка</a>
+                <a href="blog.html">Блог</a>
+                <a href="about.html">Про нас</a>
+                <a href="integrations.html">Технологии</a>
+            </nav>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Все права защищены</div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>
