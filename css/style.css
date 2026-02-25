@@ -4653,7 +4653,7 @@ p:last-child {
 
   /* Mobile dropdown styles */
   .navbar__dropdown > a .dropdown-arrow {
-    margin-left: auto;
+    margin-left: 6px;
     font-size: 12px;
   }
 
