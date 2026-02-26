@@ -4268,7 +4268,6 @@ p:last-child {
   overflow: hidden;
   text-align: center;
   padding: var(--space-12) 0;
-  background: url('../images/hero-banner.png') center center / cover no-repeat;
 }
 
 .cta__gradient-bg {
