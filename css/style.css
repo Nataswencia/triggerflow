@@ -4371,6 +4371,16 @@ p:last-child {
   gap: var(--space-1);
 }
 
+.footer__logo-image {
+  margin-bottom: var(--space-2);
+}
+
+.footer__logo-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
 .footer__logo {
   font-size: var(--font-size-xl);
   font-weight: 800;
