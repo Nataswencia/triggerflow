@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologies n8n et automatisation | TriggerFlow</title>
+    <meta name="description" content="TriggerFlow utilise n8n pour le diagnostic automatique des sites. Résultat dans Telegram et Google Sheets en 24 heures. Pourquoi n8n et pas Zapier - comparaison pour les entreprises.">
+    <link rel="canonical" href="https://triggerflow.pro/fr/integrations.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Technologies TriggerFlow : n8n, Telegram, Google Sheets | automatisation du diagnostic">
+    <meta property="og:description" content="Diagnostic automatique des sites sur n8n. Rapport dans Telegram et Google Sheets. Comparaison n8n vs Zapier.">
+    <meta property="og:url" content="https://triggerflow.pro/fr/integrations.html">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Technologies TriggerFlow : n8n, Telegram, Google Sheets">
+    <meta name="twitter:description" content="Diagnostic automatique des sites sur n8n. Résultat dans Telegram et Google Sheets en 24 heures.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+    </script>
+
+    <link rel="alternate" hreflang="ru" href="https://nataswencia.github.io/triggerflow/integrations.html">
+    <link rel="alternate" hreflang="en" href="https://nataswencia.github.io/triggerflow/en/integrations.html">
+    <link rel="alternate" hreflang="fr" href="https://nataswencia.github.io/triggerflow/fr/integrations.html">
+    <link rel="alternate" hreflang="x-default" href="https://nataswencia.github.io/triggerflow/integrations.html">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><span class="logo-icon"><img src="../images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                        <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="navbar__dropdown"><a href="services.html">Services <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#seo-text">SEO Text Reality Check <span class="dropdown__price">69€</span></a></li>
+                        <li><a href="services.html#first-screen">First Screen Verdict <span class="dropdown__price">79€</span></a></li>
+                        <li><a href="sitemoney-scan.html">SiteMoney Scan <span class="dropdown__price">à partir de 79€</span></a></li>
+                        <li><a href="services.html#one-page">One Page Breakdown <span class="dropdown__price">249€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="sitemoney-scan.html">Analyse express</a></li>
+                <li class="navbar__dropdown"><a href="money-leak-audit.html">Audit <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#offer">Offer X-Ray <span class="dropdown__price">390€</span></a></li>
+                        <li><a href="services.html#conversion">Conversion Anatomy <span class="dropdown__price">590€</span></a></li>
+                        <li><a href="services.html#psychology">Client Psychology Map <span class="dropdown__price">790€</span></a></li>
+                        <li><a href="money-leak-audit.html">Money Leak Audit <span class="dropdown__price">1490€</span></a></li>
+                        <li><a href="services.html#funnel">Sales Funnel Intelligence <span class="dropdown__price">2990€</span></a></li>
+                        <li><a href="services.html#growth">Growth Blueprint <span class="dropdown__price">4990€+</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="subscription.html">Abonnement <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="subscription.html#basic">Accès de base <span class="dropdown__price">79€/mois</span></a></li>
+                        <li><a href="subscription.html#priority">Analyses prioritaires <span class="dropdown__price">199€/mois</span></a></li>
+                        <li><a href="subscription.html#growth">Accompagnement Growth <span class="dropdown__price">990-1990€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">À propos de nous</a></li>
+                <li class="navbar__lang">
+                    <button class="navbar__lang-btn">RU &#9662;</button>
+                    <ul class="navbar__lang-menu">
+                        <li><a data-lang-switch="ru">RU</a></li>
+                        <li><a data-lang-switch="en">EN</a></li>
+                        <li><a data-lang-switch="fr">FR</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero__gradient-bg"></div>
+        <div class="container hero__content">
+            <h1 class="hero__title animate-on-scroll fade-up">
+                Diagnostic de site,<br>qui fonctionne automatiquement
+            </h1>
+            <p class="hero__subtitle animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                n8n + AI + Telegram + Google Sheets.<br>
+                Pas un audit manuel, mais un système qui analyse votre site selon plus de 50 paramètres</p>
+            <div class="hero__buttons animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                <a href="sitemoney-scan.html" class="btn btn--primary">Essayer le diagnostic - 149€</a>
+                <a href="#n8n-vs-zapier" class="btn btn--outline">Comparer n8n et Zapier</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: TECH STACK ===== -->
+    <section class="section" id="tech-stack">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Stack technologique<br>TriggerFlow</h2>
+            <div class="cards-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); max-width: 960px; margin: 0 auto;">
+                <div class="card animate-on-scroll fade-up">
+                    <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+                    <h3 class="card-title">n8n - automatisation</h3>
+                    <p class="card-text">Plateforme Enterprise qui construit des chaînes analytiques AI complexes avec GPT-4o. Analyse votre site selon plus de 50 paramètres sans intervention humaine. Auto-hébergé : vos données restent privées.</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="card-icon"><i class="fa-brands fa-telegram"></i></div>
+                    <h3 class="card-title">Telegram - livraison</h3>
+                    <p class="card-text">Résultat directement dans Telegram : rapport, priorités, recommandations. Sans e-mail, sans identifiants, sans attente. Envoyez l'URL au bot <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank">@TriggerFlow_analyse_bot</a> - vous recevrez l'analyse</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="card-icon"><i class="fa-solid fa-table-cells-large"></i></div>
+                    <h3 class="card-title">Google Sheets - données</h3>
+                    <p class="card-text">Toutes les métriques, erreurs et priorités sous une forme structurée. Suivez la dynamique des changements, comparez les audits, contrôlez les progrès - dans un outil familier</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: n8n vs Zapier ===== -->
+    <section class="section" id="n8n-vs-zapier" style="background-color: var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Pourquoi n8n et pas Zapier</h2>
+            <p class="section__description animate-on-scroll fade-up" style="max-width: 700px; margin: 0 auto var(--space-6);">
+                Zapier convient pour des intégrations simples. Pour le diagnostic des sites, une plateforme est nécessaire,<br>qui sait construire des chaînes d'analyse AI complexes</p>
+            <div class="animate-on-scroll fade-up" style="overflow-x: auto; max-width: 900px; margin: 0 auto;">
+                <table style="width: 100%; border-collapse: separate; border-spacing: 0; background: rgba(255,255,255,0.02); border-radius: var(--radius-lg); overflow: hidden; font-size: var(--font-size-sm);">
+                    <thead>
+                        <tr style="background: rgba(30,111,255,0.08);">
+                            <th style="padding: 1rem 1.25rem; text-align: left; color: var(--color-text-muted); font-weight: 500; border-bottom: 1px solid var(--color-border);">Critère</th>
+                            <th style="padding: 1rem 1.25rem; text-align: center; color: var(--color-secondary); font-weight: 600; border-bottom: 1px solid var(--color-border); background: rgba(30,111,255,0.12);">n8n (TriggerFlow)</th>
+                            <th style="padding: 1rem 1.25rem; text-align: center; color: var(--color-text-muted); font-weight: 500; border-bottom: 1px solid var(--color-border);">Zapier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Chaînes AI (GPT-4o)</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-accent-1); background: rgba(30,111,255,0.05);">Support complet</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">Limité</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Logique d'analyse personnalisée</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-accent-1); background: rgba(30,111,255,0.05);">Toute complexité</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">Seulement des scénarios linéaires</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Confidentialité des données</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-accent-1); background: rgba(30,111,255,0.05);">Serveur auto-hébergé</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">Cloud tiers</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Coût à l'échelle</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-accent-1); background: rgba(30,111,255,0.05);">Fixe</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">Grandit à chaque lancement</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-secondary);">Intégration avec Telegram</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-accent-1); background: rgba(30,111,255,0.05);">Natif</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-muted);">Par des intermédiaires</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1.25rem; color: var(--color-text-secondary);">Google Sheets analytique</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; color: var(--color-accent-1); background: rgba(30,111,255,0.05);">Profonde (lecture + écriture + formatage)</td>
+                            <td style="padding: 0.75rem 1.25rem; text-align: center; color: var(--color-text-muted);">Basique</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: HOW IT WORKS ===== -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">À quoi ressemble le processus</h2>
+            <div class="steps">
+                <div class="step animate-on-scroll fade-up">
+                    <div class="step__number">01</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">Vous envoyez l'URL dans Telegram</h3>
+                    <p class="step__text">Bot <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank">@TriggerFlow_analyse_bot</a> accepte le lien vers votre site. Pas d'inscriptions, d'identifiants ou d'installations</p>
+                </div>
+                <div class="step animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="step__number">02</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">n8n lance l'analyse AI</h3>
+                    <p class="step__text">Chaîne automatique : parsing des pages &rarr; analyse GPT-4o selon plus de 50 paramètres &rarr; structuration des données &rarr; génération de rapport. Tout sur un serveur privé.</p>
+                </div>
+                <div class="step animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="step__number">03</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">Résultat dans Telegram + Google Sheets</h3>
+                    <p class="step__text">Rapport PDF avec priorités dans Telegram en 24 heures. Toutes les données d'analyse - dans Google Sheets pour suivre la dynamique et travailler avec l'équipe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: USE CASES ===== -->
+    <section class="section" id="use-cases" style="padding-top: 0;">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section__title animate-on-scroll fade-up">Ce qui est automatisé<br>dans chaque service</h2>
+            <div class="animate-on-scroll fade-up" style="color: var(--color-text-secondary); line-height: 1.8; font-size: var(--font-size-base);">
+                <p style="margin-bottom: var(--space-3);"><strong style="color: var(--color-text-primary);"><a href="sitemoney-scan.html">SiteMoney Scan</a> (149€)</strong> - n8n analyse automatiquement plus de 50 paramètres : premier écran, offre, CTA, confiance, structure. Résultat - PDF dans Telegram + données dans Google Sheets en 24 heures</p>
+                <p style="margin-bottom: var(--space-3);"><strong style="color: var(--color-text-primary);"><a href="money-leak-audit.html">Money Leak Audit</a> (1 490€)</strong> - analyse AI sur 7 axes via n8n + expertise manuelle. Les données sont structurées dans Google Sheets, le rapport final - dans Telegram et PDF</p>
+                <p style="margin-bottom: var(--space-3);"><strong style="color: var(--color-text-primary);"><a href="subscription.html">Abonnement</a> (à partir de 79€/mois)</strong> - surveillance automatique mensuelle via n8n. Comparaison avec les données précédentes dans Google Sheets, notifications de changements dans Telegram</p>
+                <p>Tout <a href="services.html">services TriggerFlow</a> construites sur la pile n8n + AI + Telegram + Google Sheets. Contrairement à Zapier, n8n permet de construire des chaînes analytiques multi-niveaux avec AI - ce n'est pas simplement un transfert de données entre services, mais un véritable système de diagnostic.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section--faq" id="faq">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Questions sur les technologies</h2>
+            <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">Pourquoi TriggerFlow utilise n8n et non Zapier ?</summary>
+                    <div class="faq-item__answer"><p>n8n prend en charge des chaînes AI complexes avec GPT-4o, une logique d'analyse personnalisée et un déploiement auto-hébergé pour la confidentialité des données. Zapier est limité à des scénarios linéaires et ne prend pas en charge une analyse approfondie multi-niveaux. Pour le diagnostic des sites, il faut une plateforme capable de traiter des dizaines de paramètres dans une seule chaîne - n8n le fait.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.05s;">
+                    <summary class="faq-item__question">Comment fonctionne l'intégration avec Telegram ?</summary>
+                    <div class="faq-item__answer"><p>Vous envoyez l'URL du site au bot <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank">@TriggerFlow_analyse_bot</a> dans Telegram. Le système AI sur n8n analyse le site selon plus de 50 paramètres et renvoie le résultat dans Telegram : rapport structuré avec priorités. Pour <a href="sitemoney-scan.html">analyse express</a> - en 24 heures, pour <a href="money-leak-audit.html">audit complet</a> - en 5-7 jours</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <summary class="faq-item__question">À quoi sert Google Sheets dans le diagnostic ?</summary>
+                    <div class="faq-item__answer"><p>Google Sheets stocke toutes les données d'analyse de manière structurée : métriques, erreurs, priorités. Cela permet de suivre la dynamique des changements entre les audits, de travailler avec les données en équipe et de voir les progrès. <a href="subscription.html">abonnement</a> n8n compare automatiquement les données actuelles avec les précédentes et montre ce qui s'est amélioré et ce qui nécessite une attention</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <summary class="faq-item__question">Est-il sûr de transmettre les données du site via le bot ?</summary>
+                    <div class="faq-item__answer"><p>Oui. n8n fonctionne sur un serveur privé - les données ne sont pas transmises à des tiers. Seules les pages publiquement accessibles du site sont analysées, sans accès à l'admin ou aux données personnelles. C'est une différence fondamentale par rapport aux solutions cloud comme Zapier, où les données passent par des serveurs tiers.</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section section--cta" id="final-cta">
+        <div class="cta__gradient-bg"></div>
+        <div class="container section--cta__inner">
+            <h2 class="section__title animate-on-scroll fade-up">Essayez l'automatique<br>diagnostic de site</h2>
+            <p class="section__description animate-on-scroll fade-up" style="animation-delay: 0.1s; opacity: 0.8; max-width: 600px; margin: 0 auto var(--space-4);">
+                Rapport PDF dans Telegram + données dans Google Sheets.<br>Résultat en 24 heures</p>
+            <div class="animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                <a href="#" class="btn btn--primary btn--large" data-tf-form="express" data-tf-service="SiteMoney Scan PRO" data-tf-price="149">Obtenez le rapport en 24 heures - 149€</a>
+            </div>
+            <div class="guarantee-badge animate-on-scroll fade-up" style="animation-delay: 0.25s; margin: var(--space-3) auto 0;">
+                <i class="fa-solid fa-shield-check"></i> Si le rapport ne montre pas de points de croissance - nous remboursons
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo"><span class="logo-icon"><img src="../images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                <p class="footer__tagline">TriggerFlow&trade; - diagnostic automatique des sites sur n8n</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services</a>
+                <a href="sitemoney-scan.html">Analyse express</a>
+                <a href="money-leak-audit.html">Audit</a>
+                <a href="subscription.html">Abonnement</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">À propos de nous</a>
+                <a href="integrations.html">Technologies</a>
+            </nav>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Tous droits réservés</div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <span class="sticky-cta__text">Rapport pour <strong>24h</strong></span>
+        <a href="#" class="btn btn--primary" data-tf-form="express" data-tf-service="SiteMoney Scan PRO" data-tf-price="149">Diagnostic - 149€</a>
+    </div>
+
+    <!-- Main JS -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+</html>

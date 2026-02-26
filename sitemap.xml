@@ -1,51 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- index -->
     <url>
         <loc>https://triggerflow.pro/</loc>
-        <lastmod>2026-02-24</lastmod>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/"/>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://triggerflow.pro/en/</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/fr/</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- services -->
+    <url>
         <loc>https://triggerflow.pro/services.html</loc>
-        <lastmod>2026-02-24</lastmod>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/services.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/services.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/services.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/services.html"/>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://triggerflow.pro/en/services.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/services.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/services.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/services.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/fr/services.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/services.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/services.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/services.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- sitemoney-scan -->
+    <url>
         <loc>https://triggerflow.pro/sitemoney-scan.html</loc>
-        <lastmod>2026-02-24</lastmod>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/sitemoney-scan.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/sitemoney-scan.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/sitemoney-scan.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/sitemoney-scan.html"/>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://triggerflow.pro/en/sitemoney-scan.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/sitemoney-scan.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/sitemoney-scan.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/sitemoney-scan.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/fr/sitemoney-scan.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/sitemoney-scan.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/sitemoney-scan.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/sitemoney-scan.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- money-leak-audit -->
     <url>
         <loc>https://triggerflow.pro/money-leak-audit.html</loc>
-        <lastmod>2026-02-23</lastmod>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/money-leak-audit.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/money-leak-audit.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/money-leak-audit.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/money-leak-audit.html"/>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://triggerflow.pro/blog.html</loc>
-        <lastmod>2026-02-23</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://triggerflow.pro/en/money-leak-audit.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/money-leak-audit.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/money-leak-audit.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/money-leak-audit.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://triggerflow.pro/fr/money-leak-audit.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/money-leak-audit.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/money-leak-audit.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/money-leak-audit.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- subscription -->
+    <url>
         <loc>https://triggerflow.pro/subscription.html</loc>
-        <lastmod>2026-02-23</lastmod>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/subscription.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/subscription.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/subscription.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/subscription.html"/>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://triggerflow.pro/en/subscription.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/subscription.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/subscription.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/subscription.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/fr/subscription.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/subscription.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/subscription.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/subscription.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- about -->
+    <url>
         <loc>https://triggerflow.pro/about.html</loc>
-        <lastmod>2026-02-23</lastmod>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/about.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/about.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/about.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/about.html"/>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://triggerflow.pro/en/about.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/about.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/about.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/about.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/fr/about.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/about.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/about.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/about.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- integrations -->
+    <url>
         <loc>https://triggerflow.pro/integrations.html</loc>
-        <lastmod>2026-02-24</lastmod>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/integrations.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/integrations.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/integrations.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/integrations.html"/>
+        <lastmod>2026-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/en/integrations.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/integrations.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/integrations.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/integrations.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/fr/integrations.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/integrations.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/integrations.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/integrations.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- blog -->
+    <url>
+        <loc>https://triggerflow.pro/blog.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/blog.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/en/blog.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/blog.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/fr/blog.html</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/blog.html"/>
+        <lastmod>2026-02-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

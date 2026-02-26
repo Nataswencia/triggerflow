@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit des fuites de conversion pour 1490€ | TriggerFlow</title>
+    <meta name="description" content="Audit des fuites de conversion : 7 axes d'analyse du site en tant que système de vente. Nous identifions tous les points de perte et fournissons une carte de solutions avec des priorités en 5-7 jours.">
+    <link rel="canonical" href="https://triggerflow.pro/fr/money-leak-audit.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Audit des fuites de conversion sur le site pour 1490€ | Money Leak Audit | TriggerFlow">
+    <meta property="og:description" content="7 axes d'analyse des fuites de conversion. Carte des solutions avec priorités en 5-7 jours.">
+    <meta property="og:url" content="https://triggerflow.pro/fr/money-leak-audit.html">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Audit des fuites de conversion | Money Leak Audit | TriggerFlow">
+    <meta name="twitter:description" content="7 axes d'analyse des fuites sur le site. Carte des solutions avec priorités en 5-7 jours.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+    </script>
+
+    <link rel="alternate" hreflang="ru" href="https://nataswencia.github.io/triggerflow/money-leak-audit.html">
+    <link rel="alternate" hreflang="en" href="https://nataswencia.github.io/triggerflow/en/money-leak-audit.html">
+    <link rel="alternate" hreflang="fr" href="https://nataswencia.github.io/triggerflow/fr/money-leak-audit.html">
+    <link rel="alternate" hreflang="x-default" href="https://nataswencia.github.io/triggerflow/money-leak-audit.html">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><span class="logo-icon"><img src="../images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                        <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="navbar__dropdown"><a href="services.html">Services <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#seo-text">SEO Text Reality Check <span class="dropdown__price">69€</span></a></li>
+                        <li><a href="services.html#first-screen">First Screen Verdict <span class="dropdown__price">79€</span></a></li>
+                        <li><a href="sitemoney-scan.html">SiteMoney Scan <span class="dropdown__price">à partir de 79€</span></a></li>
+                        <li><a href="services.html#one-page">One Page Breakdown <span class="dropdown__price">249€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="sitemoney-scan.html">Analyse express</a></li>
+                <li class="navbar__dropdown"><a href="money-leak-audit.html" class="active">Audit <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#offer">Offer X-Ray <span class="dropdown__price">390€</span></a></li>
+                        <li><a href="services.html#conversion">Conversion Anatomy <span class="dropdown__price">590€</span></a></li>
+                        <li><a href="services.html#psychology">Client Psychology Map <span class="dropdown__price">790€</span></a></li>
+                        <li><a href="money-leak-audit.html">Money Leak Audit <span class="dropdown__price">1490€</span></a></li>
+                        <li><a href="services.html#funnel">Sales Funnel Intelligence <span class="dropdown__price">2990€</span></a></li>
+                        <li><a href="services.html#growth">Growth Blueprint <span class="dropdown__price">4990€+</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="subscription.html">Abonnement <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="subscription.html#basic">Accès de base <span class="dropdown__price">79€/mois</span></a></li>
+                        <li><a href="subscription.html#priority">Analyses prioritaires <span class="dropdown__price">199€/mois</span></a></li>
+                        <li><a href="subscription.html#growth">Accompagnement Growth <span class="dropdown__price">990-1990€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">À propos de nous</a></li>
+                <li class="navbar__lang">
+                    <button class="navbar__lang-btn">RU &#9662;</button>
+                    <ul class="navbar__lang-menu">
+                        <li><a data-lang-switch="ru">RU</a></li>
+                        <li><a data-lang-switch="en">EN</a></li>
+                        <li><a data-lang-switch="fr">FR</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ===== SECTION 1 - HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero__gradient-bg"></div>
+        <div class="container hero__content">
+            <h1 class="hero__title animate-on-scroll fade-up">
+                Audit des fuites de conversions : analyse complète du site<br>comme systèmes de vente
+            </h1>
+            <p class="hero__subtitle animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                Audit complet du site en tant que système de vente.<br>
+                Pour ceux qui se soucient de la croissance et du contrôle, et non de la « cosmétique »</p>
+            <div class="hero__buttons animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                <a href="#audit-price" class="btn btn--primary">Obtenir un audit complet</a>
+            </div>
+        </div>
+        <div class="hero__scroll-indicator">
+            <span>Faites défiler vers le bas</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2 - WHEN YOU NEED IT ===== -->
+    <section class="section section--problems" id="when-needed">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Quand est-ce nécessaire<br>Money Leak Audit</h2>
+            <div class="problems__grid">
+                <div class="problem-card animate-on-scroll fade-up">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <p class="problem-card__text">Le trafic est là, la croissance n'est pas</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                    </div>
+                    <p class="problem-card__text">Le site s'est développé de manière chaotique</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-dice"></i>
+                    </div>
+                    <p class="problem-card__text">Les décisions sont prises « sur la base des impressions »</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                    </div>
+                    <p class="problem-card__text">Je veux comprendre,<br>ce qui influence réellement les ventes</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <p class="problem-card__text">Les concurrents nous dépassent<br>avec un trafic comparable</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay: 0.5s;">
+                    <div class="problem-card__icon">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <p class="problem-card__text">Investissements dans la publicité<br>ne sont pas rentables</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3 - WHAT WE ANALYZE ===== -->
+    <section class="section section--positioning" id="what-we-analyze">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Ce que nous analysons</h2>
+            <p class="section__description animate-on-scroll fade-up">Dans le cadre de l'audit :</p>
+            <div class="positioning__cards" style="flex-wrap: wrap;">
+                <div class="positioning-card animate-on-scroll fade-up">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-sitemap"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Structure du site</h3>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.08s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Parcours utilisateur</h3>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.16s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Offres et significations</h3>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.24s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-file-alt"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Contenu (pas SEO, mais logique)</h3>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.32s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-shield-alt"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Confiance et déclencheurs</h3>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-brands fa-wpforms"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Formulaires de leads et CTA</h3>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.48s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-sign-out-alt"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Points de chute</h3>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.56s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Positionnement concurrentiel</h3>
+                </div>
+            </div>
+            <p class="section__description animate-on-scroll fade-up" style="margin-top: 2rem;">
+                <strong>Nous ne regardons pas les éléments, mais les interrelations</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4 - WHAT YOU GET ===== -->
+    <section class="section section--results" id="what-you-get">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Ce que l'audit révélera</h2>
+            <div class="results-grid">
+                <div class="result-item animate-on-scroll fade-up">
+                    <div class="result-item__icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+                    <p>Liste de toutes les pertes critiques</p>
+                </div>
+                <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="result-item__icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <p>Explication des raisons pour lesquelles ils se produisent</p>
+                </div>
+                <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="result-item__icon"><i class="fa-solid fa-arrow-up-1-9"></i></div>
+                    <p>Priorités d'action</p>
+                </div>
+                <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="result-item__icon"><i class="fa-solid fa-rocket"></i></div>
+                    <p>Recommandations que l'on peut mettre en œuvre immédiatement</p>
+                </div>
+                <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="result-item__icon"><i class="fa-solid fa-map"></i></div>
+                    <p>Carte de croissance avec des étapes concrètes</p>
+                </div>
+                <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.5s;">
+                    <div class="result-item__icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <p>Évaluation du potentiel d'augmentation des conversions</p>
+                </div>
+            </div>
+            <blockquote class="section__description animate-on-scroll fade-up" style="margin-top: 2rem; font-style: italic; border-left: 3px solid var(--accent, #6c63ff); padding-left: 1.5rem;">
+                C'est une carte des solutions, pas un rapport abstrait
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5 - FORMAT ===== -->
+    <section class="section section--steps" id="format">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Format<br>rapport d'audit</h2>
+            <div class="steps">
+                <div class="step animate-on-scroll fade-up">
+                    <div class="step__number">01</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">PDF détaillé</h3>
+                    <p class="step__text">Document complet avec les résultats de l'audit</p>
+                </div>
+                <div class="step animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="step__number">02</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">Captures d'écran + commentaires</h3>
+                    <p class="step__text">Explications visuelles pour chaque problème</p>
+                </div>
+                <div class="step animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="step__number">03</div>
+                    <div class="step__connector"></div>
+                    <h3 class="step__title">Structure des priorités</h3>
+                    <p class="step__text">Que faire d'abord / ensuite / plus tard</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6 - PRICE ===== -->
+    <section class="section section--cta" id="audit-price">
+        <div class="cta__gradient-bg"></div>
+        <div class="container section--cta__inner">
+            <div class="animate-on-scroll fade-up">
+                <div style="font-size: 4rem; font-weight: 700; margin-bottom: 0.5rem;">1&thinsp;490&nbsp;&euro;</div>
+            </div>
+            <p class="section__description animate-on-scroll fade-up" style="animation-delay: 0.1s; opacity: 0.85;">
+                Souvent utilisé comme base pour la croissance ou l'accompagnement</p>
+            <div class="animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                <a href="#" class="btn btn--primary btn--large" data-tf-form="consult" data-tf-service="Money Leak Audit" data-tf-price="1490">Obtenir la carte des fuites en 5-7 jours - 1 490€</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 7 - UPSELL ===== -->
+    <section class="section section--premium" id="next-level">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Niveau suivant</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card pricing-card--premium animate-on-scroll fade-up">
+                    <h3 class="pricing-card__name">Sales Funnel Intelligence</h3>
+                    <p class="pricing-card__desc">Analyse complète du tunnel + recommandations pour la reconstruction</p>
+                    <div class="pricing-card__price">à partir de <span>2&thinsp;990&nbsp;&euro;</span></div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="consult" data-tf-service="Sales Funnel Intelligence" data-tf-price="2990">En savoir plus</a>
+                </div>
+                <div class="pricing-card pricing-card--premium animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <h3 class="pricing-card__name">Growth Blueprint</h3>
+                    <p class="pricing-card__desc">Stratégie de croissance + roadmap + KPI</p>
+                    <div class="pricing-card__price"><span>4&thinsp;990-6&thinsp;990&nbsp;&euro;</span></div>
+                    <a href="#" class="btn btn--primary btn--block" data-tf-form="consult" data-tf-service="Growth Blueprint" data-tf-price="4990">Discuter</a>
+                </div>
+            </div>
+            <div class="subscription-card animate-on-scroll fade-up" style="margin-top: 3rem;">
+                <div class="subscription-card__icon">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <h3 class="subscription-card__name">Ou abonnement : Website Intelligence Club</h3>
+                <p class="subscription-card__desc">Contrôle permanent, analyses et recommandations</p>
+                <div class="subscription-card__price">à partir de <span>79&nbsp;&euro;/mois</span></div>
+                <a href="subscription.html" class="btn btn--primary" data-tooltip="Website Intelligence Club - подписка à partir de 79€/mois. Ежемесячный мониторинг, SEO-обновления, приоритетная поддержка и план действий. Системное сопровождение для стабильного роста">En savoir plus sur l'abonnement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: BENEFITS ===== -->
+    <section class="section" id="audit-benefits">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Avantages<br>audit approfondi</h2>
+            <div class="cards-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); max-width: 960px; margin: 0 auto;">
+                <div class="card animate-on-scroll fade-up">
+                    <div class="card-icon"><i class="fa-solid fa-microscope"></i></div>
+                    <h3 class="card-title">7 axes d'analyse</h3>
+                    <p class="card-text">Structure, parcours utilisateur, offres, contenu, confiance, formulaires de leads, points de chute - carte complète des fuites de conversion</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="card-icon"><i class="fa-solid fa-route"></i></div>
+                    <h3 class="card-title">Carte des solutions</h3>
+                    <p class="card-text">Pas une liste de problèmes, mais un plan structuré : que faire d'abord, ensuite, plus tard. Avec l'effet attendu de chaque action</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3 class="card-title">Analyse concurrentielle</h3>
+                    <p class="card-text">Nous comparons votre site avec les leaders du secteur - nous trouvons des avantages concurrentiels et des points de différenciation</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="card-icon"><i class="fa-solid fa-user-check"></i></div>
+                    <h3 class="card-title">À travers les yeux de l'utilisateur</h3>
+                    <p class="card-text">Nous parcourons le chemin du client depuis le premier contact jusqu'à l'achat. Nous identifions les barrières UX qui ne sont pas visibles de l'intérieur</p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                    <div class="card-icon"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
+                    <h3 class="card-title">Scalabilité</h3>
+                    <p class="card-text">L'audit est la base de la croissance. Ensuite - <a href="services.html#funnel">Sales Funnel Intelligence</a>, <a href="services.html#growth">Growth Blueprint</a> ou <a href="subscription.html">abonnement à l'accompagnement</a></p>
+                </div>
+                <div class="card animate-on-scroll fade-up" style="animation-delay: 0.5s;">
+                    <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3 class="card-title">Orientation ROI</h3>
+                    <p class="card-text">Chaque recommandation est liée à une métrique commerciale. Pas « améliorez l'ergonomie », mais « cela augmentera la conversion de X% »</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: SOCIAL PROOF ===== -->
+    <section class="section" id="audit-proof" style="padding-top: 0;">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section__title animate-on-scroll fade-up">Résultats après l'audit</h2>
+            <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                <blockquote class="animate-on-scroll fade-up" style="background: rgba(255,255,255,0.03); border-left: 4px solid var(--color-secondary); padding: var(--space-4) var(--space-5); border-radius: var(--radius-md);">
+                    <p style="font-style: italic; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-2);">« Money Leak Audit a identifié 23 points de fuite dans notre entonnoir de vente. En 6 semaines après la mise en œuvre des recommandations prioritaires, le taux de conversion est passé de 1,2 % à 2,8 % »</p>
+                    <footer style="font-size: var(--font-size-sm); color: var(--color-text-muted);">- Responsable marketing, plateforme B2B</footer>
+                </blockquote>
+                <blockquote class="animate-on-scroll fade-up" style="background: rgba(255,255,255,0.03); border-left: 4px solid var(--color-accent-2); padding: var(--space-4) var(--space-5); border-radius: var(--radius-md); animation-delay: 0.15s;">
+                    <p style="font-style: italic; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-2);">&laquo;Nous avons commencé par <a href="sitemoney-scan.html">SiteMoney Scan</a>, nous avons vu l'ampleur des problèmes et sommes immédiatement passés à un audit complet. L'investissement de 1490€ s'est rentabilisé dès le premier mois - le coût par lead a diminué de 35 % »</p>
+                    <footer style="font-size: var(--font-size-sm); color: var(--color-text-muted);">- Directeur digital, agence immobilière</footer>
+                </blockquote>
+                <blockquote class="animate-on-scroll fade-up" style="background: rgba(255,255,255,0.03); border-left: 4px solid var(--color-primary-light); padding: var(--space-4) var(--space-5); border-radius: var(--radius-md); animation-delay: 0.3s;">
+                    <p style="font-style: italic; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: var(--space-2);">« Le plus précieux - ce n'est pas la liste des erreurs, mais la carte des priorités. Nous savions exactement quoi faire en premier. Après l'audit, nous sommes passés à <a href="subscription.html">accompagnement mensuel</a>&raquo;</p>
+                    <footer style="font-size: var(--font-size-sm); color: var(--color-text-muted);">- Fondateur d'une startup SaaS</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION: SEARCH INTENT + NICHE ===== -->
+    <section class="section" id="audit-context">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section__title animate-on-scroll fade-up">Audit des fuites de conversions<br>pour des niches concurrentielles</h2>
+            <div class="animate-on-scroll fade-up" style="color: var(--color-text-secondary); line-height: 1.8; font-size: var(--font-size-base);">
+                <p style="margin-bottom: var(--space-3);"><strong style="color: var(--color-text-primary);">E-commerce et magasins en ligne</strong> - nous analysons les fiches produits, le panier, le processus de checkout et les mécaniques de rétention. Nous découvrons pourquoi les visiteurs ajoutent au panier mais n'achètent pas.</p>
+                <p style="margin-bottom: var(--space-3);"><strong style="color: var(--color-text-primary);">SaaS et modèles d'abonnement</strong> - nous évaluons le parcours depuis la première visite jusqu'au paiement : landing page, entonnoir d'essai, onboarding, rétention. Nous identifions les barrières qui tuent la valeur à vie.</p>
+                <p style="margin-bottom: var(--space-3);"><strong style="color: var(--color-text-primary);">Services B2B et consulting</strong> - nous vérifions comment le site établit la confiance, démontre l'expertise et convertit des ventes complexes avec un long cycle de décision.</p>
+                <p style="margin-bottom: var(--space-3);"><strong style="color: var(--color-text-primary);">Éducation et écoles en ligne</strong> - nous analysons le tunnel de vente depuis le contenu gratuit jusqu'à l'achat du cours : webinaires, lead magnets, chaînes email, pages de paiement</p>
+                <p>Vous n'êtes pas sûr de la nécessité d'un audit complet ? Commencez par <a href="sitemoney-scan.html">SiteMoney Scan à partir de 79€</a> - en 24 heures, vous verrez l'ampleur des problèmes et pourrez prendre une décision. Ou passez directement à <a href="services.html">catalogue de tous les services</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section--faq" id="faq">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Questions et réponses</h2>
+            <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">En quoi Money Leak Audit se distingue-t-il de SiteMoney Scan ?</summary>
+                    <div class="faq-item__answer"><p>SiteMoney Scan (à partir de 79€) - diagnostic express des points critiques (Light - analyse AI, PRO 149€ - analyse experte). Money Leak Audit (1490€) - audit complet du site en tant que système de vente selon 7 axes : structure, parcours utilisateur, offres, contenu, confiance, formulaires de leads, points de fuite.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.05s;">
+                    <summary class="faq-item__question">Que recevrez-vous à la suite de l'audit ?</summary>
+                    <div class="faq-item__answer"><p>Rapport PDF détaillé, captures d'écran avec commentaires, structure des priorités (quoi faire d'abord / ensuite / plus tard) et recommandations concrètes pouvant être mises en œuvre immédiatement.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <summary class="faq-item__question">Vous vous occupez de la mise en œuvre des recommandations ?</summary>
+                    <div class="faq-item__answer"><p>Money Leak Audit - c'est un diagnostic et un plan. Pour la mise en œuvre et le contrôle, il y a <a href="subscription.html">Website Intelligence Club</a> (à partir de 79€/mois) ou accompagnement Growth (990-1990€/mois)</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <summary class="faq-item__question">Combien de temps dure l'audit ?</summary>
+                    <div class="faq-item__answer"><p>L'audit complet prend 5-7 jours ouvrables. Vous recevrez un rapport détaillé avec des priorités, que vous pourrez immédiatement utiliser pour prendre des décisions.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <summary class="faq-item__question">L'audit convient-il à un magasin en ligne ?</summary>
+                    <div class="faq-item__answer"><p>Oui. Money Leak Audit analyse le site comme un système de vente - cela convient à tout site qui doit générer des demandes ou des ventes : landing pages, sites de services, boutiques en ligne.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.25s;">
+                    <summary class="faq-item__question">Comment le processus d'audit est-il automatisé ?</summary>
+                    <div class="faq-item__answer"><p>La collecte et l'analyse préliminaire des données sont entièrement automatisées sur la plateforme <a href="integrations.html">n8n</a>: parsing des pages, vérification des paramètres SEO, analyse de la structure. Les agents AI traitent les données selon plus de 50 paramètres. Le résultat arrive sur Telegram et est sauvegardé dans Google Sheets. Les recommandations finales et la stratégie sont préparées par un expert - l'automatisation accélère le processus, mais ne remplace pas l'expérience.</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section section--cta" id="final-cta">
+        <div class="cta__gradient-bg"></div>
+        <div class="container section--cta__inner">
+            <h2 class="section__title animate-on-scroll fade-up">Prêt à voir<br>l'image complète ?</h2>
+            <div class="animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                <a href="#" class="btn btn--primary btn--large" data-tf-form="consult" data-tf-service="Money Leak Audit" data-tf-price="1490">Commander un audit des fuites de conversions</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo"><span class="logo-icon"><img src="../images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                <p class="footer__tagline">TriggerFlow&trade; - audit approfondi pour éliminer les fuites de conversion</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services</a>
+                <a href="sitemoney-scan.html">Analyse express</a>
+                <a href="money-leak-audit.html">Audit</a>
+                <a href="subscription.html">Abonnement</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">À propos de nous</a>
+                <a href="integrations.html">Technologies</a>
+            </nav>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Tous droits réservés</div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <span class="sticky-cta__text">Audit pour <strong>5-7 jours</strong></span>
+        <a href="#" class="btn btn--primary" data-tf-form="consult" data-tf-service="Money Leak Audit" data-tf-price="1490">Commander un audit - 1 490€</a>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+</html>

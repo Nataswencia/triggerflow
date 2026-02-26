@@ -8,45 +8,114 @@
 
   var WEBHOOK_URL = 'https://nataswencia.app.n8n.cloud/webhook/tf-website-lead';
 
+  // i18n: detect language from <html lang="...">
+  var LANG = document.documentElement.lang || 'ru';
+  var I18N = {
+    ru: {
+      expressTitle: 'Оставить заявку', consultTitle: 'Обсудить проект', subscriptionTitle: 'Подобрать тариф',
+      name: 'Имя', namePh: 'Ваше имя', email: 'Email', websiteUrl: 'URL сайта',
+      phone: 'Телефон', company: 'Компания', companyPh: 'Название компании',
+      message: 'Сообщение', messagePh: 'Опишите задачу (минимум 10 символов)...',
+      plan: 'Тариф', planDefault: 'Выберите тариф',
+      planBasic: 'Базовый - 79\u20ac/мес', planPriority: 'Приоритетный - 199\u20ac/мес',
+      planGrowth: 'Growth сопровождение - от 990\u20ac/мес',
+      orderFor: function (p) { return 'Заказать за ' + p + '\u20ac'; },
+      submitRequest: 'Отправить заявку', discussProject: 'Обсудить проект', choosePlan: 'Подобрать тариф',
+      close: 'Закрыть', gdpr: 'Я соглашаюсь на обработку персональных данных',
+      sending: 'Отправляем заявку...', sent: 'Заявка отправлена!',
+      sentSub: 'Мы свяжемся с вами в ближайшее время',
+      errorTitle: 'Ошибка отправки', errorSub: 'Попробуйте ещё раз или напишите нам в Telegram',
+      retry: 'Попробовать снова', required: 'Обязательное поле', invalid: 'Некорректное значение',
+      rateLimit: 'Слишком много заявок. Попробуйте через 10 минут.',
+      errEmail: 'Введите корректный email', errUrl: 'Введите URL (https://example.com)',
+      errTel: 'Введите от 10 до 15 цифр', errText: 'От 2 до 50 символов, только буквы',
+      errTextarea: 'От 10 до 1000 символов', errCompany: 'Максимум 100 символов',
+      errSelect: 'Выберите вариант', errCheckbox: 'Необходимо дать согласие'
+    },
+    en: {
+      expressTitle: 'Submit Request', consultTitle: 'Discuss Your Project', subscriptionTitle: 'Choose a Plan',
+      name: 'Name', namePh: 'Your name', email: 'Email', websiteUrl: 'Website URL',
+      phone: 'Phone', company: 'Company', companyPh: 'Company name',
+      message: 'Message', messagePh: 'Describe your task (at least 10 characters)...',
+      plan: 'Plan', planDefault: 'Choose a plan',
+      planBasic: 'Basic - 79\u20ac/mo', planPriority: 'Priority - 199\u20ac/mo',
+      planGrowth: 'Growth Plan - from 990\u20ac/mo',
+      orderFor: function (p) { return 'Order for ' + p + '\u20ac'; },
+      submitRequest: 'Send Request', discussProject: 'Discuss Project', choosePlan: 'Choose a Plan',
+      close: 'Close', gdpr: 'I agree to the processing of personal data',
+      sending: 'Submitting...', sent: 'Request Sent!',
+      sentSub: 'We will contact you shortly',
+      errorTitle: 'Submission Error', errorSub: 'Please try again or contact us via Telegram',
+      retry: 'Try Again', required: 'Required field', invalid: 'Invalid value',
+      rateLimit: 'Too many requests. Please try again in 10 minutes.',
+      errEmail: 'Enter a valid email', errUrl: 'Enter a URL (https://example.com)',
+      errTel: 'Enter 10 to 15 digits', errText: '2 to 50 characters, letters only',
+      errTextarea: '10 to 1000 characters', errCompany: 'Maximum 100 characters',
+      errSelect: 'Choose an option', errCheckbox: 'Consent is required'
+    },
+    fr: {
+      expressTitle: 'Envoyer une demande', consultTitle: 'Discuter de votre projet', subscriptionTitle: 'Choisir un forfait',
+      name: 'Nom', namePh: 'Votre nom', email: 'Email', websiteUrl: 'URL du site',
+      phone: 'T\u00e9l\u00e9phone', company: 'Entreprise', companyPh: "Nom de l'entreprise",
+      message: 'Message', messagePh: 'D\u00e9crivez votre besoin (minimum 10 caract\u00e8res)...',
+      plan: 'Forfait', planDefault: 'Choisissez un forfait',
+      planBasic: 'Basique - 79\u20ac/mois', planPriority: 'Prioritaire - 199\u20ac/mois',
+      planGrowth: 'Accompagnement Growth - \u00e0 partir de 990\u20ac/mois',
+      orderFor: function (p) { return 'Commander pour ' + p + '\u20ac'; },
+      submitRequest: 'Envoyer', discussProject: 'Discuter du projet', choosePlan: 'Choisir un forfait',
+      close: 'Fermer', gdpr: "J'accepte le traitement de mes donn\u00e9es personnelles",
+      sending: 'Envoi en cours...', sent: 'Demande envoy\u00e9e !',
+      sentSub: 'Nous vous contacterons dans les plus brefs d\u00e9lais',
+      errorTitle: "Erreur d'envoi", errorSub: 'Veuillez r\u00e9essayer ou nous contacter via Telegram',
+      retry: 'R\u00e9essayer', required: 'Champ obligatoire', invalid: 'Valeur incorrecte',
+      rateLimit: 'Trop de demandes. Veuillez r\u00e9essayer dans 10 minutes.',
+      errEmail: 'Entrez un email valide', errUrl: 'Entrez une URL (https://example.com)',
+      errTel: 'Entrez de 10 \u00e0 15 chiffres', errText: 'De 2 \u00e0 50 caract\u00e8res, lettres uniquement',
+      errTextarea: 'De 10 \u00e0 1000 caract\u00e8res', errCompany: 'Maximum 100 caract\u00e8res',
+      errSelect: 'Choisissez une option', errCheckbox: 'Le consentement est requis'
+    }
+  };
+  var t = I18N[LANG] || I18N.ru;
+
   // Form field configurations per type
   var FORM_CONFIGS = {
     express: {
-      title: 'Оставить заявку',
+      title: t.expressTitle,
       fields: [
-        { name: 'name', label: 'Имя', type: 'text', placeholder: 'Ваше имя', required: true },
-        { name: 'email', label: 'Email', type: 'email', placeholder: 'email@example.com', required: true },
-        { name: 'website_url', label: 'URL сайта', type: 'url', placeholder: 'https://example.com', required: true },
-        { name: 'phone', label: 'Телефон', type: 'tel', placeholder: '+33 6 12 34 56 78', required: false }
+        { name: 'name', label: t.name, type: 'text', placeholder: t.namePh, required: true },
+        { name: 'email', label: t.email, type: 'email', placeholder: 'email@example.com', required: true },
+        { name: 'website_url', label: t.websiteUrl, type: 'url', placeholder: 'https://example.com', required: true },
+        { name: 'phone', label: t.phone, type: 'tel', placeholder: '+33 6 12 34 56 78', required: false }
       ],
-      submitText: function (price) { return price ? 'Заказать за ' + price + '\u20ac' : 'Отправить заявку'; }
+      submitText: function (price) { return price ? t.orderFor(price) : t.submitRequest; }
     },
     consult: {
-      title: 'Обсудить проект',
+      title: t.consultTitle,
       fields: [
-        { name: 'name', label: 'Имя', type: 'text', placeholder: 'Ваше имя', required: true },
-        { name: 'email', label: 'Email', type: 'email', placeholder: 'email@example.com', required: true },
-        { name: 'website_url', label: 'URL сайта', type: 'url', placeholder: 'https://example.com', required: true },
-        { name: 'phone', label: 'Телефон', type: 'tel', placeholder: '+33 6 12 34 56 78', required: false },
-        { name: 'company', label: 'Компания', type: 'company', placeholder: 'Название компании', required: false },
-        { name: 'message', label: 'Сообщение', type: 'textarea', placeholder: 'Опишите задачу (минимум 10 символов)...', required: false }
+        { name: 'name', label: t.name, type: 'text', placeholder: t.namePh, required: true },
+        { name: 'email', label: t.email, type: 'email', placeholder: 'email@example.com', required: true },
+        { name: 'website_url', label: t.websiteUrl, type: 'url', placeholder: 'https://example.com', required: true },
+        { name: 'phone', label: t.phone, type: 'tel', placeholder: '+33 6 12 34 56 78', required: false },
+        { name: 'company', label: t.company, type: 'company', placeholder: t.companyPh, required: false },
+        { name: 'message', label: t.message, type: 'textarea', placeholder: t.messagePh, required: false }
       ],
-      submitText: function () { return 'Обсудить проект'; }
+      submitText: function () { return t.discussProject; }
     },
     subscription: {
-      title: 'Подобрать тариф',
+      title: t.subscriptionTitle,
       fields: [
-        { name: 'name', label: 'Имя', type: 'text', placeholder: 'Ваше имя', required: true },
-        { name: 'email', label: 'Email', type: 'email', placeholder: 'email@example.com', required: true },
-        { name: 'website_url', label: 'URL сайта', type: 'url', placeholder: 'https://example.com', required: true },
-        { name: 'phone', label: 'Телефон', type: 'tel', placeholder: '+33 6 12 34 56 78', required: false },
-        { name: 'selected_plan', label: 'Тариф', type: 'select', required: true, options: [
-          { value: '', label: 'Выберите тариф' },
-          { value: 'Базовый 79\u20ac/мес', label: 'Базовый - 79\u20ac/мес' },
-          { value: 'Приоритетный 199\u20ac/мес', label: 'Приоритетный - 199\u20ac/мес' },
-          { value: 'Growth сопровождение от 990\u20ac/мес', label: 'Growth сопровождение - от 990\u20ac/мес' }
+        { name: 'name', label: t.name, type: 'text', placeholder: t.namePh, required: true },
+        { name: 'email', label: t.email, type: 'email', placeholder: 'email@example.com', required: true },
+        { name: 'website_url', label: t.websiteUrl, type: 'url', placeholder: 'https://example.com', required: true },
+        { name: 'phone', label: t.phone, type: 'tel', placeholder: '+33 6 12 34 56 78', required: false },
+        { name: 'selected_plan', label: t.plan, type: 'select', required: true, options: [
+          { value: '', label: t.planDefault },
+          { value: 'Базовый 79\u20ac/мес', label: t.planBasic },
+          { value: 'Приоритетный 199\u20ac/мес', label: t.planPriority },
+          { value: 'Growth сопровождение от 990\u20ac/мес', label: t.planGrowth }
         ]}
       ],
-      submitText: function () { return 'Подобрать тариф'; }
+      submitText: function () { return t.choosePlan; }
     }
   };
 
@@ -82,14 +151,8 @@
   };
 
   var ERROR_MESSAGES = {
-    email: 'Введите корректный email',
-    url: 'Введите URL (https://example.com)',
-    tel: 'Введите от 10 до 15 цифр',
-    text: 'От 2 до 50 символов, только буквы',
-    textarea: 'От 10 до 1000 символов',
-    company: 'Максимум 100 символов',
-    select: 'Выберите вариант',
-    checkbox: 'Необходимо дать согласие'
+    email: t.errEmail, url: t.errUrl, tel: t.errTel, text: t.errText,
+    textarea: t.errTextarea, company: t.errCompany, select: t.errSelect, checkbox: t.errCheckbox
   };
 
   // Phone formatting
@@ -142,7 +205,7 @@
     overlay.className = 'tf-modal-overlay';
     overlay.innerHTML =
       '<div class="tf-modal">' +
-        '<button class="tf-modal__close" type="button" aria-label="Закрыть">&times;</button>' +
+        '<button class="tf-modal__close" type="button" aria-label="' + t.close + '">&times;</button>' +
         '<div class="tf-modal__header">' +
           '<h3 class="tf-modal__title"></h3>' +
           '<p class="tf-modal__subtitle"></p>' +
@@ -156,7 +219,7 @@
           '<div class="tf-modal__gdpr form-group">' +
             '<label class="form-check">' +
               '<input type="checkbox" name="gdpr_consent" data-validate="checkbox" data-required="true">' +
-              '<span class="form-check__label">Я соглашаюсь на обработку персональных данных</span>' +
+              '<span class="form-check__label">' + t.gdpr + '</span>' +
             '</label>' +
             '<span class="form-error">' + ERROR_MESSAGES.checkbox + '</span>' +
           '</div>' +
@@ -164,18 +227,18 @@
         '</form>' +
         '<div class="tf-modal__loading" style="display:none">' +
           '<div class="tf-modal__spinner"></div>' +
-          '<p>Отправляем заявку...</p>' +
+          '<p>' + t.sending + '</p>' +
         '</div>' +
         '<div class="tf-modal__success" style="display:none">' +
           '<div style="font-size:3rem">&#10003;</div>' +
-          '<h3>Заявка отправлена!</h3>' +
-          '<p>Мы свяжемся с вами в ближайшее время</p>' +
+          '<h3>' + t.sent + '</h3>' +
+          '<p>' + t.sentSub + '</p>' +
         '</div>' +
         '<div class="tf-modal__error" style="display:none">' +
           '<div style="font-size:3rem">&#10007;</div>' +
-          '<h3>Ошибка отправки</h3>' +
-          '<p>Попробуйте ещё раз или напишите нам в Telegram</p>' +
-          '<button type="button" class="btn btn--outline" style="margin-top:1rem" onclick="TFModal.retry()">Попробовать снова</button>' +
+          '<h3>' + t.errorTitle + '</h3>' +
+          '<p>' + t.errorSub + '</p>' +
+          '<button type="button" class="btn btn--outline" style="margin-top:1rem" onclick="TFModal.retry()">' + t.retry + '</button>' +
         '</div>' +
       '</div>';
 
@@ -257,7 +320,7 @@
 
       var error = document.createElement('span');
       error.className = 'form-error';
-      error.textContent = ERROR_MESSAGES[field.type] || 'Обязательное поле';
+      error.textContent = ERROR_MESSAGES[field.type] || t.required;
       group.appendChild(error);
 
       fieldsContainer.appendChild(group);
@@ -396,13 +459,13 @@
 
     if (required && !value) {
       input.classList.add('error');
-      if (errorEl) { errorEl.textContent = 'Обязательное поле'; errorEl.classList.add('visible'); }
+      if (errorEl) { errorEl.textContent = t.required; errorEl.classList.add('visible'); }
       return false;
     }
 
     if (value && VALIDATORS[type] && !VALIDATORS[type](value, input)) {
       input.classList.add('error');
-      if (errorEl) { errorEl.textContent = ERROR_MESSAGES[type] || 'Некорректное значение'; errorEl.classList.add('visible'); }
+      if (errorEl) { errorEl.textContent = ERROR_MESSAGES[type] || t.invalid; errorEl.classList.add('visible'); }
       return false;
     }
 
@@ -455,7 +518,7 @@
     if (!checkRateLimit()) {
       showSection('error');
       var errP = overlay.querySelector('.tf-modal__error p');
-      if (errP) errP.textContent = 'Слишком много заявок. Попробуйте через 10 минут.';
+      if (errP) errP.textContent = t.rateLimit;
       return;
     }
 
@@ -476,6 +539,7 @@
       selected_plan: form.getAttribute('data-plan'),
       source_page: window.location.pathname.split('/').pop() || 'index.html',
       source_button: form.getAttribute('data-btn-text'),
+      source_language: LANG,
       gdpr_consent: true,
       _timestamp: FORM_OPEN_TIME
     };

@@ -5402,6 +5402,114 @@ p:last-child {
   outline-offset: 1px;
 }
 
+/* =============================================
+   LANGUAGE SWITCHER
+   ============================================= */
+.navbar__lang {
+  position: relative;
+  list-style: none;
+}
+
+.navbar__lang-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s;
+  font-family: inherit;
+}
+
+.navbar__lang-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.navbar__lang-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 70px;
+  margin: 6px 0 0;
+  padding: 6px 0;
+  background: var(--color-dark-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  list-style: none;
+  z-index: 300;
+}
+
+.navbar__lang-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar__lang-menu li {
+  padding: 0;
+}
+
+.navbar__lang-menu a {
+  display: block;
+  padding: 6px 16px;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+
+.navbar__lang-menu a:hover {
+  color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.navbar__lang-menu a.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Mobile: lang switcher inside hamburger menu */
+@media (max-width: 992px) {
+  .navbar__lang {
+    border-top: 1px solid var(--color-border);
+    padding-top: 12px;
+    margin-top: 8px;
+  }
+
+  .navbar__lang-btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .navbar__lang-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    display: none;
+    padding: 4px 0;
+  }
+
+  .navbar__lang-menu.open {
+    display: block;
+  }
+
+  .navbar__lang-menu a {
+    padding: 8px 16px;
+  }
+}
+
 /* ----- Print: hide BEM elements ----- */
 @media print {
   .hero__scroll-indicator,

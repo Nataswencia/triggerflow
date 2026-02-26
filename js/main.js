@@ -5,6 +5,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // ========================================
+  // 0. LANGUAGE DETECTION
+  // ========================================
+  const LANG = document.documentElement.lang || 'ru';
+
+  // ========================================
   // 1. MOBILE NAVIGATION
   // ========================================
   // Support both .navbar__hamburger (most pages) and .mobile-toggle (services.html)
@@ -289,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const originalText = btn.textContent;
-      btn.textContent = 'Отправлено!';
+      btn.textContent = {ru:'Отправлено!', en:'Sent!', fr:'Envoyé!'}[LANG] || 'Отправлено!';
       btn.classList.add('success');
       setTimeout(() => {
         btn.textContent = originalText;
@@ -358,5 +363,50 @@ document.addEventListener('DOMContentLoaded', () => {
         ticking = true;
       }
     });
+  }
+
+  // ========================================
+  // 18. LANGUAGE SWITCHER
+  // ========================================
+  const langBtn = document.querySelector('.navbar__lang-btn');
+  const langMenu = document.querySelector('.navbar__lang-menu');
+
+  if (langBtn && langMenu) {
+    // Toggle dropdown
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langMenu.classList.toggle('open');
+    });
+
+    // Close on outside click
+    document.addEventListener('click', () => {
+      langMenu.classList.remove('open');
+    });
+
+    // Handle language switch links
+    document.querySelectorAll('[data-lang-switch]').forEach(link => {
+      const targetLang = link.getAttribute('data-lang-switch');
+      // Mark current language as active
+      if (targetLang === LANG) {
+        link.classList.add('active');
+      }
+
+      // Compute href for this language
+      const path = window.location.pathname;
+      const pageName = path.split('/').pop() || 'index.html';
+      // Detect if we're inside /en/ or /fr/ subfolder
+      const inSubfolder = /\/(en|fr)\//.test(path);
+
+      let href;
+      if (targetLang === 'ru') {
+        href = inSubfolder ? '../' + pageName : pageName;
+      } else {
+        href = inSubfolder ? '../' + targetLang + '/' + pageName : targetLang + '/' + pageName;
+      }
+      link.setAttribute('href', href);
+    });
+
+    // Update button label to current language
+    langBtn.textContent = LANG.toUpperCase() + ' \u25BE';
   }
 });
