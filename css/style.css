@@ -3815,17 +3815,14 @@ p:last-child {
    29.4 PROBLEM CARDS — BEM (index.html, money-leak-audit.html)
    ============================================================ */
 .problems__grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
   max-width: 960px;
   margin: 0 auto;
 }
 
 .problem-card {
-  flex: 0 1 calc(33.333% - var(--space-3));
-  max-width: 280px;
   background: rgba(30, 111, 255, 0.03);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -3865,7 +3862,7 @@ p:last-child {
    ============================================================ */
 .positioning__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
 }
 
@@ -4730,9 +4727,12 @@ p:last-child {
     grid-template-columns: 1fr;
   }
 
-  .problem-card {
-    flex: 0 1 calc(50% - var(--space-3));
-    max-width: none;
+  .problems__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .positioning__cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .results-grid {
@@ -4797,9 +4797,12 @@ p:last-child {
     font-size: var(--font-size-base);
   }
 
-  .problem-card {
-    flex: 0 1 100%;
-    max-width: none;
+  .problems__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .positioning__cards {
+    grid-template-columns: 1fr;
   }
 
   .results-grid {
