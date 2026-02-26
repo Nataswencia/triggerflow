@@ -3023,7 +3023,7 @@ p:last-child {
     font-size: 32px;
   }
 
-  /* Hide forced <br> in section titles on mobile — let text wrap naturally */
+  /* Hide <br> in section titles on mobile — space is in HTML before <br> */
   .section__title br {
     display: none;
   }
