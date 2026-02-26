@@ -3005,6 +3005,11 @@ p:last-child {
     display: none;
   }
 
+  /* Force 3-column inline grids to single column on mobile */
+  .cards-grid[style*="repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
   /* Hide banner image on mobile — use gradient fallback */
   .hero--banner {
     background: var(--gradient-hero);
