@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Hunter AI - AI searches jobs for you | TriggerFlow</title>
+    <meta name="description" content="AI bot searches jobs for you every day matching your profile. Welcome to the Jungle, Google Jobs, RemoteOK. Free. Results delivered to Telegram.">
+    <link rel="canonical" href="https://triggerflow.pro/en/job-hunter.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Job Hunter AI - AI searches jobs for you | TriggerFlow">
+    <meta property="og:description" content="AI bot searches jobs for you every day. Scoring matched to your profile. Free.">
+    <meta property="og:url" content="https://triggerflow.pro/en/job-hunter.html">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Job Hunter AI - AI searches jobs for you | TriggerFlow">
+    <meta name="twitter:description" content="AI bot searches jobs for you every day matching your profile. Free.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://triggerflow.pro/en/"},
+                    {"@type": "ListItem", "position": 2, "name": "Job Hunter AI", "item": "https://triggerflow.pro/en/job-hunter.html"}
+                ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Job Hunter AI",
+                "description": "AI bot for automated job search. Scans Welcome to the Jungle, Google Jobs, RemoteOK, Arbeitnow every day.",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Telegram",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "EUR"
+                },
+                "provider": {"@id": "https://triggerflow.pro/#organization"}
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {"@type": "Question", "name": "How do I get started with Job Hunter AI?", "acceptedAnswer": {"@type": "Answer", "text": "Open @JobHunter_triggerflow_bot in Telegram, tap /start, and fill out your profile in 2 minutes. The bot will start searching for jobs automatically."}},
+                    {"@type": "Question", "name": "Where do the job listings come from?", "acceptedAnswer": {"@type": "Answer", "text": "From 4 sources: Google Jobs, Welcome to the Jungle, Arbeitnow, and RemoteOK. The bot checks them every day."}},
+                    {"@type": "Question", "name": "Is it really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Basic job search is completely free. A PRO version with advanced scoring will be available later."}}
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="alternate" hreflang="ru" href="https://triggerflow.pro/job-hunter.html">
+    <link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/job-hunter.html">
+    <link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/job-hunter.html">
+    <link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/job-hunter.html">
+
+    <style>
+        /* Job Hunter page-specific styles */
+        .jh-sources {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+        .jh-source {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5);
+            text-align: center;
+            transition: var(--transition-base);
+        }
+        .jh-source:hover {
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+        .jh-source__icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-3);
+        }
+        .jh-source__name {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+        .jh-source__desc {
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+        }
+
+        .jh-demo {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5);
+            max-width: 540px;
+            margin: var(--space-6) auto 0;
+        }
+        .jh-demo__header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: var(--space-3);
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: var(--space-4);
+        }
+        .jh-demo__avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .jh-demo__name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .jh-demo__time {
+            margin-left: auto;
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+        }
+        .jh-demo__msg {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        .jh-demo__msg strong {
+            color: var(--color-text-primary);
+        }
+        .jh-demo__tag {
+            display: inline-block;
+            background: rgba(0,208,132,0.1);
+            color: #00d084;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: var(--radius-pill);
+            margin-right: 4px;
+        }
+        .jh-demo__tag--score {
+            background: rgba(30,111,255,0.1);
+            color: var(--color-primary);
+        }
+
+        .jh-pricing {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-5);
+            max-width: 700px;
+            margin: var(--space-6) auto 0;
+        }
+        .jh-plan {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            position: relative;
+        }
+        .jh-plan--pro {
+            border-color: var(--color-primary);
+        }
+        .jh-plan__badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-cta);
+            color: white;
+            padding: 4px 16px;
+            border-radius: var(--radius-pill);
+            font-size: 0.75rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .jh-plan__price {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: var(--space-3) 0 var(--space-2);
+        }
+        .jh-plan__period {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+        .jh-plan__list {
+            list-style: none;
+            padding: 0;
+            margin: var(--space-4) 0;
+        }
+        .jh-plan__list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+        .jh-plan__list li:last-child { border-bottom: none; }
+        .jh-plan__list li i { color: var(--color-accent-1); margin-top: 2px; flex-shrink: 0; }
+
+        @media (max-width: 768px) {
+            .jh-sources { grid-template-columns: 1fr 1fr; }
+            .jh-pricing { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .jh-sources { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="../index.html" class="navbar__logo"><span class="logo-icon"><img src="../images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li class="navbar__dropdown"><a href="services.html">Services <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#seo-text">SEO Text Reality Check <span class="dropdown__price">69&euro;</span></a></li>
+                        <li><a href="services.html#first-screen">First Screen Verdict <span class="dropdown__price">79&euro;</span></a></li>
+                        <li><a href="sitemoney-scan.html">SiteMoney Scan <span class="dropdown__price">from 79&euro;</span></a></li>
+                        <li><a href="services.html#one-page">One Page Breakdown <span class="dropdown__price">249&euro;</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown active"><a href="#">AI Solutions <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__label">For Business</li>
+                        <li><a href="sitemoney-scan.html">SiteMoney Scanner <span class="dropdown__price">from 0&euro;</span></a></li>
+                        <li><a href="lead-hunter.html">Lead Hunter <span class="dropdown__price">199&euro;/mo</span></a></li>
+                        <li><a href="inbox-zero.html">Inbox Zero AI <span class="dropdown__price">99&euro;/mo</span></a></li>
+                        <li class="dropdown__divider"></li>
+                        <li class="dropdown__label">For Career</li>
+                        <li><a href="job-hunter.html" class="active">Job Hunter AI <span class="dropdown__price">free</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="money-leak-audit.html">Audit <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#offer">Offer X-Ray <span class="dropdown__price">390&euro;</span></a></li>
+                        <li><a href="services.html#conversion">Conversion Anatomy <span class="dropdown__price">590&euro;</span></a></li>
+                        <li><a href="services.html#psychology">Client Psychology Map <span class="dropdown__price">790&euro;</span></a></li>
+                        <li><a href="money-leak-audit.html">Money Leak Audit <span class="dropdown__price">1490&euro;</span></a></li>
+                        <li><a href="services.html#funnel">Sales Funnel Intelligence <span class="dropdown__price">2990&euro;</span></a></li>
+                        <li><a href="services.html#growth">Growth Blueprint <span class="dropdown__price">4990&euro;+</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="subscription.html">Subscription <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="subscription.html#basic">Basic Access <span class="dropdown__price">79&euro;/mo</span></a></li>
+                        <li><a href="subscription.html#priority">Priority Reviews <span class="dropdown__price">199&euro;/mo</span></a></li>
+                        <li><a href="subscription.html#growth">Growth Support <span class="dropdown__price">990-1990&euro;</span></a></li>
+                        <li><a href="subscription.html#privat">TriggerFlow Privat <span class="dropdown__price">49&euro;/mo</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="navbar__lang">
+                    <button class="navbar__lang-btn">EN &#9662;</button>
+                    <ul class="navbar__lang-menu">
+                        <li><a data-lang-switch="ru">RU</a></li>
+                        <li><a data-lang-switch="en">EN</a></li>
+                        <li><a data-lang-switch="fr">FR</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero hero--banner" id="hero">
+        <div class="hero__gradient-bg"></div>
+        <div class="container hero__content">
+            <div class="animate-on-scroll fade-up" style="margin-bottom: var(--space-3);">
+                <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(30,111,255,0.1);border:1px solid rgba(30,111,255,0.3);color:var(--color-primary);padding:6px 16px;border-radius:var(--radius-pill);font-size:0.85rem;font-weight:600;">
+                    <i class="fa-solid fa-briefcase"></i> For Career &mdash; free
+                </span>
+            </div>
+            <h1 class="hero__title animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                AI searches for jobs for you &mdash;<br>while you live your life
+            </h1>
+            <p class="hero__subtitle animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                The bot scans Welcome to the Jungle, Google Jobs, RemoteOK, and Arbeitnow every day.<br>
+                Finds jobs matching your profile. Scores the fit. Delivers the best ones to Telegram.
+            </p>
+            <div class="hero__buttons animate-on-scroll fade-up" style="animation-delay:0.3s;">
+                <a href="https://t.me/JobHunter_triggerflow_bot?start=en" class="btn btn--primary btn--large" target="_blank" rel="noopener">
+                    Start free in Telegram &rarr;
+                </a>
+                <a href="#how-it-works" class="btn btn--outline btn--large">How it works</a>
+            </div>
+            <div class="trust-bar animate-on-scroll fade-up" style="animation-delay:0.45s;">
+                <div class="trust-bar__item"><i class="fa-solid fa-clock"></i> Setup in <strong>2 minutes</strong></div>
+                <div class="trust-bar__item"><i class="fa-solid fa-magnifying-glass"></i> <strong>4 job sources</strong></div>
+                <div class="trust-bar__item"><i class="fa-solid fa-language"></i> <strong>EN / FR / RU</strong></div>
+                <div class="trust-bar__item"><i class="fa-solid fa-gift"></i> Completely <strong>free</strong></div>
+            </div>
+        </div>
+        <div class="hero__scroll-indicator">
+            <span>Scroll down</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="section" id="problem">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Job searching is a full-time job</h2>
+            <p class="section__description animate-on-scroll fade-up">You spend hours on what AI does in minutes</p>
+            <div class="pricing-grid" style="margin-top:var(--space-7);">
+                <div class="pricing-card animate-on-scroll fade-up">
+                    <div style="font-size:1.8rem;margin-bottom:var(--space-2);"><i class="fa-solid fa-hourglass-half" style="color:var(--color-primary);"></i></div>
+                    <h3 class="pricing-card__name">3-4 hours a day</h3>
+                    <p class="pricing-card__desc">Scrolling LinkedIn, Indeed, Welcome to the Jungle. Every day. The same thing over and over.</p>
+                </div>
+                <div class="pricing-card animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div style="font-size:1.8rem;margin-bottom:var(--space-2);"><i class="fa-solid fa-paper-plane" style="color:var(--color-primary);"></i></div>
+                    <h3 class="pricing-card__name">80 applications &rarr; 0 replies</h3>
+                    <p class="pricing-card__desc">Sending resumes into the void. No personalization &mdash; no chance.</p>
+                </div>
+                <div class="pricing-card animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div style="font-size:1.8rem;margin-bottom:var(--space-2);"><i class="fa-solid fa-eye-slash" style="color:var(--color-primary);"></i></div>
+                    <h3 class="pricing-card__name">Best jobs &mdash; gone</h3>
+                    <p class="pricing-card__desc">While you sleep, someone already applied. The first 24 hours are decisive.</p>
+                </div>
+                <div class="pricing-card animate-on-scroll fade-up" style="animation-delay:0.3s;">
+                    <div style="font-size:1.8rem;margin-bottom:var(--space-2);"><i class="fa-solid fa-globe" style="color:var(--color-primary);"></i></div>
+                    <h3 class="pricing-card__name">10 sites, 10 filters</h3>
+                    <p class="pricing-card__desc">Every site has its own filters and settings. Impossible to keep track of them all.</p>
+                </div>
+                <div class="pricing-card animate-on-scroll fade-up" style="animation-delay:0.4s;">
+                    <div style="font-size:1.8rem;margin-bottom:var(--space-2);"><i class="fa-solid fa-brain" style="color:var(--color-primary);"></i></div>
+                    <h3 class="pricing-card__name">Burnout</h3>
+                    <p class="pricing-card__desc">After 2 weeks, motivation hits zero. The search turns into a grind.</p>
+                </div>
+                <div class="pricing-card animate-on-scroll fade-up" style="animation-delay:0.5s;">
+                    <div style="font-size:1.8rem;margin-bottom:var(--space-2);"><i class="fa-solid fa-bullseye" style="color:var(--color-primary);"></i></div>
+                    <h3 class="pricing-card__name">No strategy</h3>
+                    <p class="pricing-card__desc">Applying to everything instead of targeting the perfect positions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TELEGRAM DEMO ===== -->
+    <section class="section" style="background: var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Here is what you get in Telegram</h2>
+            <p class="section__description animate-on-scroll fade-up">Every morning &mdash; a curated list of jobs with AI scoring matched to your profile</p>
+
+            <div class="jh-demo animate-on-scroll fade-up">
+                <div class="jh-demo__header">
+                    <div class="jh-demo__avatar"><i class="fa-solid fa-briefcase"></i></div>
+                    <div>
+                        <div class="jh-demo__name">Job Hunter AI</div>
+                        <div style="font-size:0.75rem;color:var(--color-text-muted);">Bot</div>
+                    </div>
+                    <div class="jh-demo__time">09:01</div>
+                </div>
+                <div class="jh-demo__msg">
+                    <strong>Found 7 jobs for you</strong><br><br>
+                    <strong>1. Product Manager &mdash; Doctolib</strong><br>
+                    <span class="jh-demo__tag jh-demo__tag--score">Score: 87%</span>
+                    <span class="jh-demo__tag">Paris</span>
+                    <span class="jh-demo__tag">CDI</span><br>
+                    60-75K&euro; | Remote 2 days/week<br>
+                    <em style="color:var(--color-text-muted);">via Welcome to the Jungle</em><br><br>
+
+                    <strong>2. Growth Lead &mdash; Qonto</strong><br>
+                    <span class="jh-demo__tag jh-demo__tag--score">Score: 82%</span>
+                    <span class="jh-demo__tag">Paris</span>
+                    <span class="jh-demo__tag">CDI</span><br>
+                    55-70K&euro; | Hybrid<br>
+                    <em style="color:var(--color-text-muted);">via Google Jobs</em><br><br>
+
+                    <strong>3. Senior Marketing Manager &mdash; BlaBlaCar</strong><br>
+                    <span class="jh-demo__tag jh-demo__tag--score">Score: 79%</span>
+                    <span class="jh-demo__tag">Paris</span>
+                    <span class="jh-demo__tag">CDI</span><br>
+                    65-80K&euro; | Remote-first<br>
+                    <em style="color:var(--color-text-muted);">via Welcome to the Jungle</em>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOURCES ===== -->
+    <section class="section" id="sources">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">4 job sources &mdash; one bot</h2>
+            <p class="section__description animate-on-scroll fade-up">The bot checks all platforms every day and finds what you would have missed</p>
+
+            <div class="jh-sources">
+                <div class="jh-source animate-on-scroll fade-up">
+                    <div class="jh-source__icon"><i class="fa-brands fa-google" style="color:#4285f4;"></i></div>
+                    <div class="jh-source__name">Google Jobs</div>
+                    <div class="jh-source__desc">Aggregator of all job listings across the web</div>
+                </div>
+                <div class="jh-source animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div class="jh-source__icon"><i class="fa-solid fa-mountain-sun" style="color:#ff6b6b;"></i></div>
+                    <div class="jh-source__name">Welcome to the Jungle</div>
+                    <div class="jh-source__desc">Top job platform in France and Europe</div>
+                </div>
+                <div class="jh-source animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div class="jh-source__icon"><i class="fa-solid fa-earth-europe" style="color:#00b894;"></i></div>
+                    <div class="jh-source__name">Arbeitnow</div>
+                    <div class="jh-source__desc">Jobs across Europe with visa sponsorship</div>
+                </div>
+                <div class="jh-source animate-on-scroll fade-up" style="animation-delay:0.3s;">
+                    <div class="jh-source__icon"><i class="fa-solid fa-laptop-house" style="color:#6c5ce7;"></i></div>
+                    <div class="jh-source__name">RemoteOK</div>
+                    <div class="jh-source__desc">Remote positions worldwide</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section" id="how-it-works" style="background: var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">How it works</h2>
+            <p class="section__description animate-on-scroll fade-up">From sign-up to your first job matches &mdash; 2 minutes</p>
+
+            <div style="max-width:640px;margin:var(--space-7) auto 0;">
+                <div class="step-flow animate-on-scroll fade-up">
+                    <div class="step-flow__num">1</div>
+                    <div class="step-flow__content">
+                        <h3>Fill out your profile in the bot</h3>
+                        <p>Job title, skills, country, contract type, salary range. The bot asks questions &mdash; you reply in the chat.</p>
+                    </div>
+                </div>
+                <div class="step-flow animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div class="step-flow__num">2</div>
+                    <div class="step-flow__content">
+                        <h3>AI scans 4 platforms every day</h3>
+                        <p>The bot searches for jobs matching your criteria. GPT-4o scores the fit with your profile (0-100%).</p>
+                    </div>
+                </div>
+                <div class="step-flow animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div class="step-flow__num">3</div>
+                    <div class="step-flow__content">
+                        <h3>Best jobs &mdash; delivered to your Telegram</h3>
+                        <p>Every morning at 09:00 &mdash; a curated list of relevant positions. Only what fits you. No spam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHO IS IT FOR ===== -->
+    <section class="section" id="for-whom">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Who is it for</h2>
+            <div class="filter-grid">
+                <div class="filter-col filter-col--yes animate-on-scroll fade-up">
+                    <h3 class="filter-col__heading"><i class="fa-solid fa-bullseye"></i> Your profile</h3>
+                    <ul class="filter-list">
+                        <li><i class="fa-solid fa-user-tie"></i> Professionals looking for jobs in France and Europe</li>
+                        <li><i class="fa-solid fa-globe"></i> Expats and relocators &mdash; searching for your first job in a new country</li>
+                        <li><i class="fa-solid fa-laptop"></i> IT, marketing, product, design, finance</li>
+                        <li><i class="fa-solid fa-arrows-rotate"></i> Want to switch jobs but have no time to search</li>
+                    </ul>
+                </div>
+                <div class="filter-col filter-col--no animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <h3 class="filter-col__heading"><i class="fa-solid fa-ban"></i> Not a fit</h3>
+                    <ul class="filter-list">
+                        <li><i class="fa-solid fa-xmark"></i> Looking for construction or hospitality jobs (not covered yet)</li>
+                        <li><i class="fa-solid fa-xmark"></i> Need a recruiter or career coach</li>
+                        <li><i class="fa-solid fa-xmark"></i> Not willing to fill out a profile (2 minutes)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="section" id="pricing" style="background: var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Pricing</h2>
+            <p class="section__description animate-on-scroll fade-up">Start free. Upgrade when you are ready.</p>
+
+            <div class="jh-pricing">
+                <div class="jh-plan animate-on-scroll fade-up">
+                    <h3 style="font-size:1.2rem;font-weight:700;">Free</h3>
+                    <div class="jh-plan__price">0&euro;</div>
+                    <ul class="jh-plan__list">
+                        <li><i class="fa-solid fa-check"></i> Daily search across 4 sources</li>
+                        <li><i class="fa-solid fa-check"></i> AI job scoring</li>
+                        <li><i class="fa-solid fa-check"></i> Results in Telegram</li>
+                        <li><i class="fa-solid fa-check"></i> Multilingual (EN/FR/RU)</li>
+                        <li><i class="fa-solid fa-check"></i> Deduplication (no repeats)</li>
+                    </ul>
+                    <a href="https://t.me/JobHunter_triggerflow_bot?start=en" class="btn btn--outline btn--block" target="_blank" rel="noopener">
+                        Start free
+                    </a>
+                </div>
+                <div class="jh-plan jh-plan--pro animate-on-scroll fade-up" style="animation-delay:0.15s;">
+                    <div class="jh-plan__badge"><i class="fa-solid fa-star"></i>&nbsp; Coming soon</div>
+                    <h3 style="font-size:1.2rem;font-weight:700;">PRO</h3>
+                    <div class="jh-plan__price" style="color:var(--color-text-muted);">TBD</div>
+                    <ul class="jh-plan__list">
+                        <li><i class="fa-solid fa-check"></i> Everything in Free</li>
+                        <li><i class="fa-solid fa-check"></i> Priority scoring (GPT-4o)</li>
+                        <li><i class="fa-solid fa-check"></i> Cover letter generator</li>
+                        <li><i class="fa-solid fa-check"></i> LinkedIn integration</li>
+                        <li><i class="fa-solid fa-check"></i> Application analytics</li>
+                    </ul>
+                    <button class="btn btn--primary btn--block" disabled style="opacity:0.5;cursor:not-allowed;">
+                        Coming soon
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Frequently asked questions</h2>
+            <div class="faq-list" style="max-width:700px;margin:var(--space-6) auto 0;">
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">How do I get started?</summary>
+                    <div class="faq-item__answer"><p>Open <a href="https://t.me/JobHunter_triggerflow_bot?start=en" target="_blank" rel="noopener">@JobHunter_triggerflow_bot</a> in Telegram, tap /start, choose your language, and fill out your profile. In 2 minutes the bot will start searching for jobs.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay:0.05s;">
+                    <summary class="faq-item__question">Where do the job listings come from?</summary>
+                    <div class="faq-item__answer"><p>From 4 sources: Google Jobs (aggregator), Welcome to the Jungle (top platform in France), Arbeitnow (Europe), and RemoteOK (remote). The bot checks all of them every day at 09:00.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <summary class="faq-item__question">What is AI scoring?</summary>
+                    <div class="faq-item__answer"><p>GPT-4o-mini compares each job with your profile (skills, experience, salary, location) and assigns a score from 0 to 100%. You only receive relevant positions.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay:0.15s;">
+                    <summary class="faq-item__question">Is it really free?</summary>
+                    <div class="faq-item__answer"><p>Yes. Full daily search, AI scoring, and Telegram notifications are free. A PRO version with advanced features will be available later.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <summary class="faq-item__question">Can I change my profile after signing up?</summary>
+                    <div class="faq-item__answer"><p>Yes. The /profile command lets you update your profile at any time. The /language command lets you switch the interface language.</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay:0.25s;">
+                    <summary class="faq-item__question">Does the bot work for all countries?</summary>
+                    <div class="faq-item__answer"><p>The sources cover France, Germany, the Netherlands, Belgium, Spain, and remote positions worldwide. You specify your target country during sign-up.</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta" id="cta">
+        <div class="cta__gradient-bg"></div>
+        <div class="container cta__content">
+            <h2 class="cta__title animate-on-scroll fade-up">While you are reading this &mdash;<br>someone already applied to your perfect job</h2>
+            <p class="cta__subtitle animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                Set up the bot in 2 minutes. Get your first job matches tomorrow morning.
+            </p>
+            <div class="animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                <a href="https://t.me/JobHunter_triggerflow_bot?start=en" class="btn btn--primary btn--large" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-telegram"></i>&nbsp; Open bot in Telegram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo">Trigger<span>Flow</span>&trade;</a>
+                <p class="footer__tagline">AI solutions for business and career</p>
+            </div>
+            <div class="footer__links">
+                <a href="sitemoney-scan.html">SiteMoney Scanner</a>
+                <a href="lead-hunter.html">Lead Hunter</a>
+                <a href="inbox-zero.html">Inbox Zero AI</a>
+                <a href="job-hunter.html">Job Hunter AI</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+            </div>
+                        <div class="footer__trust">
+                <span class="footer__trust-badge"><i class="fa-solid fa-shield-halved"></i> GDPR Compliant</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-lock"></i> Encrypted API</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-database"></i> No data retention</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-building-shield"></i> SASU France</span>
+            </div>
+            <div class="footer__copy">
+                <p>&copy; 2026 TriggerFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

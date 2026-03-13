@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Hunter - 50 Leads Chauds Chaque Semaine | TriggerFlow</title>
+    <meta name="description" content="L'IA trouve 50 leads B2B chauds chaque lundi. Tableau prêt avec contacts, niche et offre personnalisée. 199€/mois.">
+    <link rel="canonical" href="https://triggerflow.pro/fr/lead-hunter.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lead Hunter - 50 Leads Chauds Chaque Semaine | TriggerFlow">
+    <meta property="og:description" content="L'IA trouve 50 leads B2B chauds chaque lundi. Tableau prêt avec contacts et offres personnalisées.">
+    <meta property="og:url" content="https://triggerflow.pro/fr/lead-hunter.html">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lead Hunter - 50 Leads Chauds Chaque Semaine | TriggerFlow">
+    <meta name="twitter:description" content="L'IA trouve 50 leads B2B chauds chaque lundi. 199€/mois.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://triggerflow.pro/fr/"},
+                    {"@type": "ListItem", "position": 2, "name": "Lead Hunter", "item": "https://triggerflow.pro/fr/lead-hunter.html"}
+                ]
+            },
+            {
+                "@type": "Service",
+                "name": "Lead Hunter",
+                "description": "Le bot IA trouve 50 leads B2B chauds chaque semaine. Offre personnalisée pour chaque contact.",
+                "provider": {"@id": "https://triggerflow.pro/#organization"},
+                "offers": {
+                    "@type": "Offer",
+                    "price": "199",
+                    "priceCurrency": "EUR",
+                    "billingIncrement": "monthly"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {"@type": "Question", "name": "Comment Lead Hunter trouve-t-il des leads ?", "acceptedAnswer": {"@type": "Answer", "text": "Le bot IA recherche dans Google selon vos mots-clés, analyse les sites et crée une offre personnalisée pour chaque entreprise."}},
+                    {"@type": "Question", "name": "D'où viennent les contacts ?", "acceptedAnswer": {"@type": "Answer", "text": "Sources publiques : sites d'entreprises, LinkedIn, annuaires professionnels."}},
+                    {"@type": "Question", "name": "Combien de leads vais-je obtenir ?", "acceptedAnswer": {"@type": "Answer", "text": "50 leads par semaine, 200 par mois. Conversion 2-3% = 4-6 nouveaux clients par mois."}}
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="alternate" hreflang="ru" href="https://triggerflow.pro/lead-hunter.html">
+    <link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/lead-hunter.html">
+    <link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/lead-hunter.html">
+    <link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/lead-hunter.html">
+
+    <style>
+        /* Lead Hunter page-specific styles */
+        .lh-demo {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin: var(--space-6) 0;
+        }
+        .lh-demo__header {
+            background: linear-gradient(135deg, rgba(30,111,255,0.15), rgba(0,180,255,0.1));
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+        }
+        .lh-demo__dot { width: 10px; height: 10px; border-radius: 50%; }
+        .lh-demo__dot--red { background: #ef4444; }
+        .lh-demo__dot--yellow { background: #f59e0b; }
+        .lh-demo__dot--green { background: #10b981; }
+        .lh-demo__table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        .lh-demo__table th {
+            background: rgba(30,111,255,0.08);
+            padding: 10px 14px;
+            text-align: left;
+            color: var(--color-text-secondary);
+            font-weight: 600;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .lh-demo__table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            color: var(--color-text-primary);
+        }
+        .lh-demo__table tr:last-child td { border-bottom: none; }
+        .lh-demo__table tr:hover td { background: rgba(30,111,255,0.04); }
+        .lh-score {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        .lh-score--high { background: rgba(0,208,132,0.15); color: #00d084; }
+        .lh-score--med { background: rgba(255,149,0,0.15); color: #ff9500; }
+        .lh-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: var(--radius-pill);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .lh-badge--new { background: rgba(0,208,132,0.15); color: #00d084; }
+        .lh-badge--done { background: rgba(100,116,139,0.2); color: #94a3b8; }
+
+        .roi-calc {
+            background: linear-gradient(135deg, rgba(30,111,255,0.08), rgba(0,180,255,0.05));
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-7);
+            text-align: center;
+        }
+        .roi-calc__formula {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+            margin: var(--space-5) 0;
+        }
+        .roi-calc__item {
+            text-align: center;
+        }
+        .roi-calc__num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+        .roi-calc__label {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            margin-top: 4px;
+        }
+        .roi-calc__op {
+            font-size: 1.8rem;
+            color: var(--color-text-muted);
+            font-weight: 300;
+        }
+        .roi-calc__result {
+            border-top: 1px solid var(--color-border);
+            padding-top: var(--space-5);
+            margin-top: var(--space-4);
+        }
+        .roi-calc__result-num {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .step-flow {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+        }
+        .step-flow__num {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: white;
+            flex-shrink: 0;
+        }
+        .step-flow__content h3 { margin-bottom: 6px; font-size: 1.1rem; }
+        .step-flow__content p { color: var(--color-text-secondary); font-size: 0.95rem; margin: 0; }
+
+        .lh-pricing {
+            background: var(--color-card-bg);
+            border: 2px solid var(--color-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-7);
+            max-width: 480px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        .lh-pricing__badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-cta);
+            color: white;
+            padding: 5px 20px;
+            border-radius: var(--radius-pill);
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .lh-pricing__price-wrap { margin: var(--space-4) 0; }
+        .lh-pricing__price {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--color-text-primary);
+        }
+        .lh-pricing__period { color: var(--color-text-secondary); font-size: 1rem; }
+        .lh-pricing__includes {
+            text-align: left;
+            margin: var(--space-5) 0;
+        }
+        .lh-pricing__includes li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+        .lh-pricing__includes li:last-child { border-bottom: none; }
+        .lh-pricing__includes li i { color: var(--color-accent-1); margin-top: 2px; flex-shrink: 0; }
+        .lh-pricing__guarantee {
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+            margin-top: var(--space-3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="../index.html" class="navbar__logo"><span class="logo-icon"><img src="../images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="../index.html">Accueil</a></li>
+                <li class="navbar__dropdown"><a href="../services.html">Services <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="../services.html#seo-text">SEO Text Reality Check <span class="dropdown__price">69€</span></a></li>
+                        <li><a href="../services.html#first-screen">First Screen Verdict <span class="dropdown__price">79€</span></a></li>
+                        <li><a href="../sitemoney-scan.html">SiteMoney Scan <span class="dropdown__price">à partir de 79€</span></a></li>
+                        <li><a href="../services.html#one-page">One Page Breakdown <span class="dropdown__price">249€</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="#">Solutions IA <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__label">Pour les entreprises</li>
+                        <li><a href="../sitemoney-scan.html">SiteMoney Scanner <span class="dropdown__price">d&egrave;s 0&euro;</span></a></li>
+                        <li><a href="../lead-hunter.html">Lead Hunter <span class="dropdown__price">199&euro;/mois</span></a></li>
+                        <li><a href="../inbox-zero.html">Inbox Zero AI <span class="dropdown__price">99&euro;/mois</span></a></li>
+                        <li class="dropdown__divider"></li>
+                        <li class="dropdown__label">Pour la carri&egrave;re</li>
+                        <li><a href="../job-hunter.html">Job Hunter AI <span class="dropdown__price">gratuit</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="../money-leak-audit.html">Audit <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="../services.html#offer">Offer X-Ray <span class="dropdown__price">390€</span></a></li>
+                        <li><a href="../services.html#conversion">Conversion Anatomy <span class="dropdown__price">590€</span></a></li>
+                        <li><a href="../services.html#psychology">Client Psychology Map <span class="dropdown__price">790€</span></a></li>
+                        <li><a href="../money-leak-audit.html">Money Leak Audit <span class="dropdown__price">1490€</span></a></li>
+                        <li><a href="../services.html#funnel">Sales Funnel Intelligence <span class="dropdown__price">2990€</span></a></li>
+                        <li><a href="../services.html#growth">Growth Blueprint <span class="dropdown__price">4990€+</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="../subscription.html">Abonnement <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="../subscription.html#basic">Accès de base <span class="dropdown__price">79€/mois</span></a></li>
+                        <li><a href="../subscription.html#priority">Analyses prioritaires <span class="dropdown__price">199€/mois</span></a></li>
+                        <li><a href="../subscription.html#growth">Accompagnement Growth <span class="dropdown__price">990-1990€</span></a></li>
+                        <li><a href="../subscription.html#privat">TriggerFlow Privat <span class="dropdown__price">49€/mois</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="../pricing.html">Tarifs</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../about.html">À propos</a></li>
+                <li class="navbar__lang">
+                    <button class="navbar__lang-btn">FR &#9662;</button>
+                    <ul class="navbar__lang-menu">
+                        <li><a data-lang-switch="ru">RU</a></li>
+                        <li><a data-lang-switch="en">EN</a></li>
+                        <li><a data-lang-switch="fr">FR</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero hero--banner" id="hero">
+        <div class="hero__gradient-bg"></div>
+        <div class="container hero__content">
+            <div class="animate-on-scroll fade-up" style="margin-bottom: var(--space-3);">
+                <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,208,132,0.1);border:1px solid rgba(0,208,132,0.3);color:#00d084;padding:6px 16px;border-radius:var(--radius-pill);font-size:0.85rem;font-weight:600;">
+                    <i class="fa-solid fa-robot"></i> Bot IA &mdash; travaille pendant que vous dormez
+                </span>
+            </div>
+            <h1 class="hero__title animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                Votre prochain client est déjà sur Internet.<br>Le bot le trouvera aujourd'hui.
+            </h1>
+            <p class="hero__subtitle animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                50 leads B2B chauds chaque lundi&nbsp;&mdash; tableau prêt avec contacts,<br>
+                niche et offre personnalisée pour chaque entreprise. Sans commercial.
+            </p>
+            <div class="hero__buttons animate-on-scroll fade-up" style="animation-delay:0.3s;">
+                <button class="btn btn--primary btn--large" data-tf-form="bot-onboarding" data-tf-service="Lead Hunter" data-tf-price="199">
+                    Obtenir des leads cette semaine &rarr;
+                </button>
+                <a href="#how-it-works" class="btn btn--outline btn--large">Comment ça marche</a>
+            </div>
+            <div class="trust-bar animate-on-scroll fade-up" style="animation-delay:0.45s;">
+                <div class="trust-bar__item"><i class="fa-solid fa-users"></i> <strong>50 leads</strong> chaque semaine</div>
+                <div class="trust-bar__item"><i class="fa-solid fa-bolt"></i> Lancement en <strong>24h</strong></div>
+                <div class="trust-bar__item"><i class="fa-solid fa-chart-line"></i> ROI à partir de <strong>1000%</strong></div>
+                <div class="trust-bar__item"><i class="fa-solid fa-rotate"></i> Résiliation <strong>à tout moment</strong></div>
+            </div>
+        </div>
+        <div class="hero__scroll-indicator">
+            <span>Faites défiler</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="section section--problems" id="problem">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">La prospection manuelle tue votre business</h2>
+            <p class="section__description animate-on-scroll fade-up">L'entrepreneur moyen passe <strong>8-12 heures par semaine</strong> à chercher des leads. C'est soit votre temps, soit le salaire d'un commercial.</p>
+            <div class="problems__grid">
+                <div class="problem-card animate-on-scroll fade-up">
+                    <div class="problem-card__icon"><i class="fa-solid fa-clock"></i></div>
+                    <p class="problem-card__text">Des heures sur LinkedIn et Google à chercher des contacts</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div class="problem-card__icon"><i class="fa-solid fa-copy"></i></div>
+                    <p class="problem-card__text">Emails froids sans personnalisation &mdash; conversion &lt;1%</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div class="problem-card__icon"><i class="fa-solid fa-user-slash"></i></div>
+                    <p class="problem-card__text">Un commercial coûte 1 500-2 500€/mois</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay:0.3s;">
+                    <div class="problem-card__icon"><i class="fa-solid fa-database"></i></div>
+                    <p class="problem-card__text">Les bases de leads deviennent obsolètes avant que vous les utilisiez</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay:0.4s;">
+                    <div class="problem-card__icon"><i class="fa-solid fa-chart-bar"></i></div>
+                    <p class="problem-card__text">Pas de système &mdash; flux clients imprévisible</p>
+                </div>
+                <div class="problem-card animate-on-scroll fade-up" style="animation-delay:0.5s;">
+                    <div class="problem-card__icon"><i class="fa-solid fa-ban"></i></div>
+                    <p class="problem-card__text">Pas de temps pour vendre &mdash; tout part en recherche</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DEMO ===== -->
+    <section class="section" id="demo" style="background: var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Ce que vous recevez chaque lundi</h2>
+            <p class="section__description animate-on-scroll fade-up">Tableau prêt &mdash; ouvrez, choisissez les meilleurs, écrivez. Sans recherche, sans travail manuel.</p>
+
+            <div class="lh-demo animate-on-scroll fade-up">
+                <div class="lh-demo__header">
+                    <div class="lh-demo__dot lh-demo__dot--red"></div>
+                    <div class="lh-demo__dot lh-demo__dot--yellow"></div>
+                    <div class="lh-demo__dot lh-demo__dot--green"></div>
+                    <span style="margin-left:8px;">Lead Hunter &mdash; Semaine #47 &mdash; 50 leads trouvés</span>
+                </div>
+                <div style="overflow-x:auto;">
+                <table class="lh-demo__table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Entreprise</th>
+                            <th>Niche</th>
+                            <th>Contact</th>
+                            <th>Problème</th>
+                            <th>Offre</th>
+                            <th>Score</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>Agence Lumière</strong><br><small style="color:var(--color-text-muted);">Paris</small></td>
+                            <td>Agence SMM</td>
+                            <td>contact@agence-lumiere.fr</td>
+                            <td>Pas d'automatisation des rapports</td>
+                            <td style="max-width:200px;font-size:0.8rem;">"Je réduirai le temps de reporting de 5h à 20 min"</td>
+                            <td><span class="lh-score lh-score--high">92</span></td>
+                            <td><span class="lh-badge lh-badge--new">nouveau</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>TechVision SRL</strong><br><small style="color:var(--color-text-muted);">Lyon</small></td>
+                            <td>Startup IT</td>
+                            <td>ceo@techvision.fr</td>
+                            <td>Traitement manuel des demandes</td>
+                            <td style="max-width:200px;font-size:0.8rem;">"J'automatiserai 80% des demandes entrantes"</td>
+                            <td><span class="lh-score lh-score--high">88</span></td>
+                            <td><span class="lh-badge lh-badge--new">nouveau</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>Conseil Pro</strong><br><small style="color:var(--color-text-muted);">Bordeaux</small></td>
+                            <td>Conseil</td>
+                            <td>info@conseil-pro.fr</td>
+                            <td>Pas de CRM ni suivi clients</td>
+                            <td style="max-width:200px;font-size:0.8rem;">"Je configure CRM + emailing auto en 3 jours"</td>
+                            <td><span class="lh-score lh-score--med">74</span></td>
+                            <td><span class="lh-badge lh-badge--done">traité</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>Studio Créa</strong><br><small style="color:var(--color-text-muted);">Nice</small></td>
+                            <td>Studio design</td>
+                            <td>hello@studiocrea.fr</td>
+                            <td>Site faible, pas de demandes</td>
+                            <td style="max-width:200px;font-size:0.8rem;">"Je trouve 3 raisons pourquoi le site ne convertit pas"</td>
+                            <td><span class="lh-score lh-score--high">85</span></td>
+                            <td><span class="lh-badge lh-badge--new">nouveau</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--color-text-muted);">...</td>
+                            <td colspan="7" style="color:var(--color-text-muted);font-style:italic;">+ 46 leads supplémentaires</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+
+            <p class="animate-on-scroll fade-up" style="text-align:center;color:var(--color-text-muted);font-size:0.85rem;margin-top:var(--space-3);">
+                <i class="fa-solid fa-shield-halved"></i>&nbsp; Exemple d'export réel. Contacts modifiés pour la confidentialité.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Comment ça marche</h2>
+            <p class="section__description animate-on-scroll fade-up">Trois étapes de la configuration aux premiers leads</p>
+
+            <div style="max-width:680px;margin:var(--space-7) auto 0;">
+                <div class="step-flow animate-on-scroll fade-up">
+                    <div class="step-flow__num">1</div>
+                    <div class="step-flow__content">
+                        <h3>Vous remplissez le profil client</h3>
+                        <p>Niche, géographie, panier moyen, mots-clés de votre audience. Cela prend 5 minutes. Une seule fois.</p>
+                    </div>
+                </div>
+                <div class="step-flow animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div class="step-flow__num">2</div>
+                    <div class="step-flow__content">
+                        <h3>L'IA recherche et analyse chaque lundi</h3>
+                        <p>Le bot cherche sur Google, analyse les sites des clients potentiels, identifie le problème et crée une offre personnalisée pour chaque contact.</p>
+                    </div>
+                </div>
+                <div class="step-flow animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div class="step-flow__num">3</div>
+                    <div class="step-flow__content">
+                        <h3>Vous recevez le tableau prêt</h3>
+                        <p>50 leads dans Google Sheets : entreprise, contact, problème, offre personnalisée, score de pertinence. Il ne vous reste plus qu'à écrire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ROI CALCULATOR ===== -->
+    <section class="section section--cta" id="roi">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Calculons le ROI ensemble</h2>
+            <p class="section__description animate-on-scroll fade-up">199€/mois en vaut-il la peine &mdash; décidez vous-même</p>
+
+            <div class="roi-calc animate-on-scroll fade-up" style="max-width:620px;margin:var(--space-6) auto 0;">
+                <div class="roi-calc__formula">
+                    <div class="roi-calc__item">
+                        <span class="roi-calc__num">200</span>
+                        <div class="roi-calc__label">leads par mois</div>
+                    </div>
+                    <div class="roi-calc__op">&times;</div>
+                    <div class="roi-calc__item">
+                        <span class="roi-calc__num">2%</span>
+                        <div class="roi-calc__label">conversion</div>
+                    </div>
+                    <div class="roi-calc__op">=</div>
+                    <div class="roi-calc__item">
+                        <span class="roi-calc__num">4</span>
+                        <div class="roi-calc__label">nouveaux clients</div>
+                    </div>
+                    <div class="roi-calc__op">&times;</div>
+                    <div class="roi-calc__item">
+                        <span class="roi-calc__num">500€</span>
+                        <div class="roi-calc__label">panier moyen</div>
+                    </div>
+                </div>
+                <div class="roi-calc__result">
+                    <div class="roi-calc__result-num">2 000€/mois</div>
+                    <p style="color:var(--color-text-secondary);margin-top:var(--space-2);">pour un investissement de 199€ &mdash; ROI <strong style="color:#00d084;">904%</strong></p>
+                    <p style="color:var(--color-text-muted);font-size:0.82rem;margin-top:var(--space-2);">Calcul conservateur. Avec un panier de 1 000€ ROI = 1 900%</p>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:var(--space-4);">
+                <p style="color:var(--color-text-secondary);">Un commercial coûte <strong>1 500-2 500€/mois</strong>.<br>
+                Travaille 8h/jour. Prend des vacances. Rejoint la concurrence.</p>
+                <p style="color:var(--color-text-muted);margin-top:var(--space-2);">Le bot travaille 24/7 et coûte <strong style="color:white;">10 fois moins cher</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOR WHOM ===== -->
+    <section class="section" id="for-whom">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">À qui convient Lead Hunter</h2>
+            <div class="filter-grid animate-on-scroll fade-up" style="max-width:760px;margin:var(--space-6) auto 0;">
+                <div>
+                    <h3 style="color:var(--color-accent-1);margin-bottom:var(--space-4);"><i class="fa-solid fa-check-circle"></i> Convient si vous êtes</h3>
+                    <ul style="list-style:none;padding:0;">
+                        <li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--color-text-secondary);">
+                            <i class="fa-solid fa-check" style="color:var(--color-accent-1);margin-right:10px;"></i>Business B2B &mdash; vous vendez à des entreprises
+                        </li>
+                        <li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--color-text-secondary);">
+                            <i class="fa-solid fa-check" style="color:var(--color-accent-1);margin-right:10px;"></i>Agence (marketing, IT, design, conseil)
+                        </li>
+                        <li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--color-text-secondary);">
+                            <i class="fa-solid fa-check" style="color:var(--color-accent-1);margin-right:10px;"></i>Freelance avec panier de 300€+
+                        </li>
+                        <li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--color-text-secondary);">
+                            <i class="fa-solid fa-check" style="color:var(--color-accent-1);margin-right:10px;"></i>Voulez un flux clients prévisible
+                        </li>
+                        <li style="padding:10px 0;color:var(--color-text-secondary);">
+                            <i class="fa-solid fa-check" style="color:var(--color-accent-1);margin-right:10px;"></i>Prêt à gérer vous-même les ventes
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:var(--color-danger);margin-bottom:var(--space-4);"><i class="fa-solid fa-times-circle"></i> Ne convient pas si</h3>
+                    <ul style="list-style:none;padding:0;">
+                        <li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--color-text-secondary);">
+                            <i class="fa-solid fa-times" style="color:var(--color-danger);margin-right:10px;"></i>Commerce de détail (B2C, boutiques)
+                        </li>
+                        <li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--color-text-secondary);">
+                            <i class="fa-solid fa-times" style="color:var(--color-danger);margin-right:10px;"></i>Pas de temps pour répondre aux leads
+                        </li>
+                        <li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--color-text-secondary);">
+                            <i class="fa-solid fa-times" style="color:var(--color-danger);margin-right:10px;"></i>Panier en dessous de 200€ (pas rentable)
+                        </li>
+                        <li style="padding:10px 0;color:var(--color-text-secondary);">
+                            <i class="fa-solid fa-times" style="color:var(--color-danger);margin-right:10px;"></i>Vous attendez que le bot conclue les ventes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="section section--cta" id="pricing">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Un seul forfait. Aucune surprise.</h2>
+            <p class="section__description animate-on-scroll fade-up">Nous ne compliquons pas. Vous payez pour les résultats, pas pour les niveaux d'accès.</p>
+
+            <div class="animate-on-scroll fade-up" style="margin-top:var(--space-7);">
+                <div class="lh-pricing">
+                    <div class="lh-pricing__badge"><i class="fa-solid fa-robot"></i>&nbsp; IA travaille 24/7</div>
+                    <h3 style="font-size:1.4rem;margin-bottom:var(--space-2);">Lead Hunter</h3>
+                    <div class="lh-pricing__price-wrap">
+                        <span class="lh-pricing__price">199€</span>
+                        <span class="lh-pricing__period"> /mois</span>
+                    </div>
+                    <ul class="lh-pricing__includes">
+                        <li><i class="fa-solid fa-check"></i>50 leads chaque semaine (200/mois)</li>
+                        <li><i class="fa-solid fa-check"></i>Analyse IA du site de chaque lead</li>
+                        <li><i class="fa-solid fa-check"></i>Offre personnalisée pour chaque entreprise</li>
+                        <li><i class="fa-solid fa-check"></i>Score de pertinence (0-100)</li>
+                        <li><i class="fa-solid fa-check"></i>Tableau Google Sheets prêt</li>
+                        <li><i class="fa-solid fa-check"></i>Recherche selon votre niche et géographie</li>
+                        <li><i class="fa-solid fa-check"></i>Notification Telegram chaque lundi</li>
+                        <li><i class="fa-solid fa-check"></i>Configuration et lancement en 24h</li>
+                    </ul>
+                    <button class="btn btn--primary btn--large btn--block" data-tf-form="bot-onboarding" data-tf-service="Lead Hunter" data-tf-price="199">
+                        Connecter Lead Hunter &rarr;
+                    </button>
+                    <p class="lh-pricing__guarantee">
+                        <i class="fa-solid fa-shield-halved"></i>&nbsp; Pas de résultats la première semaine &mdash; remboursement
+                    </p>
+                </div>
+            </div>
+
+            <div class="animate-on-scroll fade-up" style="text-align:center;margin-top:var(--space-5);">
+                <p style="color:var(--color-text-muted);">Comparez : commercial &mdash; à partir de <strong style="color:white;">1 500€/mois</strong> + charges + arrêts maladie</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section--faq" id="faq">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Questions fréquentes</h2>
+            <div class="faq__list" style="max-width:720px;margin:var(--space-6) auto 0;">
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">D'où viennent les contacts ? Est-ce légal ?</summary>
+                    <div class="faq__answer"><p>Le bot recherche uniquement dans des sources publiques : sites d'entreprises, pages publiques, annuaires professionnels. Pas de bases fermées ni de crawl de données personnelles. Entièrement conforme au RGPD.</p></div>
+                </details>
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">Combien de temps avant les premiers leads ?</summary>
+                    <div class="faq__answer"><p>Après avoir rempli le profil &mdash; 24 heures. Le premier export arrivera le prochain lundi.</p></div>
+                </details>
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">Peut-on le personnaliser pour une niche étroite ?</summary>
+                    <div class="faq__answer"><p>Oui. Vous spécifiez la niche, les mots-clés, la géographie et le panier moyen. Le bot recherche exactement selon vos paramètres.</p></div>
+                </details>
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">Qu'est-ce qu'une "offre personnalisée" ?</summary>
+                    <div class="faq__answer"><p>L'IA analyse le site de chaque lead, identifie sa principale douleur et formule une proposition concrète : "Votre site n'a pas de réservation en ligne &mdash; je peux le configurer en 2 jours." Pas un email générique, mais du concret.</p></div>
+                </details>
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">Comment annuler l'abonnement ?</summary>
+                    <div class="faq__answer"><p>À tout moment, sans pénalités. Écrivez sur Telegram &mdash; nous déconnecterons dans les 24 heures.</p></div>
+                </details>
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">Puis-je travailler avec plusieurs niches ?</summary>
+                    <div class="faq__answer"><p>Chaque abonnement est configuré pour une niche. Pour plusieurs niches &mdash; plusieurs abonnements avec 20% de réduction sur le second.</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section section--cta" id="final-cta">
+        <div class="container" style="text-align:center;">
+            <h2 class="section__title animate-on-scroll fade-up">Prêt pour un flux clients systématique ?</h2>
+            <p class="section__description animate-on-scroll fade-up">Pendant que vous lisez ceci &mdash; vos concurrents cherchent encore les mêmes clients manuellement.<br>Donnez ce travail au bot.</p>
+            <div class="animate-on-scroll fade-up" style="margin-top:var(--space-5);display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;">
+                <button class="btn btn--primary btn--large" data-tf-form="bot-onboarding" data-tf-service="Lead Hunter" data-tf-price="199">
+                    Connecter Lead Hunter &mdash; 199€/mois
+                </button>
+                <a href="../sitemoney-scan.html" class="btn btn--outline btn--large">D'abord vérifier mon site</a>
+            </div>
+            <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:var(--space-4);">
+                <i class="fa-solid fa-shield-halved"></i>&nbsp; Garantie remboursement si aucun lead la première semaine
+            </p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="../index.html" class="footer__logo">Trigger<span>Flow</span>&trade;</a>
+                <p class="footer__tagline">Solutions IA pour les entreprises et la carri&egrave;re</p>
+            </div>
+            <div class="footer__links">
+                <a href="../sitemoney-scan.html">SiteMoney Scanner</a>
+                <a href="lead-hunter.html">Lead Hunter</a>
+                <a href="inbox-zero.html">Inbox Zero AI</a>
+                <a href="../about.html">À propos</a>
+                <a href="../blog.html">Blog</a>
+            </div>
+                        <div class="footer__trust">
+                <span class="footer__trust-badge"><i class="fa-solid fa-shield-halved"></i> Conforme RGPD</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-lock"></i> API chiffrée</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-database"></i> Aucune rétention de données</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-building-shield"></i> SASU France</span>
+            </div>
+            <div class="footer__copy">
+                <p>&copy; 2026 TriggerFlow. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <button class="btn btn--primary btn--block" data-tf-form="bot-onboarding" data-tf-service="Lead Hunter" data-tf-price="199">
+            Lead Hunter &mdash; 199€/mois
+        </button>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+</html>

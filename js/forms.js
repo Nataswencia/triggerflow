@@ -12,7 +12,12 @@
   var LANG = document.documentElement.lang || 'ru';
   var I18N = {
     ru: {
-      expressTitle: 'Оставить заявку', consultTitle: 'Обсудить проект', subscriptionTitle: 'Подобрать тариф',
+      expressTitle: 'Оставить заявку', consultTitle: 'Обсудить проект', subscriptionTitle: 'Подобрать тариф', botOnboardingTitle: 'Подключить бота',
+      niche: 'Ваша ниша', nichePh: 'Например: SEO-агентство, IT-консалтинг, дизайн',
+      geography: 'География клиентов', geographyPh: 'Например: Франция, Германия, вся Европа',
+      avgCheck: 'Средний чек (€)', avgCheckPh: 'Например: 500',
+      tgUsername: 'Telegram username', tgUsernamePh: '@username',
+      connectBot: 'Подключить бота',
       name: 'Имя', namePh: 'Ваше имя', email: 'Email', websiteUrl: 'URL сайта',
       phone: 'Телефон', company: 'Компания', companyPh: 'Название компании',
       message: 'Сообщение', messagePh: 'Опишите задачу (минимум 10 символов)...',
@@ -33,7 +38,12 @@
       errSelect: 'Выберите вариант', errCheckbox: 'Необходимо дать согласие'
     },
     en: {
-      expressTitle: 'Submit Request', consultTitle: 'Discuss Your Project', subscriptionTitle: 'Choose a Plan',
+      expressTitle: 'Submit Request', consultTitle: 'Discuss Your Project', subscriptionTitle: 'Choose a Plan', botOnboardingTitle: 'Connect Your Bot',
+      niche: 'Your niche', nichePh: 'E.g.: SEO agency, IT consulting, design',
+      geography: 'Client geography', geographyPh: 'E.g.: France, Germany, all Europe',
+      avgCheck: 'Average deal size (€)', avgCheckPh: 'E.g.: 500',
+      tgUsername: 'Telegram username', tgUsernamePh: '@username',
+      connectBot: 'Connect Bot',
       name: 'Name', namePh: 'Your name', email: 'Email', websiteUrl: 'Website URL',
       phone: 'Phone', company: 'Company', companyPh: 'Company name',
       message: 'Message', messagePh: 'Describe your task (at least 10 characters)...',
@@ -54,7 +64,12 @@
       errSelect: 'Choose an option', errCheckbox: 'Consent is required'
     },
     fr: {
-      expressTitle: 'Envoyer une demande', consultTitle: 'Discuter de votre projet', subscriptionTitle: 'Choisir un forfait',
+      expressTitle: 'Envoyer une demande', consultTitle: 'Discuter de votre projet', subscriptionTitle: 'Choisir un forfait', botOnboardingTitle: 'Connecter le bot',
+      niche: 'Votre niche', nichePh: 'Ex\u00e9mple: agence SEO, conseil IT, design',
+      geography: 'G\u00e9ographie clients', geographyPh: 'Ex\u00e9mple: France, Allemagne, toute l\'Europe',
+      avgCheck: 'Montant moyen (\u20ac)', avgCheckPh: 'Ex\u00e9mple: 500',
+      tgUsername: 'Nom d\'utilisateur Telegram', tgUsernamePh: '@username',
+      connectBot: 'Connecter le bot',
       name: 'Nom', namePh: 'Votre nom', email: 'Email', websiteUrl: 'URL du site',
       phone: 'T\u00e9l\u00e9phone', company: 'Entreprise', companyPh: "Nom de l'entreprise",
       message: 'Message', messagePh: 'D\u00e9crivez votre besoin (minimum 10 caract\u00e8res)...',
@@ -100,6 +115,19 @@
         { name: 'message', label: t.message, type: 'textarea', placeholder: t.messagePh, required: false }
       ],
       submitText: function () { return t.discussProject; }
+    },
+    'bot-onboarding': {
+      title: t.botOnboardingTitle,
+      fields: [
+        { name: 'name', label: t.name, type: 'text', placeholder: t.namePh, required: true },
+        { name: 'email', label: t.email, type: 'email', placeholder: 'email@example.com', required: true },
+        { name: 'niche', label: t.niche, type: 'company', placeholder: t.nichePh, required: true },
+        { name: 'geography', label: t.geography, type: 'company', placeholder: t.geographyPh, required: true },
+        { name: 'avg_check', label: t.avgCheck, type: 'company', placeholder: t.avgCheckPh, required: false },
+        { name: 'tg_username', label: t.tgUsername, type: 'company', placeholder: t.tgUsernamePh, required: true },
+        { name: 'phone', label: t.phone, type: 'tel', placeholder: '+33 6 12 34 56 78', required: false }
+      ],
+      submitText: function () { return t.connectBot; }
     },
     subscription: {
       title: t.subscriptionTitle,
