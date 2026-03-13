@@ -223,7 +223,58 @@
                 <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--large">Бесплатная диагностика за 2 мин</a>
                 <a href="sitemoney-scan.html" class="btn btn--outline btn--large">Экспресс-аудит от 79€</a>
             </div>
+            <div class="hero__url-check animate-on-scroll fade-up" style="animation-delay: 0.42s;" id="heroUrlCheck">
+                <div class="hero__url-form">
+                    <span class="hero__url-label">Проверить прямо сейчас:</span>
+                    <div class="hero__url-input-wrap">
+                        <input type="url" id="heroUrlInput" class="hero__url-input" placeholder="yoursite.com" autocomplete="off" spellcheck="false">
+                        <button class="hero__url-btn btn btn--primary" id="heroUrlBtn" onclick="startHeroCheck()">Проверить →</button>
+                    </div>
+                    <p class="hero__url-hint" id="heroUrlHint">Введите URL — AI бот начнёт анализ мгновенно</p>
+                </div>
+                <div class="hero__url-copied" id="heroUrlCopied" style="display:none;">
+                    <div class="hero__url-copied-inner">
+                        <span class="hero__url-copied-icon">✓</span>
+                        <div>
+                            <strong>URL скопирован в буфер!</strong><br>
+                            <span>Бот открывается — вставьте URL в чат (<kbd>Ctrl+V</kbd> / <kbd>⌘V</kbd>)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <script>
+        function startHeroCheck() {
+            var input = document.getElementById('heroUrlInput');
+            var hint = document.getElementById('heroUrlHint');
+            var copied = document.getElementById('heroUrlCopied');
+            var btn = document.getElementById('heroUrlBtn');
+            var raw = input.value.trim();
+            if (!raw) { input.focus(); hint.textContent = 'Введите адрес сайта'; hint.style.color = '#ff6b6b'; return; }
+            var url = raw.match(/^https?:\/\//i) ? raw : 'https://' + raw;
+            // Copy to clipboard
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(function(){}).catch(function(){});
+            } else {
+                try { var ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); } catch(e){}
+            }
+            // Show copied notice
+            hint.style.display = 'none';
+            copied.style.display = 'block';
+            btn.disabled = true;
+            // Open bot
+            window.open('https://t.me/TriggerFlow_analyse_bot', '_blank');
+            // Reset after 8s
+            setTimeout(function(){
+                hint.style.display = '';
+                hint.textContent = 'Введите URL — AI бот начнёт анализ мгновенно';
+                hint.style.color = '';
+                copied.style.display = 'none';
+                btn.disabled = false;
+            }, 8000);
+        }
+        document.getElementById('heroUrlInput').addEventListener('keydown', function(e){ if(e.key==='Enter') startHeroCheck(); });
+        </script>
         <div class="trust-bar animate-on-scroll fade-up" style="animation-delay: 0.45s;">
             <div class="trust-bar__item"><i class="fa-solid fa-chart-simple"></i> <strong>150+</strong> предпринимателей проверили свой сайт</div>
             <div class="trust-bar__item"><i class="fa-solid fa-bolt"></i> Результат за <strong>2 минуты</strong></div>

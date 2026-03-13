@@ -3670,6 +3670,93 @@ p:last-child {
   flex-wrap: wrap;
 }
 
+/* Hero URL Check Block */
+.hero__url-check {
+  margin-top: var(--space-4);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero__url-form {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 18px 20px 14px;
+  backdrop-filter: blur(8px);
+}
+.hero__url-label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.hero__url-input-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.hero__url-input {
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 0.97rem;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  font-family: var(--font-primary);
+}
+.hero__url-input::placeholder { color: rgba(255,255,255,0.35); }
+.hero__url-input:focus {
+  border-color: var(--color-accent);
+  background: rgba(255,255,255,0.14);
+}
+.hero__url-btn {
+  white-space: nowrap;
+  padding: 11px 20px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+.hero__url-btn:disabled { opacity: 0.6; cursor: default; }
+.hero__url-hint {
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+}
+.hero__url-copied {
+  background: rgba(0,208,132,0.15);
+  border: 1px solid rgba(0,208,132,0.4);
+  border-radius: 16px;
+  padding: 16px 20px;
+}
+.hero__url-copied-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.9);
+}
+.hero__url-copied-icon {
+  font-size: 1.4rem;
+  color: #00d084;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.hero__url-copied kbd {
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.82em;
+  font-family: monospace;
+}
+
 .hero__scroll-indicator {
   position: absolute;
   bottom: var(--space-5);
@@ -4768,6 +4855,13 @@ p:last-child {
   }
 
   .hero__buttons .btn {
+    width: 100%;
+  }
+
+  .hero__url-input-wrap {
+    flex-direction: column;
+  }
+  .hero__url-btn {
     width: 100%;
   }
 
