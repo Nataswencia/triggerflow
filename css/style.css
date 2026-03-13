@@ -5679,6 +5679,15 @@ p:last-child {
   }
 }
 
+/* ----- Pricing ladder mobile ----- */
+@media (max-width: 640px) {
+  #pricing-path .animate-on-scroll > div[style*="grid-template-columns"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+
 /* ----- Print: hide BEM elements ----- */
 @media print {
   .hero__scroll-indicator,
