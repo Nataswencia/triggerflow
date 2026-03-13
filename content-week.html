@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контент-план на неделю — TriggerFlow</title>
+    <meta name="description" content="AI создаст 5 готовых постов для вашего Telegram-канала за 24 часа. Light 29€ — темы и структура. PRO 49€ — полные тексты и PDF.">
+    <link rel="canonical" href="https://triggerflow.pro/content-week.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Контент-план на неделю — TriggerFlow">
+    <meta property="og:description" content="AI создаст 5 готовых постов для Telegram-канала за 24 часа. Опишите ваш бизнес — получите готовый план.">
+    <meta property="og:url" content="https://triggerflow.pro/content-week.html">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ===== HERO ===== */
+        .cw-hero {
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0d1b35 0%, #1B2A4A 50%, #2d4a7a 100%);
+        }
+        .cw-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(240, 123, 43, 0.18) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .cw-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+        .cw-hero h1 span { color: #F07B2B; }
+        .cw-hero p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+        .cw-hero-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .cw-badge {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            padding: 8px 20px;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cw-badge i { color: #F07B2B; }
+        .cw-hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-cw-primary {
+            background: #F07B2B;
+            color: white;
+            border: none;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+            display: inline-block;
+        }
+        .btn-cw-primary:hover {
+            background: #d96b1e;
+            transform: translateY(-2px);
+        }
+        .btn-cw-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .btn-cw-secondary:hover {
+            border-color: white;
+            color: white;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .cw-steps {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .cw-steps h2 {
+            text-align: center;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: #1B2A4A;
+            margin-bottom: 3rem;
+        }
+        .cw-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .cw-steps-grid { grid-template-columns: 1fr; }
+        }
+        .cw-step {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            position: relative;
+        }
+        .cw-step-num {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #1B2A4A, #2d4a7a);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 auto 1.2rem;
+        }
+        .cw-step h3 { color: #1B2A4A; font-size: 1.05rem; margin-bottom: 0.5rem; }
+        .cw-step p { color: #666; font-size: 0.95rem; line-height: 1.5; }
+
+        /* ===== PRICING ===== */
+        .cw-pricing {
+            padding: 80px 0;
+            background: white;
+        }
+        .cw-pricing h2 {
+            text-align: center;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: #1B2A4A;
+            margin-bottom: 0.5rem;
+        }
+        .cw-pricing-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1rem;
+        }
+        .cw-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        @media (max-width: 640px) {
+            .cw-cards { grid-template-columns: 1fr; }
+        }
+        .cw-card {
+            border: 2px solid #e9ecef;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            position: relative;
+            transition: box-shadow 0.3s;
+        }
+        .cw-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+        .cw-card.pro {
+            border-color: #F07B2B;
+            box-shadow: 0 4px 24px rgba(240,123,43,0.12);
+        }
+        .cw-card-badge {
+            position: absolute;
+            top: -14px;
+            right: 20px;
+            background: #F07B2B;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+        .cw-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1B2A4A;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        .cw-card.pro .cw-price { color: #F07B2B; }
+        .cw-plan-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1B2A4A;
+            margin-bottom: 1.5rem;
+        }
+        .cw-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem;
+        }
+        .cw-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 0.95rem;
+            color: #444;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .cw-features li:last-child { border-bottom: none; }
+        .cw-features li i {
+            color: #F07B2B;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .cw-card-cta {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 2px solid #1B2A4A;
+            color: #1B2A4A;
+            background: transparent;
+        }
+        .cw-card-cta:hover {
+            background: #1B2A4A;
+            color: white;
+        }
+        .cw-card.pro .cw-card-cta {
+            background: #F07B2B;
+            border-color: #F07B2B;
+            color: white;
+        }
+        .cw-card.pro .cw-card-cta:hover {
+            background: #d96b1e;
+            border-color: #d96b1e;
+        }
+
+        /* ===== FORM SECTION ===== */
+        .cw-form-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #f8f9fa 0%, #eef1f8 100%);
+        }
+        .cw-form-section h2 {
+            text-align: center;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: #1B2A4A;
+            margin-bottom: 0.5rem;
+        }
+        .cw-form-section p.lead {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+        }
+        .cw-form-wrap {
+            max-width: 620px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+        }
+        .tier-toggle {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .tier-btn {
+            flex: 1;
+            padding: 18px 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+            background: white;
+        }
+        .tier-btn:hover { border-color: #F07B2B; }
+        .tier-btn.active {
+            border-color: #F07B2B;
+            background: #fff8f5;
+        }
+        .tier-btn .tier-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1B2A4A;
+            display: block;
+            line-height: 1;
+        }
+        .tier-btn.active .tier-price { color: #F07B2B; }
+        .tier-btn .tier-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555;
+            display: block;
+            margin-top: 4px;
+        }
+        .tier-btn .tier-desc {
+            font-size: 0.78rem;
+            color: #888;
+            display: block;
+            margin-top: 4px;
+        }
+        .form-group {
+            margin-bottom: 1.4rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1B2A4A;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        .form-group label span.req { color: #F07B2B; }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            color: #222;
+            background: #fafafa;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #F07B2B;
+            background: white;
+        }
+        .form-group textarea { resize: vertical; min-height: 90px; }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+        .btn-submit {
+            background: #F07B2B;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 0.5rem;
+            transition: background 0.2s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-submit:hover:not(:disabled) {
+            background: #d96b1e;
+            transform: translateY(-1px);
+        }
+        .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; }
+        .form-note {
+            text-align: center;
+            color: #999;
+            font-size: 0.82rem;
+            margin-top: 1rem;
+        }
+        .form-success {
+            display: none;
+            background: linear-gradient(135deg, #1B2A4A 0%, #2d4a7a 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+        .form-success h3 { color: white; font-size: 1.4rem; margin-bottom: 0.8rem; }
+        .form-success p { color: rgba(255,255,255,0.85); line-height: 1.6; }
+        .form-success .success-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .form-error-msg {
+            display: none;
+            background: #fff0f0;
+            border: 1px solid #fcc;
+            color: #c00;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FAQ ===== */
+        .cw-faq {
+            padding: 80px 0;
+            background: white;
+        }
+        .cw-faq h2 {
+            text-align: center;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: #1B2A4A;
+            margin-bottom: 3rem;
+        }
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item {
+            border-bottom: 1px solid #e9ecef;
+            padding: 1.5rem 0;
+        }
+        .faq-item:first-child { padding-top: 0; }
+        .faq-q {
+            font-weight: 600;
+            color: #1B2A4A;
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .faq-q i { color: #F07B2B; margin-top: 3px; flex-shrink: 0; }
+        .faq-a { color: #555; line-height: 1.6; font-size: 0.95rem; padding-left: 24px; }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html">Главная</a></li>
+                <li class="navbar__dropdown"><a href="services.html">Услуги <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#seo-text">SEO Text Reality Check <span class="dropdown__price">69€</span></a></li>
+                        <li><a href="services.html#first-screen">First Screen Verdict <span class="dropdown__price">79€</span></a></li>
+                        <li><a href="sitemoney-scan.html">SiteMoney Scan <span class="dropdown__price">от 79€</span></a></li>
+                        <li><a href="services.html#one-page">One Page Breakdown <span class="dropdown__price">249€</span></a></li>
+                        <li><a href="content-week.html" class="active">Контент-план на неделю <span class="dropdown__price">от 29€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="sitemoney-scan.html">Экспресс-анализ</a></li>
+                <li class="navbar__dropdown"><a href="money-leak-audit.html">Аудит <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#offer">Offer X-Ray <span class="dropdown__price">390€</span></a></li>
+                        <li><a href="services.html#conversion">Conversion Anatomy <span class="dropdown__price">590€</span></a></li>
+                        <li><a href="services.html#psychology">Client Psychology Map <span class="dropdown__price">790€</span></a></li>
+                        <li><a href="money-leak-audit.html">Money Leak Audit <span class="dropdown__price">1490€</span></a></li>
+                        <li><a href="services.html#funnel">Sales Funnel Intelligence <span class="dropdown__price">2990€</span></a></li>
+                        <li><a href="services.html#growth">Growth Blueprint <span class="dropdown__price">4990€+</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="subscription.html">Подписка <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="subscription.html#basic">Базовый доступ <span class="dropdown__price">79€/мес</span></a></li>
+                        <li><a href="subscription.html#priority">Приоритетные разборы <span class="dropdown__price">199€/мес</span></a></li>
+                        <li><a href="subscription.html#growth">Growth сопровождение <span class="dropdown__price">990-1990€</span></a></li>
+                        <li><a href="subscription.html#privat">TriggerFlow Privat <span class="dropdown__price">49€/мес</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="pricing.html">Тарифы</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li class="navbar__lang">
+                    <button class="navbar__lang-btn">RU &#9662;</button>
+                    <ul class="navbar__lang-menu">
+                        <li><a data-lang-switch="ru">RU</a></li>
+                        <li><a data-lang-switch="en">EN</a></li>
+                        <li><a data-lang-switch="fr">FR</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="mobile-toggle" id="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="cw-hero">
+        <div class="container">
+            <h1>Контент-план на неделю<br><span>за 24 часа</span></h1>
+            <p>Опишите ваш бизнес — AI (GPT-4o) создаст 5 готовых постов для Telegram-канала с хуками, ключевыми пунктами и призывами к действию</p>
+            <div class="cw-hero-badges">
+                <div class="cw-badge"><i class="fas fa-bolt"></i> Готово за 24 часа</div>
+                <div class="cw-badge"><i class="fas fa-brain"></i> GPT-4o анализ</div>
+                <div class="cw-badge"><i class="fas fa-table"></i> Google Sheet в подарок</div>
+                <div class="cw-badge"><i class="fas fa-file-pdf"></i> PDF (PRO)</div>
+            </div>
+            <div class="cw-hero-cta">
+                <a href="#form" class="btn-cw-primary">Заказать PRO — 49€ <i class="fas fa-arrow-right"></i></a>
+                <a href="#pricing" class="btn-cw-secondary">Сравнить тарифы</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="cw-steps">
+        <div class="container">
+            <h2>Как это работает</h2>
+            <div class="cw-steps-grid">
+                <div class="cw-step">
+                    <div class="cw-step-num">1</div>
+                    <h3>Заполните форму</h3>
+                    <p>Укажите нишу, продукт, целевую аудиторию и цель контента. Занимает 3-5 минут.</p>
+                </div>
+                <div class="cw-step">
+                    <div class="cw-step-num">2</div>
+                    <h3>AI анализирует</h3>
+                    <p>GPT-4o создаёт персональный контент-план под ваш бизнес. Не шаблоны — конкретные темы.</p>
+                </div>
+                <div class="cw-step">
+                    <div class="cw-step-num">3</div>
+                    <h3>Получаете результат</h3>
+                    <p>Google Sheet с планом на 5 дней. PRO: полные тексты постов + PDF + расписание публикаций.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="cw-pricing" id="pricing">
+        <div class="container">
+            <h2>Выберите тариф</h2>
+            <p class="cw-pricing-subtitle">Оба тарифа включают персонализированный анализ вашего бизнеса</p>
+            <div class="cw-cards">
+                <div class="cw-card">
+                    <div class="cw-price">29€</div>
+                    <div class="cw-plan-name">Light — Структура</div>
+                    <ul class="cw-features">
+                        <li><i class="fas fa-check"></i> 5 тем постов (Пн-Пт)</li>
+                        <li><i class="fas fa-check"></i> Хук для каждого поста</li>
+                        <li><i class="fas fa-check"></i> 3 ключевых пункта на пост</li>
+                        <li><i class="fas fa-check"></i> CTA (призыв к действию)</li>
+                        <li><i class="fas fa-check"></i> Google Sheet с планом</li>
+                        <li><i class="fas fa-check"></i> Готово в течение 24 часов</li>
+                    </ul>
+                    <a href="#form" class="cw-card-cta" onclick="selectTier('light')">Выбрать Light</a>
+                </div>
+                <div class="cw-card pro">
+                    <div class="cw-card-badge">Популярный</div>
+                    <div class="cw-price">49€</div>
+                    <div class="cw-plan-name">PRO — Полные тексты</div>
+                    <ul class="cw-features">
+                        <li><i class="fas fa-check"></i> Всё из тарифа Light</li>
+                        <li><i class="fas fa-check"></i> Полные тексты 5 постов (700-900 символов)</li>
+                        <li><i class="fas fa-check"></i> Markdown-форматирование</li>
+                        <li><i class="fas fa-check"></i> Фото-запросы для Unsplash</li>
+                        <li><i class="fas fa-check"></i> Расписание публикаций (время)</li>
+                        <li><i class="fas fa-check"></i> PDF-отчёт для скачивания</li>
+                        <li><i class="fas fa-check"></i> Готово в течение 24 часов</li>
+                    </ul>
+                    <a href="#form" class="cw-card-cta" onclick="selectTier('pro')">Выбрать PRO</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FORM ===== -->
+    <section class="cw-form-section" id="form">
+        <div class="container">
+            <h2>Оставить заявку</h2>
+            <p class="lead">Заполните форму — мы пришлём результат на email в течение 24 часов</p>
+            <div class="cw-form-wrap">
+
+                <!-- Success state -->
+                <div class="form-success" id="formSuccess">
+                    <span class="success-icon">&#10003;</span>
+                    <h3>Спасибо! Заявка принята</h3>
+                    <p>Ваш контент-план готовится. Мы пришлём его на email в течение 24 часов.<br>Если возникнут вопросы — напишите в Telegram: <strong>@TriggerFlow_Potapova_bot</strong></p>
+                </div>
+
+                <!-- Form -->
+                <form id="contentWeekForm">
+                    <!-- Tier toggle -->
+                    <div class="tier-toggle" id="tierToggle">
+                        <div class="tier-btn active" id="tierLight" onclick="selectTier('light')">
+                            <span class="tier-price">29€</span>
+                            <span class="tier-name">Light</span>
+                            <span class="tier-desc">Структура и темы</span>
+                        </div>
+                        <div class="tier-btn" id="tierPro" onclick="selectTier('pro')">
+                            <span class="tier-price">49€</span>
+                            <span class="tier-name">PRO</span>
+                            <span class="tier-desc">Полные тексты + PDF</span>
+                        </div>
+                    </div>
+                    <input type="hidden" name="tier" id="tierInput" value="light">
+
+                    <!-- Contact info -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cwName">Ваше имя <span class="req">*</span></label>
+                            <input type="text" id="cwName" name="name" placeholder="Наталья" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cwEmail">Email <span class="req">*</span></label>
+                            <input type="email" id="cwEmail" name="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cwNiche">Ниша / сфера бизнеса <span class="req">*</span></label>
+                        <input type="text" id="cwNiche" name="niche" placeholder="Например: коучинг для женщин-предпринимателей" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cwProduct">Продукт или услуга <span class="req">*</span></label>
+                        <input type="text" id="cwProduct" name="product" placeholder="Например: онлайн-курс по автоматизации бизнеса" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cwAudience">Целевая аудитория <span class="req">*</span></label>
+                        <input type="text" id="cwAudience" name="audience" placeholder="Например: женщины 30-45, малый бизнес, Европа" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cwGoal">Цель контента <span class="req">*</span></label>
+                        <textarea id="cwGoal" name="goal" placeholder="Например: привлечь новых клиентов, увеличить продажи курса, повысить узнаваемость" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span id="submitText"><i class="fas fa-paper-plane"></i> Заказать контент-план</span>
+                        <span id="submitLoader" style="display:none"><i class="fas fa-spinner fa-spin"></i> Отправляем...</span>
+                    </button>
+
+                    <div class="form-error-msg" id="formError"></div>
+                    <p class="form-note">
+                        <i class="fas fa-lock"></i> Ваши данные защищены. Мы не передаём их третьим лицам.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="cw-faq">
+        <div class="container">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-circle-question"></i> Когда я получу результат?</div>
+                    <div class="faq-a">В течение 24 часов после оформления заявки. Мы пришлём ссылку на Google Sheet (и PDF для PRO) на указанный email.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-circle-question"></i> Это уникальный контент или шаблоны?</div>
+                    <div class="faq-a">Полностью уникальный контент. GPT-4o анализирует именно ваш бизнес, нишу и аудиторию — и создаёт конкретные темы и тексты. Не шаблоны.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-circle-question"></i> Можно ли заказать для любой ниши?</div>
+                    <div class="faq-a">Да. Сервис работает для любого бизнеса: онлайн-курсы, консалтинг, e-commerce, услуги, продукты, B2B и B2C.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-circle-question"></i> Что включает Google Sheet?</div>
+                    <div class="faq-a">Таблица с планом на 5 дней: тема, хук, ключевые пункты, CTA. В PRO также полный текст поста, время публикации и поисковый запрос для Unsplash.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-circle-question"></i> Как происходит оплата?</div>
+                    <div class="faq-a">После отправки заявки мы свяжемся с вами и вышлем ссылку на оплату. Контент-план будет готов в течение 24 часов после подтверждения оплаты.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fas fa-circle-question"></i> Можно заказать повторно?</div>
+                    <div class="faq-a">Конечно! Многие клиенты заказывают еженедельно. При повторном заказе — скидка 20%.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <div class="footer__logo-image">
+                    <img src="images/logo-shield.png" alt="TriggerFlow logo" width="80" height="80">
+                </div>
+                <a href="index.html" class="footer__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                <p class="footer__tagline">TriggerFlow&trade; - полный спектр SEO-услуг для роста бизнеса</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="index.html">Главная</a>
+                <a href="services.html">Услуги</a>
+                <a href="sitemoney-scan.html">Экспресс-анализ</a>
+                <a href="money-leak-audit.html">Аудит</a>
+                <a href="subscription.html">Подписка</a>
+                <a href="blog.html">Блог</a>
+                <a href="about.html">Про нас</a>
+                <a href="integrations.html">Технологии</a>
+            </nav>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Все права защищены</div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <script>
+    // Tier selection
+    function selectTier(tier) {
+        document.getElementById('tierInput').value = tier;
+        document.getElementById('tierLight').classList.toggle('active', tier === 'light');
+        document.getElementById('tierPro').classList.toggle('active', tier === 'pro');
+        // Scroll to form if not already there
+        const formEl = document.getElementById('form');
+        if (formEl && window.scrollY < formEl.offsetTop - 200) {
+            formEl.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+    }
+
+    // Form submission
+    document.getElementById('contentWeekForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        const submitLoader = document.getElementById('submitLoader');
+        const formError = document.getElementById('formError');
+
+        submitBtn.disabled = true;
+        submitText.style.display = 'none';
+        submitLoader.style.display = 'inline-flex';
+        formError.style.display = 'none';
+
+        const payload = {
+            tier: document.getElementById('tierInput').value,
+            name: document.getElementById('cwName').value.trim(),
+            email: document.getElementById('cwEmail').value.trim(),
+            niche: document.getElementById('cwNiche').value.trim(),
+            product: document.getElementById('cwProduct').value.trim(),
+            audience: document.getElementById('cwAudience').value.trim(),
+            goal: document.getElementById('cwGoal').value.trim()
+        };
+
+        try {
+            const response = await fetch('https://nataswencia.app.n8n.cloud/webhook/content-week', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok || response.status === 200) {
+                document.getElementById('contentWeekForm').style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+            } else {
+                throw new Error('Server error: ' + response.status);
+            }
+        } catch (err) {
+            formError.textContent = 'Произошла ошибка при отправке. Пожалуйста, попробуйте ещё раз или напишите нам напрямую.';
+            formError.style.display = 'block';
+            submitBtn.disabled = false;
+            submitText.style.display = 'inline-flex';
+            submitLoader.style.display = 'none';
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>
