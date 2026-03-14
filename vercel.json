@@ -1,12 +1,21 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": true
+      "has": [{ "type": "host", "value": "ai.triggerflow.pro" }],
+      "source": "/(.*)",
+      "destination": "/ai/$1"
     }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/lead-hunter", "destination": "https://ai.triggerflow.pro/lead-hunter", "permanent": true },
+    { "source": "/lead-hunter.html", "destination": "https://ai.triggerflow.pro/lead-hunter", "permanent": true },
+    { "source": "/inbox-zero", "destination": "https://ai.triggerflow.pro/inbox-zero", "permanent": true },
+    { "source": "/inbox-zero.html", "destination": "https://ai.triggerflow.pro/inbox-zero", "permanent": true },
+    { "source": "/job-hunter", "destination": "https://ai.triggerflow.pro/job-hunter", "permanent": true },
+    { "source": "/job-hunter.html", "destination": "https://ai.triggerflow.pro/job-hunter", "permanent": true }
   ],
   "headers": [
     {
@@ -20,21 +29,15 @@
     },
     {
       "source": "/images/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
       "source": "/css/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
       "source": "/js/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     }
   ]
 }
