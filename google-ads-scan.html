@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads Рентген - Диагностика рекламного бюджета | TriggerFlow</title>
+    <meta name="description" content="AI-диагностика Google Ads по 21 критерию. Рассчитаем сколько бюджета сливается на ботов, MFA-сайты и алгоритмические ловушки. Скрининг бесплатно, отчет от 99€.">
+    <link rel="canonical" href="https://triggerflow.pro/google-ads-scan.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Google Ads Рентген - Диагностика рекламного бюджета | TriggerFlow">
+    <meta property="og:description" content="21 критерий, 4 блока, 5 методологий. Узнайте сколько бюджета сливается по умолчанию.">
+    <meta property="og:url" content="https://triggerflow.pro/google-ads-scan.html">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Google Ads Рентген | TriggerFlow">
+    <meta name="twitter:description" content="AI-диагностика Google Ads по 21 критерию. Скрининг бесплатно.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://triggerflow.pro/"},
+                    {"@type": "ListItem", "position": 2, "name": "Аудит", "item": "https://triggerflow.pro/money-leak-audit.html"},
+                    {"@type": "ListItem", "position": 3, "name": "Google Ads Рентген", "item": "https://triggerflow.pro/google-ads-scan.html"}
+                ]
+            },
+            {
+                "@type": "Service",
+                "name": "Google Ads Scan Light",
+                "description": "AI-диагностика Google Ads по 21 критерию из 5 методологий. Карта угроз, расчет потерь, план действий. PDF за 24 часа.",
+                "provider": {"@id": "https://triggerflow.pro/#organization"},
+                "offers": {"@type": "Offer", "price": "99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}
+            },
+            {
+                "@type": "Service",
+                "name": "Google Ads Scan PRO",
+                "description": "Экспертная диагностика Google Ads с конкретными настройками кампаний и 30-минутной консультацией.",
+                "provider": {"@id": "https://triggerflow.pro/#organization"},
+                "offers": {"@type": "Offer", "price": "199", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {"@type": "Question", "name": "Что такое алгоритмические ловушки Google?", "acceptedAnswer": {"@type": "Answer", "text": "Настройки Google Ads по умолчанию спроектированы для максимизации расходов, а не вашей прибыли. Расширение ключевых слов, PMax без фильтрации, Display на MFA-сайтах - стандартный запуск теряет 30-70% бюджета."}},
+                    {"@type": "Question", "name": "Подходит ли скрининг для новых аккаунтов?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Для новых аккаунтов скрининг особенно важен - мы поможем с правильной архитектурой с самого начала, чтобы не тратить бюджет на обучение алгоритмов неправильным данным."}},
+                    {"@type": "Question", "name": "Чем Light отличается от PRO?", "acceptedAnswer": {"@type": "Answer", "text": "Light (99€) - AI-отчет по 21 критерию с картой угроз и расчетом потерь за 24 часа. PRO (199€) - экспертный разбор с конкретными настройками кампаний, рекомендациями по минус-словам и 30-минутной стратегической консультацией."}},
+                    {"@type": "Question", "name": "Нужен ли доступ к аккаунту Google Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Для Light достаточно ответить на 6 вопросов о вашем бизнесе. Для PRO мы попросим read-only доступ к аккаунту для точного анализа реальных данных."}}
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="alternate" hreflang="ru" href="https://triggerflow.pro/google-ads-scan.html">
+    <link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/google-ads-scan.html">
+
+    <style>
+        .loss-calc {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-4);
+            margin: var(--space-6) 0;
+        }
+        .loss-card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-5);
+            text-align: center;
+        }
+        .loss-card--danger { border-color: rgba(239,68,68,0.3); }
+        .loss-card--warning { border-color: rgba(245,158,11,0.3); }
+        .loss-card--critical { border-color: rgba(239,68,68,0.5); background: rgba(239,68,68,0.04); }
+        .loss-card__type { font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-2); }
+        .loss-card__pct {
+            font-size: 2.8rem; font-weight: 900;
+            background: linear-gradient(135deg, #ef4444, #f97316);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .loss-card__label { font-size: 0.85rem; color: var(--color-text-secondary); margin-top: var(--space-1); }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+        .method-card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-5);
+        }
+        .method-card__tag {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: var(--radius-pill);
+            font-size: 0.75rem; font-weight: 600;
+            background: rgba(30,111,255,0.1); color: var(--color-primary);
+            margin-bottom: var(--space-3);
+        }
+        .method-card__title { font-size: 1rem; font-weight: 700; margin-bottom: var(--space-2); }
+        .method-card__desc { font-size: 0.9rem; color: var(--color-text-secondary); margin: 0; }
+
+        .criteria-blocks {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+        .criteria-block {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-5);
+        }
+        .criteria-block__header {
+            display: flex; align-items: center; gap: var(--space-3);
+            margin-bottom: var(--space-4);
+        }
+        .criteria-block__num {
+            width: 40px; height: 40px;
+            border-radius: var(--radius-lg);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.9rem; flex-shrink: 0;
+        }
+        .criteria-block__num--I { background: rgba(30,111,255,0.15); color: var(--color-primary); }
+        .criteria-block__num--II { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .criteria-block__num--III { background: rgba(0,208,132,0.15); color: #00d084; }
+        .criteria-block__num--IV { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .criteria-block__title { font-size: 1rem; font-weight: 700; }
+        .criteria-block__sub { font-size: 0.8rem; color: var(--color-text-muted); }
+        .criteria-block__score { font-size: 0.8rem; color: var(--color-text-muted); margin-top: var(--space-1); }
+        .criteria-list { list-style: none; padding: 0; margin: 0; }
+        .criteria-list li {
+            display: flex; align-items: flex-start; gap: 8px;
+            padding: 6px 0; font-size: 0.88rem; color: var(--color-text-secondary);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .criteria-list li:last-child { border-bottom: none; }
+        .criteria-list li i { font-size: 0.7rem; margin-top: 4px; flex-shrink: 0; }
+
+        @media (max-width: 768px) {
+            .loss-calc { grid-template-columns: 1fr; }
+            .criteria-blocks { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html">Главная</a></li>
+                <li class="navbar__dropdown"><a href="services.html">Услуги <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#seo-text">SEO Text Reality Check <span class="dropdown__price">69€</span></a></li>
+                        <li><a href="services.html#first-screen">First Screen Verdict <span class="dropdown__price">79€</span></a></li>
+                        <li><a href="sitemoney-scan.html">SiteMoney Scan <span class="dropdown__price">от 79€</span></a></li>
+                        <li><a href="services.html#one-page">One Page Breakdown <span class="dropdown__price">249€</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="https://ai.triggerflow.pro">AI Инструменты</a></li>
+                <li class="navbar__dropdown active"><a href="money-leak-audit.html">Аудит <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="google-ads-scan.html" class="active">Google Ads Рентген <span class="dropdown__price">от 0€</span></a></li>
+                        <li class="dropdown__divider"></li>
+                        <li><a href="services.html#offer">Offer X-Ray <span class="dropdown__price">390€</span></a></li>
+                        <li><a href="services.html#conversion">Conversion Anatomy <span class="dropdown__price">590€</span></a></li>
+                        <li><a href="services.html#psychology">Client Psychology Map <span class="dropdown__price">790€</span></a></li>
+                        <li><a href="money-leak-audit.html">Money Leak Audit <span class="dropdown__price">1490€</span></a></li>
+                        <li><a href="services.html#funnel">Sales Funnel Intelligence <span class="dropdown__price">2990€</span></a></li>
+                        <li><a href="services.html#growth">Growth Blueprint <span class="dropdown__price">4990€+</span></a></li>
+                    </ul>
+                </li>
+                <li class="navbar__dropdown"><a href="subscription.html">Подписка <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="subscription.html#basic">Базовый доступ <span class="dropdown__price">79€/мес</span></a></li>
+                        <li><a href="subscription.html#priority">Приоритетные разборы <span class="dropdown__price">199€/мес</span></a></li>
+                        <li><a href="subscription.html#growth">Growth сопровождение <span class="dropdown__price">990-1990€</span></a></li>
+                        <li><a href="subscription.html#privat">TriggerFlow Privat <span class="dropdown__price">49€/мес</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="pricing.html">Тарифы</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li class="navbar__lang">
+                    <button class="navbar__lang-btn">RU &#9662;</button>
+                    <ul class="navbar__lang-menu">
+                        <li><a data-lang-switch="ru">RU</a></li>
+                        <li><a data-lang-switch="en">EN</a></li>
+                        <li><a data-lang-switch="fr">FR</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero" id="hero">
+        <div class="hero__gradient-bg"></div>
+        <div class="container hero__content">
+            <div class="animate-on-scroll fade-up" style="margin-bottom: var(--space-3);">
+                <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#ef4444;padding:6px 16px;border-radius:var(--radius-pill);font-size:0.85rem;font-weight:600;">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Методология TriggerFlow 3.0 - 21 критерий
+                </span>
+            </div>
+            <h1 class="hero__title animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                Google Ads Рентген&trade;<br>Диагностика рекламного бюджета
+            </h1>
+            <p class="hero__subtitle animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                Стандартный запуск Google Ads теряет 30-70% бюджета на ботов, MFA-сайты и алгоритмические ловушки.<br>
+                Узнайте точно - сколько теряете вы.
+            </p>
+            <div class="hero__buttons animate-on-scroll fade-up" style="animation-delay:0.3s;">
+                <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--outline btn--large">
+                    <i class="fa-brands fa-telegram"></i> Бесплатный AI-скрининг
+                </a>
+                <button class="btn btn--primary btn--large" data-tf-form="express" data-tf-service="Google Ads Scan Light" data-tf-price="99">
+                    Полный отчет за 99€
+                </button>
+            </div>
+            <p class="hero__note animate-on-scroll fade-up" style="animation-delay:0.4s;">
+                Скрининг: мгновенно | Light: 24 часа | PRO: 48 часов + консультация
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== LOSS CALCULATOR ===== -->
+    <section class="section section--problems" id="losses">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Сколько бюджета теряется по умолчанию</h2>
+            <p class="section__description animate-on-scroll fade-up">
+                Интерфейс Google Ads спроектирован для максимизации расходов, а не вашей прибыли.<br>
+                Настройки "по умолчанию" ведут к гарантированным потерям.
+            </p>
+
+            <div class="loss-calc animate-on-scroll fade-up">
+                <div class="loss-card loss-card--danger">
+                    <div class="loss-card__type"><i class="fa-solid fa-magnifying-glass"></i> Search</div>
+                    <div class="loss-card__pct">30-40%</div>
+                    <div class="loss-card__label">без защиты минус-слов и ручного контроля</div>
+                </div>
+                <div class="loss-card loss-card--warning">
+                    <div class="loss-card__type"><i class="fa-solid fa-layer-group"></i> PMax / Display</div>
+                    <div class="loss-card__pct">50-70%</div>
+                    <div class="loss-card__label">без фильтрации MFA-сайтов и плейсментов</div>
+                </div>
+                <div class="loss-card loss-card--critical">
+                    <div class="loss-card__type"><i class="fa-brands fa-youtube"></i> Video</div>
+                    <div class="loss-card__pct">60-80%</div>
+                    <div class="loss-card__label">без частотных кэпов и исключения детских каналов</div>
+                </div>
+            </div>
+
+            <div class="animate-on-scroll fade-up" style="text-align:center;margin-top:var(--space-4);">
+                <p style="color:var(--color-text-secondary);font-size:1.05rem;">
+                    При бюджете <strong style="color:white;">1 000€/мес</strong> стандартный запуск = потери от <strong style="color:#ef4444;">300€ до 800€</strong> ежемесячно.
+                </p>
+                <p style="color:var(--color-text-muted);font-size:0.9rem;margin-top:var(--space-2);">
+                    Разница между QS=4 и QS=10 - до <strong style="color:white;">3x</strong> по стоимости конверсии на одном и том же ключевом слове.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== METHODOLOGY ===== -->
+    <section class="section" id="methodology" style="background:var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">5 методологий мирового уровня</h2>
+            <p class="section__description animate-on-scroll fade-up">TriggerFlow 3.0 - расширенная версия протокола Ивицкого</p>
+
+            <div class="method-grid animate-on-scroll fade-up">
+                <div class="method-card">
+                    <div class="method-card__tag">STDC</div>
+                    <div class="method-card__title">See-Think-Do-Care</div>
+                    <p class="method-card__desc">Avinash Kaushik (Google). Маппинг аудитории по стадиям намерения - правильный тип кампании для каждой стадии воронки.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-card__tag">80/20</div>
+                    <div class="method-card__title">Perry Marshall 80/20</div>
+                    <p class="method-card__desc">Принцип Парето в PPC. Где сконцентрированы 80% конверсий - туда идут 80% бюджета.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-card__tag">РЕНТГЕН</div>
+                    <div class="method-card__title">Ivitskiy Рентген</div>
+                    <p class="method-card__desc">Карта алгоритмических угроз и калькулятор скрытых финансовых потерь. Конкретные числа в вашей валюте.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-card__tag">AUTOMATION</div>
+                    <div class="method-card__title">Vallaeys Layering</div>
+                    <p class="method-card__desc">Frederick Vallaeys. Слои ручного контроля поверх автоматических стратегий Google - вы управляете алгоритмом, а не наоборот.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-card__tag">CRO</div>
+                    <div class="method-card__title">AIDA + CRO</div>
+                    <p class="method-card__desc">Качество объявлений по модели AIDA, Quality Score по трём компонентам, Message Match между объявлением и лендингом.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 21 CRITERIA ===== -->
+    <section class="section" id="criteria">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">21 критерий - 4 блока</h2>
+            <p class="section__description animate-on-scroll fade-up">Каждый критерий оценивается от 0 до 5 баллов. Итог: X/105.</p>
+
+            <div class="criteria-blocks animate-on-scroll fade-up">
+                <div class="criteria-block">
+                    <div class="criteria-block__header">
+                        <div class="criteria-block__num criteria-block__num--I">I</div>
+                        <div>
+                            <div class="criteria-block__title">Стратегический слой</div>
+                            <div class="criteria-block__score">6 критериев - 30 баллов</div>
+                        </div>
+                    </div>
+                    <ul class="criteria-list">
+                        <li><i class="fa-solid fa-circle" style="color:var(--color-primary);"></i> Маппинг аудитории See-Think-Do-Care</li>
+                        <li><i class="fa-solid fa-circle" style="color:var(--color-primary);"></i> Соответствие типов кампаний воронке</li>
+                        <li><i class="fa-solid fa-circle" style="color:var(--color-primary);"></i> 80/20 анализ концентрации конверсий</li>
+                        <li><i class="fa-solid fa-circle" style="color:var(--color-primary);"></i> Бюджетная архитектура по стадиям</li>
+                        <li><i class="fa-solid fa-circle" style="color:var(--color-primary);"></i> Ремаркетинг vs цикл сделки</li>
+                        <li><i class="fa-solid fa-circle" style="color:var(--color-primary);"></i> Полнота воронки (Single-Channel Trap)</li>
+                    </ul>
+                </div>
+
+                <div class="criteria-block">
+                    <div class="criteria-block__header">
+                        <div class="criteria-block__num criteria-block__num--II">II</div>
+                        <div>
+                            <div class="criteria-block__title">Защитный слой</div>
+                            <div class="criteria-block__score">6 критериев - 30 баллов</div>
+                        </div>
+                    </div>
+                    <ul class="criteria-list">
+                        <li><i class="fa-solid fa-circle" style="color:#ef4444;"></i> Карта алгоритмических угроз</li>
+                        <li><i class="fa-solid fa-circle" style="color:#ef4444;"></i> Калькулятор скрытых финансовых потерь</li>
+                        <li><i class="fa-solid fa-circle" style="color:#ef4444;"></i> Automation Layering: контроль vs автоматизация</li>
+                        <li><i class="fa-solid fa-circle" style="color:#ef4444;"></i> Архитектура минус-слов на 3 уровнях</li>
+                        <li><i class="fa-solid fa-circle" style="color:#ef4444;"></i> Защита от click fraud и бот-трафика</li>
+                        <li><i class="fa-solid fa-circle" style="color:#ef4444;"></i> Исключение MFA-площадок (Display/Video)</li>
+                    </ul>
+                </div>
+
+                <div class="criteria-block">
+                    <div class="criteria-block__header">
+                        <div class="criteria-block__num criteria-block__num--III">III</div>
+                        <div>
+                            <div class="criteria-block__title">Конверсионный слой</div>
+                            <div class="criteria-block__score">5 критериев - 25 баллов</div>
+                        </div>
+                    </div>
+                    <ul class="criteria-list">
+                        <li><i class="fa-solid fa-circle" style="color:#00d084;"></i> Качество объявлений по AIDA</li>
+                        <li><i class="fa-solid fa-circle" style="color:#00d084;"></i> Message Match: объявление = лендинг</li>
+                        <li><i class="fa-solid fa-circle" style="color:#00d084;"></i> Extensions/Assets: полнота использования</li>
+                        <li><i class="fa-solid fa-circle" style="color:#00d084;"></i> Система A/B тестирования</li>
+                        <li><i class="fa-solid fa-circle" style="color:#00d084;"></i> Quality Score: диагностика компонентов</li>
+                    </ul>
+                </div>
+
+                <div class="criteria-block">
+                    <div class="criteria-block__header">
+                        <div class="criteria-block__num criteria-block__num--IV">IV</div>
+                        <div>
+                            <div class="criteria-block__title">Аналитический слой</div>
+                            <div class="criteria-block__score">4 критерия - 20 баллов</div>
+                        </div>
+                    </div>
+                    <ul class="criteria-list">
+                        <li><i class="fa-solid fa-circle" style="color:#f59e0b;"></i> Конверсионное отслеживание GA4 + Ads</li>
+                        <li><i class="fa-solid fa-circle" style="color:#f59e0b;"></i> Модель атрибуции vs цикл сделки</li>
+                        <li><i class="fa-solid fa-circle" style="color:#f59e0b;"></i> ROAS/ROI: реальная прибыльность с учетом LTV</li>
+                        <li><i class="fa-solid fa-circle" style="color:#f59e0b;"></i> Measurement Maturity: уровень зрелости</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Score legend -->
+            <div class="animate-on-scroll fade-up" style="margin-top:var(--space-6);max-width:720px;margin-left:auto;margin-right:auto;">
+                <h3 style="text-align:center;font-size:1.1rem;margin-bottom:var(--space-4);">Шкала оценки</h3>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:var(--space-3);">
+                    <div style="text-align:center;padding:var(--space-3);background:rgba(0,208,132,0.08);border:1px solid rgba(0,208,132,0.2);border-radius:var(--radius-lg);">
+                        <div style="font-weight:700;color:#00d084;">85-105</div>
+                        <div style="font-size:0.8rem;color:var(--color-text-muted);">Эталонный</div>
+                    </div>
+                    <div style="text-align:center;padding:var(--space-3);background:rgba(30,111,255,0.08);border:1px solid rgba(30,111,255,0.2);border-radius:var(--radius-lg);">
+                        <div style="font-weight:700;color:var(--color-primary);">65-84</div>
+                        <div style="font-size:0.8rem;color:var(--color-text-muted);">Продвинутый</div>
+                    </div>
+                    <div style="text-align:center;padding:var(--space-3);background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:var(--radius-lg);">
+                        <div style="font-weight:700;color:#f59e0b;">45-64</div>
+                        <div style="font-size:0.8rem;color:var(--color-text-muted);">Базовый</div>
+                    </div>
+                    <div style="text-align:center;padding:var(--space-3);background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);border-radius:var(--radius-lg);">
+                        <div style="font-weight:700;color:#f97316;">25-44</div>
+                        <div style="font-size:0.8rem;color:var(--color-text-muted);">Слабый</div>
+                    </div>
+                    <div style="text-align:center;padding:var(--space-3);background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius-lg);">
+                        <div style="font-weight:700;color:#ef4444;">0-24</div>
+                        <div style="font-size:0.8rem;color:var(--color-text-muted);">Критический</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMPARISON TABLE ===== -->
+    <section class="section" id="scan-tiers" style="background:var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Выберите глубину анализа</h2>
+            <p class="section__description animate-on-scroll fade-up">Три уровня диагностики - от мгновенного скрининга до экспертного разбора</p>
+
+            <div style="max-width:960px;margin:var(--space-6) auto 0;overflow-x:auto;">
+                <table class="animate-on-scroll fade-up" style="width:100%;border-collapse:separate;border-spacing:0;font-size:var(--font-size-base);">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;padding:var(--space-3) var(--space-4);border-bottom:2px solid var(--color-border);color:var(--color-text-muted);font-weight:500;font-size:var(--font-size-sm);min-width:160px;"></th>
+                            <th style="text-align:center;padding:var(--space-3) var(--space-4);border-bottom:2px solid var(--color-border);color:var(--color-text-muted);font-weight:600;font-size:var(--font-size-sm);">AI-скрининг<br><span style="color:var(--color-accent-1);">0€</span></th>
+                            <th style="text-align:center;padding:var(--space-3) var(--space-4);border-bottom:2px solid var(--color-border);color:var(--color-text-muted);font-weight:600;font-size:var(--font-size-sm);">Light<br><span style="color:var(--color-primary-light);">99€</span></th>
+                            <th style="text-align:center;padding:var(--space-3) var(--space-4);border-bottom:2px solid rgba(30,111,255,0.4);background:rgba(30,111,255,0.05);border-radius:var(--radius-md) var(--radius-md) 0 0;font-weight:600;font-size:var(--font-size-sm);color:var(--color-secondary);">PRO<br><span>199€</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">Время результата</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);text-align:center;color:var(--color-text-secondary);">Мгновенно</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);text-align:center;font-weight:500;">24 часа</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid rgba(30,111,255,0.2);text-align:center;background:rgba(30,111,255,0.03);font-weight:500;">48 часов</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">Критериев</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);text-align:center;color:var(--color-text-secondary);">4 вопроса</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);text-align:center;font-weight:500;">21 критерий</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid rgba(30,111,255,0.2);text-align:center;background:rgba(30,111,255,0.03);font-weight:500;">21 критерий + данные аккаунта</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">Карта угроз</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);text-align:center;">Топ-1 угроза</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);text-align:center;"><i class="fa-solid fa-check" style="color:var(--color-accent-1);"></i> Полная</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid rgba(30,111,255,0.2);text-align:center;background:rgba(30,111,255,0.03);"><i class="fa-solid fa-check" style="color:var(--color-secondary);"></i> Полная</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">Расчет потерь €</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);text-align:center;"><i class="fa-solid fa-xmark" style="color:var(--color-text-muted);"></i></td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);text-align:center;"><i class="fa-solid fa-check" style="color:var(--color-accent-1);"></i> По вашему бюджету</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid rgba(30,111,255,0.2);text-align:center;background:rgba(30,111,255,0.03);"><i class="fa-solid fa-check" style="color:var(--color-secondary);"></i> По реальным данным</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);color:var(--color-text-secondary);">Конкретные настройки</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);text-align:center;"><i class="fa-solid fa-xmark" style="color:var(--color-text-muted);"></i></td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid var(--color-border);text-align:center;">Рекомендации</td>
+                            <td style="padding:var(--space-2) var(--space-4);border-bottom:1px solid rgba(30,111,255,0.2);text-align:center;background:rgba(30,111,255,0.03);"><i class="fa-solid fa-check" style="color:var(--color-secondary);"></i> Конкретные настройки</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:var(--space-2) var(--space-4);color:var(--color-text-secondary);">Консультация</td>
+                            <td style="padding:var(--space-2) var(--space-4);text-align:center;"><i class="fa-solid fa-xmark" style="color:var(--color-text-muted);"></i></td>
+                            <td style="padding:var(--space-2) var(--space-4);text-align:center;"><i class="fa-solid fa-xmark" style="color:var(--color-text-muted);"></i></td>
+                            <td style="padding:var(--space-2) var(--space-4);text-align:center;background:rgba(30,111,255,0.03);border-radius:0 0 var(--radius-md) var(--radius-md);"><i class="fa-solid fa-check" style="color:var(--color-secondary);"></i> 30 мин Zoom</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="animate-on-scroll fade-up" style="text-align:center;margin-top:var(--space-5);">
+                <p style="color:var(--color-text-muted);font-size:var(--font-size-sm);margin-bottom:var(--space-3);">Не уверены с чего начать? Запустите бесплатный скрининг - за 2 минуты увидите главную угрозу</p>
+                <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--outline">
+                    <i class="fa-brands fa-telegram"></i> Бесплатный AI-скрининг
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SCAN TIERS PRICING ===== -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Тарифы</h2>
+            <div class="scan-tiers">
+                <div class="scan-tier scan-tier--light animate-on-scroll fade-up">
+                    <div class="scan-tier__name">Google Ads Scan Light</div>
+                    <div class="scan-tier__price">99&euro; <span>/ отчёт</span></div>
+                    <p class="scan-tier__desc">AI-диагностика по 21 критерию + PDF</p>
+                    <ul class="scan-tier__list">
+                        <li>Оценка по 21 критерию (X/105 баллов)</li>
+                        <li>Карта алгоритмических угроз</li>
+                        <li>Расчет потерь в вашей валюте</li>
+                        <li>Стратегическая архитектура запуска</li>
+                        <li>Топ-5 приоритетных действий</li>
+                        <li>PDF-отчет за 24 часа</li>
+                        <li class="excluded">Анализ реального аккаунта</li>
+                        <li class="excluded">Конкретные настройки кампаний</li>
+                        <li class="excluded">30-мин консультация</li>
+                    </ul>
+                    <button class="btn btn--outline btn--block" data-tf-form="express" data-tf-service="Google Ads Scan Light" data-tf-price="99">
+                        Заказать Light &rarr;
+                    </button>
+                </div>
+
+                <div class="scan-tier scan-tier--pro animate-on-scroll fade-up" style="animation-delay:0.15s;">
+                    <div class="scan-tier__badge">Рекомендуем</div>
+                    <div class="scan-tier__name">Google Ads Scan PRO</div>
+                    <div class="scan-tier__price">199&euro; <span>/ отчёт</span></div>
+                    <p class="scan-tier__desc">Экспертный разбор + настройки + консультация</p>
+                    <ul class="scan-tier__list">
+                        <li>Всё из Light +</li>
+                        <li>Read-only доступ к аккаунту</li>
+                        <li>Анализ реальных данных кампаний</li>
+                        <li>Конкретные настройки: минус-слова, таргетинги</li>
+                        <li>Исключения MFA-площадок (список)</li>
+                        <li>Рекомендации по структуре аккаунта</li>
+                        <li>30-минутная Zoom-консультация</li>
+                        <li>PDF-отчет за 48 часов</li>
+                    </ul>
+                    <button class="btn btn--primary btn--block" data-tf-form="express" data-tf-service="Google Ads Scan PRO" data-tf-price="199">
+                        Заказать PRO &rarr;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section--faq" id="faq">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Частые вопросы</h2>
+            <div class="faq__list" style="max-width:720px;margin:var(--space-6) auto 0;">
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">Что такое алгоритмические ловушки Google?</summary>
+                    <div class="faq__answer"><p>Настройки по умолчанию в Google Ads спроектированы для максимизации расходов рекламодателя, а не его прибыли. Например: расширение ключевых слов в Search показывает рекламу по нерелевантным запросам; PMax без ограничений тратит бюджет на некачественные плейсменты; Video без частотных кэпов показывает одно объявление сотни раз одному человеку.</p></div>
+                </details>
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">Нужен ли у меня уже работающий аккаунт Google Ads?</summary>
+                    <div class="faq__answer"><p>Нет. Для AI-скрининга и Light-отчета достаточно ответить на 6 вопросов о бизнесе. Диагностика выявит архитектурные риски и рассчитает потенциальные потери при стандартном запуске. Для PRO-отчета нужен read-only доступ к аккаунту для анализа реальных данных.</p></div>
+                </details>
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">Чем отличается от обычного аудита агентства?</summary>
+                    <div class="faq__answer"><p>Большинство аудитов от агентств - это продажа своих услуг по настройке. TriggerFlow Рентген - независимая диагностика по структурированной методологии из 5 мировых фреймворков. Вы получаете конкретные числа: сколько теряете и почему, без навязывания услуг.</p></div>
+                </details>
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">Что дальше после отчета?</summary>
+                    <div class="faq__answer"><p>Три пути: внедрить рекомендации самостоятельно, заказать помощь во внедрении в рамках Growth Blueprint, или подключиться к подписке TriggerFlow Privat для системного сопровождения.</p></div>
+                </details>
+                <details class="faq__item animate-on-scroll fade-up">
+                    <summary class="faq__question">Какой бюджет Google Ads нужен для диагностики?</summary>
+                    <div class="faq__answer"><p>Диагностика имеет смысл при бюджете от 300€/мес. При меньших бюджетах статистически значимых данных недостаточно для полноценного анализа - рекомендуем начать с бесплатного скрининга.</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section section--cta" id="final-cta">
+        <div class="container" style="text-align:center;">
+            <h2 class="section__title animate-on-scroll fade-up">Узнайте точную сумму потерь в вашем аккаунте</h2>
+            <p class="section__description animate-on-scroll fade-up">
+                Начните с бесплатного скрининга за 2 минуты&nbsp;&mdash; или сразу закажите полный отчет.
+            </p>
+            <div class="animate-on-scroll fade-up" style="margin-top:var(--space-5);display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;">
+                <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--outline btn--large">
+                    <i class="fa-brands fa-telegram"></i> Бесплатный скрининг
+                </a>
+                <button class="btn btn--primary btn--large" data-tf-form="express" data-tf-service="Google Ads Scan PRO" data-tf-price="199">
+                    Google Ads Scan PRO &mdash; 199€
+                </button>
+            </div>
+            <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:var(--space-4);">
+                <i class="fa-solid fa-shield-halved"></i>&nbsp; Независимая диагностика. Без навязывания услуг. GDPR Compliant.
+            </p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <div class="footer__logo-image">
+                    <img src="images/logo-shield.png" alt="TriggerFlow logo" width="80" height="80">
+                </div>
+                <a href="index.html" class="footer__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                <p class="footer__tagline">TriggerFlow&trade; - система диагностики и роста для вашего бизнеса</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="index.html">Главная</a>
+                <a href="services.html">Услуги</a>
+                <a href="sitemoney-scan.html">Экспресс-анализ</a>
+                <a href="google-ads-scan.html">Google Ads Рентген</a>
+                <a href="money-leak-audit.html">Аудит</a>
+                <a href="subscription.html">Подписка</a>
+                <a href="blog.html">Блог</a>
+                <a href="about.html">Про нас</a>
+                <a href="integrations.html">Технологии</a>
+                <a href="https://ai.triggerflow.pro">AI Инструменты</a>
+            </nav>
+            <div class="footer__trust">
+                <span class="footer__trust-badge"><i class="fa-solid fa-shield-halved"></i> GDPR Compliant</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-lock"></i> Encrypted API</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-database"></i> No data retention</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-building-shield"></i> SASU France</span>
+            </div>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Все права защищены</div>
+        </div>
+    </footer>
+
+    <div class="sticky-cta" id="stickyCta">
+        <span class="sticky-cta__text">Google Ads Рентген &mdash; <strong>от 0€</strong></span>
+        <button class="btn btn--primary" data-tf-form="express" data-tf-service="Google Ads Scan Light" data-tf-price="99">Заказать анализ</button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>
