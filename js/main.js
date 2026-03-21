@@ -393,15 +393,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Compute href for this language
       const path = window.location.pathname;
-      const pageName = path.split('/').pop() || 'index.html';
-      // Detect if we're inside /en/ or /fr/ subfolder
-      const inSubfolder = /\/(en|fr)\//.test(path);
+      // Strip /en/ or /fr/ prefix to get the page name
+      const cleaned = path.replace(/^\/(en|fr)\//, '/');
+      const pageName = cleaned.split('/').pop() || '';
+      // Get base path (root of site)
+      const inSubfolder = /^\/(en|fr)(\/|$)/.test(path);
+      const basePath = inSubfolder ? path.replace(/^\/(en|fr)(\/.*)?$/, '') : '';
 
       let href;
       if (targetLang === 'ru') {
-        href = inSubfolder ? '../' + pageName : pageName;
+        href = '/' + pageName;
       } else {
-        href = inSubfolder ? '../' + targetLang + '/' + pageName : targetLang + '/' + pageName;
+        href = '/' + targetLang + '/' + pageName;
       }
       link.setAttribute('href', href);
     });
