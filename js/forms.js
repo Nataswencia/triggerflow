@@ -590,6 +590,16 @@
       data.selected_plan = planSelect.value;
     }
 
+    // If Scan PRO - also trigger audit pipeline
+    var scanServices = ['SiteMoney Scan PRO', 'SiteMoney Scan Light', 'Google Ads Scan Light', 'Google Ads Scan PRO'];
+    if (scanServices.indexOf(data.service) !== -1) {
+      fetch('https://nataswencia.app.n8n.cloud/webhook/scan-pro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).catch(function(){});
+    }
+
     fetch(WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
