@@ -3747,20 +3747,19 @@ p:last-child {
   margin-right: auto;
 }
 .hero__url-form {
-  background: rgba(255,255,255,0.1);
-  border: 2px solid rgba(255, 149, 0, 0.4);
+  background: rgba(15, 20, 35, 0.95);
+  border: 2px solid #ff9500;
   border-radius: 16px;
-  padding: 20px 22px 16px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 30px rgba(255, 106, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 22px 24px 18px;
+  box-shadow: 0 0 30px rgba(255, 149, 0, 0.15), 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 .hero__url-label {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255, 149, 0, 0.9);
-  margin-bottom: 10px;
+  color: #ff9500;
+  margin-bottom: 12px;
   font-weight: 700;
 }
 .hero__url-input-wrap {
@@ -3787,18 +3786,20 @@ p:last-child {
 }
 .hero__url-btn {
   white-space: nowrap;
-  padding: 11px 20px;
-  font-size: 0.9rem;
+  padding: 13px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
   border-radius: 10px;
   cursor: pointer;
   border: none;
 }
 .hero__url-btn:disabled { opacity: 0.6; cursor: default; }
 .hero__url-hint {
-  margin: 8px 0 0;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.45);
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  color: #ffffff;
   text-align: center;
+  font-weight: 500;
 }
 .hero__url-copied {
   background: rgba(0,208,132,0.15);
