@@ -62,6 +62,9 @@
         .tool-card__icon--blue { background: rgba(30,111,255,0.15); color: var(--color-primary); }
         .tool-card__icon--green { background: rgba(0,208,132,0.15); color: #00d084; }
         .tool-card__icon--orange { background: rgba(255,149,0,0.15); color: #ff9500; }
+        .tool-card__icon--purple { background: rgba(147,51,234,0.15); color: #9333ea; }
+        .tool-card__icon--teal { background: rgba(20,184,166,0.15); color: #14b8a6; }
+        .tool-card__icon--rose { background: rgba(244,63,94,0.15); color: #f43f5e; }
         .tool-card__title { font-size: 1.25rem; font-weight: 700; margin-bottom: var(--space-2); }
         .tool-card__desc { color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-4); flex: 1; }
         .tool-card__price { font-size: 1.5rem; font-weight: 800; margin-bottom: var(--space-4); }
@@ -126,7 +129,7 @@
                 AI работает.<br>Вы занимаетесь бизнесом.
             </h1>
             <p class="hero__subtitle animate-on-scroll fade-up" style="max-width:600px;margin:0 auto;">
-                Три AI-бота которые берут рутину на себя&nbsp;- лидогенерация, управление почтой, поиск работы. Работают в Telegram 24/7.
+                AI-боты и инструменты которые берут рутину на себя&nbsp;- лидогенерация, управление почтой, формы, запись, рассылки. Работают 24/7.
             </p>
         </div>
     </section>
@@ -196,6 +199,121 @@
                     <a href="job-hunter.html" class="btn btn--outline btn--block">Попробовать бесплатно &rarr;</a>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AUTOMATION TOOLS ===== -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <hr class="divider-line">
+            <div class="ai-hero__badge" style="margin: 0 auto var(--space-3);display:flex;justify-content:center;">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Инструменты автоматизации
+            </div>
+            <h2 style="text-align:center;font-size:2rem;margin-bottom:var(--space-2);">Настроим и подключим за вас</h2>
+            <p style="text-align:center;color:var(--color-text-secondary);max-width:520px;margin:0 auto var(--space-7);">
+                Бесплатные SaaS-платформы + наша настройка и интеграция с вашим бизнесом. Один раз - работает постоянно.
+            </p>
+
+            <div class="tool-grid">
+
+                <!-- Tally.so -->
+                <div class="tool-card animate-on-scroll fade-up">
+                    <div class="tool-card__icon tool-card__icon--purple">
+                        <i class="fa-solid fa-rectangle-list"></i>
+                    </div>
+                    <div class="tool-card__title">Tally.so - формы и калькуляторы</div>
+                    <div class="tool-card__price">79-149&#8364; <span>разово</span></div>
+                    <p class="tool-card__desc">
+                        Умные формы, опросы и калькуляторы стоимости. Встраиваются на сайт, данные летят в Google Sheets или CRM.
+                    </p>
+                    <ul class="tool-card__features">
+                        <li><i class="fa-solid fa-check"></i> Калькулятор стоимости с логикой</li>
+                        <li><i class="fa-solid fa-check"></i> Формы заявок и опросы</li>
+                        <li><i class="fa-solid fa-check"></i> Embed на ваш сайт</li>
+                        <li><i class="fa-solid fa-check"></i> Интеграция с Google Sheets / CRM</li>
+                        <li><i class="fa-solid fa-check"></i> Уведомления в Telegram</li>
+                    </ul>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--block">Заказать настройку &rarr;</a>
+                </div>
+
+                <!-- Cal.com -->
+                <div class="tool-card animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div class="tool-card__icon tool-card__icon--teal">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div class="tool-card__title">Cal.com - онлайн-запись</div>
+                    <div class="tool-card__price">149-249&#8364; <span>разово</span></div>
+                    <p class="tool-card__desc">
+                        Клиенты записываются на консультацию или разбор сами. Синхронизация с Google Calendar, напоминания, подтверждения.
+                    </p>
+                    <ul class="tool-card__features">
+                        <li><i class="fa-solid fa-check"></i> Страница бронирования под ваш бренд</li>
+                        <li><i class="fa-solid fa-check"></i> Типы встреч (консультация, разбор, звонок)</li>
+                        <li><i class="fa-solid fa-check"></i> Синхронизация с Google Calendar</li>
+                        <li><i class="fa-solid fa-check"></i> Автоматические напоминания клиентам</li>
+                        <li><i class="fa-solid fa-check"></i> Embed на сайт + уведомления в Telegram</li>
+                    </ul>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--block">Заказать настройку &rarr;</a>
+                </div>
+
+                <!-- Sequential Thinking -->
+                <div class="tool-card animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div class="tool-card__icon tool-card__icon--orange">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div class="tool-card__title">Sequential Thinking - пошаговые расчёты</div>
+                    <div class="tool-card__price">149-249&#8364; <span>разово</span></div>
+                    <p class="tool-card__desc">
+                        AI разбивает сложную задачу на шаги и решает последовательно. Идеально для расчёта стоимости проектов, бизнес-планов, unit-экономики.
+                    </p>
+                    <ul class="tool-card__features">
+                        <li><i class="fa-solid fa-check"></i> Сложные расчёты стоимости проектов</li>
+                        <li><i class="fa-solid fa-check"></i> Пошаговая декомпозиция задач</li>
+                        <li><i class="fa-solid fa-check"></i> Unit-экономика и P&L модели</li>
+                        <li><i class="fa-solid fa-check"></i> Сравнение сценариев (оптимист/пессимист)</li>
+                        <li><i class="fa-solid fa-check"></i> Результат в Google Sheets + Telegram</li>
+                    </ul>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--block">Заказать настройку &rarr;</a>
+                </div>
+
+                <!-- Resend -->
+                <div class="tool-card animate-on-scroll fade-up" style="animation-delay:0.3s;">
+                    <div class="tool-card__icon tool-card__icon--rose">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <div class="tool-card__title">Resend - email-рассылки</div>
+                    <div class="tool-card__price">249-390&#8364; <span>разово</span></div>
+                    <p class="tool-card__desc">
+                        Автоматические email-цепочки: follow-up после заявки, welcome-серия, напоминания. До 3000 писем/мес бесплатно.
+                    </p>
+                    <ul class="tool-card__features">
+                        <li><i class="fa-solid fa-check"></i> HTML-шаблоны под ваш бренд</li>
+                        <li><i class="fa-solid fa-check"></i> Автоматические follow-up цепочки</li>
+                        <li><i class="fa-solid fa-check"></i> Триггеры: заявка, покупка, время</li>
+                        <li><i class="fa-solid fa-check"></i> Интеграция с n8n / Google Sheets</li>
+                        <li><i class="fa-solid fa-check"></i> До 3000 писем/мес - $0</li>
+                    </ul>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--block">Заказать настройку &rarr;</a>
+                </div>
+
+            </div>
+
+            <!-- Bundle -->
+            <div class="back-section animate-on-scroll fade-up" style="margin-top:var(--space-6);">
+                <div class="ai-hero__badge" style="margin:0 auto var(--space-3);display:flex;justify-content:center;background:rgba(0,208,132,0.1);border-color:rgba(0,208,132,0.3);color:#00d084;">
+                    <i class="fa-solid fa-tags"></i> Выгодный бандл
+                </div>
+                <h2 style="font-size:1.6rem;margin-bottom:var(--space-2);">Все 3 инструмента - 390&#8364;</h2>
+                <p style="color:var(--color-text-secondary);margin-bottom:var(--space-2);max-width:480px;margin-left:auto;margin-right:auto;">
+                    Tally.so + Cal.com + Resend = полная автоматизация коммуникаций с клиентами.
+                </p>
+                <p style="color:#00d084;font-weight:600;margin-bottom:var(--space-5);">
+                    Экономия до 250&#8364; по сравнению с покупкой по отдельности
+                </p>
+                <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+                    Заказать бандл за 390&#8364; &rarr;
+                </a>
             </div>
         </div>
     </section>
