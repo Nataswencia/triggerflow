@@ -223,6 +223,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tight);
   color: var(--color-text-primary);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -3668,10 +3669,10 @@ p:last-child {
 .hero__title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.08;
   margin-bottom: var(--space-3);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   color: var(--color-text-primary);
 }
 
