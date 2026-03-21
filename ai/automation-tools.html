@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Инструменты для бизнеса | TriggerFlow AI</title>
-    <meta name="description" content="AI-боты для автоматизации бизнеса: Lead Hunter (50 лидов/неделю), Inbox Zero AI (управление Gmail), Job Hunter AI (поиск работы). Работают в Telegram.">
-    <link rel="canonical" href="https://ai.triggerflow.pro/">
+    <title>Инструменты автоматизации - формы, запись, расчёты, email | TriggerFlow AI</title>
+    <meta name="description" content="Настроим Tally.so, Cal.com, Sequential Thinking, Resend для вашего бизнеса. Бесплатные платформы + наша интеграция. От 79€ разово.">
+    <link rel="canonical" href="https://ai.triggerflow.pro/automation-tools">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="AI Инструменты для бизнеса | TriggerFlow AI">
-    <meta property="og:description" content="AI-боты для автоматизации бизнеса. Работают в Telegram 24/7.">
-    <meta property="og:url" content="https://ai.triggerflow.pro/">
+    <meta property="og:title" content="Инструменты автоматизации - формы, запись, расчёты, email | TriggerFlow AI">
+    <meta property="og:description" content="Настроим Tally.so, Cal.com, Sequential Thinking, Resend для вашего бизнеса. От 79€ разово.">
+    <meta property="og:url" content="https://ai.triggerflow.pro/automation-tools">
     <meta property="og:site_name" content="TriggerFlow AI">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,7 +77,6 @@
         }
         .tool-card__features li:last-child { border-bottom: none; }
         .tool-card__features li i { color: var(--color-accent-1); margin-top: 2px; font-size: 0.8rem; flex-shrink: 0; }
-        .tool-card--free .tool-card__price { color: #00d084; }
 
         .divider-line {
             border: none; border-top: 1px solid var(--color-border);
@@ -91,6 +90,11 @@
             text-align: center;
             margin-top: var(--space-8);
         }
+
+        .step-flow { display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-6); }
+        .step-flow__num { width: 48px; height: 48px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; color: white; flex-shrink: 0; }
+        .step-flow__content h3 { margin-bottom: 6px; font-size: 1.1rem; }
+        .step-flow__content p { color: var(--color-text-secondary); font-size: 0.95rem; margin: 0; }
     </style>
 </head>
 <body>
@@ -103,9 +107,9 @@
                 Trigger<span class="logo-flow">Flow</span><span style="color:var(--color-primary);font-weight:700;"> AI</span><span class="tm">&trade;</span>
             </a>
             <ul class="navbar__links" id="navLinks">
-                <li><a href="index.html" class="active">Все инструменты</a></li>
+                <li><a href="index.html">Все инструменты</a></li>
                 <li><a href="ai-bots.html">AI-боты</a></li>
-                <li><a href="automation-tools.html">Автоматизация</a></li>
+                <li><a href="automation-tools.html" class="active">Автоматизация</a></li>
                 <li><a href="https://triggerflow.pro" style="color:var(--color-text-muted);font-size:0.9rem;">&larr; triggerflow.pro</a></li>
             </ul>
             <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
@@ -119,17 +123,14 @@
     <!-- ===== HERO ===== -->
     <section class="section ai-hero">
         <div class="container">
-            <a href="https://triggerflow.pro" class="ai-hero__back">
-                <i class="fa-solid fa-arrow-left"></i> triggerflow.pro - диагностика сайтов
-            </a>
             <div class="ai-hero__badge">
-                <i class="fa-solid fa-robot"></i> TriggerFlow AI - боты для автоматизации бизнеса
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Настроим и подключим за вас
             </div>
             <h1 class="hero__title animate-on-scroll fade-up" style="font-size:2.8rem;">
-                AI работает.<br>Вы занимаетесь бизнесом.
+                Автоматизация без программистов
             </h1>
             <p class="hero__subtitle animate-on-scroll fade-up" style="max-width:600px;margin:0 auto;">
-                AI-боты и инструменты которые берут рутину на себя&nbsp;- лидогенерация, управление почтой, формы, запись, рассылки. Работают 24/7.
+                Бесплатные SaaS-платформы + наша настройка и интеграция. Один раз - работает постоянно.
             </p>
         </div>
     </section>
@@ -137,84 +138,6 @@
     <!-- ===== TOOLS GRID ===== -->
     <section class="section" style="padding-top:0;">
         <div class="container">
-            <div class="tool-grid">
-
-                <!-- Lead Hunter -->
-                <div class="tool-card animate-on-scroll fade-up">
-                    <div class="tool-card__icon tool-card__icon--blue">
-                        <i class="fa-solid fa-crosshairs"></i>
-                    </div>
-                    <div class="tool-card__title">Lead Hunter</div>
-                    <div class="tool-card__price">199€ <span>/мес</span></div>
-                    <p class="tool-card__desc">
-                        AI-бот находит 50 горячих B2B лидов каждый понедельник. Готовая таблица с контактами, болью клиента и персональным оффером.
-                    </p>
-                    <ul class="tool-card__features">
-                        <li><i class="fa-solid fa-check"></i> 50 лидов каждую неделю (200/мес)</li>
-                        <li><i class="fa-solid fa-check"></i> AI-анализ сайта каждого лида</li>
-                        <li><i class="fa-solid fa-check"></i> Персональный оффер под каждый бизнес</li>
-                        <li><i class="fa-solid fa-check"></i> Готовая Google Sheets таблица</li>
-                        <li><i class="fa-solid fa-check"></i> Telegram-уведомление каждый понедельник</li>
-                    </ul>
-                    <a href="ai-bots.html" class="btn btn--primary btn--block">Подробнее &rarr;</a>
-                </div>
-
-                <!-- Inbox Zero AI -->
-                <div class="tool-card animate-on-scroll fade-up" style="animation-delay:0.1s;">
-                    <div class="tool-card__icon tool-card__icon--green">
-                        <i class="fa-solid fa-inbox"></i>
-                    </div>
-                    <div class="tool-card__title">Inbox Zero AI</div>
-                    <div class="tool-card__price">99€ <span>/мес</span></div>
-                    <p class="tool-card__desc">
-                        AI читает вашу почту, отвечает на рутину, эскалирует важное в Telegram. Настроить один раз&nbsp;- экономить 2 часа каждый день.
-                    </p>
-                    <ul class="tool-card__features">
-                        <li><i class="fa-solid fa-check"></i> Мониторинг Gmail каждые 2 минуты</li>
-                        <li><i class="fa-solid fa-check"></i> AI-анализ: важность, категория, действие</li>
-                        <li><i class="fa-solid fa-check"></i> Ответ одной кнопкой в Telegram</li>
-                        <li><i class="fa-solid fa-check"></i> Детектор коммерческих манипуляций</li>
-                        <li><i class="fa-solid fa-check"></i> История переписки с контекстом</li>
-                    </ul>
-                    <a href="ai-bots.html" class="btn btn--primary btn--block">Подробнее &rarr;</a>
-                </div>
-
-                <!-- Job Hunter AI -->
-                <div class="tool-card tool-card--free animate-on-scroll fade-up" style="animation-delay:0.2s;">
-                    <div class="tool-card__icon tool-card__icon--orange">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </div>
-                    <div class="tool-card__title">Job Hunter AI</div>
-                    <div class="tool-card__price" style="color:#00d084;">Бесплатно</div>
-                    <p class="tool-card__desc">
-                        AI-бот ищет вакансии каждый день по вашему профилю: Welcome to the Jungle, Google Jobs, RemoteOK. Скоринг под ваши критерии.
-                    </p>
-                    <ul class="tool-card__features">
-                        <li><i class="fa-solid fa-check"></i> Ежедневный поиск по 3+ платформам</li>
-                        <li><i class="fa-solid fa-check"></i> Скоринг соответствия вашему профилю</li>
-                        <li><i class="fa-solid fa-check"></i> Только новые вакансии (без дублей)</li>
-                        <li><i class="fa-solid fa-check"></i> Результат в Telegram каждое утро</li>
-                        <li><i class="fa-solid fa-check"></i> Настройка под любую нишу и город</li>
-                    </ul>
-                    <a href="ai-bots.html" class="btn btn--outline btn--block">Попробовать бесплатно &rarr;</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== AUTOMATION TOOLS ===== -->
-    <section class="section" style="padding-top:0;">
-        <div class="container">
-            <hr class="divider-line">
-            <div class="ai-hero__badge" style="margin: 0 auto var(--space-3);display:flex;justify-content:center;">
-                <i class="fa-solid fa-wand-magic-sparkles"></i> Инструменты автоматизации
-            </div>
-            <h2 style="text-align:center;font-size:2rem;margin-bottom:var(--space-2);">Настроим и подключим за вас</h2>
-            <p style="text-align:center;color:var(--color-text-secondary);max-width:520px;margin:0 auto var(--space-7);">
-                Бесплатные SaaS-платформы + наша настройка и интеграция с вашим бизнесом. Один раз - работает постоянно.
-            </p>
-
             <div class="tool-grid">
 
                 <!-- Tally.so -->
@@ -249,7 +172,7 @@
                     </p>
                     <ul class="tool-card__features">
                         <li><i class="fa-solid fa-check"></i> Страница бронирования под ваш бренд</li>
-                        <li><i class="fa-solid fa-check"></i> Типы встреч (консультация, разбор, звонок)</li>
+                        <li><i class="fa-solid fa-check"></i> Типы встреч (консультация/разбор/звонок)</li>
                         <li><i class="fa-solid fa-check"></i> Синхронизация с Google Calendar</li>
                         <li><i class="fa-solid fa-check"></i> Автоматические напоминания клиентам</li>
                         <li><i class="fa-solid fa-check"></i> Embed на сайт + уведомления в Telegram</li>
@@ -290,7 +213,7 @@
                     <ul class="tool-card__features">
                         <li><i class="fa-solid fa-check"></i> HTML-шаблоны под ваш бренд</li>
                         <li><i class="fa-solid fa-check"></i> Автоматические follow-up цепочки</li>
-                        <li><i class="fa-solid fa-check"></i> Триггеры: заявка, покупка, время</li>
+                        <li><i class="fa-solid fa-check"></i> Триггеры: заявка/покупка/время</li>
                         <li><i class="fa-solid fa-check"></i> Интеграция с n8n / Google Sheets</li>
                         <li><i class="fa-solid fa-check"></i> До 3000 писем/мес - $0</li>
                     </ul>
@@ -298,37 +221,69 @@
                 </div>
 
             </div>
+        </div>
+    </section>
 
-            <!-- Bundle -->
-            <div class="back-section animate-on-scroll fade-up" style="margin-top:var(--space-6);">
+    <!-- ===== BUNDLE ===== -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="back-section animate-on-scroll fade-up" style="margin-top:0;">
                 <div class="ai-hero__badge" style="margin:0 auto var(--space-3);display:flex;justify-content:center;background:rgba(0,208,132,0.1);border-color:rgba(0,208,132,0.3);color:#00d084;">
                     <i class="fa-solid fa-tags"></i> Выгодный бандл
                 </div>
-                <h2 style="font-size:1.6rem;margin-bottom:var(--space-2);">Все 3 инструмента - 390&#8364;</h2>
-                <p style="color:var(--color-text-secondary);margin-bottom:var(--space-2);max-width:480px;margin-left:auto;margin-right:auto;">
-                    Tally.so + Cal.com + Resend = полная автоматизация коммуникаций с клиентами.
+                <h2 style="font-size:1.6rem;margin-bottom:var(--space-2);">Все 4 инструмента - 490&#8364;</h2>
+                <p style="color:var(--color-text-secondary);margin-bottom:var(--space-2);max-width:520px;margin-left:auto;margin-right:auto;">
+                    Tally.so + Cal.com + Sequential Thinking + Resend = полная автоматизация коммуникаций с клиентами.
                 </p>
                 <p style="color:#00d084;font-weight:600;margin-bottom:var(--space-5);">
-                    Экономия до 250&#8364; по сравнению с покупкой по отдельности
+                    Экономия до 350&#8364; по сравнению с покупкой по отдельности
                 </p>
                 <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--large">
-                    Заказать бандл за 390&#8364; &rarr;
+                    Заказать бандл за 490&#8364; &rarr;
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ===== BACK TO MAIN ===== -->
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section">
+        <div class="container" style="max-width:640px;">
+            <h2 style="text-align:center;font-size:2rem;margin-bottom:var(--space-8);" class="animate-on-scroll fade-up">Как это работает</h2>
+
+            <div class="step-flow animate-on-scroll fade-up">
+                <div class="step-flow__num">1</div>
+                <div class="step-flow__content">
+                    <h3>Вы описываете задачу</h3>
+                    <p>Расскажите что нужно автоматизировать</p>
+                </div>
+            </div>
+
+            <div class="step-flow animate-on-scroll fade-up">
+                <div class="step-flow__num">2</div>
+                <div class="step-flow__content">
+                    <h3>Мы настраиваем за 2-3 дня</h3>
+                    <p>Подключаем платформу, интегрируем с вашими системами</p>
+                </div>
+            </div>
+
+            <div class="step-flow animate-on-scroll fade-up">
+                <div class="step-flow__num">3</div>
+                <div class="step-flow__content">
+                    <h3>Работает автоматически</h3>
+                    <p>Всё готово, вы получаете результат без ручной работы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BACK TO AI BOTS ===== -->
     <section class="section">
         <div class="container">
             <div class="back-section animate-on-scroll fade-up">
-                <p style="color:var(--color-text-muted);font-size:0.9rem;margin-bottom:var(--space-3);">Нужна диагностика вашего сайта?</p>
-                <h2 style="font-size:1.6rem;margin-bottom:var(--space-3);">SiteMoney Scan - узнайте почему сайт не продаёт</h2>
-                <p style="color:var(--color-text-secondary);margin-bottom:var(--space-5);max-width:480px;margin-left:auto;margin-right:auto;">
-                    AI анализирует 50+ параметров и показывает конкретный список ошибок. Результат за 2 минуты&nbsp;- бесплатно.
-                </p>
-                <a href="https://triggerflow.pro/sitemoney-scan.html" class="btn btn--primary btn--large">
-                    Проверить сайт бесплатно &rarr;
+                <p style="color:var(--color-text-muted);font-size:0.9rem;margin-bottom:var(--space-3);">Нужны AI-боты?</p>
+                <h2 style="font-size:1.6rem;margin-bottom:var(--space-3);">Support Agent, Content Planner, Invoice Generator</h2>
+                <a href="ai-bots.html" class="btn btn--primary btn--large">
+                    Смотреть AI-ботов &rarr;
                 </a>
             </div>
         </div>
@@ -346,12 +301,13 @@
                 <a href="/" class="footer__logo">
                     Trigger<span class="logo-flow">Flow</span><span style="color:var(--color-primary);"> AI</span><span class="tm">&trade;</span>
                 </a>
-                <p class="footer__tagline">AI-боты для автоматизации бизнеса</p>
+                <p class="footer__tagline">AI-боты и автоматизация для бизнеса</p>
             </div>
             <nav class="footer__nav">
+                <a href="index.html">Все инструменты</a>
                 <a href="ai-bots.html">AI-боты</a>
                 <a href="automation-tools.html">Автоматизация</a>
-                <a href="https://triggerflow.pro">Диагностика сайтов</a>
+                <a href="https://triggerflow.pro">triggerflow.pro</a>
                 <a href="https://triggerflow.pro/about.html">Про нас</a>
                 <a href="https://triggerflow.pro/blog.html">Блог</a>
             </nav>

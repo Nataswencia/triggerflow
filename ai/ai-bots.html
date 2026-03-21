@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-боты для бизнеса - поддержка, контент, счета | TriggerFlow AI</title>
+    <meta name="description" content="AI-боты работают 24/7: Support Agent отвечает клиентам, Content Planner публикует контент, Invoice Generator выставляет счета. От 79&#8364;/мес.">
+    <link rel="canonical" href="https://ai.triggerflow.pro/ai-bots">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI-боты для бизнеса - поддержка, контент, счета | TriggerFlow AI">
+    <meta property="og:description" content="AI-боты работают 24/7: Support Agent, Content Planner, Invoice Generator. От 79&#8364;/мес.">
+    <meta property="og:url" content="https://ai.triggerflow.pro/ai-bots">
+    <meta property="og:site_name" content="TriggerFlow AI">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .ai-hero { text-align: center; padding: var(--space-12) 0 var(--space-8); }
+        .ai-hero__badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(30,111,255,0.1); border: 1px solid rgba(30,111,255,0.3);
+            color: var(--color-primary); padding: 6px 16px;
+            border-radius: var(--radius-pill); font-size: 0.85rem; font-weight: 600;
+            margin-bottom: var(--space-4);
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-5);
+            margin-top: var(--space-7);
+        }
+        .tool-card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            transition: border-color 0.2s, transform 0.2s;
+            display: flex; flex-direction: column;
+        }
+        .tool-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+        }
+        .tool-card__icon {
+            width: 56px; height: 56px;
+            border-radius: var(--radius-lg);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: var(--space-4);
+        }
+        .tool-card__icon--blue { background: rgba(30,111,255,0.15); color: var(--color-primary); }
+        .tool-card__icon--green { background: rgba(0,208,132,0.15); color: #00d084; }
+        .tool-card__icon--orange { background: rgba(255,149,0,0.15); color: #ff9500; }
+        .tool-card__title { font-size: 1.25rem; font-weight: 700; margin-bottom: var(--space-2); }
+        .tool-card__desc { color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-4); flex: 1; }
+        .tool-card__price { font-size: 1.5rem; font-weight: 800; margin-bottom: var(--space-4); }
+        .tool-card__price span { font-size: 0.9rem; font-weight: 400; color: var(--color-text-muted); }
+        .tool-card__features { list-style: none; padding: 0; margin-bottom: var(--space-5); }
+        .tool-card__features li {
+            display: flex; align-items: flex-start; gap: 8px;
+            padding: 6px 0; font-size: 0.9rem; color: var(--color-text-secondary);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .tool-card__features li:last-child { border-bottom: none; }
+        .tool-card__features li i { color: var(--color-accent-1); margin-top: 2px; font-size: 0.8rem; flex-shrink: 0; }
+
+        .divider-line {
+            border: none; border-top: 1px solid var(--color-border);
+            margin: var(--space-8) 0;
+        }
+        .back-section {
+            background: linear-gradient(135deg, rgba(30,111,255,0.06), rgba(0,180,255,0.04));
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-7);
+            text-align: center;
+            margin-top: var(--space-8);
+        }
+
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-5); }
+        .case-card { background: var(--color-card-bg); border: 1px solid var(--color-border-light); border-radius: var(--radius-xl); padding: var(--space-5); }
+        .case-card__client { font-size: 0.8rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2); }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="/" class="navbar__logo">
+                <span class="logo-icon"><img src="../images/logo-shield.png" alt="TriggerFlow logo"></span>
+                Trigger<span class="logo-flow">Flow</span><span style="color:var(--color-primary);font-weight:700;"> AI</span><span class="tm">&trade;</span>
+            </a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html">Все инструменты</a></li>
+                <li><a href="ai-bots.html" class="active">AI-боты</a></li>
+                <li><a href="automation-tools.html">Автоматизация</a></li>
+                <li><a href="https://triggerflow.pro" style="color:var(--color-text-muted);font-size:0.9rem;">&larr; triggerflow.pro</a></li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="section ai-hero">
+        <div class="container">
+            <div class="ai-hero__badge">
+                <i class="fa-solid fa-robot"></i> AI-боты для бизнеса
+            </div>
+            <h1 class="hero__title animate-on-scroll fade-up" style="font-size:2.8rem;">
+                AI-сотрудники которые работают 24/7
+            </h1>
+            <p class="hero__subtitle animate-on-scroll fade-up" style="max-width:600px;margin:0 auto;">
+                Поддержка клиентов, контент-план, счета - автоматически. Настраиваем один раз, работает постоянно.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== TOOLS GRID ===== -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="tool-grid">
+
+                <!-- AI Support Agent -->
+                <div class="tool-card animate-on-scroll fade-up">
+                    <div class="tool-card__icon tool-card__icon--blue">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div class="tool-card__title">AI Support Agent</div>
+                    <div class="tool-card__price">149&#8364; <span>/мес</span></div>
+                    <p class="tool-card__desc">
+                        AI-бот отвечает на вопросы клиентов 24/7 на основе вашей базы знаний. Интеграция с сайтом, Telegram, email.
+                    </p>
+                    <ul class="tool-card__features">
+                        <li><i class="fa-solid fa-check"></i> Ответы на FAQ за секунды</li>
+                        <li><i class="fa-solid fa-check"></i> Обучение на вашей документации</li>
+                        <li><i class="fa-solid fa-check"></i> Эскалация сложных вопросов человеку</li>
+                        <li><i class="fa-solid fa-check"></i> Интеграция с Telegram и сайтом</li>
+                        <li><i class="fa-solid fa-check"></i> Аналитика популярных вопросов</li>
+                    </ul>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--block">Подключить AI-поддержку &rarr;</a>
+                </div>
+
+                <!-- Content Planner -->
+                <div class="tool-card animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div class="tool-card__icon tool-card__icon--green">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div class="tool-card__title">Content Planner</div>
+                    <div class="tool-card__price">99&#8364; <span>/мес</span></div>
+                    <p class="tool-card__desc">
+                        AI планирует контент на месяц вперёд: темы, тексты, расписание публикаций. Автопостинг в Telegram.
+                    </p>
+                    <ul class="tool-card__features">
+                        <li><i class="fa-solid fa-check"></i> Контент-план на 30 дней</li>
+                        <li><i class="fa-solid fa-check"></i> AI-генерация текстов и идей</li>
+                        <li><i class="fa-solid fa-check"></i> Автопостинг в Telegram-канал</li>
+                        <li><i class="fa-solid fa-check"></i> Подбор изображений через Unsplash</li>
+                        <li><i class="fa-solid fa-check"></i> Аналитика вовлечённости</li>
+                    </ul>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--block">Запустить контент-план &rarr;</a>
+                </div>
+
+                <!-- Invoice Generator -->
+                <div class="tool-card animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div class="tool-card__icon tool-card__icon--orange">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="tool-card__title">Invoice Generator</div>
+                    <div class="tool-card__price">79&#8364; <span>/мес</span></div>
+                    <p class="tool-card__desc">
+                        Автоматическая генерация счетов для клиентов. Данные из CRM, шаблон под ваш бренд, отправка по email.
+                    </p>
+                    <ul class="tool-card__features">
+                        <li><i class="fa-solid fa-check"></i> Генерация PDF-счетов по шаблону</li>
+                        <li><i class="fa-solid fa-check"></i> Автозаполнение из Google Sheets / CRM</li>
+                        <li><i class="fa-solid fa-check"></i> Нумерация и учёт счетов</li>
+                        <li><i class="fa-solid fa-check"></i> Отправка клиенту по email</li>
+                        <li><i class="fa-solid fa-check"></i> Напоминания о неоплаченных счетах</li>
+                    </ul>
+                    <a href="https://t.me/TriggerFlow_analyse_bot" target="_blank" rel="noopener" class="btn btn--primary btn--block">Автоматизировать счета &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== USE CASES ===== -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <hr class="divider-line">
+            <div class="ai-hero__badge" style="margin: 0 auto var(--space-3);display:flex;justify-content:center;">
+                <i class="fa-solid fa-building"></i> Кейсы
+            </div>
+            <h2 style="text-align:center;font-size:2rem;margin-bottom:var(--space-7);">Уже работает у клиентов</h2>
+
+            <div class="case-grid">
+
+                <div class="case-card animate-on-scroll fade-up">
+                    <div class="case-card__client">Инкост</div>
+                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:var(--space-2);">AI Support Agent</h3>
+                    <p style="color:var(--color-text-secondary);font-size:0.9rem;line-height:1.6;">
+                        AI Support Agent отвечает на FAQ по электромонтажу. Клиенты получают ответы мгновенно, менеджеры занимаются сложными заказами.
+                    </p>
+                </div>
+
+                <div class="case-card animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div class="case-card__client">TriggerFlow</div>
+                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:var(--space-2);">Content Planner</h3>
+                    <p style="color:var(--color-text-secondary);font-size:0.9rem;line-height:1.6;">
+                        Content Planner публикует в Telegram-канал. Контент генерируется автоматически, посты выходят по расписанию каждый день.
+                    </p>
+                </div>
+
+                <div class="case-card animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div class="case-card__client">SASU France</div>
+                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:var(--space-2);">Invoice Generator</h3>
+                    <p style="color:var(--color-text-secondary);font-size:0.9rem;line-height:1.6;">
+                        Invoice Generator выставляет счета клиентам. Данные подтягиваются из Google Sheets, PDF отправляется автоматически по email.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BACK SECTION ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="back-section animate-on-scroll fade-up">
+                <p style="color:var(--color-text-muted);font-size:0.9rem;margin-bottom:var(--space-3);">Нужны инструменты автоматизации?</p>
+                <h2 style="font-size:1.6rem;margin-bottom:var(--space-3);">Tally.so, Cal.com, Resend - настроим и подключим</h2>
+                <p style="color:var(--color-text-secondary);margin-bottom:var(--space-5);max-width:480px;margin-left:auto;margin-right:auto;">
+                    Бесплатные SaaS-платформы + наша настройка и интеграция с вашим бизнесом. Один раз - работает постоянно.
+                </p>
+                <a href="automation-tools.html" class="btn btn--primary btn--large">
+                    Смотреть инструменты &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <div class="footer__logo-image">
+                    <img src="../images/logo-shield.png" alt="TriggerFlow logo" width="80" height="80">
+                </div>
+                <a href="/" class="footer__logo">
+                    Trigger<span class="logo-flow">Flow</span><span style="color:var(--color-primary);"> AI</span><span class="tm">&trade;</span>
+                </a>
+                <p class="footer__tagline">AI-боты для автоматизации бизнеса</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="index.html">Все инструменты</a>
+                <a href="ai-bots.html">AI-боты</a>
+                <a href="automation-tools.html">Автоматизация</a>
+                <a href="https://triggerflow.pro">triggerflow.pro</a>
+                <a href="https://triggerflow.pro/about.html">Про нас</a>
+                <a href="https://triggerflow.pro/blog.html">Блог</a>
+            </nav>
+            <div class="footer__trust">
+                <span class="footer__trust-badge"><i class="fa-solid fa-shield-halved"></i> GDPR Compliant</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-lock"></i> Encrypted API</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-building-shield"></i> SASU France</span>
+            </div>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Все права защищены</div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
