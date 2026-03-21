@@ -274,17 +274,11 @@
             <div class="trust-bar__item"><i class="fa-solid fa-clock"></i> Конкретный план за <strong>24 часа</strong></div>
         </div>
         <div class="animate-on-scroll fade-up" style="text-align:center;margin-top:var(--space-4);animation-delay:0.5s;">
-            <span id="live-counter" style="display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;color:var(--color-text-muted);"><i class="fa-solid fa-circle" style="color:#00d084;font-size:0.5rem;animation:pulse 2s infinite;"></i> Последний анализ: <strong style="color:var(--color-text-secondary);">...</strong></span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--color-text-muted);">
+                <i class="fa-solid fa-chart-bar" style="color:var(--color-primary);"></i>
+                3 аудита проведено в марте 2026 по методологии TriggerFlow 3.0
+            </span>
         </div>
-        <script>
-        (function(){
-            var mins=[3,7,11,14,18,22,26,31,37,43,49,54,61,68,74,82,91,103,117];
-            var m=mins[Math.floor(Math.random()*mins.length)];
-            var txt=m<60?m+' мин. назад':Math.floor(m/60)+' ч. '+( m%60?m%60+' мин. ':'' )+'назад';
-            var el=document.querySelector('#live-counter strong');
-            if(el)el.textContent=txt;
-        })();
-        </script>
         <div class="hero__scroll-indicator">
             <span>Прокрутите вниз</span>
             <i class="fa-solid fa-chevron-down"></i>
@@ -609,9 +603,12 @@
                 <img src="images/natalia-potapova.jpg" alt="Наталья Потапова — Основатель TriggerFlow" style="flex-shrink:0;width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--color-primary);">
                 <div>
                     <div style="font-weight:600;color:var(--color-text-primary);font-size:1.05rem;">Наталья Потапова</div>
-                    <div style="color:var(--color-primary);font-size:0.85rem;margin:4px 0;">Основатель TriggerFlow</div>
-                    <div style="color:var(--color-text-muted);font-size:0.85rem;line-height:1.5;margin-bottom:6px;">20 лет в digital-маркетинге · Франция · Строю AI-системы, которые сама использую в бизнесе</div>
-                    <a href="https://www.linkedin.com/in/nataliia-potapova-4304172a2/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.8rem;color:var(--color-primary);text-decoration:none;"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <div style="color:var(--color-primary);font-size:0.85rem;margin:4px 0;">Основатель TriggerFlow &middot; SASU France</div>
+                    <div style="color:var(--color-text-muted);font-size:0.85rem;line-height:1.5;margin-bottom:6px;">20 лет в digital-маркетинге &middot; Автор методологии TriggerFlow 3.0 (21 критерий, 4 блока) &middot; Клиенты: Франция, Россия, Европа &middot; Провела аудиты для B2B, НКО, туризма, e-commerce</div>
+                    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                        <a href="https://www.linkedin.com/in/nataliia-potapova-4304172a2/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.8rem;color:var(--color-primary);text-decoration:none;"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                        <span style="font-size:0.75rem;color:var(--color-text-muted);">Bordeaux with Marina &middot; SINGA Bordeaux &middot; ИНКОСТ-ЭТМ</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -915,8 +912,8 @@
                 PDF-отчёт с приоритетами за 24 часа. <br>Конкретные точки потерь и план действий</p>
             <div class="animate-on-scroll fade-up" style="animation-delay: 0.15s; display:flex;flex-direction:column;align-items:center;gap:var(--space-3);">
                 <a href="#" class="btn btn--primary btn--large" data-tf-form="express" data-tf-service="SiteMoney Scan PRO" data-tf-price="149">Получить PRO-аудит за 149€</a>
-                <span style="display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--color-accent-2);font-weight:500;">
-                    <i class="fa-solid fa-circle-exclamation"></i> Принимаю 5 клиентов одновременно — сейчас доступно 2 места
+                <span style="display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--color-text-muted);font-weight:500;">
+                    <i class="fa-solid fa-clock"></i> Результат за 24 часа &middot; Методология TriggerFlow 3.0 &middot; 21 критерий
                 </span>
             </div>
             <div class="guarantee-badge animate-on-scroll fade-up" style="animation-delay: 0.25s; margin: var(--space-3) auto 0;">
