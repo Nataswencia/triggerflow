@@ -226,13 +226,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================
   const hero = document.querySelector('.hero') || document.querySelector('.page-hero');
   if (hero) {
-    const heroContent = hero.querySelector('.hero__content') || hero.querySelector('.container');
-    const heroTarget = heroContent || hero;
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
       if (scrolled < window.innerHeight) {
-        heroTarget.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroTarget.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
       }
     });
   }

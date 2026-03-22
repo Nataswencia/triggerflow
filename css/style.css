@@ -582,6 +582,7 @@ p:last-child {
   position: relative;
   overflow: hidden;
   background: var(--gradient-hero);
+  clip-path: inset(0);
 }
 
 /* Hero with animated mesh gradient (index page) */
