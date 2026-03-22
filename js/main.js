@@ -222,18 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================
-  // 10. PARALLAX EFFECT ON HERO
+  // 10. PARALLAX EFFECT ON HERO (removed — static hero)
   // ========================================
-  const hero = document.querySelector('.hero') || document.querySelector('.page-hero');
-  if (hero) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      if (scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-        hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
-      }
-    });
-  }
 
   // ========================================
   // 11. TYPED EFFECT FOR HERO HEADING (optional)
