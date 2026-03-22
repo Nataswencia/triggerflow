@@ -3017,8 +3017,8 @@ p:last-child {
 
   .hero {
     min-height: auto;
-    padding-top: calc(var(--nav-height) + var(--space-8));
-    padding-bottom: var(--space-8);
+    padding-top: calc(var(--nav-height) + var(--space-6));
+    padding-bottom: var(--space-12);
   }
 
   /* Hide decorative orbs on mobile to prevent overflow and improve performance */
