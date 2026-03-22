@@ -3032,6 +3032,11 @@ p:last-child {
     grid-template-columns: 1fr !important;
   }
 
+  /* Demo Results: 2-column grid becomes single column on mobile */
+  #demo-results [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
   /* Hide banner image on mobile — use gradient fallback */
   .hero--banner {
     background: var(--gradient-hero);
