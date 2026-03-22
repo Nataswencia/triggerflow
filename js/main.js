@@ -244,6 +244,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================
+  // 11b. FIX LOGO LINK FOR EN/FR
+  // ========================================
+  const logoLink = document.querySelector('.navbar__logo');
+  if (logoLink) {
+    const path = window.location.pathname;
+    if (path.indexOf('/en/') === 0 || path.indexOf('/en') === 0) {
+      logoLink.setAttribute('href', '/en/');
+    } else if (path.indexOf('/fr/') === 0 || path.indexOf('/fr') === 0) {
+      logoLink.setAttribute('href', '/fr/');
+    }
+  }
+
+  // ========================================
   // 12. ACTIVE NAV LINK HIGHLIGHTING
   // ========================================
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
