@@ -580,14 +580,14 @@ p:last-child {
   padding-top: var(--nav-height);
   padding-bottom: var(--space-10);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: var(--gradient-hero);
 }
 
 /* Hero with animated mesh gradient (index page) */
 .hero--banner {
   background: var(--color-dark);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero--banner .hero__gradient-bg {
