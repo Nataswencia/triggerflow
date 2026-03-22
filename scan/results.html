@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аудит сайта - Результаты | TriggerFlow</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0e1a;
+            --card-bg: #111827;
+            --card-border: rgba(255,255,255,0.08);
+            --text: #e5e7eb;
+            --text-muted: #9ca3af;
+            --text-bright: #f9fafb;
+            --red: #ef4444;
+            --amber: #f59e0b;
+            --blue: #3b82f6;
+            --green: #00d084;
+            --accent: #6366f1;
+            --accent-glow: rgba(99,102,241,0.15);
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            background: rgba(17,24,39,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-bright);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        .navbar-logo img {
+            height: 32px;
+        }
+        .navbar-logo span {
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .navbar-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Container */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        /* Loading / Error */
+        .state-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            gap: 20px;
+            text-align: center;
+        }
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid rgba(255,255,255,0.1);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .state-screen h2 {
+            color: var(--text-bright);
+            font-size: 1.5rem;
+        }
+        .state-screen p {
+            color: var(--text-muted);
+            max-width: 400px;
+        }
+        .state-screen a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .state-screen a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header section */
+        .audit-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .audit-header h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            word-break: break-all;
+            margin-bottom: 12px;
+        }
+        .audit-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .audit-meta span {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        .audit-meta i {
+            margin-right: 4px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .badge-type {
+            background: rgba(99,102,241,0.15);
+            color: #a78bfa;
+            border: 1px solid rgba(99,102,241,0.3);
+        }
+
+        /* Score ring */
+        .score-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 48px;
+        }
+        .score-ring-wrap {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 16px;
+        }
+        .score-ring-wrap svg {
+            transform: rotate(-90deg);
+        }
+        .score-ring-bg {
+            fill: none;
+            stroke: rgba(255,255,255,0.08);
+            stroke-width: 12;
+        }
+        .score-ring-fg {
+            fill: none;
+            stroke-width: 12;
+            stroke-linecap: round;
+            transition: stroke-dasharray 1.2s ease;
+        }
+        .score-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .score-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--text-bright);
+        }
+        .score-max {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        .score-percent {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .level-badge {
+            padding: 8px 24px;
+            border-radius: 24px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Blocks grid */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin-bottom: 20px;
+        }
+        .blocks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+        .block-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px;
+        }
+        .block-card-id {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .block-card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-bright);
+            margin-bottom: 4px;
+        }
+        .block-card-method {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .block-score-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .block-score-text {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        /* TOP-3 Priorities */
+        .priorities-section {
+            margin-bottom: 48px;
+        }
+        .priority-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .priority-rank {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        .priority-rank-1 { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .priority-rank-2 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .priority-rank-3 { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .priority-body {
+            flex: 1;
+            min-width: 0;
+        }
+        .priority-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-bright);
+            margin-bottom: 6px;
+        }
+        .priority-issue {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .priority-action {
+            font-size: 0.875rem;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        .priority-action i {
+            margin-right: 4px;
+        }
+        .badge-complexity {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .complexity-low { background: rgba(0,208,132,0.15); color: var(--green); border: 1px solid rgba(0,208,132,0.3); }
+        .complexity-medium { background: rgba(245,158,11,0.15); color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+        .complexity-high { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
+
+        /* Criteria sections */
+        .criteria-section {
+            margin-bottom: 48px;
+        }
+        .block-group {
+            margin-bottom: 32px;
+        }
+        .block-group-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .block-group-id {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .block-group-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        .criterion-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .criterion-card:hover {
+            border-color: rgba(255,255,255,0.15);
+        }
+        .criterion-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .score-badge {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        .score-1, .score-2 { background: var(--red); }
+        .score-3 { background: var(--amber); }
+        .score-4 { background: var(--blue); }
+        .score-5 { background: var(--green); }
+        .criterion-name {
+            flex: 1;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-bright);
+        }
+        .criterion-toggle {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            transition: transform 0.3s;
+        }
+        .criterion-card.open .criterion-toggle {
+            transform: rotate(180deg);
+        }
+        .criterion-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+        .criterion-card.open .criterion-details {
+            max-height: 800px;
+        }
+        .criterion-details-inner {
+            padding: 0 20px 20px;
+        }
+        .detail-block {
+            margin-bottom: 14px;
+        }
+        .detail-block:last-child {
+            margin-bottom: 0;
+        }
+        .detail-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .label-works { color: var(--green); }
+        .label-improve { color: var(--amber); }
+        .label-redflags { color: var(--red); }
+        .label-recommendation { color: var(--blue); }
+        .detail-list {
+            list-style: none;
+        }
+        .detail-list li {
+            font-size: 0.875rem;
+            color: var(--text);
+            padding: 4px 0;
+            padding-left: 22px;
+            position: relative;
+        }
+        .detail-list li::before {
+            position: absolute;
+            left: 0;
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.7rem;
+            top: 7px;
+        }
+        .list-works li::before {
+            content: '\f00c';
+            color: var(--green);
+        }
+        .list-improve li::before {
+            content: '\f061';
+            color: var(--amber);
+        }
+        .list-redflags li::before {
+            content: '\f00d';
+            color: var(--red);
+        }
+        .recommendation-box {
+            background: rgba(59,130,246,0.08);
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.875rem;
+            color: var(--text);
+            line-height: 1.5;
+        }
+        .recommendation-box i {
+            color: var(--blue);
+            margin-right: 6px;
+        }
+
+        /* Strategic idea */
+        .strategic-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(167,139,250,0.08));
+            border: 1px solid rgba(99,102,241,0.25);
+            border-radius: 16px;
+            padding: 28px 24px;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+        .strategic-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin-bottom: 12px;
+        }
+        .strategic-box h3 i {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+        .strategic-box p {
+            font-size: 1rem;
+            color: var(--text);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px 24px;
+            margin-bottom: 48px;
+        }
+        .cta-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin-bottom: 8px;
+        }
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 6px 28px rgba(99,102,241,0.4);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.06);
+            color: var(--text-bright);
+            border: 1px solid var(--card-border);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 32px 20px;
+            border-top: 1px solid var(--card-border);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Print styles */
+        @media print {
+            .navbar, .cta-section, .footer { display: none; }
+            body { background: #fff; color: #111; }
+            .container { max-width: 100%; }
+            .score-ring-fg { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .block-card, .priority-card, .criterion-card, .strategic-box {
+                break-inside: avoid;
+                border-color: #ddd;
+                background: #f9f9f9;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .criterion-details { max-height: none !important; }
+            .criterion-toggle { display: none; }
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .audit-header h1 { font-size: 1.25rem; }
+            .score-ring-wrap { width: 160px; height: 160px; }
+            .score-number { font-size: 2.75rem; }
+            .blocks-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .block-card { padding: 14px; }
+            .priority-card { flex-direction: column; gap: 12px; }
+            .priority-rank { width: 36px; height: 36px; font-size: 1rem; border-radius: 8px; }
+            .criterion-header { padding: 12px 14px; gap: 10px; }
+            .score-badge { width: 34px; height: 34px; font-size: 0.95rem; }
+            .cta-section { padding: 28px 16px; }
+            .btn { padding: 12px 20px; font-size: 0.875rem; }
+            .container { padding: 20px 14px 48px; }
+        }
+        @media (max-width: 380px) {
+            .blocks-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="/" class="navbar-logo">
+        <span>TriggerFlow</span>
+    </a>
+    <span class="navbar-label">Результаты аудита</span>
+</nav>
+
+<!-- Loading state -->
+<div id="loading" class="state-screen">
+    <div class="spinner"></div>
+    <h2>Загружаем результаты...</h2>
+    <p>Получаем данные аудита из базы</p>
+</div>
+
+<!-- Error state -->
+<div id="error" class="state-screen" style="display:none;">
+    <i class="fa-solid fa-circle-exclamation" style="font-size:3rem; color:var(--red);"></i>
+    <h2>Результаты не найдены</h2>
+    <p id="error-msg">Проверьте ссылку или обратитесь в поддержку.</p>
+    <a href="https://triggerflow.pro">Вернуться на triggerflow.pro</a>
+</div>
+
+<!-- Main content -->
+<div id="report" class="container" style="display:none;">
+
+    <!-- Header -->
+    <section class="audit-header">
+        <h1 id="r-url"></h1>
+        <div class="audit-meta">
+            <span><i class="fa-regular fa-calendar"></i> <span id="r-date"></span></span>
+            <span class="badge badge-type" id="r-sitetype"></span>
+        </div>
+    </section>
+
+    <!-- Overall score -->
+    <section class="score-section">
+        <div class="score-ring-wrap">
+            <svg width="100%" height="100%" viewBox="0 0 200 200">
+                <circle class="score-ring-bg" cx="100" cy="100" r="85"></circle>
+                <circle class="score-ring-fg" id="score-ring" cx="100" cy="100" r="85"
+                    stroke-dasharray="0 534" stroke="var(--blue)"></circle>
+            </svg>
+            <div class="score-center">
+                <div class="score-number" id="r-score">0</div>
+                <div class="score-max" id="r-max">/105</div>
+                <div class="score-percent" id="r-percent"></div>
+            </div>
+        </div>
+        <span class="badge level-badge" id="r-level"></span>
+    </section>
+
+    <!-- Methodology blocks -->
+    <h2 class="section-title"><i class="fa-solid fa-layer-group" style="color:var(--accent); margin-right:8px;"></i>Блоки оценки</h2>
+    <div class="blocks-grid" id="blocks-grid"></div>
+
+    <!-- TOP-3 Priorities -->
+    <section class="priorities-section">
+        <h2 class="section-title"><i class="fa-solid fa-bolt" style="color:var(--amber); margin-right:8px;"></i>ТОП-3 приоритета</h2>
+        <div id="priorities-list"></div>
+    </section>
+
+    <!-- All criteria -->
+    <section class="criteria-section">
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-check" style="color:var(--green); margin-right:8px;"></i>Все критерии оценки</h2>
+        <div id="criteria-list"></div>
+    </section>
+
+    <!-- Strategic idea -->
+    <div class="strategic-box" id="strategic-box" style="display:none;">
+        <h3><i class="fa-solid fa-lightbulb"></i>Стратегическая идея</h3>
+        <p id="r-strategic"></p>
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Хотите исправить найденные проблемы?</h2>
+        <p>Получите детальный план действий и экспертную поддержку</p>
+        <div class="cta-buttons">
+            <a href="/sitemoney-scan.html" class="btn btn-primary">
+                <i class="fa-solid fa-rocket"></i> Заказать SiteMoney Scan PRO
+            </a>
+            <button class="btn btn-secondary" onclick="downloadPDF()">
+                <i class="fa-solid fa-file-pdf"></i> Скачать PDF
+            </button>
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer" id="footer" style="display:none;">
+    &copy; 2026 TriggerFlow. Результаты конфиденциальны.
+</footer>
+
+<script>
+(function() {
+    var SHEET_ID = '1wEcz14CR6NCo3LrB-nIfkGNKEswx3lS51pvbpFM8qrc';
+    var SHEET_TAB = 'Scan_Results';
+
+    var params = new URLSearchParams(window.location.search);
+    var id = params.get('id');
+
+    if (!id) {
+        showError('Не указан ID аудита. Проверьте ссылку.');
+        return;
+    }
+
+    var apiUrl = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID +
+        '/gviz/tq?tqx=out:json&sheet=' + encodeURIComponent(SHEET_TAB) +
+        '&tq=' + encodeURIComponent("SELECT * WHERE A='" + id + "'");
+
+    fetch(apiUrl)
+        .then(function(res) { return res.text(); })
+        .then(function(text) {
+            // Google returns JSONP-like: /*O_o*/\ngoogle.visualization.Query.setResponse({...});
+            var start = text.indexOf('setResponse(');
+            if (start === -1) throw new Error('Неверный формат ответа');
+            start += 12;
+            var end = text.lastIndexOf(');');
+            var json = JSON.parse(text.substring(start, end));
+
+            if (!json.table || !json.table.rows || json.table.rows.length === 0) {
+                throw new Error('not_found');
+            }
+
+            var row = json.table.rows[0];
+            // Column D (index 3) = json_data
+            var jsonDataStr = row.c[3] ? row.c[3].v : null;
+            if (!jsonDataStr) throw new Error('not_found');
+
+            var data = JSON.parse(jsonDataStr);
+            renderReport(data);
+        })
+        .catch(function(err) {
+            if (err.message === 'not_found') {
+                showError('Аудит с ID "' + id + '" не найден. Проверьте ссылку или обратитесь в поддержку.');
+            } else {
+                showError('Ошибка загрузки: ' + err.message);
+            }
+        });
+
+    function showError(msg) {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('error').style.display = 'flex';
+        document.getElementById('error-msg').textContent = msg;
+    }
+
+    function getScoreColor(score, max) {
+        var pct = (score / max) * 100;
+        if (pct < 40) return 'var(--red)';
+        if (pct < 60) return 'var(--amber)';
+        if (pct < 80) return 'var(--blue)';
+        return 'var(--green)';
+    }
+
+    function getLevelColor(level) {
+        var l = (level || '').toLowerCase();
+        if (l.indexOf('крит') !== -1) return 'var(--red)';
+        if (l.indexOf('базов') !== -1) return 'var(--amber)';
+        if (l.indexOf('хорош') !== -1) return 'var(--blue)';
+        if (l.indexOf('высок') !== -1) return 'var(--green)';
+        return 'var(--blue)';
+    }
+
+    function getLevelBg(level) {
+        var l = (level || '').toLowerCase();
+        if (l.indexOf('крит') !== -1) return 'rgba(239,68,68,0.15)';
+        if (l.indexOf('базов') !== -1) return 'rgba(245,158,11,0.15)';
+        if (l.indexOf('хорош') !== -1) return 'rgba(59,130,246,0.15)';
+        if (l.indexOf('высок') !== -1) return 'rgba(0,208,132,0.15)';
+        return 'rgba(59,130,246,0.15)';
+    }
+
+    function getComplexityClass(c) {
+        var v = (c || '').toLowerCase();
+        if (v === 'low' || v.indexOf('низк') !== -1) return 'complexity-low';
+        if (v === 'high' || v.indexOf('высок') !== -1) return 'complexity-high';
+        return 'complexity-medium';
+    }
+
+    function getComplexityLabel(c) {
+        var v = (c || '').toLowerCase();
+        if (v === 'low' || v.indexOf('низк') !== -1) return 'Низкая';
+        if (v === 'high' || v.indexOf('высок') !== -1) return 'Высокая';
+        return 'Средняя';
+    }
+
+    function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.textContent = str || '';
+        return div.innerHTML;
+    }
+
+    function renderReport(data) {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('report').style.display = 'block';
+        document.getElementById('footer').style.display = 'block';
+
+        // Header
+        document.getElementById('r-url').textContent = data.url || data.client || '';
+        document.getElementById('r-date').textContent = data.date || '';
+        document.getElementById('r-sitetype').textContent = data.site_type || '';
+
+        // Score ring
+        var totalScore = data.total_score || 0;
+        var maxScore = data.max_score || 105;
+        var percentage = data.percentage || Math.round((totalScore / maxScore) * 100);
+        var circumference = 2 * Math.PI * 85; // ~534
+
+        document.getElementById('r-score').textContent = totalScore;
+        document.getElementById('r-max').textContent = '/' + maxScore;
+        document.getElementById('r-percent').textContent = percentage + '%';
+
+        var ring = document.getElementById('score-ring');
+        var fillLen = (percentage / 100) * circumference;
+        var levelColor = getLevelColor(data.level);
+
+        setTimeout(function() {
+            ring.setAttribute('stroke-dasharray', fillLen + ' ' + circumference);
+            ring.setAttribute('stroke', levelColor);
+        }, 100);
+
+        var levelBadge = document.getElementById('r-level');
+        levelBadge.textContent = data.level || '';
+        levelBadge.style.color = levelColor;
+        levelBadge.style.background = getLevelBg(data.level);
+        levelBadge.style.border = '1px solid ' + levelColor;
+
+        // Blocks
+        var blocksHtml = '';
+        var blocks = data.blocks || [];
+        var criteria = data.criteria || [];
+
+        blocks.forEach(function(block) {
+            var blockScore = 0;
+            criteria.forEach(function(c) {
+                if (c.block_id === block.id) blockScore += (c.score || 0);
+            });
+            var blockMax = block.max_score || 1;
+            var blockPct = Math.round((blockScore / blockMax) * 100);
+            var bColor = getScoreColor(blockScore, blockMax);
+
+            blocksHtml += '<div class="block-card">' +
+                '<div class="block-card-id">Блок ' + escapeHtml(block.id) + '</div>' +
+                '<div class="block-card-name">' + escapeHtml(block.name) + '</div>' +
+                '<div class="block-card-method">' + escapeHtml(block.methodology) + '</div>' +
+                '<div class="block-score-row">' +
+                    '<span class="block-score-text">' + blockScore + ' / ' + blockMax + '</span>' +
+                    '<span style="font-size:0.75rem; color:' + bColor + '; font-weight:600;">' + blockPct + '%</span>' +
+                '</div>' +
+                '<div class="progress-bar"><div class="progress-fill" style="width:' + blockPct + '%; background:' + bColor + ';"></div></div>' +
+            '</div>';
+        });
+        document.getElementById('blocks-grid').innerHTML = blocksHtml;
+
+        // TOP-3 Priorities
+        var priHtml = '';
+        var priorities = data.top3_priorities || [];
+        priorities.forEach(function(p, i) {
+            var rankClass = 'priority-rank-' + (i + 1);
+            priHtml += '<div class="priority-card">' +
+                '<div class="priority-rank ' + rankClass + '">' + (p.rank || (i + 1)) + '</div>' +
+                '<div class="priority-body">' +
+                    '<div class="priority-name">' + escapeHtml(p.criterion_name) + '</div>' +
+                    '<div class="priority-issue">' + escapeHtml(p.issue) + '</div>' +
+                    '<div class="priority-action"><i class="fa-solid fa-arrow-right"></i> ' + escapeHtml(p.action) + '</div>' +
+                    '<span class="badge badge-complexity ' + getComplexityClass(p.complexity) + '">' +
+                        getComplexityLabel(p.complexity) +
+                    '</span>' +
+                '</div>' +
+            '</div>';
+        });
+        document.getElementById('priorities-list').innerHTML = priHtml;
+
+        // All criteria grouped by block
+        var criteriaHtml = '';
+        blocks.forEach(function(block) {
+            var blockCriteria = criteria.filter(function(c) { return c.block_id === block.id; });
+            if (blockCriteria.length === 0) return;
+
+            criteriaHtml += '<div class="block-group">' +
+                '<div class="block-group-header">' +
+                    '<span class="block-group-id">' + escapeHtml(block.id) + '</span>' +
+                    '<span class="block-group-name">' + escapeHtml(block.name) + '</span>' +
+                '</div>';
+
+            blockCriteria.forEach(function(c) {
+                var scoreClass = 'score-' + Math.min(Math.max(c.score || 1, 1), 5);
+                var works = c.works || [];
+                var improve = c.improve || [];
+                var redFlags = c.red_flags || [];
+                var rec = c.recommendation || '';
+
+                criteriaHtml += '<div class="criterion-card">' +
+                    '<div class="criterion-header" onclick="this.parentElement.classList.toggle(\'open\')">' +
+                        '<div class="score-badge ' + scoreClass + '">' + (c.score || 0) + '</div>' +
+                        '<span class="criterion-name">' + escapeHtml(c.name) + '</span>' +
+                        '<i class="fa-solid fa-chevron-down criterion-toggle"></i>' +
+                    '</div>' +
+                    '<div class="criterion-details"><div class="criterion-details-inner">';
+
+                if (works.length > 0) {
+                    criteriaHtml += '<div class="detail-block">' +
+                        '<div class="detail-label label-works"><i class="fa-solid fa-check" style="margin-right:4px;"></i>Что работает</div>' +
+                        '<ul class="detail-list list-works">';
+                    works.forEach(function(w) {
+                        criteriaHtml += '<li>' + escapeHtml(w) + '</li>';
+                    });
+                    criteriaHtml += '</ul></div>';
+                }
+
+                if (improve.length > 0) {
+                    criteriaHtml += '<div class="detail-block">' +
+                        '<div class="detail-label label-improve"><i class="fa-solid fa-arrow-up" style="margin-right:4px;"></i>Что улучшить</div>' +
+                        '<ul class="detail-list list-improve">';
+                    improve.forEach(function(w) {
+                        criteriaHtml += '<li>' + escapeHtml(w) + '</li>';
+                    });
+                    criteriaHtml += '</ul></div>';
+                }
+
+                if (redFlags.length > 0) {
+                    criteriaHtml += '<div class="detail-block">' +
+                        '<div class="detail-label label-redflags"><i class="fa-solid fa-triangle-exclamation" style="margin-right:4px;"></i>Красные флаги</div>' +
+                        '<ul class="detail-list list-redflags">';
+                    redFlags.forEach(function(w) {
+                        criteriaHtml += '<li>' + escapeHtml(w) + '</li>';
+                    });
+                    criteriaHtml += '</ul></div>';
+                }
+
+                if (rec) {
+                    criteriaHtml += '<div class="detail-block">' +
+                        '<div class="detail-label label-recommendation"><i class="fa-solid fa-info-circle" style="margin-right:4px;"></i>Рекомендация</div>' +
+                        '<div class="recommendation-box"><i class="fa-solid fa-lightbulb"></i>' + escapeHtml(rec) + '</div>' +
+                    '</div>';
+                }
+
+                criteriaHtml += '</div></div></div>';
+            });
+
+            criteriaHtml += '</div>';
+        });
+        document.getElementById('criteria-list').innerHTML = criteriaHtml;
+
+        // Strategic idea
+        if (data.strategic_idea) {
+            document.getElementById('strategic-box').style.display = 'block';
+            document.getElementById('r-strategic').textContent = data.strategic_idea;
+        }
+    }
+
+    // PDF download
+    window.downloadPDF = function() {
+        window.print();
+    };
+})();
+</script>
+
+</body>
+</html>
