@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var WEBHOOK_URL = 'https://nataswencia.app.n8n.cloud/webhook/tf-website-lead';
+  var WEBHOOK_URL = '/api/form-submit';
 
   // i18n: detect language from <html lang="...">
   var LANG = document.documentElement.lang || 'ru';
@@ -590,15 +590,8 @@
       data.selected_plan = planSelect.value;
     }
 
-    // If Scan PRO - also trigger audit pipeline
-    var scanServices = ['SiteMoney Scan PRO', 'SiteMoney Scan Light', 'Google Ads Scan Light', 'Google Ads Scan PRO'];
-    if (scanServices.indexOf(data.service) !== -1) {
-      fetch('https://nataswencia.app.n8n.cloud/webhook/scan-pro', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      }).catch(function(){});
-    }
+    // Scan services are now routed via Telegram Trigger in n8n
+    // (no separate webhook needed)
 
     fetch(WEBHOOK_URL, {
       method: 'POST',
