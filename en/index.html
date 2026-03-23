@@ -236,8 +236,8 @@
                     <div class="hero__url-copied-inner" style="text-align:center;padding:var(--space-4);">
                         <span class="hero__url-copied-icon" style="font-size:2rem;color:#00d084;">&#10003;</span>
                         <div style="margin-top:var(--space-2);">
-                            <strong style="color:#fff;font-size:1.1rem;">Request received!</strong><br>
-                            <span style="color:#94a3b8;">We will send the results to your email within 24 hours</span>
+                            <strong style="color:#fff;font-size:1.1rem;">Diagnostics started!</strong><br>
+                            <span style="color:#94a3b8;">Results on your email in 2 minutes</span>
                         </div>
                         <div style="margin-top:var(--space-4);padding-top:var(--space-3);border-top:1px solid rgba(255,255,255,0.1);">
                             <p style="color:#94a3b8;font-size:0.85rem;margin-bottom:var(--space-2);">While we prepare your report:</p>
@@ -272,11 +272,19 @@
                 var btn = document.getElementById('heroEmailBtn');
                 btn.disabled = true;
                 btn.textContent = 'Sending...';
+                // 1. CRM + Telegram + follow-up
                 fetch('https://nataswencia.app.n8n.cloud/webhook/site-diagnostic', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json; charset=utf-8'},
-                    body: JSON.stringify({url: heroUrl, email: email, source: 'homepage', lang: 'en'})
-                }).then(function(){ showSuccess(); }).catch(function(){ showSuccess(); });
+                    body: JSON.stringify({url: heroUrl, email: email, source: 'homepage', lang: 'en', product: 'screening'})
+                }).catch(function(){});
+                // 2. Auto screening email (result in 2 min)
+                fetch('https://nataswencia.app.n8n.cloud/webhook/auto-screening', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json; charset=utf-8'},
+                    body: JSON.stringify({url: heroUrl, email: email, lang: 'en'})
+                }).catch(function(){});
+                showSuccess();
                 function showSuccess() {
                     document.getElementById('heroStep2').style.display = 'none';
                     document.getElementById('heroSuccess').style.display = 'block';
@@ -507,7 +515,7 @@
                         <li style="padding:4px 0;"><i class="fa-solid fa-check" style="color:#00d084;margin-right:6px;"></i>List of specific issues</li>
                         <li style="padding:4px 0;"><i class="fa-solid fa-check" style="color:#00d084;margin-right:6px;"></i>Format: email</li>
                     </ul>
-                    <a href="#hero" class="btn btn--primary btn--block">Free screening</a>
+                    <a href="#hero" class="btn btn--primary btn--block">Free diagnostics</a>
                 </div>
                 <div class="pricing-card animate-on-scroll fade-up" style="animation-delay: 0.15s;">
                     <h3 class="pricing-card__name">SiteMoney Scan Light</h3>
@@ -519,7 +527,7 @@
                         <li style="padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--color-primary);margin-right:6px;"></i>PDF report with priorities</li>
                         <li style="padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--color-primary);margin-right:6px;"></i>Top 3 actions for growth</li>
                     </ul>
-                    <a href="sitemoney-scan.html" class="btn btn--primary btn--block">Order Light</a>
+                    <button class="btn btn--primary btn--block" data-quick-scan="sitemoney">See demo</button>
                 </div>
                 <div class="pricing-card pricing-card--featured animate-on-scroll fade-up" style="animation-delay: 0.3s;">
                     <div class="pricing-card__badge">2 audits for the price of one</div>
@@ -534,7 +542,7 @@
                         <li style="padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--color-secondary);margin-right:6px;"></i>Personal implementation checklist</li>
                         <li style="padding:4px 0;"><i class="fa-solid fa-star" style="color:#fbbf24;margin-right:6px;"></i><strong>Free rescan in 30 days</strong></li>
                     </ul>
-                    <a href="sitemoney-scan.html#pro" class="btn btn--primary btn--block">Order PRO</a>
+                    <button class="btn btn--primary btn--block" data-quick-scan="sitemoney-pro">See demo</button>
                 </div>
             </div>
             <p class="animate-on-scroll fade-up" style="text-align:center;margin-top:var(--space-4);font-size:0.88rem;color:var(--color-text-secondary);">
