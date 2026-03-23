@@ -8,8 +8,13 @@
 
 const TELEGRAM_BOT_TOKEN = '8156493526:AAHC3QdxEKAXn1_fW0hxrllw7TChzQSK6BQ';
 const TELEGRAM_CHAT_ID = '1039655518';
-const N8N_WEBHOOK_URL = 'https://nataswencia.app.n8n.cloud/webhook/scan-pro';
-const SCAN_SERVICES = ['SiteMoney Scan PRO', 'SiteMoney Scan Light', 'Google Ads Scan', 'Google Ads Scan PRO', 'Google Ads Scan Light'];
+const SCAN_WEBHOOKS = {
+  'SiteMoney Scan PRO': 'https://nataswencia.app.n8n.cloud/webhook/scan-pro',
+  'SiteMoney Scan Light': 'https://nataswencia.app.n8n.cloud/webhook/scan-light',
+  'Google Ads Scan': 'https://nataswencia.app.n8n.cloud/webhook/scan-pro',
+  'Google Ads Scan PRO': 'https://nataswencia.app.n8n.cloud/webhook/scan-pro',
+  'Google Ads Scan Light': 'https://nataswencia.app.n8n.cloud/webhook/scan-light'
+};
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -61,10 +66,12 @@ export default async function handler(req, res) {
       body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: lines.join('\n') })
     }).catch(err => console.error('Telegram error:', err));
 
-    // 2. If scan service — trigger n8n pipeline via webhook
-    const isScan = SCAN_SERVICES.some(s => service.indexOf(s) !== -1);
-    if (isScan && data.website_url) {
-      fetch(N8N_WEBHOOK_URL, {
+    // 2. If scan service — trigger correct n8n pipeline via webhook
+    const webhookUrl = Object.keys(SCAN_WEBHOOKS).reduce((url, key) => {
+      return url || (service.indexOf(key) !== -1 ? SCAN_WEBHOOKS[key] : null);
+    }, null);
+    if (webhookUrl && data.website_url) {
+      fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
