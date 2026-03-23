@@ -2,60 +2,49 @@
  * TriggerFlow Forms — Vercel Serverless Function
  *
  * POST /api/form-submit
- * Receives form data, sends to Telegram @TriggerFlow_analyse_bot
- * n8n Telegram Trigger picks up the message and routes by form_type
+ * 1. Sends Telegram notification to owner
+ * 2. If scan service — calls n8n webhook to start pipeline
  */
 
 const TELEGRAM_BOT_TOKEN = '8156493526:AAHC3QdxEKAXn1_fW0hxrllw7TChzQSK6BQ';
 const TELEGRAM_CHAT_ID = '1039655518';
+const N8N_WEBHOOK_URL = 'https://nataswencia.app.n8n.cloud/webhook/scan-pro';
+const SCAN_SERVICES = ['SiteMoney Scan PRO', 'SiteMoney Scan Light', 'Google Ads Scan', 'Google Ads Scan PRO', 'Google Ads Scan Light'];
 
 export default async function handler(req, res) {
-  // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-
-  if (req.method !== 'POST') {
-    return res.status(405).json({ success: false, error: 'Method not allowed' });
-  }
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'POST') return res.status(405).json({ success: false, error: 'Method not allowed' });
 
   try {
     const data = req.body;
-
     if (!data || !data.email || !data.form_type) {
       return res.status(400).json({ success: false, error: 'Missing required fields' });
     }
 
-    // Generate unique ID
     const id = generateId();
+    const service = data.service_name || data.service || '-';
+    const price = data.service_price || data.price || '-';
 
-    // Build Telegram message
-    // First line: machine-readable for n8n routing
-    // Rest: human-readable notification
     const formLabels = {
       'express': 'Заявка на услугу',
       'consult': 'Запрос консультации',
       'bot-onboarding': 'Подключение бота',
       'subscription': 'Подписка'
     };
-
     const label = formLabels[data.form_type] || data.form_type;
-    const service = data.service_name || data.service || '-';
-    const price = data.service_price || data.price || '-';
 
+    // 1. Telegram notification to owner
     const lines = [
       `FORM|${id}|${data.form_type}|${service}|${price}`,
-      '',
-      label,
+      '', label,
       `Услуга: ${service} (${price})`,
       `Имя: ${data.name || '-'}`,
       `Email: ${data.email || '-'}`
     ];
-
     if (data.website_url) lines.push(`Сайт: ${data.website_url}`);
     if (data.phone) lines.push(`Тел: ${data.phone}`);
     if (data.company) lines.push(`Компания: ${data.company}`);
@@ -64,31 +53,31 @@ export default async function handler(req, res) {
     if (data.geography) lines.push(`Гео: ${data.geography}`);
     if (data.tg_username) lines.push(`Telegram: ${data.tg_username}`);
     if (data.selected_plan) lines.push(`Тариф: ${data.selected_plan}`);
-    lines.push('');
-    lines.push(`Страница: ${data.source_page || '-'}`);
-    lines.push(`Язык: ${data.source_language || '-'}`);
+    lines.push('', `Страница: ${data.source_page || '-'}`, `Язык: ${data.source_language || '-'}`);
 
-    // Send to Telegram
-    const tgResponse = await fetch(
-      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-      {
+    fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: lines.join('\n') })
+    }).catch(err => console.error('Telegram error:', err));
+
+    // 2. If scan service — trigger n8n pipeline via webhook
+    const isScan = SCAN_SERVICES.some(s => service.indexOf(s) !== -1);
+    if (isScan && data.website_url) {
+      fetch(N8N_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: lines.join('\n')
+          url: data.website_url,
+          email: data.email,
+          name: data.name || 'Client',
+          phone: data.phone || '',
+          service: service
         })
-      }
-    );
-
-    if (!tgResponse.ok) {
-      const err = await tgResponse.text();
-      console.error('Telegram error:', err);
-      return res.status(500).json({ success: false, error: 'Telegram send failed' });
+      }).catch(err => console.error('n8n webhook error:', err));
     }
 
     return res.status(200).json({ success: true, id: id });
-
   } catch (err) {
     console.error('Form submit error:', err);
     return res.status(500).json({ success: false, error: 'Internal error' });
