@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт и клиенты для малого бизнеса - от 39&#8364;/мес | TriggerFlow</title>
+    <meta name="description" content="AI-диагностика, оптимизация сайта и привлечение клиентов для предпринимателей. Без кабальных контрактов. Бесплатный AI-скан за 2 минуты.">
+    <link rel="canonical" href="https://triggerflow.pro/business/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Сайт и клиенты для малого бизнеса | TriggerFlow">
+    <meta property="og:description" content="AI-диагностика и оптимизация для предпринимателей. Без обязательств, без сюрпризов. От 39&#8364;/мес.">
+    <meta property="og:url" content="https://triggerflow.pro/business/">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Сайт и клиенты для малого бизнеса | TriggerFlow">
+    <meta name="twitter:description" content="AI-диагностика и оптимизация для предпринимателей. Без обязательств. От 39&#8364;/мес.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://triggerflow.pro/business/",
+        "url": "https://triggerflow.pro/business/",
+        "name": "Сайт и клиенты для малого бизнеса | TriggerFlow",
+        "description": "AI-диагностика и оптимизация сайта для предпринимателей. Без кабальных контрактов.",
+        "isPartOf": {"@id": "https://triggerflow.pro/#website"},
+        "inLanguage": "ru"
+    }
+    </script>
+
+    <link rel="alternate" hreflang="ru" href="https://triggerflow.pro/business/">
+    <link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/business/">
+
+    <style>
+        /* ===== BUSINESS PAGE SPECIFIC STYLES ===== */
+
+        /* Pricing Toggle */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: var(--space-6);
+        }
+        .pricing-toggle__label {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .pricing-toggle__label.active {
+            color: var(--color-text-primary);
+            font-weight: 600;
+        }
+        .pricing-toggle__switch {
+            width: 52px;
+            height: 28px;
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-pill);
+            position: relative;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: background 0.3s;
+        }
+        .pricing-toggle__switch::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .pricing-toggle__switch.annual::after {
+            transform: translateX(24px);
+        }
+        .pricing-toggle__badge {
+            background: rgba(0, 208, 132, 0.15);
+            color: var(--color-accent-1);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-3);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        @media (max-width: 1024px) {
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5) var(--space-4);
+            position: relative;
+            transition: var(--transition-base);
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card:hover {
+            border-color: rgba(30, 111, 255, 0.3);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card-hover);
+        }
+        .pricing-card--popular {
+            border-color: var(--color-primary);
+            background: rgba(30, 111, 255, 0.06);
+        }
+        .pricing-card--popular::before {
+            content: 'Популярный';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 16px;
+            border-radius: var(--radius-pill);
+            letter-spacing: 0.03em;
+        }
+
+        .pricing-card__name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-1);
+        }
+        .pricing-card__desc {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-3);
+            line-height: 1.5;
+        }
+        .pricing-card__price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-text-primary);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .pricing-card__price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--color-text-secondary);
+        }
+        .pricing-card__setup {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-4);
+        }
+        .pricing-card__features {
+            list-style: none;
+            margin-bottom: var(--space-4);
+            flex-grow: 1;
+        }
+        .pricing-card__features li {
+            font-size: 0.88rem;
+            color: var(--color-text-secondary);
+            padding: 6px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.4;
+        }
+        .pricing-card__features li i {
+            color: var(--color-accent-1);
+            font-size: 0.75rem;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        /* Comparison Table */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-6);
+        }
+        .compare-table th,
+        .compare-table td {
+            padding: 14px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.9rem;
+        }
+        .compare-table th {
+            color: var(--color-text-muted);
+            font-weight: 500;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .compare-table td:first-child {
+            color: var(--color-text-secondary);
+        }
+        .compare-table .highlight {
+            color: var(--color-accent-1);
+            font-weight: 600;
+        }
+        .compare-table .muted {
+            color: var(--color-text-muted);
+        }
+        .compare-table .warn {
+            color: var(--color-danger);
+        }
+        @media (max-width: 768px) {
+            .compare-table { font-size: 0.8rem; }
+            .compare-table th, .compare-table td { padding: 10px 12px; }
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, rgba(30, 111, 255, 0.12) 0%, rgba(0, 208, 132, 0.08) 100%);
+            border: 1px solid rgba(30, 111, 255, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5) var(--space-6);
+            text-align: center;
+            margin-top: var(--space-8);
+        }
+        .promo-banner__title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-2);
+        }
+        .promo-banner__text {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            margin-bottom: var(--space-4);
+            line-height: 1.6;
+        }
+        .promo-badges {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+            margin-top: var(--space-3);
+        }
+        .promo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-pill);
+            padding: 8px 20px;
+            font-size: 0.88rem;
+            color: var(--color-text-secondary);
+        }
+        .promo-badge i {
+            color: var(--color-accent-1);
+        }
+
+        /* Pain Grid */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-3);
+        }
+        @media (max-width: 768px) {
+            .pain-grid { grid-template-columns: 1fr; }
+        }
+        .pain-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            text-align: center;
+            transition: var(--transition-base);
+        }
+        .pain-card:hover {
+            border-color: rgba(255, 106, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        .pain-card__icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255, 106, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-2);
+            font-size: 1.2rem;
+            color: var(--color-accent-2);
+        }
+        .pain-card__text {
+            font-size: 0.92rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Add-ons Grid */
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-3);
+            margin-top: var(--space-5);
+        }
+        @media (max-width: 768px) {
+            .addons-grid { grid-template-columns: 1fr; }
+        }
+        .addon-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            transition: var(--transition-base);
+        }
+        .addon-card:hover {
+            border-color: rgba(30, 111, 255, 0.2);
+        }
+        .addon-card__title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .addon-card__title i {
+            color: var(--color-primary);
+            font-size: 0.9rem;
+        }
+        .addon-card__price {
+            font-size: 0.85rem;
+            color: var(--color-accent-2);
+            font-weight: 600;
+            margin-bottom: var(--space-1);
+        }
+        .addon-card__desc {
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="/index.html" class="navbar__logo"><span class="logo-icon"><img src="/images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="/index.html">Главная</a></li>
+                <li><a href="/business/" class="active">Бизнес</a></li>
+                <li class="navbar__dropdown"><a href="/services.html">Компания <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="/services.html#tripwire">Диагностика <span class="dropdown__price">от 69&#8364;</span></a></li>
+                        <li><a href="/money-leak-audit.html">Аудиты <span class="dropdown__price">от 249&#8364;</span></a></li>
+                        <li><a href="/subscription.html">Подписки <span class="dropdown__price">от 49&#8364;/мес</span></a></li>
+                        <li><a href="/pricing.html">Все тарифы</a></li>
+                    </ul>
+                </li>
+                <li><a href="/ai/">AI-решения</a></li>
+                <li><a href="/blog.html">Блог</a></li>
+                <li><a href="/about.html">О нас</a></li>
+                <li class="nav-cta"><a href="#hero" class="btn btn--primary btn--sm" style="padding:8px 18px;font-size:0.85rem;border-radius:8px;">Бесплатный скан</a></li>
+                <li class="navbar__lang">
+                    <button class="navbar__lang-btn">RU &#9662;</button>
+                    <ul class="navbar__lang-menu">
+                        <li><a data-lang-switch="ru">RU</a></li>
+                        <li><a data-lang-switch="en">EN</a></li>
+                        <li><a data-lang-switch="fr">FR</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero hero--banner" id="hero">
+        <div class="hero__gradient-bg"></div>
+        <div class="container hero__content">
+            <h1 class="hero__title">
+                <span class="hero__line hero__line--1">Ваш бизнес <span class="hero__accent">заслуживает клиентов</span></span>
+                <span class="hero__line hero__line--2">из интернета.</span>
+                <span class="hero__line hero__line--3">Без кабальных контрактов - от <span class="hero__accent">39&#8364;/мес</span></span>
+            </h1>
+            <p class="hero__subtitle hero__fade-in" style="animation-delay: 1.2s;color:#e2e8f0;">
+                AI-диагностика и оптимизация вашего сайта. Покажем <strong style="color:#ffffff;">где вы теряете клиентов</strong> и исправим это.<br>
+                Не 48 месяцев обязательств, как у конкурентов - можно уйти в любой момент.</p>
+
+            <!-- URL Form -->
+            <div class="hero__url-check animate-on-scroll fade-up" style="animation-delay: 0.42s;" id="heroUrlCheck">
+                <div class="hero__url-form" id="heroStep1">
+                    <span class="hero__url-label">Бесплатный AI-скан вашего сайта:</span>
+                    <div class="hero__url-input-wrap">
+                        <input type="url" id="heroUrlInput" class="hero__url-input" placeholder="yoursite.com" autocomplete="off" spellcheck="false">
+                        <button class="hero__url-btn btn btn--primary" id="heroUrlBtn" onclick="heroStep1Submit()">Проверить бесплатно &rarr;</button>
+                    </div>
+                </div>
+                <div id="heroStep2" style="display:none;">
+                    <span class="hero__url-label">Куда прислать результат?</span>
+                    <div class="hero__url-input-wrap">
+                        <input type="email" id="heroEmailInput" class="hero__url-input" placeholder="your@email.com" autocomplete="email" required>
+                        <button class="hero__url-btn btn btn--primary" id="heroEmailBtn" onclick="heroStep2Submit()">Отправить &rarr;</button>
+                    </div>
+                    <p id="heroEmailHint" style="color:#94a3b8;font-size:0.85rem;margin-top:8px;">Сайт: <strong id="heroUrlDisplay" style="color:#fff;"></strong></p>
+                </div>
+                <div id="heroSuccess" style="display:none;">
+                    <div class="hero__url-copied-inner" style="text-align:center;padding:var(--space-4);">
+                        <span class="hero__url-copied-icon" style="font-size:2rem;color:#00d084;">&#10003;</span>
+                        <div style="margin-top:var(--space-2);">
+                            <strong style="color:#fff;font-size:1.1rem;">Диагностика запущена!</strong><br>
+                            <span style="color:#94a3b8;">Результат на вашем email через 2 минуты</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:var(--space-3);">
+                    <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--color-accent-1);"><i class="fa-solid fa-shield-halved"></i> Бесплатно, без обязательств, результат за 2 минуты</span>
+                </div>
+            </div>
+
+            <script>
+            var heroUrl = '';
+            function heroStep1Submit() {
+                var input = document.getElementById('heroUrlInput');
+                var raw = input.value.trim();
+                if (!raw) { input.focus(); return; }
+                heroUrl = raw.match(/^https?:\/\//i) ? raw : 'https://' + raw;
+                document.getElementById('heroStep1').style.display = 'none';
+                document.getElementById('heroStep2').style.display = 'block';
+                document.getElementById('heroUrlDisplay').textContent = heroUrl;
+                document.getElementById('heroEmailInput').focus();
+            }
+            function heroStep2Submit() {
+                var emailInput = document.getElementById('heroEmailInput');
+                var email = emailInput.value.trim();
+                if (!email || !email.includes('@')) { emailInput.focus(); return; }
+                var btn = document.getElementById('heroEmailBtn');
+                btn.disabled = true;
+                btn.textContent = 'Отправляем...';
+                fetch('https://nataswencia.app.n8n.cloud/webhook/site-diagnostic', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json; charset=utf-8'},
+                    body: JSON.stringify({url: heroUrl, email: email, source: 'business-page', lang: 'ru', product: 'screening'})
+                }).catch(function(){});
+                fetch('https://nataswencia.app.n8n.cloud/webhook/auto-screening', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json; charset=utf-8'},
+                    body: JSON.stringify({url: heroUrl, email: email, lang: 'ru'})
+                }).catch(function(){});
+                document.getElementById('heroStep2').style.display = 'none';
+                document.getElementById('heroSuccess').style.display = 'block';
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('heroUrlInput').addEventListener('keydown', function(e){ if(e.key==='Enter') heroStep1Submit(); });
+                document.getElementById('heroEmailInput').addEventListener('keydown', function(e){ if(e.key==='Enter') heroStep2Submit(); });
+            });
+            </script>
+        </div>
+        <div class="trust-bar animate-on-scroll fade-up" style="animation-delay: 0.45s;">
+            <div class="trust-bar__item"><i class="fa-solid fa-ban"></i> <strong>Без обязательств</strong></div>
+            <div class="trust-bar__item"><i class="fa-solid fa-robot"></i> <strong>AI-автоматизация</strong></div>
+            <div class="trust-bar__item"><i class="fa-solid fa-bolt"></i> Результат за <strong>2 минуты</strong></div>
+            <div class="trust-bar__item"><i class="fa-solid fa-building-shield"></i> <strong>SASU France</strong></div>
+        </div>
+    </section>
+
+    <!-- ===== PAIN POINTS ===== -->
+    <section class="section" id="problems">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Знакомо?</h2>
+            <p class="section__description animate-on-scroll fade-up">Вы вложили деньги в сайт, но клиенты не идут. Конкуренты с худшим предложением - выше в Google. Знакомая история</p>
+            <div class="pain-grid">
+                <div class="pain-card animate-on-scroll fade-up">
+                    <div class="pain-card__icon"><i class="fa-solid fa-ghost"></i></div>
+                    <p class="pain-card__text">Сайт есть, а клиентов из Google - ноль</p>
+                </div>
+                <div class="pain-card animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div class="pain-card__icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <p class="pain-card__text">Агентство посадило на контракт 24-48 месяцев, а результата нет</p>
+                </div>
+                <div class="pain-card animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div class="pain-card__icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+                    <p class="pain-card__text">Платите 100-300&#8364;/мес за сайт, который не окупается</p>
+                </div>
+                <div class="pain-card animate-on-scroll fade-up" style="animation-delay:0.3s;">
+                    <div class="pain-card__icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <p class="pain-card__text">Вас нет на Google Maps и в локальных каталогах</p>
+                </div>
+                <div class="pain-card animate-on-scroll fade-up" style="animation-delay:0.4s;">
+                    <div class="pain-card__icon"><i class="fa-solid fa-ranking-star"></i></div>
+                    <p class="pain-card__text">Конкуренты выше в поиске, хотя ваш продукт лучше</p>
+                </div>
+                <div class="pain-card animate-on-scroll fade-up" style="animation-delay:0.5s;">
+                    <div class="pain-card__icon"><i class="fa-solid fa-circle-question"></i></div>
+                    <p class="pain-card__text">Не понимаете что не так и куда уходят деньги</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW WE'RE DIFFERENT ===== -->
+    <section class="section" id="difference" style="background: var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Мы не продаём вам сайт.<br>Мы находим, почему ваш бизнес не получает клиентов</h2>
+            <p class="section__description animate-on-scroll fade-up">Вместо того чтобы продавать шаблонный сайт и исчезать - мы сначала диагностируем проблему, а потом систематически её решаем</p>
+            <div class="positioning__cards">
+                <div class="positioning-card animate-on-scroll fade-up">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Сначала диагностика</h3>
+                    <p class="positioning-card__text">AI сканирует ваш сайт и показывает конкретные причины, почему клиенты не приходят. Не гадание - данные</p>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="positioning-card__title">AI вместо ручного труда</h3>
+                    <p class="positioning-card__text">Автоматизация на n8n + GPT-4o позволяет давать сервис уровня агентства за треть цены. Без раздутого штата</p>
+                </div>
+                <div class="positioning-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                    <div class="positioning-card__icon">
+                        <i class="fa-solid fa-handshake-slash"></i>
+                    </div>
+                    <h3 class="positioning-card__title">Без кабальных контрактов</h3>
+                    <p class="positioning-card__text">Месяц к месяцу. Не нравится - уходите. Нам нужно заслуживать ваши деньги каждый месяц, а не держать на контракте</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING PACKAGES ===== -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Выберите свой темп роста</h2>
+            <p class="section__description animate-on-scroll fade-up">Все пакеты - без обязательств. Можно повысить, понизить или отменить в любой момент</p>
+
+            <!-- Annual Toggle -->
+            <div class="pricing-toggle animate-on-scroll fade-up">
+                <span class="pricing-toggle__label active" id="toggleMonthly">Ежемесячно</span>
+                <div class="pricing-toggle__switch" id="toggleSwitch" onclick="togglePricing()"></div>
+                <span class="pricing-toggle__label" id="toggleAnnual">Ежегодно</span>
+                <span class="pricing-toggle__badge">-20%</span>
+            </div>
+
+            <div class="pricing-grid">
+
+                <!-- Starter -->
+                <div class="pricing-card animate-on-scroll fade-up">
+                    <div class="pricing-card__name">Starter</div>
+                    <div class="pricing-card__desc">Минимальный старт для тех, кто хочет проверить</div>
+                    <div class="pricing-card__price" data-monthly="39" data-annual="31">39&#8364; <span>/ мес</span></div>
+                    <div class="pricing-card__setup">Без frais de lancement</div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fa-solid fa-check"></i> AI-диагностика сайта (ежемесячно)</li>
+                        <li><i class="fa-solid fa-check"></i> Отчёт с приоритетами действий</li>
+                        <li><i class="fa-solid fa-check"></i> Базовая SEO-оптимизация</li>
+                        <li><i class="fa-solid fa-check"></i> 2 правки сайта в месяц</li>
+                        <li><i class="fa-solid fa-check"></i> Email-поддержка</li>
+                    </ul>
+                    <a href="#hero" class="btn btn--outline" style="width:100%;text-align:center;">Начать бесплатно</a>
+                </div>
+
+                <!-- Croissance -->
+                <div class="pricing-card pricing-card--popular animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div class="pricing-card__name">Croissance</div>
+                    <div class="pricing-card__desc">Для тех, кто серьёзно настроен на рост</div>
+                    <div class="pricing-card__price" data-monthly="79" data-annual="63">79&#8364; <span>/ мес</span></div>
+                    <div class="pricing-card__setup">Frais de lancement: 199&#8364;</div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fa-solid fa-check"></i> Всё из Starter</li>
+                        <li><i class="fa-solid fa-check"></i> Полная SEO-оптимизация сайта</li>
+                        <li><i class="fa-solid fa-check"></i> Отслеживание 10 ключевых слов</li>
+                        <li><i class="fa-solid fa-check"></i> AI-отчёт каждый месяц</li>
+                        <li><i class="fa-solid fa-check"></i> Безлимитные правки</li>
+                        <li><i class="fa-solid fa-check"></i> Выделенный менеджер</li>
+                    </ul>
+                    <a href="#hero" class="btn btn--primary" style="width:100%;text-align:center;">Начать с Croissance</a>
+                </div>
+
+                <!-- Acceleration -->
+                <div class="pricing-card animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div class="pricing-card__name">Acc&eacute;l&eacute;ration</div>
+                    <div class="pricing-card__desc">Максимальная видимость и привлечение</div>
+                    <div class="pricing-card__price" data-monthly="149" data-annual="119">149&#8364; <span>/ мес</span></div>
+                    <div class="pricing-card__setup">Frais de lancement: 499&#8364;</div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fa-solid fa-check"></i> Всё из Croissance</li>
+                        <li><i class="fa-solid fa-check"></i> Pr&eacute;sence Locale (40+ платформ)</li>
+                        <li><i class="fa-solid fa-check"></i> AI-контент: 4 статьи/мес</li>
+                        <li><i class="fa-solid fa-check"></i> Google Ads setup и ведение</li>
+                        <li><i class="fa-solid fa-check"></i> Аналитика конверсий</li>
+                        <li><i class="fa-solid fa-check"></i> A/B тесты ключевых страниц</li>
+                    </ul>
+                    <a href="#hero" class="btn btn--outline" style="width:100%;text-align:center;">Выбрать Acc&eacute;l&eacute;ration</a>
+                </div>
+
+                <!-- Domination -->
+                <div class="pricing-card animate-on-scroll fade-up" style="animation-delay:0.3s;">
+                    <div class="pricing-card__name">Domination</div>
+                    <div class="pricing-card__desc">Полная система привлечения клиентов</div>
+                    <div class="pricing-card__price" data-monthly="299" data-annual="239">299&#8364; <span>/ мес</span></div>
+                    <div class="pricing-card__setup">Frais de lancement: 999&#8364;</div>
+                    <ul class="pricing-card__features">
+                        <li><i class="fa-solid fa-check"></i> Всё из Acc&eacute;l&eacute;ration</li>
+                        <li><i class="fa-solid fa-check"></i> AI-лидогенерация</li>
+                        <li><i class="fa-solid fa-check"></i> Воронка продаж</li>
+                        <li><i class="fa-solid fa-check"></i> Telegram-бот для бизнеса</li>
+                        <li><i class="fa-solid fa-check"></i> Автоматизация n8n</li>
+                        <li><i class="fa-solid fa-check"></i> Стратег-консультант</li>
+                        <li><i class="fa-solid fa-check"></i> Приоритетная поддержка 24/7</li>
+                    </ul>
+                    <a href="#hero" class="btn btn--outline" style="width:100%;text-align:center;">Выбрать Domination</a>
+                </div>
+            </div>
+
+            <script>
+            var isAnnual = false;
+            function togglePricing() {
+                isAnnual = !isAnnual;
+                document.getElementById('toggleSwitch').classList.toggle('annual', isAnnual);
+                document.getElementById('toggleMonthly').classList.toggle('active', !isAnnual);
+                document.getElementById('toggleAnnual').classList.toggle('active', isAnnual);
+                document.querySelectorAll('.pricing-card__price').forEach(function(el) {
+                    var m = el.getAttribute('data-monthly');
+                    var a = el.getAttribute('data-annual');
+                    if (m && a) {
+                        el.innerHTML = (isAnnual ? a : m) + '&#8364; <span>/ мес</span>';
+                    }
+                });
+            }
+            </script>
+        </div>
+    </section>
+
+    <!-- ===== ADD-ONS ===== -->
+    <section class="section" id="addons" style="background: var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Дополнительные услуги</h2>
+            <p class="section__description animate-on-scroll fade-up">Подключайте к любому пакету по мере роста</p>
+            <div class="addons-grid">
+                <div class="addon-card animate-on-scroll fade-up">
+                    <div class="addon-card__title"><i class="fa-solid fa-pen-fancy"></i> AI-статьи для блога</div>
+                    <div class="addon-card__price">19&#8364;/статья или 59&#8364;/мес (4 шт)</div>
+                    <div class="addon-card__desc">SEO-оптимизированные статьи, написанные AI и проверенные редактором. Регулярный контент для роста в поиске</div>
+                </div>
+                <div class="addon-card animate-on-scroll fade-up" style="animation-delay:0.1s;">
+                    <div class="addon-card__title"><i class="fa-solid fa-bullhorn"></i> Google Ads</div>
+                    <div class="addon-card__price">99&#8364;/мес + рекламный бюджет</div>
+                    <div class="addon-card__desc">Настройка и ведение рекламных кампаний. Без setup fee - в отличие от конкурентов (175&#8364; у Solocal)</div>
+                </div>
+                <div class="addon-card animate-on-scroll fade-up" style="animation-delay:0.2s;">
+                    <div class="addon-card__title"><i class="fa-solid fa-share-nodes"></i> Соцсети</div>
+                    <div class="addon-card__price">79&#8364;/мес (12 постов)</div>
+                    <div class="addon-card__desc">AI генерирует посты для Instagram и Facebook. Вы утверждаете - мы публикуем</div>
+                </div>
+                <div class="addon-card animate-on-scroll fade-up" style="animation-delay:0.3s;">
+                    <div class="addon-card__title"><i class="fa-solid fa-magnifying-glass-chart"></i> Аудит конверсий</div>
+                    <div class="addon-card__price">249&#8364; (разово)</div>
+                    <div class="addon-card__desc">Глубокий анализ: почему посетители не становятся клиентами. PDF-отчёт с планом действий</div>
+                </div>
+                <div class="addon-card animate-on-scroll fade-up" style="animation-delay:0.4s;">
+                    <div class="addon-card__title"><i class="fa-brands fa-telegram"></i> Telegram-бот</div>
+                    <div class="addon-card__price">49&#8364;/мес</div>
+                    <div class="addon-card__desc">Бот для вашего бизнеса: приём заявок, ответы на вопросы, уведомления о новых клиентах</div>
+                </div>
+                <div class="addon-card animate-on-scroll fade-up" style="animation-delay:0.5s;">
+                    <div class="addon-card__title"><i class="fa-solid fa-map-location-dot"></i> Pr&eacute;sence Locale</div>
+                    <div class="addon-card__price">39&#8364;/мес</div>
+                    <div class="addon-card__desc">Ваш бизнес на Google Maps, PagesJaunes и 40+ платформах. Единый профиль, синхронизация данных</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMPARISON WITH COMPETITORS ===== -->
+    <section class="section" id="compare">
+        <div class="container" style="max-width:960px;">
+            <h2 class="section__title animate-on-scroll fade-up">Сравните сами</h2>
+            <p class="section__description animate-on-scroll fade-up">Что вы получаете за сопоставимую цену у нас и у типичных агентств</p>
+            <div class="animate-on-scroll fade-up" style="overflow-x:auto;">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th style="color:var(--color-primary);">TriggerFlow</th>
+                            <th>Simpl&eacute;bo</th>
+                            <th>Solocal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Сайт + SEO</td>
+                            <td class="highlight">79&#8364;/мес</td>
+                            <td class="muted">110&#8364;/мес</td>
+                            <td class="muted">119&#8364;/мес</td>
+                        </tr>
+                        <tr>
+                            <td>Frais de lancement</td>
+                            <td class="highlight">199&#8364;</td>
+                            <td class="muted">700&#8364;</td>
+                            <td class="muted">450&#8364;</td>
+                        </tr>
+                        <tr>
+                            <td>AI-диагностика</td>
+                            <td class="highlight"><i class="fa-solid fa-check"></i> включена</td>
+                            <td class="warn"><i class="fa-solid fa-xmark"></i> нет</td>
+                            <td class="muted">базовый аудит</td>
+                        </tr>
+                        <tr>
+                            <td>AI-контент</td>
+                            <td class="highlight"><i class="fa-solid fa-check"></i> от Acc&eacute;l&eacute;ration</td>
+                            <td class="warn"><i class="fa-solid fa-xmark"></i> нет</td>
+                            <td class="warn"><i class="fa-solid fa-xmark"></i> нет</td>
+                        </tr>
+                        <tr>
+                            <td>Обязательства</td>
+                            <td class="highlight">Нет</td>
+                            <td class="muted">Нет</td>
+                            <td class="warn">12-48 мес</td>
+                        </tr>
+                        <tr>
+                            <td>Расторжение</td>
+                            <td class="highlight">В любой момент</td>
+                            <td class="muted">В любой момент</td>
+                            <td class="warn">За 4 мес до конца</td>
+                        </tr>
+                        <tr>
+                            <td>Бесплатный триал</td>
+                            <td class="highlight"><i class="fa-solid fa-check"></i> AI-скан</td>
+                            <td class="warn"><i class="fa-solid fa-xmark"></i> нет</td>
+                            <td class="muted">Базовый аудит</td>
+                        </tr>
+                        <tr>
+                            <td>Автоматизация</td>
+                            <td class="highlight">n8n + Telegram + AI</td>
+                            <td class="warn"><i class="fa-solid fa-xmark"></i> нет</td>
+                            <td class="warn"><i class="fa-solid fa-xmark"></i> нет</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROMOS ===== -->
+    <section class="section" id="promos" style="background: var(--color-dark-surface);">
+        <div class="container" style="max-width:900px;">
+            <div class="promo-banner animate-on-scroll fade-up">
+                <div class="promo-banner__title">Специальные условия</div>
+                <div class="promo-banner__text">Мы только запустили направление для малого бизнеса - и предлагаем лучшие условия первым клиентам</div>
+                <div class="promo-badges">
+                    <div class="promo-badge"><i class="fa-solid fa-gift"></i> 1-й месяц бесплатно</div>
+                    <div class="promo-badge"><i class="fa-solid fa-percent"></i> -20% при оплате за год</div>
+                    <div class="promo-badge"><i class="fa-solid fa-truck-fast"></i> Бесплатная миграция от конкурента</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+        <div class="container" style="max-width:800px;">
+            <h2 class="section__title animate-on-scroll fade-up">Частые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item animate-on-scroll fade-up">
+                    <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                        Вы создаёте сайты?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>Мы не шаблонное агентство. Мы диагностируем ваш текущий сайт, находим что мешает привлекать клиентов, и исправляем это. Если у вас нет сайта - мы поможем выбрать платформу и настроим оптимальное присутствие в интернете. Если сайт есть - оптимизируем его для получения клиентов.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll fade-up">
+                    <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                        Чем вы отличаетесь от Simpl&eacute;bo и Solocal?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>Три главных отличия: 1) Мы начинаем с AI-диагностики - показываем проблемы до того, как что-то продаём. 2) Никаких обязательств - месяц к месяцу, не 48 месяцев. 3) AI-автоматизация позволяет давать сервис уровня агентства за 30-40% дешевле.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll fade-up">
+                    <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                        Что такое AI-диагностика?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>Наша система на базе GPT-4o проверяет ваш сайт по 50+ параметрам за 2 минуты. Вы получаете отчёт с конкретным списком ошибок и приоритетами - что исправить первым, чтобы получить клиентов. Бесплатный скан доступен прямо сейчас.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll fade-up">
+                    <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                        Могу ли я перенести сайт от другого агентства?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>Да, миграция бесплатна. Мы анализируем ваш текущий сайт, переносим всё ценное и оптимизируем. Процесс занимает 5-7 рабочих дней, и ваш сайт ни на минуту не уходит в оффлайн.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll fade-up">
+                    <button class="faq-item__question" onclick="this.parentElement.classList.toggle('open')">
+                        Какие гарантии?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>Первый месяц бесплатно - вы ничего не теряете. Если за первый платный месяц вы не увидите конкретных улучшений в видимости сайта - вернём деньги. Без обязательств, без мелкого шрифта.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section" id="final-cta" style="background: var(--color-dark-surface);">
+        <div class="container" style="text-align:center;max-width:700px;">
+            <h2 class="section__title animate-on-scroll fade-up">Начните с бесплатного скана</h2>
+            <p class="section__description animate-on-scroll fade-up">AI проверит ваш сайт за 2 минуты и покажет, где вы теряете клиентов. Бесплатно, без обязательств</p>
+            <div class="animate-on-scroll fade-up" style="margin-top:var(--space-5);">
+                <a href="#hero" class="btn btn--primary btn--lg">Бесплатная диагностика &rarr;</a>
+            </div>
+            <p class="animate-on-scroll fade-up" style="margin-top:var(--space-3);font-size:0.85rem;color:var(--color-text-muted);">
+                Или напишите нам: <a href="https://t.me/TriggerFlow_analyse_bot" style="color:var(--color-primary);text-decoration:none;">Telegram</a>
+            </p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <div class="footer__logo-image">
+                    <img src="/images/logo-shield.png" alt="TriggerFlow logo" width="80" height="80">
+                </div>
+                <a href="/index.html" class="footer__logo"><span class="logo-icon"><img src="/images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                <p class="footer__tagline">TriggerFlow&trade; - AI-диагностика и рост для вашего бизнеса</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="/index.html">Главная</a>
+                <a href="/business/">Бизнес</a>
+                <a href="/services.html">Компания</a>
+                <a href="/ai/">AI-решения</a>
+                <a href="/blog.html">Блог</a>
+                <a href="/about.html">О нас</a>
+            </nav>
+            <div style="text-align:center;padding:var(--space-4) 0;">
+                <a href="#hero" class="btn btn--primary">Бесплатная диагностика сайта</a>
+            </div>
+            <div class="footer__trust">
+                <span class="footer__trust-badge"><i class="fa-solid fa-shield-halved"></i> GDPR Compliant</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-lock"></i> Encrypted API</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-database"></i> No data retention</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-building-shield"></i> SASU France</span>
+            </div>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Все права защищены</div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <span class="sticky-cta__text">Скан за <strong>2 мин</strong></span>
+        <a href="#hero" class="btn btn--primary">Бесплатный скан</a>
+    </div>
+
+    <!-- Main JS -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
