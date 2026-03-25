@@ -249,6 +249,28 @@
     </url>
     <url>
         <loc>https://triggerflow.pro/business/</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/business/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/business/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/business/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/business/"/>
+        <lastmod>2026-03-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/en/business/</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/business/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/business/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/business/"/>
+        <lastmod>2026-03-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://triggerflow.pro/fr/business/</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://triggerflow.pro/business/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/business/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://triggerflow.pro/fr/business/"/>
         <lastmod>2026-03-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
