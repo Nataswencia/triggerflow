@@ -431,6 +431,13 @@
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
+    <!-- EN/FR blog articles -->
+    <url><loc>https://triggerflow.pro/en/blog/ai-agents-for-business.html</loc><lastmod>2026-03-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://triggerflow.pro/en/blog/sales-funnel-2026.html</loc><lastmod>2026-03-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://triggerflow.pro/en/blog/homepage-anatomy-high-conversion.html</loc><lastmod>2026-03-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://triggerflow.pro/fr/blog/agents-ia-pour-entreprises.html</loc><lastmod>2026-03-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://triggerflow.pro/fr/blog/entonnoir-de-vente-2026.html</loc><lastmod>2026-03-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://triggerflow.pro/fr/blog/page-accueil-anatomie-haute-conversion.html</loc><lastmod>2026-03-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <!-- mentions-legales -->
     <url>
         <loc>https://triggerflow.pro/mentions-legales</loc>
