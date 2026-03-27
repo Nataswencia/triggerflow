@@ -306,6 +306,57 @@
         </div>
     </section>
 
+    <style>
+        @media (max-width: 640px) {
+            #router .router-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
+    <!-- ===== SECTION 1.5 - ROUTER: Two paths ===== -->
+    <section class="section" id="router" style="padding: var(--space-7) 0; background: var(--color-dark-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="section__title animate-on-scroll fade-up" style="font-size: clamp(1.4rem, 3.5vw, 2rem);">Какая у вас задача?</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); margin-top: var(--space-5);" class="router-grid">
+
+                <!-- Path 1: Small Business -->
+                <a href="/business/" class="animate-on-scroll fade-up" style="text-decoration:none; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl); padding: var(--space-5); transition: all 0.3s; display: flex; flex-direction: column; gap: var(--space-3);"
+                   onmouseover="this.style.borderColor='rgba(255,106,0,0.4)';this.style.transform='translateY(-4px)'"
+                   onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform='none'">
+                    <div style="width:56px;height:56px;border-radius:14px;background:rgba(255,106,0,0.1);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--color-accent-2);">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div style="font-size:1.2rem;font-weight:600;color:var(--color-text-primary);">Мне нужен сайт и клиенты</div>
+                    <div style="font-size:0.92rem;color:var(--color-text-secondary);line-height:1.6;">У меня малый бизнес. Сайт не приносит клиентов или его вообще нет. Хочу присутствие в Google и заявки</div>
+                    <div style="display:flex;align-items:center;gap:6px;font-size:0.85rem;color:var(--color-accent-2);font-weight:500;margin-top:auto;">
+                        Пакеты от 39&#8364;/мес <i class="fa-solid fa-arrow-right" style="font-size:0.75rem;"></i>
+                    </div>
+                </a>
+
+                <!-- Path 2: Existing site -->
+                <a href="services.html" class="animate-on-scroll fade-up" style="text-decoration:none; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl); padding: var(--space-5); transition: all 0.3s; display: flex; flex-direction: column; gap: var(--space-3); animation-delay: 0.15s;"
+                   onmouseover="this.style.borderColor='rgba(30,111,255,0.4)';this.style.transform='translateY(-4px)'"
+                   onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform='none'">
+                    <div style="width:56px;height:56px;border-radius:14px;background:rgba(30,111,255,0.1);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--color-primary);">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div style="font-size:1.2rem;font-weight:600;color:var(--color-text-primary);">У меня есть сайт, но он не продаёт</div>
+                    <div style="font-size:0.92rem;color:var(--color-text-secondary);line-height:1.6;">Трафик есть, а заявок мало. Хочу понять где утечки и получить план роста с приоритетами</div>
+                    <div style="display:flex;align-items:center;gap:6px;font-size:0.85rem;color:var(--color-primary);font-weight:500;margin-top:auto;">
+                        Диагностика от 69&#8364; <i class="fa-solid fa-arrow-right" style="font-size:0.75rem;"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Third option: AI tools -->
+            <div class="animate-on-scroll fade-up" style="text-align:center;margin-top:var(--space-4);animation-delay:0.3s;">
+                <a href="/ai/" style="display:inline-flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--color-text-muted);text-decoration:none;padding:var(--space-2) var(--space-4);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-pill);transition:all 0.3s;"
+                   onmouseover="this.style.borderColor='rgba(30,111,255,0.3)';this.style.color='#fff'"
+                   onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.color=''">
+                    <i class="fa-solid fa-robot"></i> Мне нужна AI-автоматизация для бизнеса
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== SECTION 2 - PROBLEM RECOGNITION (unchanged) ===== -->
     <section class="section section--problems" id="problems">
         <div class="container">
