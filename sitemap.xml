@@ -431,4 +431,11 @@
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
+    <!-- mentions-legales -->
+    <url>
+        <loc>https://triggerflow.pro/mentions-legales</loc>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
 </urlset>
