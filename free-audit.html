@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бесплатный аудит сайта | TriggerFlow</title>
+    <meta name="description" content="Бесплатный мини-аудит вашего сайта от TriggerFlow. Для первых 10 желающих. AI-анализ + личные рекомендации за 24 часа.">
+    <link rel="canonical" href="https://triggerflow.pro/free-audit">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Бесплатный аудит сайта - только 10 мест | TriggerFlow">
+    <meta property="og:description" content="Бесплатный мини-аудит: 5 критических ошибок на вашем сайте + план исправления. Для первых 10 желающих.">
+    <meta property="og:url" content="https://triggerflow.pro/free-audit">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:image" content="https://triggerflow.pro/images/logo-shield.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .audit-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #0a0e1a 0%, #0a1a3a 50%, #0a0e1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .audit-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(30,111,255,0.15) 0%, transparent 60%);
+        }
+        .audit-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,106,0,0.1) 0%, transparent 60%);
+        }
+        .audit-card {
+            max-width: 680px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(30,111,255,0.15);
+            border-radius: 20px;
+            padding: 50px 40px;
+            position: relative;
+            z-index: 1;
+        }
+        .audit-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6a00, #ff9500);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+        .audit-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .audit-title span {
+            background: linear-gradient(135deg, #1e6ff0, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .audit-subtitle {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .audit-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 32px;
+        }
+        .audit-features li {
+            color: #cbd5e1;
+            font-size: 1rem;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .audit-features li i {
+            color: #ff6a00;
+            font-size: 1.1rem;
+            width: 24px;
+        }
+        .audit-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .audit-form input {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(30,111,255,0.2);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .audit-form input:focus {
+            border-color: #1e6ff0;
+        }
+        .audit-form input::placeholder {
+            color: #64748b;
+        }
+        .audit-form button {
+            background: linear-gradient(135deg, #ff6a00, #ff9500);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.5px;
+        }
+        .audit-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,106,0,0.3);
+        }
+        .audit-spots {
+            text-align: center;
+            margin-top: 16px;
+            color: #ff6a00;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .audit-trust {
+            text-align: center;
+            margin-top: 20px;
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+        .audit-success {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        .audit-success h3 {
+            color: #00d4ff;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .audit-success p {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+        @media (max-width: 600px) {
+            .audit-card { padding: 30px 24px; }
+            .audit-title { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="audit-hero">
+        <div class="audit-card">
+            <div id="auditForm">
+                <div class="audit-badge">БЕСПЛАТНО - ТОЛЬКО 10 МЕСТ</div>
+                <h1 class="audit-title">Мини-аудит вашего сайта от <span>TriggerFlow</span></h1>
+                <p class="audit-subtitle">
+                    5 критических ошибок на вашем сайте + конкретный план исправления.
+                    AI-анализ + личные рекомендации от Натальи Потаповой.
+                    Результат за 24 часа.
+                </p>
+                <ul class="audit-features">
+                    <li><i class="fa-solid fa-magnifying-glass-chart"></i> AI-сканирование скорости, мобильности, SEO</li>
+                    <li><i class="fa-solid fa-bullseye"></i> Проверка конверсионного пути (CTA, формы, доверие)</li>
+                    <li><i class="fa-solid fa-file-pdf"></i> PDF-отчет с приоритетами и скриншотами</li>
+                    <li><i class="fa-solid fa-comments"></i> Личные рекомендации (не шаблон)</li>
+                    <li><i class="fa-solid fa-clock"></i> Результат за 24 часа</li>
+                </ul>
+                <form class="audit-form" id="leadForm" onsubmit="submitLead(event)">
+                    <input type="url" name="website" placeholder="Ссылка на ваш сайт" required>
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="text" name="contact" placeholder="WhatsApp, Telegram или email для связи" required>
+                    <button type="submit"><i class="fa-solid fa-rocket"></i> Получить бесплатный аудит</button>
+                </form>
+                <div class="audit-spots"><i class="fa-solid fa-fire"></i> Осталось мест: <span id="spotsLeft">10</span> из 10</div>
+                <div class="audit-trust"><i class="fa-solid fa-shield-halved"></i> Данные не передаются третьим лицам. Только для аудита.</div>
+            </div>
+            <div class="audit-success" id="auditSuccess">
+                <h3><i class="fa-solid fa-circle-check"></i> Заявка принята!</h3>
+                <p>Наталья свяжется с вами в течение 24 часов с готовым аудитом. Спасибо за доверие!</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    async function submitLead(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+            website: form.website.value,
+            name: form.name.value,
+            contact: form.contact.value,
+            source: 'free-audit-page',
+            timestamp: new Date().toISOString()
+        };
+
+        try {
+            await fetch('https://n8n.triggerflow.pro/webhook/free-audit-lead', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+        } catch(err) {
+            // Silent fail - still show success
+        }
+
+        document.getElementById('auditForm').style.display = 'none';
+        document.getElementById('auditSuccess').style.display = 'block';
+    }
+    </script>
+</body>
+</html>
