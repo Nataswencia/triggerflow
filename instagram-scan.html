@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Scan PRO - бесплатный аудит Instagram за 24 часа | TriggerFlow</title>
+    <meta name="description" content="Бесплатный аудит Instagram по 21 критерию за 24 часа. PDF-отчёт на 20+ страниц: красные флаги, быстрые победы, стратегия роста. Для экспертов, магазинов, локального бизнеса.">
+    <link rel="canonical" href="https://triggerflow.pro/instagram-scan.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Instagram Scan PRO - бесплатный аудит Instagram за 24 часа | TriggerFlow">
+    <meta property="og:description" content="21 критерий, 4 методологических блока, PDF-отчёт на 20+ страниц. Узнайте где Instagram теряет ваших клиентов.">
+    <meta property="og:url" content="https://triggerflow.pro/instagram-scan.html">
+    <meta property="og:site_name" content="TriggerFlow">
+    <meta property="og:image" content="https://triggerflow.pro/images/logo-shield.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="TriggerFlow">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Instagram Scan PRO - бесплатный аудит Instagram за 24 часа | TriggerFlow">
+    <meta name="twitter:description" content="21 критерий, 4 методологических блока, PDF-отчёт на 20+ страниц. Узнайте где Instagram теряет ваших клиентов.">
+    <meta name="twitter:image" content="https://triggerflow.pro/images/logo-shield.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Instagram gradient accent styles -->
+    <style>
+        :root {
+            --ig-gradient: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+            --ig-gradient-soft: linear-gradient(135deg, rgba(249,206,52,0.15), rgba(238,42,123,0.15), rgba(98,40,215,0.15));
+            --ig-pink: #ee2a7b;
+            --ig-orange: #f77737;
+            --ig-purple: #6228d7;
+        }
+
+        .ig-accent {
+            background: var(--ig-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ig-border {
+            border-image: var(--ig-gradient) 1;
+        }
+
+        .hero__ig-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--ig-gradient-soft);
+            border: 1px solid rgba(238,42,123,0.3);
+            border-radius: 100px;
+            padding: 6px 18px;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .ig-icon {
+            background: var(--ig-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .methodology-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(238,42,123,0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5);
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .methodology-card:hover {
+            border-color: rgba(238,42,123,0.5);
+            transform: translateY(-4px);
+        }
+
+        .methodology-card__number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ig-pink);
+            margin-bottom: 0.75rem;
+        }
+
+        .methodology-card__title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .methodology-card__methodology {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-4);
+        }
+
+        .step-item__number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--ig-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .step-item__content h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .step-item__content p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-base);
+        }
+
+        .ig-tier-free {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(238,42,123,0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+        }
+
+        .ig-tier-pro {
+            background: rgba(238,42,123,0.05);
+            border: 2px solid rgba(238,42,123,0.5);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            position: relative;
+        }
+
+        .ig-tier-pro .scan-tier__badge {
+            background: var(--ig-gradient);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            padding: 4px 14px;
+            border-radius: 100px;
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        .results-6-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-4);
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .result6-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(238,42,123,0.15);
+            border-radius: var(--radius-lg);
+            padding: var(--space-4) var(--space-4);
+            transition: border-color 0.3s;
+        }
+
+        .result6-item:hover {
+            border-color: rgba(238,42,123,0.4);
+        }
+
+        .result6-item__icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            background: var(--ig-gradient-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .result6-item__title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .result6-item__desc {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        .audience-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        .audience-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-4) var(--space-5);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+        }
+
+        .audience-card__icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .audience-card__text {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+        }
+
+        .audience-card__text strong {
+            color: var(--color-text-primary);
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        .ig-tiers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-5);
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .ig-tier__name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .ig-tier__price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .ig-tier__price--free {
+            background: var(--ig-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ig-tier__price--pro {
+            color: var(--color-text-primary);
+        }
+
+        .ig-tier__price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--color-text-muted);
+        }
+
+        .ig-tier__desc {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: var(--space-4);
+        }
+
+        .ig-tier__list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--space-5);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .ig-tier__list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .ig-tier__list li i {
+            flex-shrink: 0;
+            margin-top: 3px;
+            font-size: 0.8rem;
+        }
+
+        .ig-tier__list li.included i { color: var(--ig-pink); }
+        .ig-tier__list li.excluded { opacity: 0.4; }
+        .ig-tier__list li.excluded i { color: var(--color-text-muted); }
+
+        .btn--ig {
+            background: var(--ig-gradient);
+            color: #fff;
+            border: none;
+        }
+
+        .btn--ig:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn--ig-outline {
+            border: 2px solid var(--ig-pink);
+            color: var(--ig-pink);
+            background: transparent;
+        }
+
+        .btn--ig-outline:hover {
+            background: rgba(238,42,123,0.08);
+        }
+
+        .ig-quote {
+            background: rgba(255,255,255,0.03);
+            border-left: 4px solid var(--ig-pink);
+            padding: var(--space-4) var(--space-5);
+            border-radius: var(--radius-md);
+        }
+
+        @media (max-width: 768px) {
+            .results-6-grid { grid-template-columns: 1fr 1fr; }
+            .audience-cards { grid-template-columns: 1fr; }
+            .methodology-grid { grid-template-columns: 1fr; }
+            .ig-tiers { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .results-6-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://triggerflow.pro/"},
+                    {"@type": "ListItem", "position": 2, "name": "Instagram Scan PRO", "item": "https://triggerflow.pro/instagram-scan.html"}
+                ]
+            },
+            {
+                "@type": "Service",
+                "name": "Instagram Scan PRO (бесплатный)",
+                "description": "Бесплатный аудит Instagram по 21 критерию. PDF-отчёт на 20+ страниц: эмоциональная карта профиля, красные флаги, ТОП-3 быстрые победы, стратегическая идея. Результат за 24 часа.",
+                "provider": {"@id": "https://triggerflow.pro/#organization"},
+                "areaServed": "Worldwide",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock"
+                }
+            },
+            {
+                "@type": "Service",
+                "name": "Instagram Scan PRO + Консультация",
+                "description": "Полный аудит Instagram по 21 критерию + 60-минутная видео-консультация с разбором отчёта + план действий на месяц.",
+                "provider": {"@id": "https://triggerflow.pro/#organization"},
+                "areaServed": "Worldwide",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "99",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {"@type": "Question", "name": "Сколько длится аудит Instagram?", "acceptedAnswer": {"@type": "Answer", "text": "PDF-отчёт готов в течение 24 часов. Обычно намного быстрее - в тот же день."}},
+                    {"@type": "Question", "name": "Что если у меня мало подписчиков?", "acceptedAnswer": {"@type": "Answer", "text": "Аудит полезен на любом этапе. Чем раньше исправить ошибки в профиле, Bio и контент-стратегии - тем быстрее придут подписчики и клиенты."}},
+                    {"@type": "Question", "name": "На каком языке аудит Instagram?", "acceptedAnswer": {"@type": "Answer", "text": "Аудит-отчёт на русском языке. Анализируем аккаунты на любом языке - русском, французском, английском."}},
+                    {"@type": "Question", "name": "Нужен ли доступ к аккаунту Instagram?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Мы анализируем только публичную информацию - то, что видит любой посетитель вашего профиля. Пароли и доступ не нужны."}}
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="alternate" hreflang="ru" href="https://triggerflow.pro/instagram-scan.html">
+    <link rel="alternate" hreflang="x-default" href="https://triggerflow.pro/instagram-scan.html">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="/business/">Малому бизнесу</a></li>
+                <li class="navbar__dropdown"><a href="services.html" class="active">Услуги <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="services.html#tripwire">Диагностика <span class="dropdown__price">от 69&#8364;</span></a></li>
+                        <li><a href="money-leak-audit.html">Аудиты <span class="dropdown__price">от 249&#8364;</span></a></li>
+                        <li><a href="subscription.html">Подписки <span class="dropdown__price">от 49&#8364;/мес</span></a></li>
+                        <li><a href="services.html#premium-packages">Внедрение <span class="dropdown__price">от 590&#8364;</span></a></li>
+                        <li><a href="pricing.html">Все тарифы</a></li>
+                    </ul>
+                </li>
+                <li><a href="/ai/">AI-решения</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li class="nav-cta"><a href="#hero" class="btn btn--primary btn--sm" style="padding:8px 18px;font-size:0.85rem;border-radius:8px;">Бесплатный аудит</a></li>
+
+                <li class="navbar__lang">
+                    <button class="navbar__lang-btn">RU &#9662;</button>
+                    <ul class="navbar__lang-menu">
+                        <li><a data-lang-switch="ru">RU</a></li>
+                        <li><a data-lang-switch="en">EN</a></li>
+                        <li><a data-lang-switch="fr">FR</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+    <!-- ===== SECTION 1 - HERO ===== -->
+    <section class="page-hero" id="hero">
+        <div class="hero__gradient-bg"></div>
+        <div class="container hero__content">
+            <div class="hero__ig-badge animate-on-scroll fade-up">
+                <i class="fa-brands fa-instagram ig-icon"></i>
+                Instagram Scan PRO
+            </div>
+            <h1 class="hero__title animate-on-scroll fade-up">
+                Аудит вашего Instagram<br>
+                <span class="ig-accent">за 24 часа</span>
+            </h1>
+            <p class="hero__subtitle animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                21 критерий, 4 методологических блока, пошаговые рекомендации с инструментами и примерами
+            </p>
+            <div class="hero__buttons animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                <a href="https://www.instagram.com/potapova.ai.automation/" target="_blank" rel="noopener" class="btn btn--ig btn--large">Получить аудит - бесплатно</a>
+            </div>
+            <p class="hero__note animate-on-scroll fade-up" style="animation-delay: 0.4s;">
+                PDF-отчёт на 20+ страниц в течение 24 часов
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2 - WHAT YOU GET ===== -->
+    <section class="section" id="what-you-get">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Что вы получите</h2>
+            <p class="section__description animate-on-scroll fade-up">Не общие советы - конкретный разбор вашего аккаунта с действиями</p>
+            <div class="results-6-grid">
+                <div class="result6-item animate-on-scroll fade-up">
+                    <div class="result6-item__icon">
+                        <i class="fa-solid fa-eye ig-icon"></i>
+                    </div>
+                    <div class="result6-item__title">Эмоциональная карта профиля</div>
+                    <div class="result6-item__desc">Первое впечатление за 3 секунды - что видит посетитель и почему остаётся или уходит</div>
+                </div>
+                <div class="result6-item animate-on-scroll fade-up" style="animation-delay: 0.05s;">
+                    <div class="result6-item__icon">
+                        <i class="fa-solid fa-list-check ig-icon"></i>
+                    </div>
+                    <div class="result6-item__title">Оценка по 21 критерию</div>
+                    <div class="result6-item__desc">От Bio и шапки профиля до контент-стратегии и возможностей монетизации</div>
+                </div>
+                <div class="result6-item animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="result6-item__icon">
+                        <i class="fa-solid fa-triangle-exclamation ig-icon"></i>
+                    </div>
+                    <div class="result6-item__title">Красные флаги</div>
+                    <div class="result6-item__desc">Что прямо сейчас убивает конверсию и отпугивает потенциальных клиентов</div>
+                </div>
+                <div class="result6-item animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="result6-item__icon">
+                        <i class="fa-solid fa-bolt ig-icon"></i>
+                    </div>
+                    <div class="result6-item__title">ТОП-3 на эту неделю</div>
+                    <div class="result6-item__desc">Быстрые победы по 30-60 минут каждая - результат уже на следующей неделе</div>
+                </div>
+                <div class="result6-item animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="result6-item__icon">
+                        <i class="fa-solid fa-chart-line ig-icon"></i>
+                    </div>
+                    <div class="result6-item__title">ТОП-3 на месяц</div>
+                    <div class="result6-item__desc">Системные улучшения которые дадут рост в подписчиках и продажах</div>
+                </div>
+                <div class="result6-item animate-on-scroll fade-up" style="animation-delay: 0.25s;">
+                    <div class="result6-item__icon">
+                        <i class="fa-solid fa-lightbulb ig-icon"></i>
+                    </div>
+                    <div class="result6-item__title">Стратегическая идея</div>
+                    <div class="result6-item__desc">Уникальная рекомендация именно для вашего бизнеса и вашей аудитории</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3 - METHODOLOGY ===== -->
+    <section class="section" id="methodology" style="background-color: var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">4 блока методологии</h2>
+            <p class="section__description animate-on-scroll fade-up">Анализ построен на доказанных маркетинговых фреймворках</p>
+            <div class="methodology-grid">
+                <div class="methodology-card animate-on-scroll fade-up">
+                    <div class="methodology-card__number">Блок I</div>
+                    <div class="methodology-card__title">Профиль и визуальная система</div>
+                    <div class="methodology-card__methodology">Gestalt + Mobile-first</div>
+                    <p style="color: var(--color-text-secondary); font-size: 0.88rem; margin-top: 0.75rem; line-height: 1.6;">Bio, аватар, шапка, имя, актуальные - как воспринимается профиль целиком на экране телефона</p>
+                </div>
+                <div class="methodology-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="methodology-card__number">Блок II</div>
+                    <div class="methodology-card__title">Контент-стратегия</div>
+                    <div class="methodology-card__methodology">Kaptsova Funnel + Algorithm</div>
+                    <p style="color: var(--color-text-secondary); font-size: 0.88rem; margin-top: 0.75rem; line-height: 1.6;">Воронка прогрева, разнообразие форматов, регулярность, хэштеги, взаимодействие с алгоритмом</p>
+                </div>
+                <div class="methodology-card animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="methodology-card__number">Блок III</div>
+                    <div class="methodology-card__title">Вовлечение и рост</div>
+                    <div class="methodology-card__methodology">Growth + Community</div>
+                    <p style="color: var(--color-text-secondary); font-size: 0.88rem; margin-top: 0.75rem; line-height: 1.6;">Engagement rate, комментарии, Stories, коллаборации, точки роста аудитории</p>
+                </div>
+                <div class="methodology-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="methodology-card__number">Блок IV</div>
+                    <div class="methodology-card__title">Позиционирование и монетизация</div>
+                    <div class="methodology-card__methodology">StoryBrand + Sales Funnel</div>
+                    <p style="color: var(--color-text-secondary); font-size: 0.88rem; margin-top: 0.75rem; line-height: 1.6;">Уникальность предложения, путь клиента, CTA, ссылки, конверсия в продажи</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4 - FOR WHOM ===== -->
+    <section class="section" id="for-whom">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Для кого этот аудит</h2>
+            <p class="section__description animate-on-scroll fade-up">Вы ведёте Instagram - но он не приносит клиентов?</p>
+            <div class="audience-cards">
+                <div class="audience-card animate-on-scroll fade-up">
+                    <div class="audience-card__icon">
+                        <i class="fa-solid fa-user-tie ig-icon"></i>
+                    </div>
+                    <div class="audience-card__text">
+                        <strong>Эксперты и коучи</strong>
+                        Ведёте Instagram, делитесь знаниями - но клиенты не пишут в директ. Аудит покажет что мешает
+                    </div>
+                </div>
+                <div class="audience-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="audience-card__icon">
+                        <i class="fa-solid fa-bag-shopping ig-icon"></i>
+                    </div>
+                    <div class="audience-card__text">
+                        <strong>Магазины и продавцы</strong>
+                        Выкладываете товары, делаете красивые фото - но продаж через Instagram нет или мало
+                    </div>
+                </div>
+                <div class="audience-card animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="audience-card__icon">
+                        <i class="fa-solid fa-share-nodes ig-icon"></i>
+                    </div>
+                    <div class="audience-card__text">
+                        <strong>MLM дистрибьюторы</strong>
+                        Хотите строить команду через Instagram но не понимаете как выделиться среди тысяч похожих аккаунтов
+                    </div>
+                </div>
+                <div class="audience-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="audience-card__icon">
+                        <i class="fa-solid fa-store ig-icon"></i>
+                    </div>
+                    <div class="audience-card__text">
+                        <strong>Локальный бизнес</strong>
+                        Кафе, салон, студия - хотите привлекать местных клиентов через Instagram но не знаете с чего начать
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5 - HOW IT WORKS ===== -->
+    <section class="section" id="how-it-works" style="background-color: var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Как это работает</h2>
+            <p class="section__description animate-on-scroll fade-up">Три шага - и готовый план для вашего Instagram</p>
+            <div class="steps-list">
+                <div class="step-item animate-on-scroll fade-up">
+                    <div class="step-item__number">1</div>
+                    <div class="step-item__content">
+                        <h3>Вы отправляете ссылку на Instagram</h3>
+                        <p>Напишите ИНСТА в комментариях к посту или в директ - и отправьте ссылку на ваш аккаунт. Больше ничего не нужно</p>
+                    </div>
+                </div>
+                <div class="step-item animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <div class="step-item__number">2</div>
+                    <div class="step-item__content">
+                        <h3>Мы анализируем профиль по 21 критерию за 24 часа</h3>
+                        <p>Наталья лично проводит разбор по 4 блокам методологии. Никаких автоматических отчётов - живой экспертный взгляд на ваш аккаунт</p>
+                    </div>
+                </div>
+                <div class="step-item animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+                    <div class="step-item__number">3</div>
+                    <div class="step-item__content">
+                        <h3>Вы получаете PDF-отчёт + приоритеты</h3>
+                        <p>20+ страниц с конкретными рекомендациями, инструментами и примерами. Что делать на этой неделе и что - на месяц</p>
+                    </div>
+                </div>
+            </div>
+            <div class="animate-on-scroll fade-up" style="text-align: center; margin-top: var(--space-6);">
+                <a href="https://www.instagram.com/potapova.ai.automation/" target="_blank" rel="noopener" class="btn btn--ig btn--large">Написать ИНСТА в директ</a>
+                <p style="margin-top: 0.75rem; color: var(--color-text-muted); font-size: 0.85rem;">Или напишите в комментариях к любому посту</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6 - SOCIAL PROOF ===== -->
+    <section class="section" id="social-proof">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section__title animate-on-scroll fade-up">Что говорят после аудита</h2>
+            <div class="ig-quote animate-on-scroll fade-up">
+                <p style="font-style: italic; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-3);">&laquo;Спасибо большое за аудит. Очень много интересного и полезного для себя открыла. Поняла, что мне ещё работать и работать, чтобы усовершенствовать свою страницу и повысить её эффективность. Но есть и хорошая новость - аудит сразу даёт рекомендации и шаги, которые надо сделать, причём очерчивает временные рамки. Задача за малым - следовать указаниям и не лениться. Считаю, что это довольно грамотный и полезный инструмент&raquo;</p>
+                <footer style="font-size: var(--font-size-sm); color: var(--color-text-muted);">- Мария Г., владелица магазина винтажных украшений</footer>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 7 - TIERS ===== -->
+    <section class="section" id="tiers" style="background-color: var(--color-dark-surface);">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Выберите формат</h2>
+            <p class="section__description animate-on-scroll fade-up">Начните бесплатно - или сразу с разбором в прямом эфире</p>
+            <div class="ig-tiers">
+                <div class="ig-tier-free animate-on-scroll fade-up">
+                    <div class="ig-tier__name">Бесплатный аудит</div>
+                    <div class="ig-tier__price ig-tier__price--free">0 &euro; <span>/ навсегда</span></div>
+                    <p class="ig-tier__desc">Полный разбор по 21 критерию в формате PDF</p>
+                    <ul class="ig-tier__list">
+                        <li class="included"><i class="fa-solid fa-check"></i> Анализ по 21 критерию</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> PDF-отчёт на 20+ страниц</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Эмоциональная карта профиля</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Красные флаги - что убивает конверсию</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> ТОП-3 быстрые победы на неделю</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> ТОП-3 системных улучшения на месяц</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Стратегическая идея для вашего бизнеса</li>
+                        <li class="excluded"><i class="fa-solid fa-xmark"></i> Видео-консультация 60 мин</li>
+                        <li class="excluded"><i class="fa-solid fa-xmark"></i> Разбор отчёта голосом</li>
+                        <li class="excluded"><i class="fa-solid fa-xmark"></i> План действий на месяц</li>
+                    </ul>
+                    <a href="https://www.instagram.com/potapova.ai.automation/" target="_blank" rel="noopener" class="btn btn--ig-outline btn--block">Получить бесплатно</a>
+                </div>
+                <div class="ig-tier-pro animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <div class="scan-tier__badge">Максимум пользы</div>
+                    <div class="ig-tier__name">PRO консультация</div>
+                    <div class="ig-tier__price ig-tier__price--pro">99 &euro; <span>/ сессия</span></div>
+                    <p class="ig-tier__desc">Аудит + живой разбор + план на месяц</p>
+                    <ul class="ig-tier__list">
+                        <li class="included"><i class="fa-solid fa-check"></i> Всё из бесплатного аудита</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> 60-минутная видео-консультация</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Разбор PDF-отчёта вместе с вами</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Ответы на все вопросы по аккаунту</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Персональный план действий на месяц</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Конкретные шаги для вашей ниши</li>
+                        <li class="included"><i class="fa-solid fa-check"></i> Запись консультации остаётся у вас</li>
+                    </ul>
+                    <a href="https://www.instagram.com/potapova.ai.automation/" target="_blank" rel="noopener" class="btn btn--ig btn--block">Записаться на консультацию</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 8 - FAQ ===== -->
+    <section class="section section--faq" id="faq">
+        <div class="container">
+            <h2 class="section__title animate-on-scroll fade-up">Вопросы и ответы</h2>
+            <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+                <details class="faq-item animate-on-scroll fade-up">
+                    <summary class="faq-item__question">Сколько длится аудит Instagram?</summary>
+                    <div class="faq-item__answer"><p>PDF-отчёт готов в течение 24 часов. Обычно намного быстрее - в тот же день</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.05s;">
+                    <summary class="faq-item__question">Что если у меня мало подписчиков?</summary>
+                    <div class="faq-item__answer"><p>Аудит полезен на любом этапе. Чем раньше исправить ошибки в профиле, Bio и контент-стратегии - тем быстрее придут подписчики и клиенты. Лучше найти проблемы сейчас, чем потратить год на неработающий подход</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                    <summary class="faq-item__question">На каком языке аудит?</summary>
+                    <div class="faq-item__answer"><p>Отчёт на русском языке. Анализируем аккаунты на любом языке - русском, французском, английском. Главное - понять, что работает для вашей аудитории</p></div>
+                </details>
+                <details class="faq-item animate-on-scroll fade-up" style="animation-delay: 0.15s;">
+                    <summary class="faq-item__question">Нужен ли доступ к аккаунту?</summary>
+                    <div class="faq-item__answer"><p>Нет. Мы анализируем только публичную информацию - то, что видит любой посетитель вашего профиля. Пароли и доступ к аккаунту не нужны</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 9 - FINAL CTA ===== -->
+    <section class="section section--cta" id="final-cta">
+        <div class="cta__gradient-bg"></div>
+        <div class="container section--cta__inner">
+            <h2 class="section__title animate-on-scroll fade-up">Хотите узнать где ваш Instagram<br>теряет клиентов?</h2>
+            <p class="section__description animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+                Напишите ИНСТА в комментариях или в директ - и получите PDF-отчёт за 24 часа
+            </p>
+            <div class="animate-on-scroll fade-up" style="animation-delay: 0.2s; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://www.instagram.com/potapova.ai.automation/" target="_blank" rel="noopener" class="btn btn--ig btn--large">Получить бесплатный аудит</a>
+            </div>
+            <p class="section__link animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+                <a href="sitemoney-scan.html" data-tooltip="SiteMoney Scan - диагностика сайта на потери конверсий. Light 79€ | PRO 149€">Также делаем аудит сайта &rarr;</a>
+            </p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <div class="footer__logo-image">
+                    <img src="images/logo-shield.png" alt="TriggerFlow logo" width="80" height="80">
+                </div>
+                <a href="index.html" class="footer__logo"><span class="logo-icon"><img src="images/logo-shield.png" alt="TriggerFlow logo"></span>Trigger<span class="logo-flow">Flow</span><span class="tm">&trade;</span></a>
+                <p class="footer__tagline">TriggerFlow&trade; - AI-автоматизация и аудиты для малого бизнеса</p>
+            </div>
+            <nav class="footer__nav">
+                <a href="index.html">Главная</a>
+                <a href="/business/">Малому бизнесу</a>
+                <a href="services.html">Услуги</a>
+                <a href="/ai/">AI-решения</a>
+                <a href="blog.html">Блог</a>
+                <a href="about.html">О нас</a>
+            </nav>
+            <div class="footer-social" style="justify-content:center;">
+                <a href="https://www.facebook.com/profile.php?id=61578048296432" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/potapova.ai.automation/" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://t.me/TriggerFlow_Public" target="_blank" rel="noopener" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://www.linkedin.com/in/nataliia-potapova-4304172a2/" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="footer__trust">
+                <span class="footer__trust-badge"><i class="fa-solid fa-shield-halved"></i> GDPR Compliant</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-lock"></i> Encrypted API</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-database"></i> No data retention</span>
+                <span class="footer__trust-badge"><i class="fa-solid fa-building-shield"></i> SASU France</span>
+            </div>
+            <div class="footer__legal"><a href="/mentions-legales" style="font-size:0.75rem;color:var(--color-text-muted);text-decoration:none;">Mentions légales</a></div>
+            <div class="footer__copy">
+                &copy; 2026 TriggerFlow&trade;. Все права защищены</div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <span class="sticky-cta__text">PDF за <strong>24ч</strong></span>
+        <a href="https://www.instagram.com/potapova.ai.automation/" target="_blank" rel="noopener" class="btn btn--ig">Instagram Scan PRO - бесплатно</a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>
