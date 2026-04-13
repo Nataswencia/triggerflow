@@ -68,6 +68,47 @@
 .price-table .total{font-weight:700;background:rgba(129,140,248,0.1)}
 @media(max-width:768px){.principle-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.principle-grid{grid-template-columns:1fr}}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
     <link rel="alternate" hreflang="ru" href="https://triggerflow.pro/blog/ai-agenty-dlya-biznesa.html">
     <link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/blog/ai-agents-for-business.html">
@@ -109,9 +150,9 @@
 
 <div class="article-tldr">AI-агент - это не чат-бот. Это автономная система с целью, памятью, инструментами и способностью к самокоррекции. 5 типов бизнес-агентов уже работают в реальных компаниях. Стоимость внедрения - от 20 евро/месяц. И нет, это не "будущее" - это инструмент, который ваши конкуренты уже используют.</div>
 
-<h2>Что такое AI-агент простыми словами</h2>
+<h2 id="что-такое-ai-агент-простыми-словами">Что такое AI-агент простыми словами</h2>
 
-<p>Забудьте всё, что вам рассказывали маркетологи. AI-агент - это программа, которая выполняет задачу от начала до конца без вашего участия. Не отвечает на вопросы. Не генерирует текст по запросу. Работает сама.</p>
+<p>Забудьте всё, что вам рассказывали маркетологи. AI-агент - это программа, которая выполняет задачу от начала до конца без вашего участия. Не отвечает на вопросы. Не генерирует текст по запросу. Работает сама</p>
 
 <p>Исследователи выделяют 6 ключевых принципов, которые отличают AI-агента от обычного инструмента:</p>
 
@@ -124,9 +165,9 @@
 <div class="principle-item"><i class="fa-solid fa-rotate"></i><h4>Саморефлексия</h4><p>Проверяет и корректирует свой результат</p></div>
 </div>
 
-<p>Ключевое отличие: агент не ждет вашей команды. Он запускается по расписанию или триггеру, делает работу и отчитывается. Вы просыпаетесь - а посты уже опубликованы, лиды собраны, письма обработаны.</p>
+<p>Ключевое отличие: агент не ждет вашей команды. Он запускается по расписанию или триггеру, делает работу и отчитывается. Вы просыпаетесь - а посты уже опубликованы, лиды собраны, письма обработаны</p>
 
-<h2>AI-агент vs обычный чат-бот</h2>
+<h2 id="ai-агент-vs-обычный-чат-бот">AI-агент vs обычный чат-бот</h2>
 
 <p>Большинство людей путают эти понятия. Вот принципиальная разница:</p>
 
@@ -143,46 +184,46 @@
 </tbody>
 </table>
 
-<p>Если коротко: ChatGPT - это калькулятор. AI-агент - это бухгалтер, который сам считает, сам проверяет и сам отправляет отчет.</p>
+<p>Если коротко: ChatGPT - это калькулятор. AI-агент - это бухгалтер, который сам считает, сам проверяет и сам отправляет отчет</p>
 
-<h2>5 типов AI-агентов для бизнеса</h2>
+<h2 id="5-типов-ai-агентов-для-бизнеса">5 типов AI-агентов для бизнеса</h2>
 
 <div class="agent-card content">
 <h3><i class="fa-solid fa-pen-fancy"></i> 1. Контент-агент</h3>
-<p><strong>Что делает:</strong> генерирует посты, статьи, рассылки по расписанию. Проверяет стиль и уникальность. Подбирает изображения. Публикует.</p>
-<p><strong>Реальный пример:</strong> агент для Telegram-канала: каждый день в 8:00 берет тему из контент-плана, генерирует пост через GPT-4o, проверяет через Reflection Pattern (второй GPT проверяет первый), подбирает фото через Unsplash, публикует в канал.</p>
-<p><strong>Экономия:</strong> 2-3 часа в день на создание контента.</p>
+<p><strong>Что делает:</strong> генерирует посты, статьи, рассылки по расписанию. Проверяет стиль и уникальность. Подбирает изображения. Публикует</p>
+<p><strong>Реальный пример:</strong> агент для Telegram-канала: каждый день в 8:00 берет тему из контент-плана, генерирует пост через GPT-4o, проверяет через Reflection Pattern (второй GPT проверяет первый), подбирает фото через Unsplash, публикует в канал</p>
+<p><strong>Экономия:</strong> 2-3 часа в день на создание контента</p>
 </div>
 
 <div class="agent-card analytics">
 <h3><i class="fa-solid fa-chart-line"></i> 2. Аналитик-агент</h3>
-<p><strong>Что делает:</strong> собирает метрики, строит отчеты, отслеживает аномалии. Присылает еженедельные саммари с инсайтами.</p>
-<p><strong>Реальный пример:</strong> каждое воскресенье агент считает подписчиков канала, количество постов, ошибки выполнения, собирает макро-тренды из Hacker News и новостных API - и присылает структурированный отчет в Telegram.</p>
-<p><strong>Экономия:</strong> 4-5 часов в неделю на аналитику.</p>
+<p><strong>Что делает:</strong> собирает метрики, строит отчеты, отслеживает аномалии. Присылает еженедельные саммари с инсайтами</p>
+<p><strong>Реальный пример:</strong> каждое воскресенье агент считает подписчиков канала, количество постов, ошибки выполнения, собирает макро-тренды из Hacker News и новостных API - и присылает структурированный отчет в Telegram</p>
+<p><strong>Экономия:</strong> 4-5 часов в неделю на аналитику</p>
 </div>
 
 <div class="agent-card lead">
 <h3><i class="fa-solid fa-magnet"></i> 3. Лид-агент</h3>
-<p><strong>Что делает:</strong> ищет потенциальных клиентов через поисковые API, анализирует сайты, скорит лиды по релевантности, пишет персонализированные офферы.</p>
-<p><strong>Реальный пример:</strong> агент раз в неделю ищет 50 компаний через Serper.dev по ключевым словам ниши. GPT-4o анализирует каждый сайт, оценивает потенциал, генерирует персональное предложение. Результат - Google Sheet с готовыми лидами и офферами.</p>
-<p><strong>Экономия:</strong> 10-15 часов в неделю на поиск клиентов.</p>
+<p><strong>Что делает:</strong> ищет потенциальных клиентов через поисковые API, анализирует сайты, скорит лиды по релевантности, пишет персонализированные офферы</p>
+<p><strong>Реальный пример:</strong> агент раз в неделю ищет 50 компаний через Serper.dev по ключевым словам ниши. GPT-4o анализирует каждый сайт, оценивает потенциал, генерирует персональное предложение. Результат - Google Sheet с готовыми лидами и офферами</p>
+<p><strong>Экономия:</strong> 10-15 часов в неделю на поиск клиентов</p>
 </div>
 
 <div class="agent-card email">
 <h3><i class="fa-solid fa-envelope-open-text"></i> 4. Email-агент</h3>
-<p><strong>Что делает:</strong> мониторит входящую почту, классифицирует письма, предлагает ответы, отслеживает коммерческие предложения, обнаруживает манипуляции в ценах.</p>
-<p><strong>Реальный пример:</strong> агент проверяет Gmail каждые 30 минут. GPT-4o-mini анализирует каждое письмо: категория, срочность, намерение отправителя. Присылает в Telegram краткое резюме с кнопками "Согласиться / Редактировать / Архивировать". Хранит всю историю переписки для контекста.</p>
-<p><strong>Экономия:</strong> 1-2 часа в день на обработку почты.</p>
+<p><strong>Что делает:</strong> мониторит входящую почту, классифицирует письма, предлагает ответы, отслеживает коммерческие предложения, обнаруживает манипуляции в ценах</p>
+<p><strong>Реальный пример:</strong> агент проверяет Gmail каждые 30 минут. GPT-4o-mini анализирует каждое письмо: категория, срочность, намерение отправителя. Присылает в Telegram краткое резюме с кнопками "Согласиться / Редактировать / Архивировать". Хранит всю историю переписки для контекста</p>
+<p><strong>Экономия:</strong> 1-2 часа в день на обработку почты</p>
 </div>
 
 <div class="agent-card crm">
 <h3><i class="fa-solid fa-address-book"></i> 5. CRM-агент</h3>
-<p><strong>Что делает:</strong> автоматически обновляет профили клиентов после каждого взаимодействия. Помнит историю, предпочтения, результаты прошлых анализов.</p>
-<p><strong>Реальный пример:</strong> после каждого SEO-анализа сайта агент записывает в Client_Profiles: имя клиента, компанию, сайт, оценку, использованные услуги. При следующем обращении - агент уже знает клиента и может персонализировать ответ.</p>
-<p><strong>Экономия:</strong> забытые клиенты = потерянные деньги. Агент не забывает.</p>
+<p><strong>Что делает:</strong> автоматически обновляет профили клиентов после каждого взаимодействия. Помнит историю, предпочтения, результаты прошлых анализов</p>
+<p><strong>Реальный пример:</strong> после каждого SEO-анализа сайта агент записывает в Client_Profiles: имя клиента, компанию, сайт, оценку, использованные услуги. При следующем обращении - агент уже знает клиента и может персонализировать ответ</p>
+<p><strong>Экономия:</strong> забытые клиенты = потерянные деньги. Агент не забывает</p>
 </div>
 
-<h2>Почему это не "будущее", а уже реальность</h2>
+<h2 id="почему-это-не-будущее-а-уже-реальность">Почему это не "будущее", а уже реальность</h2>
 
 <p>Цифры 2025-2026 года:</p>
 
@@ -193,9 +234,9 @@
 <li><strong>Unsplash API</strong> - 50 запросов/час бесплатно. Хватает на весь контент-план</li>
 </ul>
 
-<p>AI-агенты перестали быть экспериментом. Это инфраструктура. Как email или CRM - просто следующий слой автоматизации.</p>
+<p>AI-агенты перестали быть экспериментом. Это инфраструктура. Как email или CRM - просто следующий слой автоматизации</p>
 
-<h2>Сколько стоит внедрить AI-агента</h2>
+<h2 id="сколько-стоит-внедрить-ai-агента">Сколько стоит внедрить AI-агента</h2>
 
 <p>Честная таблица без маркетинговых обещаний:</p>
 
@@ -211,24 +252,15 @@
 </tbody>
 </table>
 
-<p>Сравните с ручной работой: маркетолог стоит от 1500 евро/мес, SMM-менеджер - от 800 евро/мес. AI-агент делает часть их работы за 30 евро.</p>
+<p>Сравните с ручной работой: маркетолог стоит от 1500 евро/мес, SMM-менеджер - от 800 евро/мес. AI-агент делает часть их работы за 30 евро</p>
 
-<h2>FAQ</h2>
+<h2 id="faq">FAQ</h2>
 
-<div class="faq-item">
-<h3>Чем AI-агент отличается от обычного чат-бота?</h3>
-<p>Чат-бот реагирует на запрос и забывает контекст. AI-агент имеет цель, память, инструменты и способность планировать последовательность действий. Агент работает автономно 24/7, а не ждет вашего сообщения.</p>
-</div>
+<details class="faq-accordion"><summary>Чем AI-агент отличается от обычного чат-бота?</summary><p>Чат-бот реагирует на запрос и забывает контекст. AI-агент имеет цель, память, инструменты и способность планировать последовательность действий. Агент работает автономно 24/7, а не ждет вашего сообщения</p></details>
 
-<div class="faq-item">
-<h3>Сколько стоит внедрить AI-агента в бизнес?</h3>
-<p>DIY на n8n Cloud: от 20 евро/месяц (платформа) + 10-15 евро/месяц (OpenAI API). С агентством: от 500 евро за настройку + поддержка. Окупаемость - от 2-4 недель при правильном выборе задачи.</p>
-</div>
+<details class="faq-accordion"><summary>Сколько стоит внедрить AI-агента в бизнес?</summary><p>DIY на n8n Cloud: от 20 евро/месяц (платформа) + 10-15 евро/месяц (OpenAI API). С агентством: от 500 евро за настройку + поддержка. Окупаемость - от 2-4 недель при правильном выборе задачи</p></details>
 
-<div class="faq-item">
-<h3>Какой AI-агент внедрить первым?</h3>
-<p>Начните с контент-агента или email-агента - они дают быстрый видимый результат при минимальной сложности. Лид-агент и CRM-агент требуют больше настройки, но дают максимальный ROI.</p>
-</div>
+<details class="faq-accordion"><summary>Какой AI-агент внедрить первым?</summary><p>Начните с контент-агента или email-агента - они дают быстрый видимый результат при минимальной сложности. Лид-агент и CRM-агент требуют больше настройки, но дают максимальный ROI</p></details>
 
 <div class="article-takeaways">
 <h2>Ключевые выводы</h2>
@@ -242,8 +274,8 @@
 </div>
 
 <div class="article-cta">
-<h2>Хотите AI-агента для вашего бизнеса?</h2>
-<p>Бот проанализирует ваш сайт за 2 минуты и покажет, какие процессы можно автоматизировать первыми.</p>
+<h2 id="хотите-ai-агента-для-вашего-бизнеса">Хотите AI-агента для вашего бизнеса?</h2>
+<p>Бот проанализирует ваш сайт за 2 минуты и покажет, какие процессы можно автоматизировать первыми</p>
 <a href="/#hero" class="btn">Бесплатный анализ сайта</a>
 </div>
 

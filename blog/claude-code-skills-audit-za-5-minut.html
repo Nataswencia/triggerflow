@@ -72,6 +72,47 @@
 .quote-block{background:rgba(255,106,0,0.08);border-left:4px solid #ff6a00;padding:1.2rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0;font-style:italic;color:#e2e8f0}
 .quote-block cite{display:block;margin-top:0.5rem;font-size:0.85rem;color:#94a3b8;font-style:normal}
 @media(max-width:600px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -103,7 +144,7 @@
             <button class="navbar__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
 <main>
 <div class="container"><div class="article-breadcrumb"><a href="../index.html">Главная</a> / <a href="../blog.html">Блог</a> / Claude Code Skills: аудит за 5 минут</div></div>
-<section class="page-hero"><div class="container"><div class="blog-card__category">Claude Code и AI-агенты</div><h1 class="page-hero__title"><span class="gradient-text">Claude Code Skills:<br>аудит Instagram за 5 минут вместо 3 часов</span></h1><p style="font-size:1.2rem;color:#64748b;max-width:700px">Реальный кейс: 6 аудитов за неделю, система из 32 правил и почему я больше не объясняю Claude одно и то же дважды.</p><div class="article-meta"><span><i class="fa-regular fa-calendar"></i> 10 апреля 2026</span><span><i class="fa-regular fa-clock"></i> 7 мин</span></div></div></section>
+<section class="page-hero"><div class="container"><div class="blog-card__category">Claude Code и AI-агенты</div><h1 class="page-hero__title"><span class="gradient-text">Claude Code Skills:<br>аудит Instagram за 5 минут вместо 3 часов</span></h1><p style="font-size:1.2rem;color:#64748b;max-width:700px">Реальный кейс: 6 аудитов за неделю, система из 32 правил и почему я больше не объясняю Claude одно и то же дважды</p><div class="article-meta"><span><i class="fa-regular fa-calendar"></i> 10 апреля 2026</span><span><i class="fa-regular fa-clock"></i> 7 мин</span></div></div></section>
 
 <div class="article-body">
 
@@ -116,33 +157,33 @@
 <div class="stat-box"><span class="num">32</span><span class="desc">правила в системе</span></div>
 </div>
 
-<h2>Почему аудит вручную - это больно</h2>
+<h2 id="почему-аудит-вручную-это-больно">Почему аудит вручную - это больно</h2>
 
-<p>Аудит Instagram-страницы - это не просто "посмотреть профиль и написать что думаешь".</p>
+<p>Аудит Instagram-страницы - это не просто "посмотреть профиль и написать что думаешь"</p>
 
-<p>Это 21 критерий по 4 блокам: шапка профиля, контент и визуал, вовлечённость, стратегия и конверсия.</p>
+<p>Это 21 критерий по 4 блокам: шапка профиля, контент и визуал, вовлечённость, стратегия и конверсия</p>
 
-<p>Это PDF на 20+ страниц с конкретными примерами, цифрами, рекомендациями.</p>
+<p>Это PDF на 20+ страниц с конкретными примерами, цифрами, рекомендациями</p>
 
-<p>И каждый раз - с нуля. Каждый раз я объясняла: не ставь точки в конце абзацев, каждое предложение с новой строки, перед использованием @аккаунтов в примерах - проверь что они существуют. Каждый раз переделывала верстку по 10-15 итераций. Однажды потратила 40 минут только на то, чтобы правильно выровнять блок с оценкой.</p>
+<p>И каждый раз - с нуля. Каждый раз я объясняла: не ставь точки в конце абзацев, каждое предложение с новой строки, перед использованием @аккаунтов в примерах - проверь что они существуют. Каждый раз переделывала верстку по 10-15 итераций. Однажды потратила 40 минут только на то, чтобы правильно выровнять блок с оценкой</p>
 
-<p>Первый аудит занял 3 часа. И я понимала - так не должно быть.</p>
+<p>Первый аудит занял 3 часа. И я понимала - так не должно быть</p>
 
-<h2>Что такое Claude Code Skills</h2>
+<h2 id="что-такое-claude-code-skills">Что такое Claude Code Skills</h2>
 
-<p>Смотрите, Claude Code - это AI-агент, который работает прямо в терминале и имеет доступ к файловой системе.</p>
+<p>Смотрите, Claude Code - это AI-агент, который работает прямо в терминале и имеет доступ к файловой системе</p>
 
-<p>Ключевая фича: он читает файл <code>CLAUDE.md</code> и всё из папки <code>rules/</code> при каждом запуске. Автоматически. Без напоминания.</p>
+<p>Ключевая фича: он читает файл <code>CLAUDE.md</code> и всё из папки <code>rules/</code> при каждом запуске. Автоматически. Без напоминания</p>
 
-<p>Skill - это набор markdown-файлов с правилами для конкретной задачи. Один раз пишешь - и больше не объясняешь.</p>
+<p>Skill - это набор markdown-файлов с правилами для конкретной задачи. Один раз пишешь - и больше не объясняешь</p>
 
-<p>Кстати, это не магия и не сложная интеграция. Просто файлы с текстом в нужной папке.</p>
+<p>Кстати, это не магия и не сложная интеграция. Просто файлы с текстом в нужной папке</p>
 
-<h2>Как я создала skill для аудита</h2>
+<h2 id="как-я-создала-skill-для-аудита">Как я создала skill для аудита</h2>
 
-<p>После первого аудита я выписала всё, что объясняла Claude вручную. Получился список на 32 пункта.</p>
+<p>После первого аудита я выписала всё, что объясняла Claude вручную. Получился список на 32 пункта</p>
 
-<p>Потом разложила по файлам - каждый файл отвечает за свою зону ответственности.</p>
+<p>Потом разложила по файлам - каждый файл отвечает за свою зону ответственности</p>
 
 <div class="skill-file">
 <div class="file-icon"><i class="fa-regular fa-file-lines"></i></div>
@@ -192,7 +233,7 @@
 </div>
 </div>
 
-<h2>Как это работает сейчас - 3 шага</h2>
+<h2 id="как-это-работает-сейчас-3-шага">Как это работает сейчас - 3 шага</h2>
 
 <div class="chain-step step">
 <span class="step-num">ШАГ 1</span>
@@ -203,63 +244,54 @@
 <div class="chain-step step">
 <span class="step-num">ШАГ 2</span>
 <h3>Claude работает по системе</h3>
-<p>Открывает профиль, собирает данные по 21 критерию, проверяет что @аккаунты в примерах реальные, генерирует HTML по шаблону с 32 правилами оформления.</p>
-<p>Я в это время занимаюсь другим.</p>
+<p>Открывает профиль, собирает данные по 21 критерию, проверяет что @аккаунты в примерах реальные, генерирует HTML по шаблону с 32 правилами оформления</p>
+<p>Я в это время занимаюсь другим</p>
 </div>
 
 <div class="chain-step result">
 <span class="step-num">РЕЗУЛЬТАТ</span>
 <h3>PDF готов + сообщение клиенту</h3>
-<p>Получаю готовый HTML, конвертирую в PDF одной командой. Плюс - уже составленное сопроводительное сообщение по шаблону из <code>delivery.md</code>. Проверяю, отправляю.</p>
+<p>Получаю готовый HTML, конвертирую в PDF одной командой. Плюс - уже составленное сопроводительное сообщение по шаблону из <code>delivery.md</code>. Проверяю, отправляю</p>
 </div>
 
-<h2>Что изменилось на практике</h2>
+<h2 id="что-изменилось-на-практике">Что изменилось на практике</h2>
 
-<p>Первый аудит - 3 часа. 15 итераций верстки. Два раза переписывала вступление. Один раз обнаружила несуществующий @аккаунт уже после отправки клиенту.</p>
+<p>Первый аудит - 3 часа. 15 итераций верстки. Два раза переписывала вступление. Один раз обнаружила несуществующий @аккаунт уже после отправки клиенту</p>
 
-<p>К шестому аудиту - 5 минут на постановку задачи, 20 минут ждать пока Claude генерирует, 5 минут финальная проверка и отправка.</p>
+<p>К шестому аудиту - 5 минут на постановку задачи, 20 минут ждать пока Claude генерирует, 5 минут финальная проверка и отправка</p>
 
-<p>Ноль ошибок в верстке. Ноль пропущенных критериев. Ноль несуществующих @аккаунтов.</p>
+<p>Ноль ошибок в верстке. Ноль пропущенных критериев. Ноль несуществующих @аккаунтов</p>
 
-<p>Кстати, клиенты это заметили. Не скорость - качество. Когда правила зашиты в систему, они выполняются всегда. Не "обычно", не "в этот раз вспомнила" - а всегда.</p>
+<p>Кстати, клиенты это заметили. Не скорость - качество. Когда правила зашиты в систему, они выполняются всегда. Не "обычно", не "в этот раз вспомнила" - а всегда</p>
 
 <div class="quote-block">
 "Довольно грамотный и полезный инструмент - сразу видно, что человек разбирается в теме"
 <cite>- Мария Г., отзыв после аудита</cite>
 </div>
 
-<h2>Почему это работает лучше чем промпт в чате</h2>
+<h2 id="почему-это-работает-лучше-чем-промпт-в-чате">Почему это работает лучше чем промпт в чате</h2>
 
-<p>Вот в чём разница. В обычном чате контекст сбрасывается. Вы написали правила в начале разговора - через 20 сообщений Claude может их "забыть" или интерпретировать иначе.</p>
+<p>Вот в чём разница. В обычном чате контекст сбрасывается. Вы написали правила в начале разговора - через 20 сообщений Claude может их "забыть" или интерпретировать иначе</p>
 
-<p>Файлы в <code>rules/</code> - это другое. Они загружаются каждый раз при старте. Они всегда на месте. Их можно версионировать, дополнять, исправлять.</p>
+<p>Файлы в <code>rules/</code> - это другое. Они загружаются каждый раз при старте. Они всегда на месте. Их можно версионировать, дополнять, исправлять</p>
 
-<p>И самое главное - они отделены от конкретного проекта. Хотите применить те же правила к другому аккаунту? Просто говорите "аудит @другой_аккаунт". Система уже знает, что делать.</p>
+<p>И самое главное - они отделены от конкретного проекта. Хотите применить те же правила к другому аккаунту? Просто говорите "аудит @другой_аккаунт". Система уже знает, что делать</p>
 
-<h2>Итог</h2>
+<h2 id="итог">Итог</h2>
 
-<p>Skill - это не про технологии. Это про принцип: один раз зафиксировать знание, которое повторяется.</p>
+<p>Skill - это не про технологии. Это про принцип: один раз зафиксировать знание, которое повторяется</p>
 
-<p>Если вы делаете одно и то же больше двух раз - это кандидат на skill. Аудиты, контент, отчёты, обработка заявок, ответы на типовые вопросы.</p>
+<p>Если вы делаете одно и то же больше двух раз - это кандидат на skill. Аудиты, контент, отчёты, обработка заявок, ответы на типовые вопросы</p>
 
-<p>Вы не ускоряете себя. Вы создаёте систему, которая работает без вас.</p>
+<p>Вы не ускоряете себя. Вы создаёте систему, которая работает без вас</p>
 
-<h2>FAQ</h2>
+<h2 id="faq">FAQ</h2>
 
-<div class="faq-item">
-<h3>Что такое Claude Code Skills?</h3>
-<p>Claude Code Skills - это набор правил, шаблонов и инструкций в файлах <code>rules/</code>, которые Claude читает автоматически при каждом запуске. Вместо того чтобы каждый раз объяснять "без точек в конце", "проверь @аккаунты", "21 критерий" - всё это лежит в файлах и применяется само.</p>
-</div>
+<details class="faq-accordion"><summary>Что такое Claude Code Skills?</summary><p>Claude Code Skills - это набор правил, шаблонов и инструкций в файлах <code>rules/</code>, которые Claude читает автоматически при каждом запуске. Вместо того чтобы каждый раз объяснять "без точек в конце", "проверь @аккаунты", "21 критерий" - всё это лежит в файлах и применяется само</p></details>
 
-<div class="faq-item">
-<h3>Сколько стоит такой аудит Instagram?</h3>
-<p>Первый аудит - бесплатно. Напишите <strong>ИНСТА</strong> в комментариях под любым постом в Instagram - пришлю детали в директ. Полный разбор по 21 критерию в течение 24 часов.</p>
-</div>
+<details class="faq-accordion"><summary>Сколько стоит такой аудит Instagram?</summary><p>Первый аудит - бесплатно. Напишите <strong>ИНСТА</strong> в комментариях под любым постом в Instagram - пришлю детали в директ. Полный разбор по 21 критерию в течение 24 часов</p></details>
 
-<div class="faq-item">
-<h3>Можно ли сделать skill для своего бизнеса?</h3>
-<p>Да. Skill - это просто набор markdown-файлов с правилами для вашей задачи. Подходит для любого повторяющегося процесса: аудиты, контент, отчёты, обработка заявок. Если задача делается больше 2 раз - её можно превратить в skill.</p>
-</div>
+<details class="faq-accordion"><summary>Можно ли сделать skill для своего бизнеса?</summary><p>Да. Skill - это просто набор markdown-файлов с правилами для вашей задачи. Подходит для любого повторяющегося процесса: аудиты, контент, отчёты, обработка заявок. Если задача делается больше 2 раз - её можно превратить в skill</p></details>
 
 <div class="article-takeaways">
 <h2>Ключевые выводы</h2>
@@ -273,8 +305,8 @@
 </div>
 
 <div class="article-cta">
-<h2>Хотите бесплатный аудит вашего Instagram?</h2>
-<p>Напишите ИНСТА в комментариях в Instagram - пришлю полный разбор по 21 критерию в директ в течение 24 часов.</p>
+<h2 id="хотите-бесплатный-аудит-вашего-instagram">Хотите бесплатный аудит вашего Instagram?</h2>
+<p>Напишите ИНСТА в комментариях в Instagram - пришлю полный разбор по 21 критерию в директ в течение 24 часов</p>
 <a href="https://www.instagram.com/potapova.ai.automation/" class="btn" target="_blank" rel="noopener">Перейти в Instagram</a>
 </div>
 

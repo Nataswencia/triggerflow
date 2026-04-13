@@ -45,6 +45,47 @@
 .compare-table tr:hover td{background:rgba(255,255,255,0.03)}
 .highlight-box{background:rgba(99,102,241,0.08);border:1px solid rgba(129,140,248,0.3);padding:1.5rem;border-radius:12px;margin:1.5rem 0}
 .highlight-box h3{color:#818cf8;margin-top:0}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -82,17 +123,17 @@
 
 <img class="article-hero-img" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Хештеги в Instagram и Facebook - сравнение платформ">
 
-<h2>30 хештегов и ноль толку: знакомо?</h2>
+<h2 id="30-хештегов-и-ноль-толку-знакомо">30 хештегов и ноль толку: знакомо?</h2>
 
-<p>Вот знакомая ситуация: вы копируете один и тот же блок хештегов под каждый пост в Instagram и Facebook. Охваты не растут. Подписчики не приходят. И вы начинаете думать, что хештеги - это вчерашний день.</p>
+<p>Вот знакомая ситуация: вы копируете один и тот же блок хештегов под каждый пост в Instagram и Facebook. Охваты не растут. Подписчики не приходят. И вы начинаете думать, что хештеги - это вчерашний день</p>
 
-<p>На самом деле проблема не в хештегах. Проблема в том, что Instagram и Facebook - это два совершенно разных алгоритма. И то, что работает на одной платформе, на другой может навредить.</p>
+<p>На самом деле проблема не в хештегах. Проблема в том, что Instagram и Facebook - это два совершенно разных алгоритма. И то, что работает на одной платформе, на другой может навредить</p>
 
-<p>Смотрите, я проанализировала десятки аккаунтов и собрала данные. Разница колоссальная.</p>
+<p>Смотрите, я проанализировала десятки аккаунтов и собрала данные. Разница колоссальная</p>
 
-<h2>Как алгоритм Instagram использует хештеги</h2>
+<h2 id="как-алгоритм-instagram-использует-хештеги">Как алгоритм Instagram использует хештеги</h2>
 
-<p>Instagram изначально строился вокруг хештегов. Это одна из основных систем обнаружения контента. Когда вы ставите хештег - ваш пост попадает в ленту этого хештега и может быть показан людям, которые на вас не подписаны.</p>
+<p>Instagram изначально строился вокруг хештегов. Это одна из основных систем обнаружения контента. Когда вы ставите хештег - ваш пост попадает в ленту этого хештега и может быть показан людям, которые на вас не подписаны</p>
 
 <h3>Что происходит технически</h3>
 <ul>
@@ -121,13 +162,13 @@
 </ul>
 </div>
 
-<p>Кстати, это не секрет и не лайфхак одного блогера. Этот подход рекомендуют Later, Hootsuite, Social Media Examiner и практически все крупные SMM-платформы. В русскоязычном пространстве его тоже активно используют на курсах и вебинарах по продвижению.</p>
+<p>Кстати, это не секрет и не лайфхак одного блогера. Этот подход рекомендуют Later, Hootsuite, Social Media Examiner и практически все крупные SMM-платформы. В русскоязычном пространстве его тоже активно используют на курсах и вебинарах по продвижению</p>
 
-<h2>А что с Facebook? Спойлер: всё иначе</h2>
+<h2 id="а-что-с-facebook-спойлер-всё-иначе">А что с Facebook? Спойлер: всё иначе</h2>
 
-<p>Вот тут многие делают ошибку. Берут те же 30 хештегов из Instagram и вставляют в Facebook-пост. Или, ещё хуже, пишут их комментарием.</p>
+<p>Вот тут многие делают ошибку. Берут те же 30 хештегов из Instagram и вставляют в Facebook-пост. Или, ещё хуже, пишут их комментарием</p>
 
-<p>Facebook работает по-другому. Принципиально.</p>
+<p>Facebook работает по-другому. Принципиально</p>
 
 <h3>Как алгоритм Facebook строит охват</h3>
 <ul>
@@ -139,11 +180,11 @@
 
 <h3>Хештеги в комментариях Facebook - бесполезно</h3>
 
-<p>В отличие от Instagram, Facebook не индексирует хештеги из комментариев. Только из основного текста поста. Но даже там их влияние минимально.</p>
+<p>В отличие от Instagram, Facebook не индексирует хештеги из комментариев. Только из основного текста поста. Но даже там их влияние минимально</p>
 
-<p>Использование хештегов в Facebook-постах может даже навредить - пост выглядит как автоматический кросспостинг из Instagram, а алгоритм FB такие посты понижает.</p>
+<p>Использование хештегов в Facebook-постах может даже навредить - пост выглядит как автоматический кросспостинг из Instagram, а алгоритм FB такие посты понижает</p>
 
-<h2>Сравнительная таблица: Instagram vs Facebook</h2>
+<h2 id="сравнительная-таблица-instagram-vs-facebook">Сравнительная таблица: Instagram vs Facebook</h2>
 
 <table class="compare-table">
 <tr><th>Параметр</th><th>Instagram</th><th>Facebook</th></tr>
@@ -156,7 +197,7 @@
 <tr><td>Риск спама</td><td>Низкий (если миксовать наборы)</td><td>Высокий (выглядит как кросспостинг)</td></tr>
 </table>
 
-<h2>Правила работы с хештегами в Instagram</h2>
+<h2 id="правила-работы-с-хештегами-в-instagram">Правила работы с хештегами в Instagram</h2>
 
 <h3>1. Миксуйте размеры</h3>
 <p>Не берите только крупные хештеги с миллионами публикаций - ваш пост утонет за секунды. Оптимальный микс:</p>
@@ -167,15 +208,15 @@
 </ul>
 
 <h3>2. Чередуйте наборы</h3>
-<p>Один и тот же набор хештегов каждый раз - это красный флаг для алгоритма. Instagram может расценить это как спам-поведение. Подготовьте 5-7 наборов по типам контента и меняйте 30-40% хештегов от поста к посту.</p>
+<p>Один и тот же набор хештегов каждый раз - это красный флаг для алгоритма. Instagram может расценить это как спам-поведение. Подготовьте 5-7 наборов по типам контента и меняйте 30-40% хештегов от поста к посту</p>
 
 <h3>3. Хештеги должны быть релевантны</h3>
-<p>Не ставьте #love #instagood #photooftheday на пост про автоматизацию бизнеса. Алгоритм сравнивает контент поста с темой хештега. Нерелевантные хештеги понижают пост.</p>
+<p>Не ставьте #love #instagood #photooftheday на пост про автоматизацию бизнеса. Алгоритм сравнивает контент поста с темой хештега. Нерелевантные хештеги понижают пост</p>
 
 <h3>4. Брендовый хештег - обязательно</h3>
-<p>Создайте уникальный хештег для вашего бренда. Он не даст охвата, но создаст коллекцию всех ваших постов в одном месте. Клиенты смогут найти весь ваш контент по одному клику.</p>
+<p>Создайте уникальный хештег для вашего бренда. Он не даст охвата, но создаст коллекцию всех ваших постов в одном месте. Клиенты смогут найти весь ваш контент по одному клику</p>
 
-<h2>А что делать в Facebook?</h2>
+<h2 id="а-что-делать-в-facebook">А что делать в Facebook?</h2>
 
 <p>Раз хештеги не работают - что работает?</p>
 
@@ -186,9 +227,9 @@
 <li><strong>Видео и прямые эфиры.</strong> Facebook активно продвигает видеоконтент - Reels, Live, короткие видео</li>
 </ul>
 
-<p>Если всё же хотите использовать хештеги в FB - ставьте максимум 2-3, и только в тексте поста. Никаких комментариев с хештегами, никаких блоков по 30 штук.</p>
+<p>Если всё же хотите использовать хештеги в FB - ставьте максимум 2-3, и только в тексте поста. Никаких комментариев с хештегами, никаких блоков по 30 штук</p>
 
-<h2>Автоматизация: как публиковать хештеги без ручной работы</h2>
+<h2 id="автоматизация-как-публиковать-хештеги-без-ручной-р">Автоматизация: как публиковать хештеги без ручной работы</h2>
 
 <p>Если у вас автопостинг через Instagram Graph API (или инструменты вроде n8n) - добавить автоматический комментарий с хештегами несложно:</p>
 
@@ -198,25 +239,25 @@
 <li>Комментарий появляется мгновенно, Instagram индексирует хештеги</li>
 </ol>
 
-<p>Это два API-вызова вместо одного. Зато пост чистый, хештеги работают, и всё происходит автоматически.</p>
+<p>Это два API-вызова вместо одного. Зато пост чистый, хештеги работают, и всё происходит автоматически</p>
 
-<p>Для Facebook автокомментарий с хештегами настраивать не нужно - это просто не даст результата.</p>
+<p>Для Facebook автокомментарий с хештегами настраивать не нужно - это просто не даст результата</p>
 
 <section class="article-faq"><h2>Часто задаваемые вопросы</h2>
-<div class="faq-item"><h3>Куда ставить хештеги - в caption или в комментарий?</h3><p>В Instagram лучше в первый комментарий - пост выглядит чище, а индексация работает одинаково. В Facebook хештеги в комментариях не индексируются.</p></div>
-<div class="faq-item"><h3>Сколько хештегов ставить в Instagram?</h3><p>Оптимально 20-25 из лимита 30. Миксуйте категории: 5 крупных (100K+), 10 средних (10-100K), 10 нишевых (до 10K).</p></div>
-<div class="faq-item"><h3>Работают ли хештеги в Facebook?</h3><p>Хештеги в Facebook практически не влияют на охват. Алгоритм FB продвигает контент через социальный граф - друзья, группы, репосты. Хештеги играют минимальную роль.</p></div>
-<div class="faq-item"><h3>Можно ли использовать одни и те же хештеги каждый раз?</h3><p>Нет. Instagram может расценить это как спам-поведение. Подготовьте 5-7 наборов и чередуйте их, меняя 30-40% хештегов от поста к посту.</p></div>
-<div class="faq-item"><h3>Как автоматизировать публикацию хештегов?</h3><p>Через Instagram Graph API можно автоматически публиковать комментарий с хештегами сразу после поста. Инструменты вроде n8n позволяют настроить это без кода.</p></div>
+<details class="faq-accordion"><summary>Куда ставить хештеги - в caption или в комментарий?</summary><p>В Instagram лучше в первый комментарий - пост выглядит чище, а индексация работает одинаково. В Facebook хештеги в комментариях не индексируются</p></details>
+<details class="faq-accordion"><summary>Сколько хештегов ставить в Instagram?</summary><p>Оптимально 20-25 из лимита 30. Миксуйте категории: 5 крупных (100K+), 10 средних (10-100K), 10 нишевых (до 10K)</p></details>
+<details class="faq-accordion"><summary>Работают ли хештеги в Facebook?</summary><p>Хештеги в Facebook практически не влияют на охват. Алгоритм FB продвигает контент через социальный граф - друзья, группы, репосты. Хештеги играют минимальную роль</p></details>
+<details class="faq-accordion"><summary>Можно ли использовать одни и те же хештеги каждый раз?</summary><p>Нет. Instagram может расценить это как спам-поведение. Подготовьте 5-7 наборов и чередуйте их, меняя 30-40% хештегов от поста к посту</p></details>
+<details class="faq-accordion"><summary>Как автоматизировать публикацию хештегов?</summary><p>Через Instagram Graph API можно автоматически публиковать комментарий с хештегами сразу после поста. Инструменты вроде n8n позволяют настроить это без кода</p></details>
 </section>
 
 <section class="article-takeaways"><h2>Ключевые выводы</h2>
 <ul>
-<li>Instagram и Facebook - два разных мира. Хештеги работают только в Instagram.</li>
-<li>Публикуйте хештеги первым комментарием - пост чище, индексация та же.</li>
-<li>Миксуйте крупные, средние и нишевые хештеги. Чередуйте наборы.</li>
-<li>В Facebook забудьте про хештеги - работайте с группами, вопросами и нативным контентом.</li>
-<li>Автоматизируйте через API: пост + автокомментарий с хештегами за 2 запроса.</li>
+<li>Instagram и Facebook - два разных мира. Хештеги работают только в Instagram</li>
+<li>Публикуйте хештеги первым комментарием - пост чище, индексация та же</li>
+<li>Миксуйте крупные, средние и нишевые хештеги. Чередуйте наборы</li>
+<li>В Facebook забудьте про хештеги - работайте с группами, вопросами и нативным контентом</li>
+<li>Автоматизируйте через API: пост + автокомментарий с хештегами за 2 запроса</li>
 </ul></section>
 
 <div class="article-cta"><h3>Хотите автоматизировать соцсети? Начните с бесплатного скана</h3><a href="/#hero" class="btn">Попробовать бесплатно</a></div>

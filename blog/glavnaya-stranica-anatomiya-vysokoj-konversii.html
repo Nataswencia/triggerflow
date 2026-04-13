@@ -36,6 +36,47 @@
 .article-meta{display:flex;gap:1.5rem;color:#94a3b8;font-size:0.9rem;margin-top:1rem}
 .article-breadcrumb{padding:1rem 0;font-size:0.9rem;color:#64748b}
 .article-breadcrumb a{color:#818cf8;text-decoration:none}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
     <link rel="alternate" hreflang="ru" href="https://triggerflow.pro/blog/glavnaya-stranica-anatomiya-vysokoj-konversii.html">
     <link rel="alternate" hreflang="en" href="https://triggerflow.pro/en/blog/homepage-anatomy-high-conversion.html">
@@ -77,65 +118,65 @@
 <img class="article-hero-img" src="https://images.unsplash.com/photo-1527624111800-38e9283e7470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4OTA3NDl8MHwxfHNlYXJjaHw1fHxkYXJrJTIwbWluaW1hbCUyMHRlY2h8ZW58MXwwfHxibHVlfDE3NzQyNTc4MzZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Главная страница: анатомия высокой конверсии">
 <p>Я открываю сайт клиента. Первый экран - красивый баннер, слоган, кнопка. Закрываю через 3 секунды. Потому что не поняла - зачем мне тут оставаться</p>
 <p>И так каждый второй сайт. Красиво - да. Понятно - нет. А у вас есть всего 5-7 секунд, чтобы человек решил: остаться или уйти</p>
-<h2>Зачем важен первый экран?</h2>
+<h2 id="зачем-важен-первый-экран">Зачем важен первый экран?</h2>
 <p>Первый экран - это ваше первое впечатление. Если посетитель не находит нужную информацию мгновенно, он уходит. Без сожалений</p>
 
 <h3>Как правильно оформить первый экран?</h3>
 <ul>
-<li><strong>Четкое предложение ценности:</strong> Покажите, что вы предлагаете и чем это полезно.</li>
-<li><strong>Привлекательный дизайн:</strong> Эстетика важна. Используйте качественные изображения и читаемые шрифты.</li>
-<li><strong>Призыв к действию (CTA):</strong> Разместите его так, чтобы его было легко найти.</li>
+<li><strong>Четкое предложение ценности:</strong> Покажите, что вы предлагаете и чем это полезно</li>
+<li><strong>Привлекательный дизайн:</strong> Эстетика важна. Используйте качественные изображения и читаемые шрифты</li>
+<li><strong>Призыв к действию (CTA):</strong> Разместите его так, чтобы его было легко найти</li>
 </ul>
 
-<h2>Структура сайта: фундамент успеха</h2>
-<p>Структура сайта помогает пользователям быстро находить нужную информацию. Четко спланированная структура улучшает пользовательский опыт и повышает конверсию.</p>
+<h2 id="структура-сайта-фундамент-успеха">Структура сайта: фундамент успеха</h2>
+<p>Структура сайта помогает пользователям быстро находить нужную информацию. Четко спланированная структура улучшает пользовательский опыт и повышает конверсию</p>
 
 <h3>Основные элементы структуры сайта:</h3>
 <ol>
-<li><strong>Навигационное меню:</strong> Должно быть интуитивно понятным и доступным.</li>
-<li><strong>Категории и подкатегории:</strong> Логично организуйте контент.</li>
-<li><strong>Карты сайта:</strong> Упростите индексацию для поисковых систем.</li>
+<li><strong>Навигационное меню:</strong> Должно быть интуитивно понятным и доступным</li>
+<li><strong>Категории и подкатегории:</strong> Логично организуйте контент</li>
+<li><strong>Карты сайта:</strong> Упростите индексацию для поисковых систем</li>
 </ol>
 
-<h2>Навигация: ключ к удержанию пользователя</h2>
-<p>Плохая навигация — это путь к высоким показателям отказов. Убедитесь, что пользователи могут легко перемещаться по сайту.</p>
+<h2 id="навигация-ключ-к-удержанию-пользователя">Навигация: ключ к удержанию пользователя</h2>
+<p>Плохая навигация — это путь к высоким показателям отказов. Убедитесь, что пользователи могут легко перемещаться по сайту</p>
 
 <h3>Советы по улучшению навигации:</h3>
 <ul>
-<li><strong>Понятные названия:</strong> Используйте слова, которые пользователи ожидают увидеть.</li>
-<li><strong>Мобильная адаптация:</strong> Убедитесь, что навигация удобна на всех устройствах.</li>
-<li><strong>Минимум кликов:</strong> Пользователю должно быть легко добраться до любой страницы.</li>
+<li><strong>Понятные названия:</strong> Используйте слова, которые пользователи ожидают увидеть</li>
+<li><strong>Мобильная адаптация:</strong> Убедитесь, что навигация удобна на всех устройствах</li>
+<li><strong>Минимум кликов:</strong> Пользователю должно быть легко добраться до любой страницы</li>
 </ul>
 
-<h2>Лендинг: как оптимизировать его для конверсий</h2>
-<p>Лендинг - это страница, куда пользователь попадает чаще всего. Она должна быть сфокусирована на одной цели.</p>
+<h2 id="лендинг-как-оптимизировать-его-для-конверсий">Лендинг: как оптимизировать его для конверсий</h2>
+<p>Лендинг - это страница, куда пользователь попадает чаще всего. Она должна быть сфокусирована на одной цели</p>
 
 <h3>Что важно для успешного лендинга?</h3>
 <ol>
-<li><strong>Единый фокус:</strong> Не перегружайте пользователя информацией.</li>
-<li><strong>Социальные доказательства:</strong> Покажите отзывы или кейсы.</li>
-<li><strong>Тестирование:</strong> Постоянно улучшайте лендинг на основе данных.</li>
+<li><strong>Единый фокус:</strong> Не перегружайте пользователя информацией</li>
+<li><strong>Социальные доказательства:</strong> Покажите отзывы или кейсы</li>
+<li><strong>Тестирование:</strong> Постоянно улучшайте лендинг на основе данных</li>
 </ol>
 
-<h2>Кейсы и примеры успеха</h2>
-<p>Многие успешные компании, такие как Amazon и Airbnb, уделяют первому экрану и структуре сайта особое внимание. Это помогло им достичь высоких показателей конверсии и удержания пользователей.</p>
+<h2 id="кейсы-и-примеры-успеха">Кейсы и примеры успеха</h2>
+<p>Многие успешные компании, такие как Amazon и Airbnb, уделяют первому экрану и структуре сайта особое внимание. Это помогло им достичь высоких показателей конверсии и удержания пользователей</p>
 
 <p>Если хотите узнать больше о том, как улучшить ваш сайт, посетите <a href="../sitemoney-scan.html">SiteMoney Scan</a> и <a href="../money-leak-audit.html">Money Leak Audit</a>.</p>
 
 <section class="article-faq"><h2>Часто задаваемые вопросы</h2>
-<div class="faq-item"><h3>Почему первый экран так важен?</h3><p>Первые впечатления формируются за считанные секунды. Если первый экран не привлекает внимание, пользователь может уйти.</p></div>
-<div class="faq-item"><h3>Как улучшить структуру сайта?</h3><p>Оптимизируйте навигацию, используйте ясные названия и внедряйте карты сайта для лучшей индексации.</p></div>
-<div class="faq-item"><h3>Что такое хороший призыв к действию?</h3><p>Это понятный и заметный элемент, который побуждает пользователя к действию, например, подписаться или купить.</p></div>
-<div class="faq-item"><h3>Как лендинг влияет на конверсии?</h3><p>Лендинг фокусируется на одной цели, что упрощает принятие решения пользователем и повышает конверсию.</p></div>
-<div class="faq-item"><h3>Зачем тестировать лендинг?</h3><p>Тестирование помогает выявить слабые места и улучшить конверсию, опираясь на реальные данные.</p></div>
+<details class="faq-accordion"><summary>Почему первый экран так важен?</summary><p>Первые впечатления формируются за считанные секунды. Если первый экран не привлекает внимание, пользователь может уйти</p></details>
+<details class="faq-accordion"><summary>Как улучшить структуру сайта?</summary><p>Оптимизируйте навигацию, используйте ясные названия и внедряйте карты сайта для лучшей индексации</p></details>
+<details class="faq-accordion"><summary>Что такое хороший призыв к действию?</summary><p>Это понятный и заметный элемент, который побуждает пользователя к действию, например, подписаться или купить</p></details>
+<details class="faq-accordion"><summary>Как лендинг влияет на конверсии?</summary><p>Лендинг фокусируется на одной цели, что упрощает принятие решения пользователем и повышает конверсию</p></details>
+<details class="faq-accordion"><summary>Зачем тестировать лендинг?</summary><p>Тестирование помогает выявить слабые места и улучшить конверсию, опираясь на реальные данные</p></details>
 </section>
 <section class="article-takeaways"><h2>Ключевые выводы</h2>
 <ul>
-<li>Первый экран формирует первое впечатление за 5-7 секунд.</li>
-<li>Четкая структура сайта улучшает пользовательский опыт.</li>
-<li>Интуитивная навигация снижает показатели отказов.</li>
-<li>Лендинг должен иметь единый фокус и социальные доказательства.</li>
-<li>Постоянное тестирование лендинга улучшает конверсии.</li>
+<li>Первый экран формирует первое впечатление за 5-7 секунд</li>
+<li>Четкая структура сайта улучшает пользовательский опыт</li>
+<li>Интуитивная навигация снижает показатели отказов</li>
+<li>Лендинг должен иметь единый фокус и социальные доказательства</li>
+<li>Постоянное тестирование лендинга улучшает конверсии</li>
 </ul></section>
 <div class="article-cta"><h3>Продвинутые стратегии - в TriggerFlow Privat</h3><a href="/#hero" class="btn">Попробовать бесплатно</a></div>
 

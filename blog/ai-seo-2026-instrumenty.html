@@ -36,6 +36,47 @@
 .article-meta{display:flex;gap:1.5rem;color:#999;font-size:0.9rem;margin-top:1rem}
 .article-breadcrumb{padding:1rem 0;font-size:0.9rem;color:#666}
 .article-breadcrumb a{color:#1a237e;text-decoration:none}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -48,11 +89,11 @@
 <img class="article-hero-img" src="https://images.unsplash.com/photo-1614647374313-27416280ef55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4OTA3NDl8MHwxfHNlYXJjaHwyfHxkYXJrJTIwbWluaW1hbCUyMHRlY2h8ZW58MXwwfHxibHVlfDE3NzQ3MjA5OTB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="AI в SEO 2026: инструменты, которые заменяют команду">
 <p>Когда я впервые подключила AI к SEO-задачам, думала - ну, поможет с текстами. А оказалось - это как нанять целый отдел который работает 24/7</p>
 <p>Серьёзно. Я за вечер сделала то, на что раньше уходила неделя. Кластеризация ключевых слов, анализ конкурентов, оптимизация контента - всё это теперь делает нейросеть, пока я пью кофе</p>
-<h2>AI и его влияние на SEO: уже реальность</h2>
+<h2 id="ai-и-его-влияние-на-seo-уже-реальность">AI и его влияние на SEO: уже реальность</h2>
 <p>Смотрите, AI в SEO - это уже не эксперимент. Google давно использует нейросети для ранжирования. А маркетологи - для анализа данных и автоматизации рутины. К 2026 году это стало нормой</p>
 
 <h3>Нейросети для бизнеса: новые горизонты</h3>
-<p>Нейросети уже изменяют бизнес-процессы. Они анализируют огромные массивы данных за считанные секунды и предоставляют инсайты, которые команда могла бы искать неделями.</p>
+<p>Нейросети уже изменяют бизнес-процессы. Они анализируют огромные массивы данных за считанные секунды и предоставляют инсайты, которые команда могла бы искать неделями</p>
 
 <ul>
 <li>Анализ ключевых слов и их кластеризация</li>
@@ -60,20 +101,20 @@
 <li>Адаптация под изменения алгоритмов поиска</li>
 </ul>
 
-<h2>Автоматизация SEO: что будет в 2026 году</h2>
-<p>С автоматизацией SEO можно забыть о рутинных задачах. AI инструменты выполняют их быстрее и точнее, освобождая время для стратегического планирования.</p>
+<h2 id="автоматизация-seo-что-будет-в-2026-году">Автоматизация SEO: что будет в 2026 году</h2>
+<p>С автоматизацией SEO можно забыть о рутинных задачах. AI инструменты выполняют их быстрее и точнее, освобождая время для стратегического планирования</p>
 
 <h3>Инструменты AI, которые стоит использовать</h3>
 <p>Вот некоторые из инструментов, которые могут заменить целые команды:</p>
 
 <ol>
-<li><strong>ChatGPT</strong> - создание контента на лету.</li>
-<li><strong>Jasper AI</strong> - генерация текстов для любых нужд.</li>
-<li><strong>Frase</strong> - оптимизация контента с использованием AI.</li>
+<li><strong>ChatGPT</strong> - создание контента на лету</li>
+<li><strong>Jasper AI</strong> - генерация текстов для любых нужд</li>
+<li><strong>Frase</strong> - оптимизация контента с использованием AI</li>
 </ol>
 
-<h2>AI маркетинг: больше, чем просто инструмент</h2>
-<p>AI маркетинг становится неотъемлемой частью бизнес-стратегий. Он не только повышает эффективность, но и позволяет персонализировать подход к каждому клиенту.</p>
+<h2 id="ai-маркетинг-больше-чем-просто-инструмент">AI маркетинг: больше, чем просто инструмент</h2>
+<p>AI маркетинг становится неотъемлемой частью бизнес-стратегий. Он не только повышает эффективность, но и позволяет персонализировать подход к каждому клиенту</p>
 
 <h3>Как AI меняет маркетинг</h3>
 <p>AI помогает:</p>
@@ -84,29 +125,29 @@
 <li>Автоматизировать взаимодействие через чат-боты и персональные рекомендации</li>
 </ul>
 
-<h2>AI в будущем SEO: готовимся к изменениям</h2>
-<p>К 2026 году роль AI в SEO только усилится. Компании, которые не внедрят AI, рискуют отстать и потерять конкурентное преимущество.</p>
+<h2 id="ai-в-будущем-seo-готовимся-к-изменениям">AI в будущем SEO: готовимся к изменениям</h2>
+<p>К 2026 году роль AI в SEO только усилится. Компании, которые не внедрят AI, рискуют отстать и потерять конкурентное преимущество</p>
 
 <h3>Почему важно внедрять AI уже сейчас</h3>
-<p>AI позволяет держать руку на пульсе изменений и быть на шаг впереди конкурентов. Это не просто тренд - это революция в бизнесе.</p>
+<p>AI позволяет держать руку на пульсе изменений и быть на шаг впереди конкурентов. Это не просто тренд - это революция в бизнесе</p>
 
 <p>Для детального анализа и внедрения AI в ваш бизнес, обратитесь к нашим услугам: <a href="../sitemoney-scan.html">SiteMoney Scan</a>, <a href="../money-leak-audit.html">Money Leak Audit</a>, <a href="../subscription.html">Website Intelligence Club</a>.</p>
 
 <p>Продвинутые стратегии - в TriggerFlow Privat</p>
 <section class="article-faq"><h2>Часто задаваемые вопросы</h2>
-<div class="faq-item"><h3>Как AI влияет на SEO?</h3><p>AI помогает анализировать данные, оптимизировать контент и предсказывать изменения алгоритмов, что делает SEO более эффективным.</p></div>
-<div class="faq-item"><h3>Какие AI инструменты заменяют команды в SEO?</h3><p>Такие инструменты, как ChatGPT, Jasper AI и Frase, позволяют автоматизировать создание и оптимизацию контента, анализ данных и предсказание трендов.</p></div>
-<div class="faq-item"><h3>Как AI помогает в маркетинге?</h3><p>AI позволяет анализировать поведение пользователей, предсказывать их потребности и автоматизировать взаимодействие через чат-боты и рекомендации.</p></div>
-<div class="faq-item"><h3>Почему важно внедрять AI в бизнес уже сейчас?</h3><p>AI помогает оставаться конкурентоспособным, позволяя быстро адаптироваться к изменениям и улучшая эффективность бизнес-процессов.</p></div>
-<div class="faq-item"><h3>Что такое AI маркетинг?</h3><p>AI маркетинг - это использование AI технологий для анализа, автоматизации и персонализации маркетинговых стратегий, повышающее их эффективность.</p></div>
+<details class="faq-accordion"><summary>Как AI влияет на SEO?</summary><p>AI помогает анализировать данные, оптимизировать контент и предсказывать изменения алгоритмов, что делает SEO более эффективным</p></details>
+<details class="faq-accordion"><summary>Какие AI инструменты заменяют команды в SEO?</summary><p>Такие инструменты, как ChatGPT, Jasper AI и Frase, позволяют автоматизировать создание и оптимизацию контента, анализ данных и предсказание трендов</p></details>
+<details class="faq-accordion"><summary>Как AI помогает в маркетинге?</summary><p>AI позволяет анализировать поведение пользователей, предсказывать их потребности и автоматизировать взаимодействие через чат-боты и рекомендации</p></details>
+<details class="faq-accordion"><summary>Почему важно внедрять AI в бизнес уже сейчас?</summary><p>AI помогает оставаться конкурентоспособным, позволяя быстро адаптироваться к изменениям и улучшая эффективность бизнес-процессов</p></details>
+<details class="faq-accordion"><summary>Что такое AI маркетинг?</summary><p>AI маркетинг - это использование AI технологий для анализа, автоматизации и персонализации маркетинговых стратегий, повышающее их эффективность</p></details>
 </section>
 <section class="article-takeaways"><h2>Ключевые выводы</h2>
 <ul>
-<li>AI уже активно применяется в SEO и маркетинге, улучшая процессы и эффективность.</li>
-<li>К 2026 году AI инструменты станут стандартом для SEO, замещая рутинные задачи.</li>
-<li>Нейросети способны анализировать данные быстрее и точнее, чем человек.</li>
-<li>Автоматизация позволяет сосредоточиться на стратегическом планировании.</li>
-<li>Внедрение AI в бизнес - это не просто тренд, а необходимость для конкурентоспособности.</li>
+<li>AI уже активно применяется в SEO и маркетинге, улучшая процессы и эффективность</li>
+<li>К 2026 году AI инструменты станут стандартом для SEO, замещая рутинные задачи</li>
+<li>Нейросети способны анализировать данные быстрее и точнее, чем человек</li>
+<li>Автоматизация позволяет сосредоточиться на стратегическом планировании</li>
+<li>Внедрение AI в бизнес - это не просто тренд, а необходимость для конкурентоспособности</li>
 </ul></section>
 <div class="article-cta"><h3>Продвинутые стратегии - в TriggerFlow Privat</h3><a href="https://t.me/TriggerFlow_analyse_bot" class="btn" target="_blank"><i class="fa-brands fa-telegram"></i> Попробовать бесплатно</a></div>
 

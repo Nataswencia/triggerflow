@@ -44,6 +44,47 @@
 .article-breadcrumb a{color:#1a237e;text-decoration:none}
 .priority-list{background:#fff8e1;border-left:4px solid #ff9500;padding:1.5rem;border-radius:0 8px 8px 0;margin:2rem 0}
 .priority-list h3{color:#e65100;margin-top:0}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -67,7 +108,7 @@
 
 <p>Ни в одном из них дело не было в цене</p>
 
-<h2>1. Профиль не отвечает за 3 секунды "кто вы и что я получу"</h2>
+<h2 id="1-профиль-не-отвечает-за-3-секунды-кто-вы-и-что-я-">1. Профиль не отвечает за 3 секунды "кто вы и что я получу"</h2>
 
 <div class="barrier-box">
 <strong class="label">Как это выглядит</strong>
@@ -81,7 +122,7 @@
 
 <div class="case-box">Один из разобранных профилей: коуч с bio "Психолог | мама двоих | Одесса". Рекомендация - "Помогаю родителям услышать своего ребёнка за 8 недель без криков". На следующей неделе - 12 новых подписчиков из рекомендаций без единого нового поста.</div>
 
-<h2>2. Нет одного чёткого бесплатного шага между "интересно" и "купить"</h2>
+<h2 id="2-нет-одного-чёткого-бесплатного-шага-между-интере">2. Нет одного чёткого бесплатного шага между "интересно" и "купить"</h2>
 
 <div class="barrier-box">
 <strong class="label">Как это выглядит</strong>
@@ -95,7 +136,7 @@
 
 <div class="case-box">Мой собственный кейс. До апреля у меня не было ничего бесплатного - только "запишитесь на консультацию". Результат - 0 записей в месяц. Я запустила бесплатный Instagram-аудит по 21 критерию. За первую неделю - 8 запросов. Это то что работает.</div>
 
-<h2>3. CTA "пишите в директ" - и всё</h2>
+<h2 id="3-cta-пишите-в-директ-и-всё">3. CTA "пишите в директ" - и всё</h2>
 
 <div class="barrier-box">
 <strong class="label">Как это выглядит</strong>
@@ -109,7 +150,7 @@
 
 <div class="case-box">Разобранный аккаунт по MLM - 1500 подписчиков, bio "По сотрудничеству - в директ". После замены на "Хотите узнать свой стиль путешествий? Напишите КВИЗ - пришлю опросник на 3 минуты и персональную рекомендацию" - первые 4 клиента в течение недели. Без накрутки, без рекламы.</div>
 
-<h2>4. Нет социального доказательства - непонятно помогаете ли вы реально</h2>
+<h2 id="4-нет-социального-доказательства-непонятно-помогае">4. Нет социального доказательства - непонятно помогаете ли вы реально</h2>
 
 <div class="barrier-box">
 <strong class="label">Как это выглядит</strong>
@@ -121,7 +162,7 @@
 
 <p><strong>Что делать.</strong> Закрепите 1 пост (pinned) - кейс "было/стало" любого клиента. С разрешения, обезличено если нужно. С конкретными цифрами и сроками. Без этого все ваши посты звучат одинаково: "я помогаю", "я эксперт", "доверяйте мне". Одна реальная история перевешивает 50 экспертных постов</p>
 
-<h2>5. Одинаковый контент для "только зашёл" и "готов купить"</h2>
+<h2 id="5-одинаковый-контент-для-только-зашёл-и-готов-купи">5. Одинаковый контент для "только зашёл" и "готов купить"</h2>
 
 <div class="barrier-box">
 <strong class="label">Как это выглядит</strong>
@@ -133,7 +174,7 @@
 
 <p><strong>Что делать.</strong> Посчитайте свои последние 10 постов. Сколько из них - про проблему клиента ("знакомо когда..."), сколько - про решение ("вот как я это делаю"), сколько - продают ("есть места")? Идеальная пропорция: 5 / 3 / 2. Если у вас 0/0/10 - вы продаёте тем кто не готов покупать. Если 10/0/0 - вы никогда не переходите к деньгам</p>
 
-<h2>6. Цена - это ваш страх, не барьер клиента</h2>
+<h2 id="6-цена-это-ваш-страх-не-барьер-клиента">6. Цена - это ваш страх, не барьер клиента</h2>
 
 <div class="barrier-box">
 <strong class="label">Как это выглядит</strong>
@@ -147,7 +188,7 @@
 
 <div class="case-box">Я тоже через это прошла. В марте я снизила цену своих услуг с 290€ до 149€ потому что "не покупают". Продаж больше не стало. В апреле подняла обратно до 79€ за один конкретный продукт (IG-аудит), написала точно что входит, сроки 24 часа, первые 8 аудитов бесплатно - пошли заявки. Дело было не в цифре.</div>
 
-<h2>7. "Пишите в директ" - и 24 часа молчания</h2>
+<h2 id="7-пишите-в-директ-и-24-часа-молчания">7. "Пишите в директ" - и 24 часа молчания</h2>
 
 <div class="barrier-box">
 <strong class="label">Как это выглядит</strong>
@@ -159,7 +200,7 @@
 
 <p><strong>Что делать.</strong> Настройте автоответ в Instagram Messenger на ключевые фразы. Приветственное сообщение. Ice Breakers (быстрые кнопки "Цена", "Как работаем", "Пример"). Даже базовая настройка - это 30 минут, и в 3 раза быстрее первый ответ. Или автоматизация через n8n: кодовое слово - автоответ в комментариях + DM с деталями в течение 2 минут</p>
 
-<h2>8. Highlights пустые или хаотичные - клиент не видит что уже было</h2>
+<h2 id="8-highlights-пустые-или-хаотичные-клиент-не-видит-">8. Highlights пустые или хаотичные - клиент не видит что уже было</h2>
 
 <div class="barrier-box">
 <strong class="label">Как это выглядит</strong>
@@ -171,7 +212,7 @@
 
 <p><strong>Что делать.</strong> Идеальный набор highlights для услуг: Обо мне (1 сторис про вас и ваш путь), Услуги (что и сколько стоит), Результаты (кейсы клиентов), Отзывы, FAQ (ответы на самые частые вопросы), Как работаем (процесс). 5-6 тематических highlights с чёткими обложками лучше чем 15 случайных</p>
 
-<h2>9. Вы убеждаете всех вместо того чтобы говорить со своим племенем</h2>
+<h2 id="9-вы-убеждаете-всех-вместо-того-чтобы-говорить-со-">9. Вы убеждаете всех вместо того чтобы говорить со своим племенем</h2>
 
 <div class="barrier-box">
 <strong class="label">Как это выглядит</strong>
@@ -183,7 +224,7 @@
 
 <p><strong>Что делать.</strong> Возьмите последние 5 постов. В каждом - что-нибудь написано специально для "всех"? Уберите эти формулировки. Замените на конкретику: "Если ты эксперт которая запускает онлайн-консультации" звучит сильнее чем "для тех кто работает в интернете"</p>
 
-<h2>10. Нет ответа "почему именно сейчас"</h2>
+<h2 id="10-нет-ответа-почему-именно-сейчас">10. Нет ответа "почему именно сейчас"</h2>
 
 <div class="barrier-box">
 <strong class="label">Как это выглядит</strong>
@@ -220,11 +261,11 @@
 <p>Это не супер-стратегия. Это просто починка базовых 10 барьеров</p>
 
 <section class="article-faq"><h2>Часто задаваемые вопросы</h2>
-<div class="faq-item"><h3>Это про цену? Мне снижать цены?</h3><p>Почти никогда. За 8 аудитов только 1 клиент имел реальную ценовую проблему. Остальное - профиль не отвечает за 3 секунды зачем вы, нет бесплатного шага перед платным, или messenger молчит 24 часа. Сначала чинить эти базовые вещи, потом думать о цене</p></div>
-<div class="faq-item"><h3>Что самое важное исправить первым?</h3><p>Bio и display name - то что клиент видит за первые 3 секунды. 15 минут работы, 30-40% конверсии профиля вверх. После этого - первый бесплатный шаг в bio</p></div>
-<div class="faq-item"><h3>А если у меня нет времени на это?</h3><p>Большинство пунктов - 15-30 минут работы каждый. Начните с одного. Пункты 1, 2, 3 - базовые, без них остальное не работает. Проверьте свой профиль по ним за час</p></div>
-<div class="faq-item"><h3>Как узнать на каком именно пункте я проседаю?</h3><p>Бесплатный IG-аудит по 21 критерию. Напишите ИНСТА в комментариях под последним постом <a href="https://www.instagram.com/potapova.ai.automation" target="_blank" rel="noopener">@potapova.ai.automation</a> - получите PDF-разбор в течение 24 часов. Там будет точный балл и приоритетный ТОП-3</p></div>
-<div class="faq-item"><h3>Откуда статистика по 8 аудитам?</h3><p>Аудиты проведены лично мной по собственному протоколу (21 критерий, 105 баллов). Клиенты - эксперты в разных нишах: коучинг, нутрициология, e-commerce, недвижимость, B2B fashion. Детали клиентов обезличены, паттерны реальные</p></div>
+<details class="faq-accordion"><summary>Это про цену? Мне снижать цены?</summary><p>Почти никогда. За 8 аудитов только 1 клиент имел реальную ценовую проблему. Остальное - профиль не отвечает за 3 секунды зачем вы, нет бесплатного шага перед платным, или messenger молчит 24 часа. Сначала чинить эти базовые вещи, потом думать о цене</p></details>
+<details class="faq-accordion"><summary>Что самое важное исправить первым?</summary><p>Bio и display name - то что клиент видит за первые 3 секунды. 15 минут работы, 30-40% конверсии профиля вверх. После этого - первый бесплатный шаг в bio</p></details>
+<details class="faq-accordion"><summary>А если у меня нет времени на это?</summary><p>Большинство пунктов - 15-30 минут работы каждый. Начните с одного. Пункты 1, 2, 3 - базовые, без них остальное не работает. Проверьте свой профиль по ним за час</p></details>
+<details class="faq-accordion"><summary>Как узнать на каком именно пункте я проседаю?</summary><p>Бесплатный IG-аудит по 21 критерию. Напишите ИНСТА в комментариях под последним постом <a href="https://www.instagram.com/potapova.ai.automation" target="_blank" rel="noopener">@potapova.ai.automation</a> - получите PDF-разбор в течение 24 часов. Там будет точный балл и приоритетный ТОП-3</p></details>
+<details class="faq-accordion"><summary>Откуда статистика по 8 аудитам?</summary><p>Аудиты проведены лично мной по собственному протоколу (21 критерий, 105 баллов). Клиенты - эксперты в разных нишах: коучинг, нутрициология, e-commerce, недвижимость, B2B fashion. Детали клиентов обезличены, паттерны реальные</p></details>
 </section>
 
 <section class="article-takeaways"><h2>Ключевые выводы</h2>

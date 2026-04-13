@@ -63,6 +63,47 @@
 .stack-table th{background:#6366f1;color:white}
 .stack-table tr:nth-child(even){background:rgba(255,255,255,0.05)}
 @media(max-width:600px){.price-compare{grid-template-columns:1fr}}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -100,7 +141,7 @@
 
 <div class="article-tldr">Bloomberg Terminal дает трейдерам разведку рынка за $24 000/год. Те же 3 слоя разведки - технический, стратегический, психологический - можно собрать из бесплатных AI-инструментов. Не 100% замена, но 80% функционала при 0% стоимости. Рассказываем как.</div>
 
-<h2>Почему Bloomberg стоит $24 000 в год</h2>
+<h2 id="почему-bloomberg-стоит-24-000-в-год">Почему Bloomberg стоит $24 000 в год</h2>
 
 <p>Bloomberg Terminal - это не просто "новости". Это машина бизнес-разведки, которая дает трейдерам три вещи:</p>
 
@@ -110,7 +151,7 @@
 <li><strong>Что думают люди</strong> - настроения рынка, прогнозы аналитиков</li>
 </ol>
 
-<p>За эти 3 слоя информации банки платят $2 000 в месяц за каждый терминал. Но если вы не трейдер на Wall Street - вам не нужны биржевые котировки в реальном времени. Вам нужна та же логика, применимая к вашему бизнесу.</p>
+<p>За эти 3 слоя информации банки платят $2 000 в месяц за каждый терминал. Но если вы не трейдер на Wall Street - вам не нужны биржевые котировки в реальном времени. Вам нужна та же логика, применимая к вашему бизнесу</p>
 
 <div class="price-compare">
 <div class="price-box expensive">
@@ -125,14 +166,14 @@
 </div>
 </div>
 
-<h2>3 слоя бизнес-радара</h2>
+<h2 id="3-слоя-бизнес-радара">3 слоя бизнес-радара</h2>
 
-<p>Концепция простая: любая бизнес-разведка состоит из 3 слоев. Bloomberg закрывает все три для финансов. Вы можете закрыть все три для своей ниши.</p>
+<p>Концепция простая: любая бизнес-разведка состоит из 3 слоев. Bloomberg закрывает все три для финансов. Вы можете закрыть все три для своей ниши</p>
 
 <div class="layer-card tech">
 <span class="layer-tag tech">СЛОЙ 1</span>
 <h3>Технический: что делают конкуренты</h3>
-<p><strong>Bloomberg:</strong> Отслеживает сделки, IPO, слияния компаний в реальном времени.</p>
+<p><strong>Bloomberg:</strong> Отслеживает сделки, IPO, слияния компаний в реальном времени</p>
 <p><strong>Ваш AI-радар:</strong></p>
 <ul>
 <li><strong>Hacker News API</strong> (бесплатно) - что обсуждают в вашей индустрии, какие инструменты набирают популярность</li>
@@ -140,13 +181,13 @@
 <li><strong>Google Alerts</strong> (бесплатно) - мониторинг упоминаний конкурентов, ключевых технологий</li>
 <li><strong>GPT-4o анализ</strong> - AI читает все источники и выделяет: "3 ваших конкурента начали использовать X"</li>
 </ul>
-<p><strong>Результат:</strong> Еженедельный дайджест - кто что запустил, какие технологии набирают обороты, куда движется рынок.</p>
+<p><strong>Результат:</strong> Еженедельный дайджест - кто что запустил, какие технологии набирают обороты, куда движется рынок</p>
 </div>
 
 <div class="layer-card strat">
 <span class="layer-tag strat">СЛОЙ 2</span>
 <h3>Стратегический: макро-тренды и законы</h3>
-<p><strong>Bloomberg:</strong> Аналитические отчеты, прогнозы, регуляторные изменения.</p>
+<p><strong>Bloomberg:</strong> Аналитические отчеты, прогнозы, регуляторные изменения</p>
 <p><strong>Ваш AI-радар:</strong></p>
 <ul>
 <li><strong>Serper News API</strong> - новости по вашей индустрии + регуляторика (AI Act, GDPR, новые законы)</li>
@@ -154,13 +195,13 @@
 <li><strong>EUR-Lex / Legifrance RSS</strong> (бесплатно) - новые законы ЕС, которые влияют на бизнес</li>
 <li><strong>GPT-4o анализ</strong> - "Из 50 новостей 3 напрямую влияют на ваших клиентов. Вот почему."</li>
 </ul>
-<p><strong>Результат:</strong> Вы узнаете о новом законе или тренде до ваших конкурентов. Это окно возможностей.</p>
+<p><strong>Результат:</strong> Вы узнаете о новом законе или тренде до ваших конкурентов. Это окно возможностей</p>
 </div>
 
 <div class="layer-card psych">
 <span class="layer-tag psych">СЛОЙ 3</span>
 <h3>Психологический: что думают клиенты</h3>
-<p><strong>Bloomberg:</strong> Sentiment analysis, индексы страха/жадности, прогнозы аналитиков.</p>
+<p><strong>Bloomberg:</strong> Sentiment analysis, индексы страха/жадности, прогнозы аналитиков</p>
 <p><strong>Ваш AI-радар:</strong></p>
 <ul>
 <li><strong>Gmail Agent</strong> - AI анализирует входящие письма: настроения клиентов, частые вопросы, сигналы оттока</li>
@@ -168,10 +209,10 @@
 <li><strong>Telegram-бот обратная связь</strong> - автоматический сбор отзывов после каждой услуги</li>
 <li><strong>GPT-4o анализ</strong> - "За последний месяц 3 клиента спрашивали про X. Это нереализованный спрос."</li>
 </ul>
-<p><strong>Результат:</strong> Вы видите паттерны до того, как они станут проблемой. Клиент еще не ушел, но вы уже знаете, что он недоволен.</p>
+<p><strong>Результат:</strong> Вы видите паттерны до того, как они станут проблемой. Клиент еще не ушел, но вы уже знаете, что он недоволен</p>
 </div>
 
-<h2>Конкретный AI-стек: что использовать</h2>
+<h2 id="конкретный-ai-стек-что-использовать">Конкретный AI-стек: что использовать</h2>
 
 <table class="stack-table">
 <tr><th>Компонент</th><th>Инструмент</th><th>Стоимость</th><th>Что дает</th></tr>
@@ -184,9 +225,9 @@
 <tr><td>Память</td><td>Google Sheets</td><td>$0</td><td>CRM + история взаимодействий</td></tr>
 </table>
 
-<p><strong>Итого: ~$1-2 в месяц</strong> вместо $2 000. Разница в 1000 раз.</p>
+<p><strong>Итого: ~$1-2 в месяц</strong> вместо $2 000. Разница в 1000 раз</p>
 
-<h2>Что Bloomberg делает лучше (и это нормально)</h2>
+<h2 id="что-bloomberg-делает-лучше-и-это-нормально">Что Bloomberg делает лучше (и это нормально)</h2>
 
 <p>Будем честны - AI-стек не заменяет Bloomberg полностью:</p>
 
@@ -196,9 +237,9 @@
 <li><strong>Нетворкинг</strong> - Bloomberg Chat используют 325 000 финансистов для общения</li>
 </ul>
 
-<p>Но если вы - малый бизнес, SaaS, агентство, фрилансер - вам это и не нужно. Вам нужно знать 3 вещи: что делают конкуренты, куда движется рынок, и что думают клиенты. И это AI закрывает полностью.</p>
+<p>Но если вы - малый бизнес, SaaS, агентство, фрилансер - вам это и не нужно. Вам нужно знать 3 вещи: что делают конкуренты, куда движется рынок, и что думают клиенты. И это AI закрывает полностью</p>
 
-<h2>Как настроить за 1 день</h2>
+<h2 id="как-настроить-за-1-день">Как настроить за 1 день</h2>
 
 <ol>
 <li><strong>Час 1:</strong> Определите 3-5 ключевых слов для мониторинга (ваша ниша + конкуренты)</li>
@@ -207,10 +248,10 @@
 <li><strong>Тест:</strong> Запустите и получите первый отчет. Корректируйте ключевые слова по результатам</li>
 </ol>
 
-<p>Или - попросите нас. Мы уже собрали этот стек для себя и можем настроить для вашего бизнеса.</p>
+<p>Или - попросите нас. Мы уже собрали этот стек для себя и можем настроить для вашего бизнеса</p>
 
 <div class="article-takeaways">
-<h2>Главные выводы</h2>
+<h2 id="главные-выводы">Главные выводы</h2>
 <ul>
 <li>Bloomberg = 3 слоя разведки: технический + стратегический + психологический</li>
 <li>Те же 3 слоя можно собрать из бесплатных API + GPT за ~$1-2/мес</li>
@@ -220,26 +261,17 @@
 </ul>
 </div>
 
-<h2>FAQ</h2>
+<h2 id="faq">FAQ</h2>
 
-<div class="faq-item">
-<h3>Что такое Bloomberg Terminal и зачем он нужен?</h3>
-<p>Bloomberg Terminal - это профессиональная платформа для финансовой аналитики стоимостью $24 000 в год. Трейдеры используют его для мониторинга рынков, новостей и конкурентов в реальном времени. Для малого бизнеса те же задачи можно решить бесплатными AI-инструментами.</p>
-</div>
+<details class="faq-accordion"><summary>Что такое Bloomberg Terminal и зачем он нужен?</summary><p>Bloomberg Terminal - это профессиональная платформа для финансовой аналитики стоимостью $24 000 в год. Трейдеры используют его для мониторинга рынков, новостей и конкурентов в реальном времени. Для малого бизнеса те же задачи можно решить бесплатными AI-инструментами</p></details>
 
-<div class="faq-item">
-<h3>Можно ли заменить Bloomberg бесплатными инструментами?</h3>
-<p>На 80% - да. AI-стек из Hacker News API, Google Trends, Reddit и GPT-4o покрывает технический мониторинг, стратегические тренды и анализ клиентских настроений. Недоступны только биржевые данные в реальном времени и узкоспециализированная финансовая аналитика.</p>
-</div>
+<details class="faq-accordion"><summary>Можно ли заменить Bloomberg бесплатными инструментами?</summary><p>На 80% - да. AI-стек из Hacker News API, Google Trends, Reddit и GPT-4o покрывает технический мониторинг, стратегические тренды и анализ клиентских настроений. Недоступны только биржевые данные в реальном времени и узкоспециализированная финансовая аналитика</p></details>
 
-<div class="faq-item">
-<h3>Как автоматизировать бизнес-разведку?</h3>
-<p>Через n8n или аналогичные no-code платформы: настройте автоматический сбор данных из открытых API, AI-анализ через GPT, и доставку инсайтов в Telegram. Весь процесс занимает 2-3 часа настройки и работает полностью автономно.</p>
-</div>
+<details class="faq-accordion"><summary>Как автоматизировать бизнес-разведку?</summary><p>Через n8n или аналогичные no-code платформы: настройте автоматический сбор данных из открытых API, AI-анализ через GPT, и доставку инсайтов в Telegram. Весь процесс занимает 2-3 часа настройки и работает полностью автономно</p></details>
 
 <div class="article-cta">
-<h2>Хотите свой AI-радар?</h2>
-<p>Мы настроим 3-слойную бизнес-разведку для вашей ниши. Автономно, в Telegram, за $0/мес.</p>
+<h2 id="хотите-свой-ai-радар">Хотите свой AI-радар?</h2>
+<p>Мы настроим 3-слойную бизнес-разведку для вашей ниши. Автономно, в Telegram, за $0/мес</p>
 <a href="/#hero" class="btn">Узнать подробнее</a>
 </div>
 
@@ -255,7 +287,7 @@
 </div>
 </main>
 
-<footer class="footer"><div class="container"><p>&copy; 2026 TriggerFlow. AI-диагностика сайтов.</p></div></footer>
+<footer class="footer"><div class="container"><p>&copy; 2026 TriggerFlow. AI-диагностика сайтов</p></div></footer>
 <script src="../js/main.js"></script>
 </body>
 </html>

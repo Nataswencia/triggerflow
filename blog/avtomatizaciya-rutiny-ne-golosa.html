@@ -64,6 +64,47 @@
 .checklist li.yes::before{background:#4CAF50}
 .checklist li.no::before{background:#f44336}
 @media(max-width:600px){.time-compare{grid-template-columns:1fr}}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -101,7 +142,7 @@
 
 <div class="article-tldr">Я автоматизировала публикацию постов, генерацию обложек, расписание Stories, автоответы на комментарии. Это сэкономило 3 часа в день. Но тексты, личные истории, голос в Reels и живое общение с подписчиками - это зона, куда автоматизация не должна заходить. Подписчики чувствуют разницу мгновенно</div>
 
-<h2>Где я была год назад</h2>
+<h2 id="где-я-была-год-назад">Где я была год назад</h2>
 
 <p>10 лет я вела соцсети руками. Каждый день одно и то же: открыть Canva, сделать картинку, написать текст, подобрать хэштеги, опубликовать, ответить на комментарии, посмотреть статистику. 3-4 часа в день на контент. Каждый день. Без выходных</p>
 
@@ -109,7 +150,7 @@
 
 <p>Спойлер: это не работает</p>
 
-<h2>Что пошло не так</h2>
+<h2 id="что-пошло-не-так">Что пошло не так</h2>
 
 <p>Первую неделю всё выглядело отлично. Посты выходили по расписанию, обложки генерировались автоматически, комментарии получали ответы</p>
 
@@ -119,7 +160,7 @@
 
 <p>И тогда я поняла - автоматизация - это не "всё или ничего". Это про границу. И эту границу нужно провести очень чётко</p>
 
-<h2>Граница: что автоматизировать, а что - никогда</h2>
+<h2 id="граница-что-автоматизировать-а-что-никогда">Граница: что автоматизировать, а что - никогда</h2>
 
 <div class="zone-card auto">
 <span class="label">АВТОМАТИЗИРУЙ</span>
@@ -147,7 +188,7 @@
 </ul>
 </div>
 
-<h2>Как выглядит мой день сейчас</h2>
+<h2 id="как-выглядит-мой-день-сейчас">Как выглядит мой день сейчас</h2>
 
 <div class="time-compare">
 <div class="time-box before">
@@ -181,7 +222,7 @@
 <li>Записать идею для завтрашнего контента если пришла</li>
 </ul>
 
-<h2>Тест "живой человек или бот"</h2>
+<h2 id="тест-живой-человек-или-бот">Тест "живой человек или бот"</h2>
 
 <p>Перед публикацией каждого поста я задаю себе один вопрос: если подписчик прочитает это вслух - он поймёт, что это написал живой человек?</p>
 
@@ -201,7 +242,7 @@
 <li>Незавершённость - заставляет задуматься, а не даёт готовый ответ</li>
 </ul>
 
-<h2>Правило 80/20 в контенте</h2>
+<h2 id="правило-8020-в-контенте">Правило 80/20 в контенте</h2>
 
 <p>80% работы - это рутина. Одна и та же последовательность действий каждый день. Сгенерировать обложку, опубликовать в нужное время, добавить хэштеги, отправить на другие платформы. Это должна делать система</p>
 
@@ -213,22 +254,13 @@
 
 <p>Золотая середина: автоматизируй всё, что повторяется. Оставь себе всё, что делает тебя - тобой</p>
 
-<h2>FAQ</h2>
+<h2 id="faq">FAQ</h2>
 
-<div class="faq-item">
-<h3>Можно ли полностью автоматизировать ведение соцсетей?</h3>
-<p>Публикацию, расписание, форматирование - да. Но тексты, голос, личные истории и живое общение с подписчиками автоматизировать нельзя. Подписчики чувствуют, когда за текстом нет человека</p>
-</div>
+<details class="faq-accordion"><summary>Можно ли полностью автоматизировать ведение соцсетей?</summary><p>Публикацию, расписание, форматирование - да. Но тексты, голос, личные истории и живое общение с подписчиками автоматизировать нельзя. Подписчики чувствуют, когда за текстом нет человека</p></details>
 
-<div class="faq-item">
-<h3>Сколько времени нужно тратить на контент при автоматизации?</h3>
-<p>30 минут на ревью черновиков и утверждение + 15 минут на живое общение с подписчиками. Итого 45 минут в день вместо 3-4 часов без автоматизации</p>
-</div>
+<details class="faq-accordion"><summary>Сколько времени нужно тратить на контент при автоматизации?</summary><p>30 минут на ревью черновиков и утверждение + 15 минут на живое общение с подписчиками. Итого 45 минут в день вместо 3-4 часов без автоматизации</p></details>
 
-<div class="faq-item">
-<h3>Что именно можно автоматизировать в контент-маркетинге?</h3>
-<p>Генерацию обложек, публикацию по расписанию, автоответы на типовые комментарии, адаптацию одного текста под разные платформы, аналитику и отчёты. Всё, что повторяется каждый день одинаково</p>
-</div>
+<details class="faq-accordion"><summary>Что именно можно автоматизировать в контент-маркетинге?</summary><p>Генерацию обложек, публикацию по расписанию, автоответы на типовые комментарии, адаптацию одного текста под разные платформы, аналитику и отчёты. Всё, что повторяется каждый день одинаково</p></details>
 
 <div class="article-takeaways">
 <h2>Ключевые выводы</h2>
@@ -242,7 +274,7 @@
 </div>
 
 <div class="article-cta">
-<h2>Хотите узнать, что можно автоматизировать в вашем бизнесе?</h2>
+<h2 id="хотите-узнать-что-можно-автоматизировать-в-вашем-б">Хотите узнать, что можно автоматизировать в вашем бизнесе?</h2>
 <p>Бот проанализирует ваш сайт и покажет, где автоматизация сэкономит больше всего времени</p>
 <a href="/#hero" class="btn">Бесплатный анализ сайта</a>
 </div>

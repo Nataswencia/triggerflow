@@ -36,6 +36,47 @@
 .article-meta{display:flex;gap:1.5rem;color:#999;font-size:0.9rem;margin-top:1rem}
 .article-breadcrumb{padding:1rem 0;font-size:0.9rem;color:#666}
 .article-breadcrumb a{color:#1a237e;text-decoration:none}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -48,11 +89,11 @@
 <img class="article-hero-img" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1080" alt="Как составить портрет целевой аудитории за 1 час">
 <p>Я потратила час и наконец поняла кто мой клиент. Серьёзно - один час. До этого два года продавала всем подряд и удивлялась почему конверсия на нуле</p>
 <p>Оказалось, я разговаривала не с теми людьми. Мой контент читали все - а покупали единицы. Потому что я не знала кому именно продаю</p>
-<h2>Понимание важности целевой аудитории</h2>
+<h2 id="понимание-важности-целевой-аудитории">Понимание важности целевой аудитории</h2>
 <p>Целевая аудитория - это не абстрактное "все кому интересно". Это конкретные люди с конкретными проблемами. Чем точнее вы их знаете, тем меньше денег сливаете впустую</p>
 
-<h2>Подготовка к созданию портрета клиента</h2>
-<p>Перед тем как начать, важно собрать все доступные данные о ваших клиентах. Воспользуйтесь аналитическими инструментами, такими как Google Analytics, чтобы понять, кто посещает ваш сайт.</p>
+<h2 id="подготовка-к-созданию-портрета-клиента">Подготовка к созданию портрета клиента</h2>
+<p>Перед тем как начать, важно собрать все доступные данные о ваших клиентах. Воспользуйтесь аналитическими инструментами, такими как Google Analytics, чтобы понять, кто посещает ваш сайт</p>
 <p>Вот несколько вопросов, которые помогут вам начать:</p>
 <ul>
 <li>Кто ваш идеальный клиент?</li>
@@ -60,26 +101,26 @@
 <li>Какие у него интересы и потребности?</li>
 </ul>
 
-<h2>Использование психологии продаж</h2>
-<p>Психология продаж - мощный инструмент в арсенале любого предпринимателя. Она помогает понять, почему люди покупают и как на них может повлиять ваш продукт.</p>
-<p>Согласно исследованиям, 95% решений о покупке принимаются на уровне подсознания. Это значит, что эмоции и инстинкты играют ключевую роль в процессе покупки.</p>
-<p>Используйте это знание, чтобы обращаться к эмоциям ваших клиентов, создавая убедительные предложения и рекламные кампании.</p>
+<h2 id="использование-психологии-продаж">Использование психологии продаж</h2>
+<p>Психология продаж - мощный инструмент в арсенале любого предпринимателя. Она помогает понять, почему люди покупают и как на них может повлиять ваш продукт</p>
+<p>Согласно исследованиям, 95% решений о покупке принимаются на уровне подсознания. Это значит, что эмоции и инстинкты играют ключевую роль в процессе покупки</p>
+<p>Используйте это знание, чтобы обращаться к эмоциям ваших клиентов, создавая убедительные предложения и рекламные кампании</p>
 
-<h2>Создание портрета клиента</h2>
-<p>Теперь, когда у вас есть все необходимые данные, пришло время создать портрет клиента. Начните с демографических характеристик: возраст, пол, образование, доход.</p>
-<p>Затем перейдите к психографическим характеристикам: ценности, интересы, образ жизни. Это поможет вам понять, что движет вашими клиентами.</p>
-<p>Не забудьте учесть триггеры покупки - те факторы, которые побуждают клиента сделать покупку именно у вас. Это может быть цена, качество, удобство или что-то еще.</p>
+<h2 id="создание-портрета-клиента">Создание портрета клиента</h2>
+<p>Теперь, когда у вас есть все необходимые данные, пришло время создать портрет клиента. Начните с демографических характеристик: возраст, пол, образование, доход</p>
+<p>Затем перейдите к психографическим характеристикам: ценности, интересы, образ жизни. Это поможет вам понять, что движет вашими клиентами</p>
+<p>Не забудьте учесть триггеры покупки - те факторы, которые побуждают клиента сделать покупку именно у вас. Это может быть цена, качество, удобство или что-то еще</p>
 
-<h2>Практическое применение портрета клиента</h2>
-<p>Созданный портрет клиента - это не просто документ. Это инструмент, который поможет вам принимать более обоснованные маркетинговые решения.</p>
+<h2 id="практическое-применение-портрета-клиента">Практическое применение портрета клиента</h2>
+<p>Созданный портрет клиента - это не просто документ. Это инструмент, который поможет вам принимать более обоснованные маркетинговые решения</p>
 <p>Смотрите, как это работает:</p>
 <ol>
-<li>Адаптируйте свои рекламные кампании под нужды и интересы вашей аудитории.</li>
-<li>Разработайте продукты, которые действительно решают проблемы ваших клиентов.</li>
-<li>Оптимизируйте свой сайт и контент под предпочтения целевой аудитории.</li>
+<li>Адаптируйте свои рекламные кампании под нужды и интересы вашей аудитории</li>
+<li>Разработайте продукты, которые действительно решают проблемы ваших клиентов</li>
+<li>Оптимизируйте свой сайт и контент под предпочтения целевой аудитории</li>
 </ol>
 <p>И вот, всего за час, вы создали мощный инструмент для роста вашего бизнеса. 🚀</p>
-<p>Теперь, когда вы знаете, как быстрее и точнее определить свою целевую аудиторию, вы можете быть уверены, что ваши маркетинговые усилия не пропадут даром.</p>
+<p>Теперь, когда вы знаете, как быстрее и точнее определить свою целевую аудиторию, вы можете быть уверены, что ваши маркетинговые усилия не пропадут даром</p>
 
 <h3>Дополнительные ресурсы</h3>
 <ul>
@@ -90,19 +131,19 @@
 
 <p>Продвинутые стратегии - в TriggerFlow Privat</p>
 <section class="article-faq"><h2>Часто задаваемые вопросы</h2>
-<div class="faq-item"><h3>Как быстро составить портрет целевой аудитории?</h3><p>Используйте аналитические инструменты и ответьте на ключевые вопросы о ваших клиентах, чтобы создать портрет за 1 час.</p></div>
-<div class="faq-item"><h3>Какие данные нужны для портрета клиента?</h3><p>Демографические и психографические характеристики, а также триггеры покупки.</p></div>
-<div class="faq-item"><h3>Как психология продаж помогает в создании портрета?</h3><p>Она позволяет понять, как эмоции и инстинкты влияют на решения о покупке.</p></div>
-<div class="faq-item"><h3>Что такое триггеры покупки?</h3><p>Это факторы, которые побуждают клиента выбрать ваш продукт, такие как цена или качество.</p></div>
-<div class="faq-item"><h3>Как использовать портрет клиента в маркетинге?</h3><p>Адаптируйте рекламные кампании, создавайте продукты и оптимизируйте контент под нужды вашей аудитории.</p></div>
+<details class="faq-accordion"><summary>Как быстро составить портрет целевой аудитории?</summary><p>Используйте аналитические инструменты и ответьте на ключевые вопросы о ваших клиентах, чтобы создать портрет за 1 час</p></details>
+<details class="faq-accordion"><summary>Какие данные нужны для портрета клиента?</summary><p>Демографические и психографические характеристики, а также триггеры покупки</p></details>
+<details class="faq-accordion"><summary>Как психология продаж помогает в создании портрета?</summary><p>Она позволяет понять, как эмоции и инстинкты влияют на решения о покупке</p></details>
+<details class="faq-accordion"><summary>Что такое триггеры покупки?</summary><p>Это факторы, которые побуждают клиента выбрать ваш продукт, такие как цена или качество</p></details>
+<details class="faq-accordion"><summary>Как использовать портрет клиента в маркетинге?</summary><p>Адаптируйте рекламные кампании, создавайте продукты и оптимизируйте контент под нужды вашей аудитории</p></details>
 </section>
 <section class="article-takeaways"><h2>Ключевые выводы</h2>
 <ul>
-<li>Определение целевой аудитории - ключ к успешным продажам.</li>
-<li>Психология продаж объясняет поведение покупателей.</li>
-<li>Создание портрета клиента требует анализа данных.</li>
-<li>Триггеры покупки важны для мотивации клиентов.</li>
-<li>Портрет клиента помогает в оптимизации маркетинга.</li>
+<li>Определение целевой аудитории - ключ к успешным продажам</li>
+<li>Психология продаж объясняет поведение покупателей</li>
+<li>Создание портрета клиента требует анализа данных</li>
+<li>Триггеры покупки важны для мотивации клиентов</li>
+<li>Портрет клиента помогает в оптимизации маркетинга</li>
 </ul></section>
 <div class="article-cta"><h3>Продвинутые стратегии - в TriggerFlow Privat</h3><a href="https://t.me/TriggerFlow_analyse_bot" class="btn" target="_blank"><i class="fa-brands fa-telegram"></i> Попробовать бесплатно</a></div>
 

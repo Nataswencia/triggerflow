@@ -39,6 +39,47 @@
 .article-meta{display:flex;gap:1.5rem;color:#94a3b8;font-size:0.9rem;margin-top:1rem}
 .article-breadcrumb{padding:1rem 0;font-size:0.9rem;color:#64748b}
 .article-breadcrumb a{color:#818cf8;text-decoration:none}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -76,54 +117,54 @@
 <img class="article-hero-img" src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4OTA3NDl8MHwxfHNlYXJjaHwzfHx3ZWJzaXRlJTIwY29udmVyc2lvbnxlbnwwfDB8fHwxNzczNTY2MDUzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Микроконверсии: скрытый потенциал роста продаж">
 <p>Все говорят о конверсиях. Покупка, заявка, подписка. Но есть десятки маленьких шагов до этого - и именно на них теряется 80% посетителей</p>
 <p>Смотрите, я анализировала один интернет-магазин. Трафик отличный, товар нужный, цены адекватные. А продажи - ноль. Оказалось, люди даже не добавляли товар в корзину. Проблема была не в покупке, а в шагах до неё</p>
-<h2>Что такое микроконверсии и почему они важны?</h2>
+<h2 id="что-такое-микроконверсии-и-почему-они-важны">Что такое микроконверсии и почему они важны?</h2>
 <p>Микроконверсии - это маленькие действия на пути к покупке. Подписка на рассылку, добавление в корзину, просмотр видео. Каждое из них - сигнал, что человек движется к цели. Или не движется - и тогда вы знаете где проблема</p>
 
 <h3>Роль микроконверсий в улучшении конверсии сайта</h3>
-<p>Микроконверсии помогают глубже понять поведение пользователей на сайте. Они дают возможность следить за тем, как пользователи взаимодействуют с различными элементами вашего сайта, и какие из них способствуют достижению макроконверсий.</p>
+<p>Микроконверсии помогают глубже понять поведение пользователей на сайте. Они дают возможность следить за тем, как пользователи взаимодействуют с различными элементами вашего сайта, и какие из них способствуют достижению макроконверсий</p>
 
-<h2>Как микроконверсии влияют на UX дизайн?</h2>
-<p>Хорошо спроектированный UX дизайн может значительно увеличить количество микроконверсий. Это связано с тем, что удобный и интуитивно понятный интерфейс способствует более активному взаимодействию пользователей с сайтом.</p>
+<h2 id="как-микроконверсии-влияют-на-ux-дизайн">Как микроконверсии влияют на UX дизайн?</h2>
+<p>Хорошо спроектированный UX дизайн может значительно увеличить количество микроконверсий. Это связано с тем, что удобный и интуитивно понятный интерфейс способствует более активному взаимодействию пользователей с сайтом</p>
 
 <ul>
-<li>Интуитивно понятная навигация помогает пользователям быстрее находить нужную информацию.</li>
-<li>Привлекательные и простые визуальные элементы удерживают внимание пользователей.</li>
-<li>Быстрая загрузка страниц уменьшает вероятность отказов.</li>
+<li>Интуитивно понятная навигация помогает пользователям быстрее находить нужную информацию</li>
+<li>Привлекательные и простые визуальные элементы удерживают внимание пользователей</li>
+<li>Быстрая загрузка страниц уменьшает вероятность отказов</li>
 </ul>
 
-<h2>Применение A/B тестирования для оптимизации микроконверсий</h2>
-<p>A/B тестирование - это эффективный метод для оценки изменений в UX дизайне и их влияния на микроконверсии. Разделяя трафик на две группы и тестируя разные версии страницы, вы можете определить, какие изменения приводят к увеличению микроконверсий и, в конечном итоге, к росту конверсии сайта.</p>
+<h2 id="применение-ab-тестирования-для-оптимизации-микроко">Применение A/B тестирования для оптимизации микроконверсий</h2>
+<p>A/B тестирование - это эффективный метод для оценки изменений в UX дизайне и их влияния на микроконверсии. Разделяя трафик на две группы и тестируя разные версии страницы, вы можете определить, какие изменения приводят к увеличению микроконверсий и, в конечном итоге, к росту конверсии сайта</p>
 
 <ol>
-<li>Определите ключевые метрики для успешного тестирования.</li>
-<li>Создайте гипотезы о том, какие изменения могут повлиять на микроконверсии.</li>
-<li>Проводите тесты на реальных пользователях для получения достоверных данных.</li>
-<li>Анализируйте результаты и вносите изменения на основе полученных данных.</li>
+<li>Определите ключевые метрики для успешного тестирования</li>
+<li>Создайте гипотезы о том, какие изменения могут повлиять на микроконверсии</li>
+<li>Проводите тесты на реальных пользователях для получения достоверных данных</li>
+<li>Анализируйте результаты и вносите изменения на основе полученных данных</li>
 </ol>
 
-<h2>Кейсы успешного применения микроконверсий</h2>
-<p>Многие компании уже добились значительных успехов, используя микроконверсии в своих стратегиях. Например, компания X увеличила свою конверсию на 20% за счет оптимизации микроконверсий, таких как регистрация на вебинар и скачивание бесплатного контента.</p>
+<h2 id="кейсы-успешного-применения-микроконверсий">Кейсы успешного применения микроконверсий</h2>
+<p>Многие компании уже добились значительных успехов, используя микроконверсии в своих стратегиях. Например, компания X увеличила свою конверсию на 20% за счет оптимизации микроконверсий, таких как регистрация на вебинар и скачивание бесплатного контента</p>
 
 <h3>Почему вам стоит обратить внимание на микроконверсии?</h3>
-<p>Игнорирование микроконверсий может означать упущенные возможности для роста. Анализируя и оптимизируя эти мелкие взаимодействия, вы не только улучшаете пользовательский опыт, но и создаете устойчивую основу для долгосрочного роста конверсии сайта.</p>
+<p>Игнорирование микроконверсий может означать упущенные возможности для роста. Анализируя и оптимизируя эти мелкие взаимодействия, вы не только улучшаете пользовательский опыт, но и создаете устойчивую основу для долгосрочного роста конверсии сайта</p>
 
-<p>Чтобы узнать больше о том, как можно улучшить ваш сайт и увеличить его конверсию, ознакомьтесь с нашими услугами: <a href="../sitemoney-scan.html">SiteMoney Scan</a> и <a href="../money-leak-audit.html">Money Leak Audit</a>. Также, присоединяйтесь к нашему <a href="../subscription.html">Website Intelligence Club</a> для получения эксклюзивных стратегий.</p>
+<p>Чтобы узнать больше о том, как можно улучшить ваш сайт и увеличить его конверсию, ознакомьтесь с нашими услугами: <a href="../sitemoney-scan.html">SiteMoney Scan</a> и <a href="../money-leak-audit.html">Money Leak Audit</a>. Также, присоединяйтесь к нашему <a href="../subscription.html">Website Intelligence Club</a> для получения эксклюзивных стратегий</p>
 
 <p><strong>Продвинутые стратегии - в TriggerFlow Privat</strong></p>
 <section class="article-faq"><h2>Часто задаваемые вопросы</h2>
-<div class="faq-item"><h3>Что такое микроконверсии?</h3><p>Микроконверсии - это небольшие действия пользователей на сайте, которые способствуют достижению основной цели, но не являются конечной целью сами по себе.</p></div>
-<div class="faq-item"><h3>Как микроконверсии влияют на общий успех сайта?</h3><p>Они помогают понять поведение пользователей, улучшить UX дизайн и в конечном итоге увеличить конверсию сайта.</p></div>
-<div class="faq-item"><h3>Как A/B тестирование помогает в оптимизации микроконверсий?</h3><p>A/B тестирование позволяет тестировать различные версии страницы, чтобы определить, какие изменения ведут к увеличению микроконверсий.</p></div>
-<div class="faq-item"><h3>Могут ли микроконверсии непосредственно влиять на продажи?</h3><p>Да, микроконверсии, такие как добавление товара в корзину или регистрация на вебинар, могут стимулировать пользователей к совершению покупки.</p></div>
-<div class="faq-item"><h3>Как улучшить UX дизайн для увеличения микроконверсий?</h3><p>Интуитивно понятная навигация, привлекательные визуальные элементы и быстрая загрузка страниц могут значительно улучшить UX дизайн.</p></div>
+<details class="faq-accordion"><summary>Что такое микроконверсии?</summary><p>Микроконверсии - это небольшие действия пользователей на сайте, которые способствуют достижению основной цели, но не являются конечной целью сами по себе</p></details>
+<details class="faq-accordion"><summary>Как микроконверсии влияют на общий успех сайта?</summary><p>Они помогают понять поведение пользователей, улучшить UX дизайн и в конечном итоге увеличить конверсию сайта</p></details>
+<details class="faq-accordion"><summary>Как A/B тестирование помогает в оптимизации микроконверсий?</summary><p>A/B тестирование позволяет тестировать различные версии страницы, чтобы определить, какие изменения ведут к увеличению микроконверсий</p></details>
+<details class="faq-accordion"><summary>Могут ли микроконверсии непосредственно влиять на продажи?</summary><p>Да, микроконверсии, такие как добавление товара в корзину или регистрация на вебинар, могут стимулировать пользователей к совершению покупки</p></details>
+<details class="faq-accordion"><summary>Как улучшить UX дизайн для увеличения микроконверсий?</summary><p>Интуитивно понятная навигация, привлекательные визуальные элементы и быстрая загрузка страниц могут значительно улучшить UX дизайн</p></details>
 </section>
 <section class="article-takeaways"><h2>Ключевые выводы</h2>
 <ul>
-<li>Микроконверсии играют ключевую роль в увеличении общей конверсии сайта.</li>
-<li>Оптимизация UX дизайна способствует росту количества микроконверсий.</li>
-<li>A/B тестирование - эффективный инструмент для анализа влияния изменений на микроконверсии.</li>
-<li>Успешные компании уже используют микроконверсии для увеличения продаж.</li>
-<li>Игнорирование микроконверсий может привести к упущенным возможностям для бизнеса.</li>
+<li>Микроконверсии играют ключевую роль в увеличении общей конверсии сайта</li>
+<li>Оптимизация UX дизайна способствует росту количества микроконверсий</li>
+<li>A/B тестирование - эффективный инструмент для анализа влияния изменений на микроконверсии</li>
+<li>Успешные компании уже используют микроконверсии для увеличения продаж</li>
+<li>Игнорирование микроконверсий может привести к упущенным возможностям для бизнеса</li>
 </ul></section>
 <div class="article-cta"><h3>Продвинутые стратегии - в TriggerFlow Privat</h3><a href="/#hero" class="btn">Попробовать бесплатно</a></div>
 

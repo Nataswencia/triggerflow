@@ -72,6 +72,47 @@
 .rule-card h3{margin:0 0 0.5rem;color:#818cf8;font-size:1rem}
 .rule-card p{margin:0;font-size:0.95rem}
 @media(max-width:600px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -103,7 +144,7 @@
             <button class="navbar__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
 <main>
 <div class="container"><div class="article-breadcrumb"><a href="../index.html">Главная</a> / <a href="../blog.html">Блог</a> / 4 дня простоя после миграции</div></div>
-<section class="page-hero"><div class="container"><div class="blog-card__category">n8n и AI-агенты</div><h1 class="page-hero__title"><span class="gradient-text">4 дня простоя:<br>как одна миграция сломала 6 воркфлоу</span></h1><p style="font-size:1.2rem;color:#64748b;max-width:700px">Реальный разбор цепочки из 4 ошибок после переезда n8n на GCP. И 6 правил, чтобы это не повторилось.</p><div class="article-meta"><span><i class="fa-regular fa-calendar"></i> 3 апреля 2026</span><span><i class="fa-regular fa-clock"></i> 8 мин</span></div></div></section>
+<section class="page-hero"><div class="container"><div class="blog-card__category">n8n и AI-агенты</div><h1 class="page-hero__title"><span class="gradient-text">4 дня простоя:<br>как одна миграция сломала 6 воркфлоу</span></h1><p style="font-size:1.2rem;color:#64748b;max-width:700px">Реальный разбор цепочки из 4 ошибок после переезда n8n на GCP. И 6 правил, чтобы это не повторилось</p><div class="article-meta"><span><i class="fa-regular fa-calendar"></i> 3 апреля 2026</span><span><i class="fa-regular fa-clock"></i> 8 мин</span></div></div></section>
 
 <div class="article-body">
 
@@ -116,55 +157,55 @@
 <div class="stat-box"><span class="num">2ч</span><span class="desc">на диагностику</span></div>
 </div>
 
-<h2>Что произошло</h2>
+<h2 id="что-произошло">Что произошло</h2>
 
-<p>У меня 40+ воркфлоу на n8n. Один из них - Events Manager - каждое утро в 7:00 присылает в Telegram брифинг: события дня, критические дедлайны, французские слова для изучения, мотивационную цитату.</p>
+<p>У меня 40+ воркфлоу на n8n. Один из них - Events Manager - каждое утро в 7:00 присылает в Telegram брифинг: события дня, критические дедлайны, французские слова для изучения, мотивационную цитату</p>
 
-<p>28 марта я перенесла n8n с облака на свой GCP Free Tier. Всё выглядело рабочим. Воркфлоу показывали "Active". Я успокоилась.</p>
+<p>28 марта я перенесла n8n с облака на свой GCP Free Tier. Всё выглядело рабочим. Воркфлоу показывали "Active". Я успокоилась</p>
 
-<p>31 марта заметила: утреннее сообщение не приходит. Уже 4 дня. Проверила логи - каждый запуск падает с ошибкой 403 на Google Sheets.</p>
+<p>31 марта заметила: утреннее сообщение не приходит. Уже 4 дня. Проверила логи - каждый запуск падает с ошибкой 403 на Google Sheets</p>
 
-<h2>Цепочка ошибок: каждая прятала следующую</h2>
+<h2 id="цепочка-ошибок-каждая-прятала-следующую">Цепочка ошибок: каждая прятала следующую</h2>
 
-<p>Вот что бесит в таких ситуациях. Вы чините одну проблему, запускаете тест, и узнаёте о следующей. Потом чините вторую - появляется третья. Как матрёшка, только каждая следующая злее.</p>
+<p>Вот что бесит в таких ситуациях. Вы чините одну проблему, запускаете тест, и узнаёте о следующей. Потом чините вторую - появляется третья. Как матрёшка, только каждая следующая злее</p>
 
 <div class="chain-step error">
 <span class="step-num">ОШИБКА 1</span>
 <h3>Client Secret исчез</h3>
-<p>При миграции n8n заменил Client Secret Google OAuth на заглушку <code>__n8n_BLANK_VALUE_</code>. Credential показывал "Account connected", но токен не мог обновиться без секрета. Результат - 403 на ВСЕХ нодах с Google Sheets.</p>
-<p>6 воркфлоу упали одновременно. Events Manager, Greetings, Eclat автопостинг, Facebook Spoke.</p>
+<p>При миграции n8n заменил Client Secret Google OAuth на заглушку <code>__n8n_BLANK_VALUE_</code>. Credential показывал "Account connected", но токен не мог обновиться без секрета. Результат - 403 на ВСЕХ нодах с Google Sheets</p>
+<p>6 воркфлоу упали одновременно. Events Manager, Greetings, Eclat автопостинг, Facebook Spoke</p>
 </div>
 
 <div class="chain-step fix">
 <span class="step-num">ФИКС 1</span>
 <h3>Восстановила Client Secret, переавторизовала OAuth</h3>
-<p>Зашла в n8n UI, вставила правильный Client Secret, нажала "Sign in with Google". Прошла 3 экрана предупреждений Google (приложение не верифицировано). Токен обновился.</p>
+<p>Зашла в n8n UI, вставила правильный Client Secret, нажала "Sign in with Google". Прошла 3 экрана предупреждений Google (приложение не верифицировано). Токен обновился</p>
 </div>
 
 <div class="chain-step error">
 <span class="step-num">ОШИБКА 2</span>
 <h3>Таблица принадлежит другому аккаунту</h3>
 <p>Запустила тест. Снова 403. Но теперь Client Secret на месте, OAuth свежий. В чём дело?</p>
-<p>Оказалось: таблица Events создана с аккаунта <code>alinfghjnf7546@gmail.com</code>, а OAuth привязан к <code>nataswencia@gmail.com</code>. У второго аккаунта просто нет доступа к таблице. Три Google-аккаунта, и я забыла, какой из них владелец.</p>
+<p>Оказалось: таблица Events создана с аккаунта <code>alinfghjnf7546@gmail.com</code>, а OAuth привязан к <code>nataswencia@gmail.com</code>. У второго аккаунта просто нет доступа к таблице. Три Google-аккаунта, и я забыла, какой из них владелец</p>
 </div>
 
 <div class="chain-step fix">
 <span class="step-num">ФИКС 2</span>
 <h3>Расшарила таблицу на OAuth-аккаунт</h3>
-<p>Залогинилась в аккаунт-владелец (2FA, SMS, всё как обычно). Расшарила таблицу как "Редактор". Read Events Sheet прошёл.</p>
+<p>Залогинилась в аккаунт-владелец (2FA, SMS, всё как обычно). Расшарила таблицу как "Редактор". Read Events Sheet прошёл</p>
 </div>
 
 <div class="chain-step error">
 <span class="step-num">ОШИБКА 3</span>
 <h3>Google Calendar credential не существует</h3>
-<p>Запустила тест. Sheets работают! Но упало на ноде "Read Calendar Events": credential с ID <code>fQ0Kjiz3984iL6Yn</code> не существует. Он просто не перенёсся при миграции.</p>
+<p>Запустила тест. Sheets работают! Но упало на ноде "Read Calendar Events": credential с ID <code>fQ0Kjiz3984iL6Yn</code> не существует. Он просто не перенёсся при миграции</p>
 </div>
 
 <div class="chain-step fix">
 <span class="step-num">ФИКС 3</span>
 <h3>Временно отключила Calendar-ноду</h3>
-<p>Создать новый credential через API получилось, но OAuth авторизация через Playwright провалилась 3 раза - Google показывает 3 экрана предупреждений для непроверенных приложений, и OAuth state token истекает быстрее, чем я успеваю пройти все экраны.</p>
-<p>Решение: отключила Calendar-ноду через <code>disabled: true</code>. Утренний брифинг работает на данных из Google Sheets, Calendar можно подключить позже вручную.</p>
+<p>Создать новый credential через API получилось, но OAuth авторизация через Playwright провалилась 3 раза - Google показывает 3 экрана предупреждений для непроверенных приложений, и OAuth state token истекает быстрее, чем я успеваю пройти все экраны</p>
+<p>Решение: отключила Calendar-ноду через <code>disabled: true</code>. Утренний брифинг работает на данных из Google Sheets, Calendar можно подключить позже вручную</p>
 </div>
 
 <div class="chain-step error">
@@ -173,7 +214,7 @@
 <p>Запустила тест. Sheets OK, Calendar пропущен, GPT сгенерировал брифинг. Упало на отправке в Telegram:</p>
 <pre><code>Bad Request: can't parse entities:
 Unsupported start tag "=48ч)&lt;/b" at byte offset 583</code></pre>
-<p>GPT написал <code>&lt;=48ч</code> (знак "меньше или равно 48 часов"). Telegram решил, что <code>&lt;</code> - это начало HTML-тега. И умер.</p>
+<p>GPT написал <code>&lt;=48ч</code> (знак "меньше или равно 48 часов"). Telegram решил, что <code>&lt;</code> - это начало HTML-тега. И умер</p>
 </div>
 
 <div class="chain-step fix">
@@ -195,12 +236,12 @@ Unsupported start tag "=48ч)&lt;/b" at byte offset 583</code></pre>
   }
   return result;
 }</code></pre>
-<p>После этого - <strong>SUCCESS</strong>. Утренний брифинг пришёл в Telegram.</p>
+<p>После этого - <strong>SUCCESS</strong>. Утренний брифинг пришёл в Telegram</p>
 </div>
 
-<h2>Где я потеряла время</h2>
+<h2 id="где-я-потеряла-время">Где я потеряла время</h2>
 
-<p>Не на починке. На диагностике.</p>
+<p>Не на починке. На диагностике</p>
 
 <p>Смотрите на таймлайн:</p>
 
@@ -212,28 +253,28 @@ Unsupported start tag "=48ч)&lt;/b" at byte offset 583</code></pre>
 <div class="timeline-item ok"><strong>SUCCESS</strong> - тест прошёл. Итого: ~2 часа.</div>
 </div>
 
-<p>Если бы я перед первым фиксом проверила ВСЁ - все credentials, все таблицы, все ноды - я бы нашла все 4 проблемы за 10 минут. И починила бы за 20. Вместо 2 часов - 30 минут.</p>
+<p>Если бы я перед первым фиксом проверила ВСЁ - все credentials, все таблицы, все ноды - я бы нашла все 4 проблемы за 10 минут. И починила бы за 20. Вместо 2 часов - 30 минут</p>
 
-<h2>6 правил после этого кейса</h2>
+<h2 id="6-правил-после-этого-кейса">6 правил после этого кейса</h2>
 
 <div class="rule-card">
 <h3>1. Полный аудит перед починкой</h3>
-<p>При ошибке в воркфлоу - сначала получить JSON, пройтись по ВСЕМ нодам, составить список внешних зависимостей (credentials, таблицы, API). Проверить каждую. Только потом чинить - всё разом.</p>
+<p>При ошибке в воркфлоу - сначала получить JSON, пройтись по ВСЕМ нодам, составить список внешних зависимостей (credentials, таблицы, API). Проверить каждую. Только потом чинить - всё разом</p>
 </div>
 
 <div class="rule-card">
 <h3>2. OAuth через UI, не через автоматизацию</h3>
-<p>Google OAuth с непроверенным приложением - это 3 экрана предупреждений + 2FA. State token живёт ~3 минуты. Playwright не успевает. Делайте OAuth руками - 30 секунд vs 20 минут отладки.</p>
+<p>Google OAuth с непроверенным приложением - это 3 экрана предупреждений + 2FA. State token живёт ~3 минуты. Playwright не успевает. Делайте OAuth руками - 30 секунд vs 20 минут отладки</p>
 </div>
 
 <div class="rule-card">
 <h3>3. Знать владельцев таблиц</h3>
-<p>Если у вас несколько Google-аккаунтов - записывайте, кому принадлежит каждая таблица. При миграции OAuth может быть привязан к другому аккаунту, и "работающий" credential не будет иметь доступа.</p>
+<p>Если у вас несколько Google-аккаунтов - записывайте, кому принадлежит каждая таблица. При миграции OAuth может быть привязан к другому аккаунту, и "работающий" credential не будет иметь доступа</p>
 </div>
 
 <div class="rule-card">
 <h3>4. Client Secret при миграции = проверять первым</h3>
-<p>n8n при экспорте/импорте заменяет Client Secret на заглушку. Это не баг - это защита. Но после миграции ПЕРВЫМ делом проверяйте все OAuth credentials.</p>
+<p>n8n при экспорте/импорте заменяет Client Secret на заглушку. Это не баг - это защита. Но после миграции ПЕРВЫМ делом проверяйте все OAuth credentials</p>
 </div>
 
 <div class="rule-card">
@@ -243,10 +284,10 @@ Unsupported start tag "=48ч)&lt;/b" at byte offset 583</code></pre>
 
 <div class="rule-card">
 <h3>6. Чек-лист после миграции</h3>
-<p>После любого переезда n8n: проверить ВСЕ OAuth credentials (не заглушка ли secret), проверить доступ ко ВСЕМ таблицам, проверить включённость API в GCP Console. 10 минут проверки = 4 дня сэкономленного простоя.</p>
+<p>После любого переезда n8n: проверить ВСЕ OAuth credentials (не заглушка ли secret), проверить доступ ко ВСЕМ таблицам, проверить включённость API в GCP Console. 10 минут проверки = 4 дня сэкономленного простоя</p>
 </div>
 
-<h2>Итог в цифрах</h2>
+<h2 id="итог-в-цифрах">Итог в цифрах</h2>
 
 <div class="stat-grid">
 <div class="stat-box"><span class="num">$24</span><span class="desc">экономия/мес на GCP</span></div>
@@ -255,24 +296,15 @@ Unsupported start tag "=48ч)&lt;/b" at byte offset 583</code></pre>
 <div class="stat-box"><span class="num">30м</span><span class="desc">если бы сделала аудит</span></div>
 </div>
 
-<p>Миграция на GCP - правильное решение. Экономия реальная, контроль полный. Но любая миграция - это не "перенёс и забыл". Это "перенёс, проверил всё, и только потом забыл".</p>
+<p>Миграция на GCP - правильное решение. Экономия реальная, контроль полный. Но любая миграция - это не "перенёс и забыл". Это "перенёс, проверил всё, и только потом забыл"</p>
 
-<h2>FAQ</h2>
+<h2 id="faq">FAQ</h2>
 
-<div class="faq-item">
-<h3>Почему после миграции n8n ломаются Google-воркфлоу?</h3>
-<p>При миграции OAuth2 credentials теряют Client Secret - он заменяется заглушкой. Плюс таблицы могут принадлежать другому Google-аккаунту, а нужные API могут быть не включены в GCP Console. Результат - 403 Forbidden на всех Google-нодах.</p>
-</div>
+<details class="faq-accordion"><summary>Почему после миграции n8n ломаются Google-воркфлоу?</summary><p>При миграции OAuth2 credentials теряют Client Secret - он заменяется заглушкой. Плюс таблицы могут принадлежать другому Google-аккаунту, а нужные API могут быть не включены в GCP Console. Результат - 403 Forbidden на всех Google-нодах</p></details>
 
-<div class="faq-item">
-<h3>Как правильно диагностировать сломанный n8n воркфлоу?</h3>
-<p>Полный аудит ПЕРЕД починкой: получить JSON воркфлоу, проверить все credentials и их статус, проверить доступ ко всем внешним ресурсам (таблицы, API), убедиться что нужные API включены в GCP. Только потом чинить - всё разом, а не по одной ошибке.</p>
-</div>
+<details class="faq-accordion"><summary>Как правильно диагностировать сломанный n8n воркфлоу?</summary><p>Полный аудит ПЕРЕД починкой: получить JSON воркфлоу, проверить все credentials и их статус, проверить доступ ко всем внешним ресурсам (таблицы, API), убедиться что нужные API включены в GCP. Только потом чинить - всё разом, а не по одной ошибке</p></details>
 
-<div class="faq-item">
-<h3>Как избежать ошибки "can't parse entities" в Telegram?</h3>
-<p>GPT генерирует текст с символами &lt; и &gt;, которые Telegram интерпретирует как HTML-теги. Решение - функция sanitizeTgHtml(): экранировать все &lt; и &gt;, затем восстановить только разрешённые теги (b, i, u, s, code, pre). Добавляется в Code-ноду перед отправкой.</p>
-</div>
+<details class="faq-accordion"><summary>Как избежать ошибки "can't parse entities" в Telegram?</summary><p>GPT генерирует текст с символами &lt; и &gt;, которые Telegram интерпретирует как HTML-теги. Решение - функция sanitizeTgHtml(): экранировать все &lt; и &gt;, затем восстановить только разрешённые теги (b, i, u, s, code, pre). Добавляется в Code-ноду перед отправкой</p></details>
 
 <div class="article-takeaways">
 <h2>Ключевые выводы</h2>
@@ -287,8 +319,8 @@ Unsupported start tag "=48ч)&lt;/b" at byte offset 583</code></pre>
 </div>
 
 <div class="article-cta">
-<h2>Хотите автоматизацию, которая переживёт миграцию?</h2>
-<p>Бот проанализирует ваш сайт и покажет, где автоматизация даст максимальный эффект - с правильной архитектурой.</p>
+<h2 id="хотите-автоматизацию-которая-переживёт-миграцию">Хотите автоматизацию, которая переживёт миграцию?</h2>
+<p>Бот проанализирует ваш сайт и покажет, где автоматизация даст максимальный эффект - с правильной архитектурой</p>
 <a href="/#hero" class="btn">Бесплатный анализ сайта</a>
 </div>
 

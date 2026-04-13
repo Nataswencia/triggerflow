@@ -64,6 +64,47 @@
 .comparison-table th{background:#6366f1;color:white}
 .comparison-table tr:nth-child(even){background:rgba(255,255,255,0.05)}
 @media(max-width:600px){.before-after{grid-template-columns:1fr}.timeline-step{flex-direction:column;align-items:center;text-align:center}}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -101,7 +142,7 @@
 
 <div class="article-tldr">7 навыков, которые вы считали ценными, AI уже делает лучше вас. 4 новых навыка стали критичными. Хорошая новость: адаптироваться можно за 30 дней. Плохая: каждый день промедления - это день, когда ваши конкуренты уходят вперед.</div>
 
-<h2>Что изменилось за последний год</h2>
+<h2 id="что-изменилось-за-последний-год">Что изменилось за последний год</h2>
 
 <div class="before-after">
 <div class="before-box">
@@ -126,74 +167,74 @@
 </div>
 </div>
 
-<p>Разница не в качестве. Разница в масштабе. Человек физически не может мониторить 50 источников, анализировать 100 лидов и писать 10 постов каждый день. AI-агент - может.</p>
+<p>Разница не в качестве. Разница в масштабе. Человек физически не может мониторить 50 источников, анализировать 100 лидов и писать 10 постов каждый день. AI-агент - может</p>
 
-<h2>7 навыков, которые AI сделал ненужными</h2>
+<h2 id="7-навыков-которые-ai-сделал-ненужными">7 навыков, которые AI сделал ненужными</h2>
 
 <div class="skill-card obsolete">
 <h3><i class="fa-solid fa-keyboard"></i> 1. Ручной ввод данных</h3>
-<p><strong>Было:</strong> ассистент переносит данные из почты в CRM, из формы в таблицу, из документа в систему. <strong>Стало:</strong> вебхук ловит форму, Code-нода парсит данные, Google Sheets нода записывает. Время: 0 секунд vs 20 минут.</p>
+<p><strong>Было:</strong> ассистент переносит данные из почты в CRM, из формы в таблицу, из документа в систему. <strong>Стало:</strong> вебхук ловит форму, Code-нода парсит данные, Google Sheets нода записывает. Время: 0 секунд vs 20 минут</p>
 </div>
 
 <div class="skill-card obsolete">
 <h3><i class="fa-solid fa-copy"></i> 2. Написание шаблонных текстов</h3>
-<p><strong>Было:</strong> копирайтер пишет описания товаров, email-рассылки, посты по шаблону. <strong>Стало:</strong> GPT-4o-mini генерирует 50 описаний за 30 секунд. С Reflection Pattern - качество на уровне мидл-копирайтера.</p>
+<p><strong>Было:</strong> копирайтер пишет описания товаров, email-рассылки, посты по шаблону. <strong>Стало:</strong> GPT-4o-mini генерирует 50 описаний за 30 секунд. С Reflection Pattern - качество на уровне мидл-копирайтера</p>
 </div>
 
 <div class="skill-card obsolete">
 <h3><i class="fa-solid fa-binoculars"></i> 3. Мониторинг конкурентов вручную</h3>
-<p><strong>Было:</strong> маркетолог каждый день открывает сайты конкурентов, читает их блоги, следит за ценами. <strong>Стало:</strong> AI-агент собирает тренды из HN, Reddit, новостных API каждый день и присылает дайджест с анализом.</p>
+<p><strong>Было:</strong> маркетолог каждый день открывает сайты конкурентов, читает их блоги, следит за ценами. <strong>Стало:</strong> AI-агент собирает тренды из HN, Reddit, новостных API каждый день и присылает дайджест с анализом</p>
 </div>
 
 <div class="skill-card obsolete">
 <h3><i class="fa-solid fa-address-card"></i> 4. Ведение CRM руками</h3>
-<p><strong>Было:</strong> менеджер записывает после каждого звонка: "Разговаривал с Иваном, интересует SEO". <strong>Стало:</strong> CRM-агент автоматически обновляет Client_Profiles после каждого взаимодействия - анализ, email, бот-команда.</p>
+<p><strong>Было:</strong> менеджер записывает после каждого звонка: "Разговаривал с Иваном, интересует SEO". <strong>Стало:</strong> CRM-агент автоматически обновляет Client_Profiles после каждого взаимодействия - анализ, email, бот-команда</p>
 </div>
 
 <div class="skill-card obsolete">
 <h3><i class="fa-solid fa-filter"></i> 5. Ручная квалификация лидов</h3>
-<p><strong>Было:</strong> менеджер по продажам просматривает 100 заявок и решает, кому звонить. <strong>Стало:</strong> GPT-4o анализирует сайт лида, оценивает потенциал, генерирует персональный оффер. Score от 1 до 100.</p>
+<p><strong>Было:</strong> менеджер по продажам просматривает 100 заявок и решает, кому звонить. <strong>Стало:</strong> GPT-4o анализирует сайт лида, оценивает потенциал, генерирует персональный оффер. Score от 1 до 100</p>
 </div>
 
 <div class="skill-card obsolete">
 <h3><i class="fa-solid fa-calendar-alt"></i> 6. Планирование контента вручную</h3>
-<p><strong>Было:</strong> SMM-менеджер составляет контент-план на месяц в Google Docs. <strong>Стало:</strong> AI-агент берет темы из контент-плана, генерирует, проверяет через Reflection, публикует. Контент-план на 30 дней - набор данных, а не творческий процесс.</p>
+<p><strong>Было:</strong> SMM-менеджер составляет контент-план на месяц в Google Docs. <strong>Стало:</strong> AI-агент берет темы из контент-плана, генерирует, проверяет через Reflection, публикует. Контент-план на 30 дней - набор данных, а не творческий процесс</p>
 </div>
 
 <div class="skill-card obsolete">
 <h3><i class="fa-solid fa-reply-all"></i> 7. Рутинная переписка</h3>
-<p><strong>Было:</strong> 2 часа в день на чтение, сортировку и ответы на письма. <strong>Стало:</strong> Email-агент классифицирует, извлекает суть, предлагает ответ. Вы нажимаете "Согласиться" - агент отправляет. 15 минут вместо 2 часов.</p>
+<p><strong>Было:</strong> 2 часа в день на чтение, сортировку и ответы на письма. <strong>Стало:</strong> Email-агент классифицирует, извлекает суть, предлагает ответ. Вы нажимаете "Согласиться" - агент отправляет. 15 минут вместо 2 часов</p>
 </div>
 
-<h2>Какие навыки стали критически важными</h2>
+<h2 id="какие-навыки-стали-критически-важными">Какие навыки стали критически важными</h2>
 
 <div class="skill-card critical">
 <h3><i class="fa-solid fa-terminal"></i> 1. Промпт-инженерия</h3>
-<p>Умение правильно формулировать задачу для AI. Не "напиши пост", а конкретная структура: роль, контекст, формат, ограничения, примеры. Разница между хорошим и плохим промптом - 10x в качестве результата.</p>
+<p>Умение правильно формулировать задачу для AI. Не "напиши пост", а конкретная структура: роль, контекст, формат, ограничения, примеры. Разница между хорошим и плохим промптом - 10x в качестве результата</p>
 </div>
 
 <div class="skill-card critical">
 <h3><i class="fa-solid fa-diagram-project"></i> 2. Построение AI-пайплайнов</h3>
-<p>n8n, Make, Zapier - это новый Excel. Умение соединить триггер, обработку данных, AI-модель и выходной канал в автоматический пайплайн. Не программирование - конструирование.</p>
+<p>n8n, Make, Zapier - это новый Excel. Умение соединить триггер, обработку данных, AI-модель и выходной канал в автоматический пайплайн. Не программирование - конструирование</p>
 </div>
 
 <div class="skill-card critical">
 <h3><i class="fa-solid fa-chess-king"></i> 3. Стратегическое мышление</h3>
-<p>AI забрал тактику. Вам остается стратегия. Какую задачу автоматизировать? Какой сегмент атаковать? Как позиционироваться? AI дает данные - вы принимаете решения.</p>
+<p>AI забрал тактику. Вам остается стратегия. Какую задачу автоматизировать? Какой сегмент атаковать? Как позиционироваться? AI дает данные - вы принимаете решения</p>
 </div>
 
 <div class="skill-card critical">
 <h3><i class="fa-solid fa-magnifying-glass-chart"></i> 4. Аналитическая интерпретация</h3>
-<p>AI генерирует отчеты, тренды, прогнозы. Но интерпретировать их в контексте вашего бизнеса - это ваша работа. "Конверсия упала на 15%" - AI видит цифру. Вы понимаете, что это из-за нового конкурента.</p>
+<p>AI генерирует отчеты, тренды, прогнозы. Но интерпретировать их в контексте вашего бизнеса - это ваша работа. "Конверсия упала на 15%" - AI видит цифру. Вы понимаете, что это из-за нового конкурента</p>
 </div>
 
-<h2>Как адаптироваться: план на 30 дней</h2>
+<h2 id="как-адаптироваться-план-на-30-дней">Как адаптироваться: план на 30 дней</h2>
 
 <div class="timeline-step">
 <div class="step-num">1</div>
 <div class="step-content">
 <h3>Неделя 1: Аудит и выбор</h3>
-<p>Выпишите все повторяющиеся задачи в бизнесе. Отметьте те, на которые уходит больше 2 часов в неделю. Выберите одну - самую рутинную и болезненную. Это ваш первый кандидат на автоматизацию.</p>
+<p>Выпишите все повторяющиеся задачи в бизнесе. Отметьте те, на которые уходит больше 2 часов в неделю. Выберите одну - самую рутинную и болезненную. Это ваш первый кандидат на автоматизацию</p>
 </div>
 </div>
 
@@ -201,7 +242,7 @@
 <div class="step-num">2</div>
 <div class="step-content">
 <h3>Неделя 2: Платформа и первая автоматизация</h3>
-<p>Зарегистрируйтесь на n8n Cloud (20 евро/мес). Создайте первый воркфлоу: триггер по расписанию, чтение данных из Google Sheets, отправка в Telegram. Без AI - просто автоматизация.</p>
+<p>Зарегистрируйтесь на n8n Cloud (20 евро/мес). Создайте первый воркфлоу: триггер по расписанию, чтение данных из Google Sheets, отправка в Telegram. Без AI - просто автоматизация</p>
 </div>
 </div>
 
@@ -209,7 +250,7 @@
 <div class="step-num">3</div>
 <div class="step-content">
 <h3>Неделя 3: AI-слой</h3>
-<p>Добавьте GPT-4o-mini к вашему воркфлоу. Пусть AI анализирует данные, генерирует текст или классифицирует входящие. Настройте промпт: роль, контекст, формат вывода.</p>
+<p>Добавьте GPT-4o-mini к вашему воркфлоу. Пусть AI анализирует данные, генерирует текст или классифицирует входящие. Настройте промпт: роль, контекст, формат вывода</p>
 </div>
 </div>
 
@@ -217,26 +258,17 @@
 <div class="step-num">4</div>
 <div class="step-content">
 <h3>Неделя 4: Память и метрики</h3>
-<p>Добавьте Google Sheets как память. Пусть агент помнит, что делал. Добавьте метрики: время выполнения, статус, ошибки. Поздравляю - у вас работающий AI-агент.</p>
+<p>Добавьте Google Sheets как память. Пусть агент помнит, что делал. Добавьте метрики: время выполнения, статус, ошибки. Поздравляю - у вас работающий AI-агент</p>
 </div>
 </div>
 
-<h2>FAQ</h2>
+<h2 id="faq">FAQ</h2>
 
-<div class="faq-item">
-<h3>Какие бизнес-навыки стали ненужными из-за AI?</h3>
-<p>Ручной ввод данных, написание шаблонных текстов, мониторинг конкурентов вручную, ведение CRM руками, ручная квалификация лидов, планирование контента и рутинная переписка - все это AI делает быстрее и дешевле.</p>
-</div>
+<details class="faq-accordion"><summary>Какие бизнес-навыки стали ненужными из-за AI?</summary><p>Ручной ввод данных, написание шаблонных текстов, мониторинг конкурентов вручную, ведение CRM руками, ручная квалификация лидов, планирование контента и рутинная переписка - все это AI делает быстрее и дешевле</p></details>
 
-<div class="faq-item">
-<h3>Какие навыки нужны бизнесу в 2026 году?</h3>
-<p>Промпт-инженерия, построение AI-пайплайнов (n8n, Make), стратегическое мышление и аналитическая интерпретация AI-выводов. AI забирает тактику - вам остается стратегия.</p>
-</div>
+<details class="faq-accordion"><summary>Какие навыки нужны бизнесу в 2026 году?</summary><p>Промпт-инженерия, построение AI-пайплайнов (n8n, Make), стратегическое мышление и аналитическая интерпретация AI-выводов. AI забирает тактику - вам остается стратегия</p></details>
 
-<div class="faq-item">
-<h3>Как быстро адаптировать бизнес к AI?</h3>
-<p>За 30 дней: неделя 1 - аудит процессов и выбор задачи, неделя 2 - настройка платформы и первая автоматизация, неделя 3 - подключение AI-слоя, неделя 4 - запуск мониторинга и метрик.</p>
-</div>
+<details class="faq-accordion"><summary>Как быстро адаптировать бизнес к AI?</summary><p>За 30 дней: неделя 1 - аудит процессов и выбор задачи, неделя 2 - настройка платформы и первая автоматизация, неделя 3 - подключение AI-слоя, неделя 4 - запуск мониторинга и метрик</p></details>
 
 <div class="article-takeaways">
 <h2>Ключевые выводы</h2>
@@ -250,8 +282,8 @@
 </div>
 
 <div class="article-cta">
-<h2>Узнайте, что автоматизировать первым</h2>
-<p>Бот проанализирует ваш сайт и покажет точки роста - бесплатно за 2 минуты.</p>
+<h2 id="узнайте-что-автоматизировать-первым">Узнайте, что автоматизировать первым</h2>
+<p>Бот проанализирует ваш сайт и покажет точки роста - бесплатно за 2 минуты</p>
 <a href="/#hero" class="btn">Бесплатный анализ сайта</a>
 </div>
 

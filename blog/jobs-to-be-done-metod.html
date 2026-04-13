@@ -39,6 +39,47 @@
 .article-meta{display:flex;gap:1.5rem;color:#94a3b8;font-size:0.9rem;margin-top:1rem}
 .article-breadcrumb{padding:1rem 0;font-size:0.9rem;color:#64748b}
 .article-breadcrumb a{color:#818cf8;text-decoration:none}
+
+.article-author-card{display:flex;gap:1.2rem;align-items:center;padding:1.5rem;background:linear-gradient(135deg,rgba(30,111,255,0.04),rgba(255,106,0,0.04));border-radius:12px;margin:1.5rem 0 2rem;border:1px solid rgba(30,111,255,0.1)}
+.article-author-card .author-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 25%;flex-shrink:0;border:3px solid #1e6fff}
+.article-author-card .author-info{flex:1}
+.article-author-card .author-name{font-weight:700;color:#1a237e;font-size:1.05rem;margin-bottom:0.2rem}
+.article-author-card .author-bio{color:#555;font-size:0.92rem;line-height:1.5;margin-bottom:0.3rem}
+.article-author-card .author-link{color:#ff6a00;font-weight:600;font-size:0.88rem;text-decoration:none}
+
+.article-related{margin:3rem 0;padding:2rem 0;border-top:2px solid #f0f4ff}
+.article-related h2{margin-top:0;margin-bottom:1.5rem;color:#1a237e}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.related-card{display:flex;flex-direction:column;background:#fafafa;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform 0.2s,box-shadow 0.2s;border:1px solid #e0e7ff}
+.related-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,111,255,0.12)}
+.related-card__img{width:100%;height:140px;background-size:cover;background-position:center 30%}
+.related-card__body{padding:1rem 1.2rem 1.2rem}
+.related-card__cat{color:#ff6a00;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:0.4rem}
+.related-card__title{font-size:1rem;line-height:1.4;color:#1a237e;margin:0;font-weight:600}
+
+.article-faq details{margin-bottom:1rem;background:#fafafa;border-radius:8px;border:1px solid #e0e7ff;overflow:hidden}
+.article-faq details[open]{background:#f0f4ff}
+.article-faq summary{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:#1a237e;list-style:none;position:relative;padding-right:3rem}
+.article-faq summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:#ff6a00;transition:transform 0.2s}
+.article-faq details[open] summary::after{content:"−"}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq details > p,.article-faq details > div{padding:0 1.5rem 1.2rem;color:#2C2321;line-height:1.7;margin:0}
+
+.priority-list ol{list-style:none;padding-left:0;counter-reset:step}
+.priority-list li{position:relative;padding-left:2.8rem;margin-bottom:0.8rem;counter-increment:step}
+.priority-list li::before{content:"✓";position:absolute;left:0;top:0;width:2rem;height:2rem;background:#ff6a00;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+
+.article-toc{background:#f8f9fa;border-radius:10px;padding:1.2rem 1.5rem;margin:1.5rem 0;border-left:4px solid #1e6fff}
+.article-toc__title{font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#1e6fff;font-weight:700;margin-bottom:0.8rem}
+.article-toc ol{margin:0;padding-left:1.5rem;counter-reset:toc}
+.article-toc li{margin-bottom:0.4rem;line-height:1.5}
+.article-toc a{color:#1a237e;text-decoration:none;font-weight:500}
+.article-toc a:hover{color:#ff6a00;text-decoration:underline}
+
+@media(max-width:720px){
+.article-author-card{flex-direction:column;text-align:center}
+.related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -76,21 +117,21 @@
 <img class="article-hero-img" src="https://images.unsplash.com/photo-1696041756040-c910a971f222?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4OTA3NDl8MHwxfHNlYXJjaHw0fHx0YXJnZXQlMjBhdWRpZW5jZSUyQyUyMG1hcmtldGluZ3xlbnwwfDB8fHwxNzczOTExNDg4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Jobs To Be Done: Метод, который все меняет">
 <p>Долго не могла понять - почему одни продукты покупают, а другие нет. Пока не наткнулась на простую идею: клиент не покупает продукт. Он нанимает его на работу</p>
 <p>Серьёзно. Человек не покупает дрель - он покупает дырку в стене. Не покупает CRM - покупает порядок в продажах. И когда я стала смотреть на бизнес через эту призму, всё встало на свои места</p>
-<h2>Понимание метода Jobs To Be Done</h2> <p>Jobs To Be Done (JTBD) - методология, которая фокусируется на задачах клиентов, а не на демографии. Вместо вопроса "кто ваш клиент?" она спрашивает "какую задачу он пытается решить?"</p> <h3>Основные принципы JTBD</h3> <ul> <li><strong>Фокус на задаче:</strong> Вместо того чтобы концентрироваться на характеристиках продукта, метод JTBD обращает внимание на то, какую задачу клиент пытается решить.</li> <li><strong>Контекст использования:</strong> Понимание контекста, в котором клиент выбирает ваш продукт, позволяет более точно настраивать маркетинговую стратегию.</li> <li><strong>Эмоциональные и функциональные триггеры:</strong> JTBD изучает как функциональные, так и эмоциональные причины, которые побуждают клиента к покупке.</li> </ul> <h2>Работа с целевой аудиторией с помощью JTBD</h2> <p>Одной из главных задач маркетолога является формирование точного портрета клиента. Применение JTBD позволяет углубиться в психологию продаж, выявляя не только целевые группы, но и их истинные мотивации.</p> <h3>Создание портрета клиента</h3> <ol> <li><strong>Идентификация задач:</strong> Определите ключевые задачи, которые ваша целевая аудитория хочет решить.</li> <li><strong>Анализ контекста:</strong> Изучите, в каком контексте клиенты сталкиваются с этими задачами.</li> <li><strong>Определение триггеров:</strong> Выявите триггеры покупки, которые побуждают клиента выбрать ваш продукт.</li> </ol> <h2>Кейс: Как JTBD изменил подход компании XYZ</h2> <p>Компания XYZ, специализирующаяся на производстве бытовой техники, решила использовать метод JTBD для улучшения понимания своей целевой аудитории. Они обнаружили, что их клиенты покупают определенные бытовые приборы не только из-за функциональных характеристик, но и для создания определенной атмосферы в доме. Это позволило компании изменить свою маркетинговую стратегию и увеличить продажи на 20% за полгода.</p> <h2>Психология продаж и JTBD</h2> <p>Психология продаж - это ключевой элемент успешного бизнеса. JTBD помогает идентифицировать эмоциональные триггеры, которые влияют на принятие решений клиентов. Это позволяет настраивать коммуникации так, чтобы они резонировали с потребностями и желаниями аудитории.</p> <h3>Выявление триггеров покупки</h3> <p>Триггеры покупки могут быть как рациональными, так и эмоциональными. Например, клиент может выбрать определенный продукт из-за его уникальных функций или из-за уверенности, которую он приносит. Понимание этих триггеров позволяет разрабатывать более точные маркетинговые кампании.</p> <h2>Заключение</h2> <p>Метод Jobs To Be Done - это мощный инструмент для понимания целевой аудитории. Он позволяет углубиться в причины, по которым клиенты выбирают ваш продукт, и использовать эту информацию для создания более эффективных маркетинговых стратегий. При правильном применении JTBD может значительно повысить удовлетворенность клиентов и увеличить продажи.</p> <p>Дополнительно, рассмотрите использование наших инструментов, таких как <a href="../sitemoney-scan.html">SiteMoney Scan</a> и <a href="../money-leak-audit.html">Money Leak Audit</a>, для более глубокого анализа вашей аудитории.</p>
+<h2 id="понимание-метода-jobs-to-be-done">Понимание метода Jobs To Be Done</h2> <p>Jobs To Be Done (JTBD) - методология, которая фокусируется на задачах клиентов, а не на демографии. Вместо вопроса "кто ваш клиент?" она спрашивает "какую задачу он пытается решить?"</p> <h3>Основные принципы JTBD</h3> <ul> <li><strong>Фокус на задаче:</strong> Вместо того чтобы концентрироваться на характеристиках продукта, метод JTBD обращает внимание на то, какую задачу клиент пытается решить</li> <li><strong>Контекст использования:</strong> Понимание контекста, в котором клиент выбирает ваш продукт, позволяет более точно настраивать маркетинговую стратегию</li> <li><strong>Эмоциональные и функциональные триггеры:</strong> JTBD изучает как функциональные, так и эмоциональные причины, которые побуждают клиента к покупке</li> </ul> <h2 id="работа-с-целевой-аудиторией-с-помощью-jtbd">Работа с целевой аудиторией с помощью JTBD</h2> <p>Одной из главных задач маркетолога является формирование точного портрета клиента. Применение JTBD позволяет углубиться в психологию продаж, выявляя не только целевые группы, но и их истинные мотивации</p> <h3>Создание портрета клиента</h3> <ol> <li><strong>Идентификация задач:</strong> Определите ключевые задачи, которые ваша целевая аудитория хочет решить</li> <li><strong>Анализ контекста:</strong> Изучите, в каком контексте клиенты сталкиваются с этими задачами</li> <li><strong>Определение триггеров:</strong> Выявите триггеры покупки, которые побуждают клиента выбрать ваш продукт</li> </ol> <h2 id="кейс-как-jtbd-изменил-подход-компании-xyz">Кейс: Как JTBD изменил подход компании XYZ</h2> <p>Компания XYZ, специализирующаяся на производстве бытовой техники, решила использовать метод JTBD для улучшения понимания своей целевой аудитории. Они обнаружили, что их клиенты покупают определенные бытовые приборы не только из-за функциональных характеристик, но и для создания определенной атмосферы в доме. Это позволило компании изменить свою маркетинговую стратегию и увеличить продажи на 20% за полгода</p> <h2 id="психология-продаж-и-jtbd">Психология продаж и JTBD</h2> <p>Психология продаж - это ключевой элемент успешного бизнеса. JTBD помогает идентифицировать эмоциональные триггеры, которые влияют на принятие решений клиентов. Это позволяет настраивать коммуникации так, чтобы они резонировали с потребностями и желаниями аудитории</p> <h3>Выявление триггеров покупки</h3> <p>Триггеры покупки могут быть как рациональными, так и эмоциональными. Например, клиент может выбрать определенный продукт из-за его уникальных функций или из-за уверенности, которую он приносит. Понимание этих триггеров позволяет разрабатывать более точные маркетинговые кампании</p> <h2 id="заключение">Заключение</h2> <p>Метод Jobs To Be Done - это мощный инструмент для понимания целевой аудитории. Он позволяет углубиться в причины, по которым клиенты выбирают ваш продукт, и использовать эту информацию для создания более эффективных маркетинговых стратегий. При правильном применении JTBD может значительно повысить удовлетворенность клиентов и увеличить продажи</p> <p>Дополнительно, рассмотрите использование наших инструментов, таких как <a href="../sitemoney-scan.html">SiteMoney Scan</a> и <a href="../money-leak-audit.html">Money Leak Audit</a>, для более глубокого анализа вашей аудитории</p>
 <section class="article-faq"><h2>Часто задаваемые вопросы</h2>
-<div class="faq-item"><h3>Что такое Jobs To Be Done?</h3><p>Jobs To Be Done - это методология, фокусирующаяся на задачах, которые клиенты хотят решить, покупая ваш продукт.</p></div>
-<div class="faq-item"><h3>Как JTBD помогает понять целевую аудиторию?</h3><p>JTBD позволяет углубиться в мотивации клиентов и понять, какие задачи они хотят решить, что помогает формировать более точные маркетинговые стратегии.</p></div>
-<div class="faq-item"><h3>Как использовать JTBD в маркетинге?</h3><p>Используйте JTBD для анализа задач и триггеров покупки ваших клиентов, чтобы настраивать маркетинговые кампании, которые резонируют с их нуждами.</p></div>
-<div class="faq-item"><h3>Какие преимущества дает метод JTBD?</h3><p>JTBD предоставляет глубокое понимание клиентских потребностей, что позволяет разрабатывать более эффективные продукты и маркетинговые стратегии.</p></div>
-<div class="faq-item"><h3>Как JTBD влияет на психологию продаж?</h3><p>JTBD помогает выявить эмоциональные триггеры, влияющие на покупательское поведение, позволяя лучше настраивать коммуникации с клиентами.</p></div>
+<details class="faq-accordion"><summary>Что такое Jobs To Be Done?</summary><p>Jobs To Be Done - это методология, фокусирующаяся на задачах, которые клиенты хотят решить, покупая ваш продукт</p></details>
+<details class="faq-accordion"><summary>Как JTBD помогает понять целевую аудиторию?</summary><p>JTBD позволяет углубиться в мотивации клиентов и понять, какие задачи они хотят решить, что помогает формировать более точные маркетинговые стратегии</p></details>
+<details class="faq-accordion"><summary>Как использовать JTBD в маркетинге?</summary><p>Используйте JTBD для анализа задач и триггеров покупки ваших клиентов, чтобы настраивать маркетинговые кампании, которые резонируют с их нуждами</p></details>
+<details class="faq-accordion"><summary>Какие преимущества дает метод JTBD?</summary><p>JTBD предоставляет глубокое понимание клиентских потребностей, что позволяет разрабатывать более эффективные продукты и маркетинговые стратегии</p></details>
+<details class="faq-accordion"><summary>Как JTBD влияет на психологию продаж?</summary><p>JTBD помогает выявить эмоциональные триггеры, влияющие на покупательское поведение, позволяя лучше настраивать коммуникации с клиентами</p></details>
 </section>
 <section class="article-takeaways"><h2>Ключевые выводы</h2>
 <ul>
-<li>JTBD фокусируется на задачах, которые клиенты пытаются решить, покупая ваш продукт.</li>
-<li>Методология помогает глубже понять мотивации и триггеры покупки.</li>
-<li>JTBD позволяет создать более точный портрет клиента и настроить маркетинговые стратегии.</li>
-<li>Понимание контекста использования продукта способствует увеличению продаж.</li>
-<li>Использование JTBD может привести к значительному росту удовлетворенности клиентов.</li>
+<li>JTBD фокусируется на задачах, которые клиенты пытаются решить, покупая ваш продукт</li>
+<li>Методология помогает глубже понять мотивации и триггеры покупки</li>
+<li>JTBD позволяет создать более точный портрет клиента и настроить маркетинговые стратегии</li>
+<li>Понимание контекста использования продукта способствует увеличению продаж</li>
+<li>Использование JTBD может привести к значительному росту удовлетворенности клиентов</li>
 </ul></section>
 <div class="article-cta"><h3>Продвинутые стратегии - в TriggerFlow Privat</h3><a href="/#hero" class="btn">Попробовать бесплатно</a></div>
 
