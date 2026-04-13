@@ -108,6 +108,8 @@
 .article-author-card{flex-direction:column;text-align:center}
 .related-grid{grid-template-columns:1fr}
 }
+
+.article-inline-img{width:100%;max-height:400px;object-fit:cover;object-position:center 30%;border-radius:10px;margin:2.5rem 0;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
 </style>
 </head>
 <body>
@@ -226,6 +228,7 @@
 <p>Каждый воркфлоу логирует: timestamp, execution_time_sec, status, details. В Google Sheets. Еженедельный аналитик-агент считает: постов опубликовано, ошибок, среднее время, рост подписчиков. Присылает отчет в Telegram. Вы видите тренды, а не гадаете</p>
 </div>
 
+<img class="article-inline-img" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1080&q=80&auto=format&fit=crop" alt="" loading="lazy">
 <h2 id="архитектура-которая-не-ломается">Архитектура, которая не ломается</h2>
 
 <p>Вот слои среды, которые делают автоматизацию устойчивой:</p>
@@ -281,6 +284,7 @@
 
 <p>Если у вас меньше 4 из 7 - ваша автоматизация сломается. Вопрос не "если", а "когда"</p>
 
+<img class="article-inline-img" src="https://images.unsplash.com/photo-1664575602807-e04b79b9b7cd?w=1080&q=80&auto=format&fit=crop" alt="" loading="lazy">
 <h2 id="faq">FAQ</h2>
 
 <details class="faq-accordion"><summary>Почему AI-автоматизации перестают работать?</summary><p>Потому что люди строят автоматизацию вокруг конкретной модели GPT, а не вокруг среды. Когда модель обновляется или меняет поведение - всё ломается. Правильный подход: строить среду (память, инструменты, контроль), которая работает с любой моделью</p></details>

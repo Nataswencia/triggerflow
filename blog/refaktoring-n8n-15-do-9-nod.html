@@ -117,6 +117,8 @@
 .article-author-card{flex-direction:column;text-align:center}
 .related-grid{grid-template-columns:1fr}
 }
+
+.article-inline-img{width:100%;max-height:400px;object-fit:cover;object-position:center 30%;border-radius:10px;margin:2.5rem 0;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
 </style>
 </head>
 <body>
@@ -268,6 +270,7 @@ Mark Advance Flags        &larr; без изменений</code></pre>
 Формирует JSON для Google Sheets batchUpdate. Можно сделать expression-ом прямо в HTTP-ноде Mark Today Notified.
 </div>
 
+<img class="article-inline-img" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1080&q=80&auto=format&fit=crop" alt="" loading="lazy">
 <h2 id="что-не-трогаем">Что НЕ трогаем</h2>
 
 <div class="node-card keep">
@@ -331,6 +334,7 @@ HTTP-вызов к OpenAI. Меняем только промпт (добавл�
 <li><strong>Не трогать французские слова.</strong> Если массив кастомизирован - перенести как есть. Не генерировать через GPT, не "улучшать". Детерминистичный список лучше рандомного</li>
 </ul>
 
+<img class="article-inline-img" src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1080&q=80&auto=format&fit=crop" alt="" loading="lazy">
 <h2 id="когда-не-стоит-делать-рефакторинг">Когда НЕ стоит делать рефакторинг</h2>
 
 <p>Кстати, знаете что? Иногда ответ - "не трогай"</p>

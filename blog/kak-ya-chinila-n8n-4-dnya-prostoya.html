@@ -113,6 +113,8 @@
 .article-author-card{flex-direction:column;text-align:center}
 .related-grid{grid-template-columns:1fr}
 }
+
+.article-inline-img{width:100%;max-height:400px;object-fit:cover;object-position:center 30%;border-radius:10px;margin:2.5rem 0;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
 </style>
 </head>
 <body>
@@ -239,6 +241,7 @@ Unsupported start tag "=48ч)&lt;/b" at byte offset 583</code></pre>
 <p>После этого - <strong>SUCCESS</strong>. Утренний брифинг пришёл в Telegram</p>
 </div>
 
+<img class="article-inline-img" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1080&q=80&auto=format&fit=crop" alt="" loading="lazy">
 <h2 id="где-я-потеряла-время">Где я потеряла время</h2>
 
 <p>Не на починке. На диагностике</p>
@@ -298,6 +301,7 @@ Unsupported start tag "=48ч)&lt;/b" at byte offset 583</code></pre>
 
 <p>Миграция на GCP - правильное решение. Экономия реальная, контроль полный. Но любая миграция - это не "перенёс и забыл". Это "перенёс, проверил всё, и только потом забыл"</p>
 
+<img class="article-inline-img" src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1080&q=80&auto=format&fit=crop" alt="" loading="lazy">
 <h2 id="faq">FAQ</h2>
 
 <details class="faq-accordion"><summary>Почему после миграции n8n ломаются Google-воркфлоу?</summary><p>При миграции OAuth2 credentials теряют Client Secret - он заменяется заглушкой. Плюс таблицы могут принадлежать другому Google-аккаунту, а нужные API могут быть не включены в GCP Console. Результат - 403 Forbidden на всех Google-нодах</p></details>

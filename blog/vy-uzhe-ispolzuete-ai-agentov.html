@@ -101,6 +101,8 @@
 .article-author-card{flex-direction:column;text-align:center}
 .related-grid{grid-template-columns:1fr}
 }
+
+.article-inline-img{width:100%;max-height:400px;object-fit:cover;object-position:center 30%;border-radius:10px;margin:2.5rem 0;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
 </style>
 </head>
 <body>
@@ -235,6 +237,7 @@
 <div class="example"><strong>Пример:</strong> TF Autoposting - GPT генерирует пост, Reflection GPT проверяет: стиль на "вы"? Нет длинных тире? Нет повторов с последними 5 постами? Не фейковый кейс? Если не прошел - переписывает (максимум 1 повтор).</div>
 </div>
 
+<img class="article-inline-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1080&q=80&auto=format&fit=crop" alt="" loading="lazy">
 <h2 id="полная-архитектура-42-воркфлоу-как-мульти-агентная">Полная архитектура: 42 воркфлоу как мульти-агентная система</h2>
 
 <p>Один воркфлоу - это один агент. Но когда 42 воркфлоу работают вместе, обмениваясь данными через общую память - это мульти-агентная система</p>
@@ -279,6 +282,7 @@
 
 <p>5 шагов - и у вас полноценный AI-агент с 6 принципами. Не "в теории". В продакшене</p>
 
+<img class="article-inline-img" src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1080&q=80&auto=format&fit=crop" alt="" loading="lazy">
 <h2 id="faq">FAQ</h2>
 
 <details class="faq-accordion"><summary>Можно ли считать n8n-воркфлоу AI-агентом?</summary><p>Да, если воркфлоу реализует 6 принципов: цель, контекст, память, инструменты, планирование и саморефлексию. n8n-воркфлоу с GPT, Google Sheets (память) и Reflection Pattern - это полноценный AI-агент</p></details>
